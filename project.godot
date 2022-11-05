@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="Merchants Prototype"
+config/name="Merchants of Mie"
 run/main_scene="res://StartScreen/StartScreen.tscn"
 config/icon="res://icon.png"
 
