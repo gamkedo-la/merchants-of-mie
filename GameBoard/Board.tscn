@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://GameBoard/BoardActions.gd" type="Script" id=1]
+[ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-City.gd" type="Script" id=1]
 [ext_resource path="res://SharedResources/Models/TerrainTiles/BaseTerrain.material" type="Material" id=10]
 
 [node name="Board" type="Node"]
