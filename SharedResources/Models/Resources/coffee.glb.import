@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/gold.fbx-72b185437b717b2c11bb63a1ebde56ec.scn"
+path="res://.import/coffee.glb-f38e2aacbd97796ff3f502378295486d.scn"
 
 [deps]
 
-source_file="res://SharedResources/Models/Resources/gold.fbx"
-dest_files=[ "res://.import/gold.fbx-72b185437b717b2c11bb63a1ebde56ec.scn" ]
+source_file="res://SharedResources/Models/Resources/coffee.glb"
+dest_files=[ "res://.import/coffee.glb-f38e2aacbd97796ff3f502378295486d.scn" ]
 
 [params]
 

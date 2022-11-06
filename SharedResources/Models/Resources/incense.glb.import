@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/grapes.fbx-785ac5c368080e0447bb948dc524b831.scn"
+path="res://.import/incense.glb-c639cff0cc092e775bb1b1525965e60d.scn"
 
 [deps]
 
-source_file="res://SharedResources/Models/Resources/grapes.fbx"
-dest_files=[ "res://.import/grapes.fbx-785ac5c368080e0447bb948dc524b831.scn" ]
+source_file="res://SharedResources/Models/Resources/incense.glb"
+dest_files=[ "res://.import/incense.glb-c639cff0cc092e775bb1b1525965e60d.scn" ]
 
 [params]
 

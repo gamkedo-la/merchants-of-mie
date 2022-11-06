@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/fish.fbx-d5ff693d88a20cce96d09becfd5a4807.scn"
+path="res://.import/gold.glb-272d66cf89b82b28ee1f200735cf752f.scn"
 
 [deps]
 
-source_file="res://SharedResources/Models/Resources/fish.fbx"
-dest_files=[ "res://.import/fish.fbx-d5ff693d88a20cce96d09becfd5a4807.scn" ]
+source_file="res://SharedResources/Models/Resources/gold.glb"
+dest_files=[ "res://.import/gold.glb-272d66cf89b82b28ee1f200735cf752f.scn" ]
 
 [params]
 
