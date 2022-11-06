@@ -1,12 +1,1226 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-City.gd" type="Script" id=1]
+[ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-Forest.glb" type="PackedScene" id=2]
+[ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-Mountain.glb" type="PackedScene" id=3]
+[ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-Castle.glb" type="PackedScene" id=4]
+[ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-City.glb" type="PackedScene" id=5]
+[ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-Plains.glb" type="PackedScene" id=6]
+[ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-Water.glb" type="PackedScene" id=7]
+[ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-Stone.glb" type="PackedScene" id=8]
+[ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-Desert.glb" type="PackedScene" id=9]
 [ext_resource path="res://SharedResources/Models/TerrainTiles/BaseTerrain.material" type="Material" id=10]
 
 [node name="Board" type="Node"]
 script = ExtResource( 1 )
 
 [node name="BoardTiles" type="Node" parent="."]
+
+[node name="Tile-Castle" parent="BoardTiles" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1 )
+
+[node name="Tile-City" parent="BoardTiles" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 17 )
+
+[node name="Tile-City2" parent="BoardTiles" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 1 )
+
+[node name="Tile-City3" parent="BoardTiles" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -15 )
+
+[node name="Tile-City4" parent="BoardTiles" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -13 )
+
+[node name="Tile-City5" parent="BoardTiles" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 13 )
+
+[node name="Tile-City6" parent="BoardTiles" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -7 )
+
+[node name="Tile-Desert" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -1 )
+
+[node name="Tile-Desert2" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -1 )
+
+[node name="Tile-Desert3" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -1 )
+
+[node name="Tile-Desert4" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -3 )
+
+[node name="Tile-Desert5" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -5 )
+
+[node name="Tile-Desert6" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 1 )
+
+[node name="Tile-Desert7" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 1 )
+
+[node name="Tile-Desert8" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 3 )
+
+[node name="Tile-Desert9" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 5 )
+
+[node name="Tile-Desert10" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 7 )
+
+[node name="Tile-Desert11" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 5 )
+
+[node name="Tile-Desert12" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 7 )
+
+[node name="Tile-Desert13" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 5 )
+
+[node name="Tile-Desert14" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 7 )
+
+[node name="Tile-Desert23" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 9 )
+
+[node name="Tile-Desert15" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 5 )
+
+[node name="Tile-Desert16" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 7 )
+
+[node name="Tile-Desert21" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 9 )
+
+[node name="Tile-Desert22" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 11 )
+
+[node name="Tile-Desert17" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5 )
+
+[node name="Tile-Desert18" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 7 )
+
+[node name="Tile-Desert19" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 9 )
+
+[node name="Tile-Desert24" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 13 )
+
+[node name="Tile-Desert20" parent="BoardTiles" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 11 )
+
+[node name="Tile-Forest" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 11 )
+
+[node name="Tile-Forest2" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 13 )
+
+[node name="Tile-Forest3" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 9 )
+
+[node name="Tile-Forest21" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -17 )
+
+[node name="Tile-Forest34" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -17 )
+
+[node name="Tile-Forest35" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -17 )
+
+[node name="Tile-Forest36" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -17 )
+
+[node name="Tile-Forest37" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -17 )
+
+[node name="Tile-Forest38" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -15 )
+
+[node name="Tile-Forest39" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -15 )
+
+[node name="Tile-Forest40" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -15 )
+
+[node name="Tile-Forest41" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -13 )
+
+[node name="Tile-Forest42" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -13 )
+
+[node name="Tile-Forest43" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -13 )
+
+[node name="Tile-Forest44" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -11 )
+
+[node name="Tile-Forest45" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -11 )
+
+[node name="Tile-Forest46" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -11 )
+
+[node name="Tile-Forest55" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -7 )
+
+[node name="Tile-Forest56" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5 )
+
+[node name="Tile-Forest57" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3 )
+
+[node name="Tile-Forest58" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -7 )
+
+[node name="Tile-Forest61" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -9 )
+
+[node name="Tile-Forest59" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -5 )
+
+[node name="Tile-Forest62" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -7 )
+
+[node name="Tile-Forest63" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -5 )
+
+[node name="Tile-Forest60" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3 )
+
+[node name="Tile-Forest47" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -9 )
+
+[node name="Tile-Forest50" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -11 )
+
+[node name="Tile-Forest51" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -13 )
+
+[node name="Tile-Forest53" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -11 )
+
+[node name="Tile-Forest54" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -13 )
+
+[node name="Tile-Forest52" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -15 )
+
+[node name="Tile-Forest48" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -9 )
+
+[node name="Tile-Forest49" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -9 )
+
+[node name="Tile-Forest22" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -17 )
+
+[node name="Tile-Forest23" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -17 )
+
+[node name="Tile-Forest24" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -17 )
+
+[node name="Tile-Forest25" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -15 )
+
+[node name="Tile-Forest26" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -15 )
+
+[node name="Tile-Forest27" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -15 )
+
+[node name="Tile-Forest28" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -15 )
+
+[node name="Tile-Forest33" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -15 )
+
+[node name="Tile-Forest29" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -13 )
+
+[node name="Tile-Forest30" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -13 )
+
+[node name="Tile-Forest31" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -13 )
+
+[node name="Tile-Forest32" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -13 )
+
+[node name="Tile-Forest4" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 11 )
+
+[node name="Tile-Forest5" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 13 )
+
+[node name="Tile-Forest7" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 15 )
+
+[node name="Tile-Forest6" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 9 )
+
+[node name="Tile-Forest8" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 11 )
+
+[node name="Tile-Forest9" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 13 )
+
+[node name="Tile-Forest10" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 15 )
+
+[node name="Tile-Forest18" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 9 )
+
+[node name="Tile-Forest19" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 11 )
+
+[node name="Tile-Forest20" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 13 )
+
+[node name="Tile-Forest11" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 9 )
+
+[node name="Tile-Forest12" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 7 )
+
+[node name="Tile-Forest13" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 9 )
+
+[node name="Tile-Forest14" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 11 )
+
+[node name="Tile-Forest15" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 13 )
+
+[node name="Tile-Forest16" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 7 )
+
+[node name="Tile-Forest17" parent="BoardTiles" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 5 )
+
+[node name="Tile-Mountain" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 15 )
+
+[node name="Tile-Mountain2" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 13 )
+
+[node name="Tile-Mountain3" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 11 )
+
+[node name="Tile-Mountain4" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 9 )
+
+[node name="Tile-Mountain5" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 7 )
+
+[node name="Tile-Mountain6" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 5 )
+
+[node name="Tile-Mountain10" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 17 )
+
+[node name="Tile-Mountain11" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 15 )
+
+[node name="Tile-Mountain12" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 13 )
+
+[node name="Tile-Mountain13" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 11 )
+
+[node name="Tile-Mountain14" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 9 )
+
+[node name="Tile-Mountain15" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 7 )
+
+[node name="Tile-Mountain16" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 17 )
+
+[node name="Tile-Mountain17" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 15 )
+
+[node name="Tile-Mountain18" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 9 )
+
+[node name="Tile-Mountain19" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 17 )
+
+[node name="Tile-Mountain20" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 15 )
+
+[node name="Tile-Mountain22" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 17 )
+
+[node name="Tile-Mountain23" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 15 )
+
+[node name="Tile-Mountain24" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 13 )
+
+[node name="Tile-Mountain25" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 17 )
+
+[node name="Tile-Mountain26" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 15 )
+
+[node name="Tile-Mountain28" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 15 )
+
+[node name="Tile-Mountain29" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 13 )
+
+[node name="Tile-Mountain30" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 13 )
+
+[node name="Tile-Mountain27" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 13 )
+
+[node name="Tile-Mountain21" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 9 )
+
+[node name="Tile-Mountain7" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 3 )
+
+[node name="Tile-Mountain8" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 1 )
+
+[node name="Tile-Mountain9" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -1 )
+
+[node name="Tile-Mountain31" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -3 )
+
+[node name="Tile-Mountain32" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -5 )
+
+[node name="Tile-Mountain35" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -7 )
+
+[node name="Tile-Mountain37" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -7 )
+
+[node name="Tile-Mountain38" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -7 )
+
+[node name="Tile-Mountain40" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -9 )
+
+[node name="Tile-Mountain41" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -11 )
+
+[node name="Tile-Mountain39" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -7 )
+
+[node name="Tile-Mountain42" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -9 )
+
+[node name="Tile-Mountain43" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -11 )
+
+[node name="Tile-Mountain44" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -13 )
+
+[node name="Tile-Mountain36" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -9 )
+
+[node name="Tile-Mountain33" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -5 )
+
+[node name="Tile-Mountain34" parent="BoardTiles" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -3 )
+
+[node name="Tile-Stone" parent="BoardTiles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 5 )
+
+[node name="Tile-Stone2" parent="BoardTiles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 3 )
+
+[node name="Tile-Stone12" parent="BoardTiles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 3 )
+
+[node name="Tile-Stone3" parent="BoardTiles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 1 )
+
+[node name="Tile-Stone4" parent="BoardTiles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -3 )
+
+[node name="Tile-Stone5" parent="BoardTiles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -5 )
+
+[node name="Tile-Stone6" parent="BoardTiles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -5 )
+
+[node name="Tile-Stone7" parent="BoardTiles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -3 )
+
+[node name="Tile-Stone8" parent="BoardTiles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 13 )
+
+[node name="Tile-Stone9" parent="BoardTiles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 11 )
+
+[node name="Tile-Stone10" parent="BoardTiles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 11 )
+
+[node name="Tile-Stone11" parent="BoardTiles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 11 )
+
+[node name="Tile-Water" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -1 )
+
+[node name="Tile-Water2" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 1 )
+
+[node name="Tile-Water3" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 3 )
+
+[node name="Tile-Water4" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 5 )
+
+[node name="Tile-Water5" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 7 )
+
+[node name="Tile-Water6" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 9 )
+
+[node name="Tile-Water7" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 11 )
+
+[node name="Tile-Water8" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 13 )
+
+[node name="Tile-Water9" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 15 )
+
+[node name="Tile-Water10" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 17 )
+
+[node name="Tile-Water11" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 19 )
+
+[node name="Tile-Water13" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -19 )
+
+[node name="Tile-Water14" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -17 )
+
+[node name="Tile-Water15" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -15 )
+
+[node name="Tile-Water16" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -13 )
+
+[node name="Tile-Water17" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -11 )
+
+[node name="Tile-Water18" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -9 )
+
+[node name="Tile-Water19" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -7 )
+
+[node name="Tile-Water20" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -5 )
+
+[node name="Tile-Water21" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -3 )
+
+[node name="Tile-Water77" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -17 )
+
+[node name="Tile-Water78" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -15 )
+
+[node name="Tile-Water79" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -13 )
+
+[node name="Tile-Water80" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -11 )
+
+[node name="Tile-Water81" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -9 )
+
+[node name="Tile-Water82" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -7 )
+
+[node name="Tile-Water85" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -17 )
+
+[node name="Tile-Water86" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -15 )
+
+[node name="Tile-Water89" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -9 )
+
+[node name="Tile-Water90" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -7 )
+
+[node name="Tile-Water91" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -17 )
+
+[node name="Tile-Water94" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -17 )
+
+[node name="Tile-Water97" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -17 )
+
+[node name="Tile-Water98" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -17 )
+
+[node name="Tile-Water159" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -17 )
+
+[node name="Tile-Water99" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -17 )
+
+[node name="Tile-Water100" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -17 )
+
+[node name="Tile-Water101" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -17 )
+
+[node name="Tile-Water102" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -17 )
+
+[node name="Tile-Water103" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -15 )
+
+[node name="Tile-Water96" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -7 )
+
+[node name="Tile-Water83" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -5 )
+
+[node name="Tile-Water84" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -3 )
+
+[node name="Tile-Water12" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -1 )
+
+[node name="Tile-Water22" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 1 )
+
+[node name="Tile-Water23" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 3 )
+
+[node name="Tile-Water24" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 5 )
+
+[node name="Tile-Water25" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 7 )
+
+[node name="Tile-Water26" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 9 )
+
+[node name="Tile-Water27" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 11 )
+
+[node name="Tile-Water28" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 13 )
+
+[node name="Tile-Water29" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 15 )
+
+[node name="Tile-Water30" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 17 )
+
+[node name="Tile-Water31" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 19 )
+
+[node name="Tile-Water32" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -19 )
+
+[node name="Tile-Water41" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -19 )
+
+[node name="Tile-Water42" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -19 )
+
+[node name="Tile-Water43" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -19 )
+
+[node name="Tile-Water44" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -19 )
+
+[node name="Tile-Water45" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -19 )
+
+[node name="Tile-Water46" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -19 )
+
+[node name="Tile-Water47" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -19 )
+
+[node name="Tile-Water48" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -19 )
+
+[node name="Tile-Water49" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -19 )
+
+[node name="Tile-Water50" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -19 )
+
+[node name="Tile-Water51" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -19 )
+
+[node name="Tile-Water52" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -19 )
+
+[node name="Tile-Water53" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -19 )
+
+[node name="Tile-Water54" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -19 )
+
+[node name="Tile-Water55" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -19 )
+
+[node name="Tile-Water56" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -19 )
+
+[node name="Tile-Water57" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -19 )
+
+[node name="Tile-Water58" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -19 )
+
+[node name="Tile-Water59" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 19 )
+
+[node name="Tile-Water60" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 19 )
+
+[node name="Tile-Water61" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 19 )
+
+[node name="Tile-Water104" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 17 )
+
+[node name="Tile-Water138" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 15 )
+
+[node name="Tile-Water105" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 17 )
+
+[node name="Tile-Water158" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 15 )
+
+[node name="Tile-Water137" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 17 )
+
+[node name="Tile-Water106" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 17 )
+
+[node name="Tile-Water107" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 15 )
+
+[node name="Tile-Water62" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 19 )
+
+[node name="Tile-Water63" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 19 )
+
+[node name="Tile-Water64" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 19 )
+
+[node name="Tile-Water65" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 19 )
+
+[node name="Tile-Water66" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 19 )
+
+[node name="Tile-Water67" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 19 )
+
+[node name="Tile-Water68" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 19 )
+
+[node name="Tile-Water118" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 9 )
+
+[node name="Tile-Water119" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 7 )
+
+[node name="Tile-Water120" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 9 )
+
+[node name="Tile-Water121" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 7 )
+
+[node name="Tile-Water122" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 17 )
+
+[node name="Tile-Water123" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 0.999958, -0.0091803, 0, 0.0091803, 0.999958, 0, 0, 0, 1, -1, 0, 15 )
+
+[node name="Tile-Water131" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 17 )
+
+[node name="Tile-Water132" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 0.999958, -0.0091803, 0, 0.0091803, 0.999958, 0, 0, 0, 1, -3, 0, 15 )
+
+[node name="Tile-Water134" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 17 )
+
+[node name="Tile-Water135" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 0.999958, -0.0091803, 0, 0.0091803, 0.999958, 0, 0, 0, 1, -5, 0, 15 )
+
+[node name="Tile-Water136" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 17 )
+
+[node name="Tile-Water124" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 17 )
+
+[node name="Tile-Water125" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 15 )
+
+[node name="Tile-Water126" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 17 )
+
+[node name="Tile-Water127" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 15 )
+
+[node name="Tile-Water128" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 17 )
+
+[node name="Tile-Water69" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 19 )
+
+[node name="Tile-Water70" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 19 )
+
+[node name="Tile-Water71" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 19 )
+
+[node name="Tile-Water72" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 19 )
+
+[node name="Tile-Water73" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 19 )
+
+[node name="Tile-Water74" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 19 )
+
+[node name="Tile-Water75" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 19 )
+
+[node name="Tile-Water76" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 19 )
+
+[node name="Tile-Water149" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 17 )
+
+[node name="Tile-Water33" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -17 )
+
+[node name="Tile-Water34" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -15 )
+
+[node name="Tile-Water35" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -13 )
+
+[node name="Tile-Water36" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -11 )
+
+[node name="Tile-Water37" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -9 )
+
+[node name="Tile-Water38" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -7 )
+
+[node name="Tile-Water39" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -5 )
+
+[node name="Tile-Water108" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -5 )
+
+[node name="Tile-Water114" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -7 )
+
+[node name="Tile-Water129" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -9 )
+
+[node name="Tile-Water130" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -11 )
+
+[node name="Tile-Water115" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -5 )
+
+[node name="Tile-Water116" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -5 )
+
+[node name="Tile-Water117" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -5 )
+
+[node name="Tile-Water140" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -5 )
+
+[node name="Tile-Water141" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5 )
+
+[node name="Tile-Water142" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -7 )
+
+[node name="Tile-Water143" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -9 )
+
+[node name="Tile-Water144" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -9 )
+
+[node name="Tile-Water145" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -13 )
+
+[node name="Tile-Water146" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -13 )
+
+[node name="Tile-Water147" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -15 )
+
+[node name="Tile-Water148" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -15 )
+
+[node name="Tile-Water109" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -3 )
+
+[node name="Tile-Water110" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -1 )
+
+[node name="Tile-Water111" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 1 )
+
+[node name="Tile-Water112" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 3 )
+
+[node name="Tile-Water113" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 5 )
+
+[node name="Tile-Water139" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 7 )
+
+[node name="Tile-Water133" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 9 )
+
+[node name="Tile-Water150" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 11 )
+
+[node name="Tile-Water151" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 13 )
+
+[node name="Tile-Water152" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -3 )
+
+[node name="Tile-Water153" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -1 )
+
+[node name="Tile-Water154" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 1 )
+
+[node name="Tile-Water155" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 3 )
+
+[node name="Tile-Water156" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 5 )
+
+[node name="Tile-Water157" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 7 )
+
+[node name="Tile-Water40" parent="BoardTiles" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -3 )
+
+[node name="Tile-Plains2" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -1.0157 )
+
+[node name="Tile-Plains3" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0.984296 )
+
+[node name="Tile-Plains4" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2.9843 )
+
+[node name="Tile-Plains25" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -1.0157 )
+
+[node name="Tile-Plains26" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0.984296 )
+
+[node name="Tile-Plains27" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 2.9843 )
+
+[node name="Tile-Plains28" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1.0157 )
+
+[node name="Tile-Plains29" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0.984296 )
+
+[node name="Tile-Plains30" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 2.9843 )
+
+[node name="Tile-Plains31" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -1.0157 )
+
+[node name="Tile-Plains32" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0.984296 )
+
+[node name="Tile-Plains33" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 2.9843 )
+
+[node name="Tile-Plains5" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2.9843 )
+
+[node name="Tile-Plains6" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2.9843 )
+
+[node name="Tile-Plains34" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 4.9843 )
+
+[node name="Tile-Plains37" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 6.9843 )
+
+[node name="Tile-Plains38" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 8.9843 )
+
+[node name="Tile-Plains47" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -1.0157 )
+
+[node name="Tile-Plains48" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0.984296 )
+
+[node name="Tile-Plains49" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 2.9843 )
+
+[node name="Tile-Plains50" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 4.9843 )
+
+[node name="Tile-Plains51" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 6.9843 )
+
+[node name="Tile-Plains53" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -1.0157 )
+
+[node name="Tile-Plains54" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0.984296 )
+
+[node name="Tile-Plains55" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 2.9843 )
+
+[node name="Tile-Plains56" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 4.9843 )
+
+[node name="Tile-Plains57" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 6.9843 )
+
+[node name="Tile-Plains52" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 8.9843 )
+
+[node name="Tile-Plains39" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 10.9843 )
+
+[node name="Tile-Plains40" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 10.9843 )
+
+[node name="Tile-Plains41" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 10.9843 )
+
+[node name="Tile-Plains44" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 10.9843 )
+
+[node name="Tile-Plains42" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 12.9843 )
+
+[node name="Tile-Plains43" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 12.9843 )
+
+[node name="Tile-Plains35" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4.9843 )
+
+[node name="Tile-Plains36" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 4.9843 )
+
+[node name="Tile-Plains7" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0.984296 )
+
+[node name="Tile-Plains8" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.0157 )
+
+[node name="Tile-Plains45" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.0157 )
+
+[node name="Tile-Plains46" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3.0157 )
+
+[node name="Tile-Plains58" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -3.0157 )
+
+[node name="Tile-Plains59" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -1.0157 )
+
+[node name="Tile-Plains60" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0.984296 )
+
+[node name="Tile-Plains61" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 2.9843 )
+
+[node name="Tile-Plains62" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 4.9843 )
+
+[node name="Tile-Plains63" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 6.9843 )
+
+[node name="Tile-Plains64" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -3.0157 )
+
+[node name="Tile-Plains65" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -1.0157 )
+
+[node name="Tile-Plains66" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0.984296 )
+
+[node name="Tile-Plains67" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 2.9843 )
+
+[node name="Tile-Plains68" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 4.9843 )
+
+[node name="Tile-Plains69" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 6.9843 )
+
+[node name="Tile-Plains71" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 8.9843 )
+
+[node name="Tile-Plains72" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 10.9843 )
+
+[node name="Tile-Plains73" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 12.9843 )
+
+[node name="Tile-Plains74" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 14.9843 )
+
+[node name="Tile-Plains70" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -3.0157 )
+
+[node name="Tile-Plains76" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -1.0157 )
+
+[node name="Tile-Plains77" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0.984296 )
+
+[node name="Tile-Plains78" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 2.9843 )
+
+[node name="Tile-Plains79" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -3.0157 )
+
+[node name="Tile-Plains80" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -1.0157 )
+
+[node name="Tile-Plains81" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 4.9843 )
+
+[node name="Tile-Plains82" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 2.9843 )
+
+[node name="Tile-Plains83" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -3.0157 )
+
+[node name="Tile-Plains75" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -5.0157 )
+
+[node name="Tile-Plains84" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -7.0157 )
+
+[node name="Tile-Plains85" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -9.0157 )
+
+[node name="Tile-Plains86" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -11.0157 )
+
+[node name="Tile-Plains92" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -11.0157 )
+
+[node name="Tile-Plains93" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -11.0157 )
+
+[node name="Tile-Plains94" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -11.0157 )
+
+[node name="Tile-Plains95" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -11.0157 )
+
+[node name="Tile-Plains87" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -9.0157 )
+
+[node name="Tile-Plains88" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -11.0157 )
+
+[node name="Tile-Plains89" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -13.0157 )
+
+[node name="Tile-Plains91" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -13.0157 )
+
+[node name="Tile-Plains96" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -13.0157 )
+
+[node name="Tile-Plains90" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -15.0157 )
+
+[node name="Tile-Plains97" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -15.0157 )
+
+[node name="Tile-Plains9" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.0157 )
+
+[node name="Tile-Plains10" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3.0157 )
+
+[node name="Tile-Plains11" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -5.0157 )
+
+[node name="Tile-Plains12" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -7.0157 )
+
+[node name="Tile-Plains13" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -9.0157 )
+
+[node name="Tile-Plains14" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -11.0157 )
+
+[node name="Tile-Plains15" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -11.0157 )
+
+[node name="Tile-Plains16" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -9.0157 )
+
+[node name="Tile-Plains17" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -9.0157 )
+
+[node name="Tile-Plains18" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -11.0157 )
+
+[node name="Tile-Plains19" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -7.0157 )
+
+[node name="Tile-Plains98" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -5.0157 )
+
+[node name="Tile-Plains99" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -3.0157 )
+
+[node name="Tile-Plains20" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -13.0157 )
+
+[node name="Tile-Plains21" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -15.0157 )
+
+[node name="Tile-Plains22" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -7.0157 )
+
+[node name="Tile-Plains24" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -9.0157 )
+
+[node name="Tile-Plains23" parent="BoardTiles" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -7.0157 )
 
 [node name="CSGBox" type="CSGBox" parent="."]
 width = 0.1
