@@ -4,7 +4,11 @@ const MAX_TURNS = 3
 var current_scene = null
 var turn_number = 0
 
+onready var action_Points_available = 5
+onready var action_Points_Per_Turn = 5 
+
 func _ready():
+	print("At turn start, player has: " + str(action_Points_Per_Turn) + " available")
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
 
