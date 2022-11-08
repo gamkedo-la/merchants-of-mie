@@ -1,5 +1,12 @@
 extends Node
 
+var pronoun = "They "
+var former_job = ""
+var bridge = ""
+var aspirations = ""
+var new_occupation = ""
+var merchant_name = ""
+
 var merchant_names = [
 	"Laureion Mirwald",
 "Helicaon Topp",
@@ -302,10 +309,75 @@ var merchant_names = [
 "Lateefa el-Matar",
 "Juwairiya el-Hoda",	
 ]
-var merchant_name = ""
+
+var former_job_array = [
+"used to be a",
+"worked as a",
+"trained as a"
+]
+
+var bridge_array = [
+"Miller.",
+"Blacksmith.",
+"Stonemason.",
+"Carpenter.",
+"Weaver.",
+"Watchmaker.",
+"Shoemaker.",
+"Baker.",
+"Farmer.",
+"Shop Owner.",
+"Painter.",
+"Barrister.",
+"Fisherman.",
+"Miner."
+]
+
+var aspirations_array = [
+"Now, they aspire to be a",
+"Now, they are becoming a",
+"Now, they are training to be a",
+"Now, they hope to be a",
+"Now, they are moonlighting as a",	
+]
+
+var new_occupation_array = [
+"Real Estate Agent.",
+"World Traveler.",
+"Lottery Winner.",
+"Wood Carver.",
+"Pastry Chef.",
+"Town Crier.",
+"Spy.",
+"Mail Carrier.",
+"Parkour Expert.",
+"Rock Collector.",
+"Retiree.",
+"Parent.",
+"Musician.",
+"Business Owner.",
+"Wig maker.",
+"Scribe.",
+"Writer.",
+"Land owner.",
+"Diplomat.",
+"Jewlery Maker.",
+"Banker.",
+"Surgeon.",
+"Priest.",
+"Nanny.",
+"Stamp Collector.",
+"Regional Entertainer.",
+"Stand up comedian."
+]
 
 func _ready():
 	randomize()
 	merchant_names.shuffle()
+	former_job_array.shuffle()
+	bridge_array.shuffle()
+	aspirations_array.shuffle()
+	new_occupation_array.shuffle()
 	merchant_name = merchant_names[0]
 	print(merchant_name)
+	print(pronoun + former_job_array[0] + " " + bridge_array[0] + " " + aspirations_array[0] + " " + new_occupation_array[0])
