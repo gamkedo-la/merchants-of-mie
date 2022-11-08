@@ -1,15 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://SharedResources/Models/Characters/merchantToken.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/MerchantInfo.gd" type="Script" id=2]
-[ext_resource path="res://Player/MerchantToken.gd" type="Script" id=3]
 [ext_resource path="res://SharedResources/Models/Characters/merchantToken2.tscn" type="PackedScene" id=4]
 
 [node name="MerchantToken" type="Spatial"]
-script = ExtResource( 3 )
-
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( -0.999945, -0.00555085, 0.00891852, 0, 0.84899, 0.528408, -0.0105049, 0.528379, -0.848944, 0.74096, 1.93543, -3.10947 )
 
 [node name="Token" type="Position3D" parent="."]
 
@@ -21,6 +16,3 @@ transform = Transform( 0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, -0.0437049 )
 
 [node name="MerchantInfo" type="Node" parent="."]
 script = ExtResource( 2 )
-
-[node name="Position3D" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0 )
