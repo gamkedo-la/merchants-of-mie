@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://MainGame/AMap.gd" type="Script" id=2]
@@ -11,11 +11,6 @@ size = Vector2( 20, 20 )
 
 [sub_resource type="ConcavePolygonShape" id=2]
 data = PoolVector3Array( 10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10 )
-
-[sub_resource type="CubeMesh" id=3]
-
-[sub_resource type="ConcavePolygonShape" id=4]
-data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
 
 [node name="MainGame" type="Spatial"]
 
@@ -36,7 +31,7 @@ __meta__ = {
 }
 
 [node name="Camera" type="Camera" parent="AMap"]
-transform = Transform( -0.627933, -0.670264, 0.395533, 0, 0.508222, 0.861226, -0.778268, 0.540792, -0.31913, 9.25277, 15.6367, -7.21168 )
+transform = Transform( 1, 8.56997e-10, -3.64579e-10, 0, 0.391463, 0.920194, 9.31323e-10, -0.920194, 0.391463, -1.22851, 16.0734, 8.96881 )
 current = true
 size = 20.0
 script = ExtResource( 4 )
@@ -48,24 +43,6 @@ mesh = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="AMap/Ground/StaticBody"]
 shape = SubResource( 2 )
-
-[node name="Cube" type="MeshInstance" parent="AMap"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-mesh = SubResource( 3 )
-
-[node name="StaticBody" type="StaticBody" parent="AMap/Cube"]
-
-[node name="CollisionShape" type="CollisionShape" parent="AMap/Cube/StaticBody"]
-shape = SubResource( 4 )
-
-[node name="Cube2" type="MeshInstance" parent="AMap"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2 )
-mesh = SubResource( 3 )
-
-[node name="StaticBody" type="StaticBody" parent="AMap/Cube2"]
-
-[node name="CollisionShape" type="CollisionShape" parent="AMap/Cube2/StaticBody"]
-shape = SubResource( 4 )
 
 [node name="PlayerPrototype" parent="AMap" instance=ExtResource( 5 )]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.47288, 0.336094, 0.544791 )

@@ -23,7 +23,8 @@ func _physics_process(delta):
 			move_and_slide(move_vec.normalized() * MOVE_SPEED, Vector3(0,1,0))
 			
 func move_to(target_pos):
-	path = amap.get_path_to_node(global_transform.origin, target_pos)
+	var g_transform = global_transform.origin
+	path = amap.get_path_to_node(g_transform, target_pos)
 	path_ind = 0
 
 func start_player_turn():
