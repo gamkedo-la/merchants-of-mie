@@ -5,4 +5,4 @@
 [node name="Resource-Coffee" type="Spatial"]
 
 [node name="coffee" parent="." instance=ExtResource( 1 )]
-transform = Transform( -1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, 0, 0, 0 )
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )

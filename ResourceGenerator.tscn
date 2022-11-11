@@ -7,9 +7,580 @@
 
 [node name="Board" parent="." instance=ExtResource( 2 )]
 
-[node name="ResourceSpot" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.0361031, 0.5 )
-script = ExtResource( 1 )
-
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.998491, -0.0363138, 0.0411929, 0, 0.750135, 0.661285, -0.054914, -0.660287, 0.749003, 0.403065, 1.3751, 1.50485 )
+transform = Transform( 0.0017813, -0.74487, 0.667208, 0, 0.667209, 0.744871, -0.999998, -0.00132684, 0.0011885, 10.5248, 9.85633, -0.765475 )
+
+[node name="FishSpawner" type="Node" parent="."]
+
+[node name="ResourceSpot" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0.0361031, -8.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot2" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0.0361031, -8.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot3" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.0361031, -8.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot4" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.0361031, -8.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot5" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.0361031, -8.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot6" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.0361031, -8.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot7" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.0361031, -8.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot8" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, -8.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot9" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, -7.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot10" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, -7.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot11" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.0361031, -7.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot12" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0.0361031, -7.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot13" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.0361031, -6.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot14" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, -6.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot15" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, -5.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot16" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, -4.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot17" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, -4.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot18" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, -4.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot19" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.0361031, -4.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot20" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.0361031, -3.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot21" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.0361031, -3.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot22" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, -3.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot23" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0.0361031, -3.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot24" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0.0361031, -2.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot25" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0.0361031, -2.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot26" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.0361031, -2.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot27" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.0361031, -2.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot28" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.0361031, -2.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot29" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0.0361031, -1.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot30" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0.0361031, 0.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot31" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.0361031, 3.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot32" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.0361031, 3.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot33" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.0361031, 7.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot34" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.0361031, 7.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot35" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.0361031, 8.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot36" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.0361031, 8.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="ResourceSpot37" type="Spatial" parent="FishSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.0361031, 8.5 )
+script = ExtResource( 1 )
+can_spawn_fish = true
+
+[node name="CoffeeSpawner" type="Node" parent="."]
+
+[node name="ResourceSpot38" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0.0361031, 4.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="ResourceSpot39" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0.0361031, 6.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="ResourceSpot40" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0.0361031, 5.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="ResourceSpot41" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0.0361031, 3.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="ResourceSpot42" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.0361031, 4.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="ResourceSpot43" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.0361031, 6.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="ResourceSpot44" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.0361031, -6.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="ResourceSpot45" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.0361031, -7.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="ResourceSpot46" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.0361031, -7.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="ResourceSpot47" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.0361031, -6.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="ResourceSpot48" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.0361031, -7.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="ResourceSpot50" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.0361031, -7.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="ResourceSpot51" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.0361031, -7.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="ResourceSpot52" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.0361031, -6.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="ResourceSpot53" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.0361031, -5.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="ResourceSpot54" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.0361031, -5.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="ResourceSpot55" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.0361031, -6.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="ResourceSpot56" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.0361031, -7.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="ResourceSpot57" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.0361031, -7.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="ResourceSpot58" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.0361031, -6.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="ResourceSpot59" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.0361031, -5.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="ResourceSpot49" type="Spatial" parent="CoffeeSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.0361031, -6.5 )
+script = ExtResource( 1 )
+can_spawn_coffee = true
+
+[node name="GoldSpawner" type="Node" parent="."]
+
+[node name="ResourceSpot60" type="Spatial" parent="GoldSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, 6.5 )
+script = ExtResource( 1 )
+can_spawn_gold = true
+
+[node name="ResourceSpot61" type="Spatial" parent="GoldSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, 5.5 )
+script = ExtResource( 1 )
+can_spawn_gold = true
+
+[node name="ResourceSpot62" type="Spatial" parent="GoldSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.0361031, 5.5 )
+script = ExtResource( 1 )
+can_spawn_gold = true
+
+[node name="ResourceSpot63" type="Spatial" parent="GoldSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.0361031, 5.5 )
+script = ExtResource( 1 )
+can_spawn_gold = true
+
+[node name="ResourceSpot64" type="Spatial" parent="GoldSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, 1.5 )
+script = ExtResource( 1 )
+can_spawn_gold = true
+
+[node name="ResourceSpot65" type="Spatial" parent="GoldSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, 0.5 )
+script = ExtResource( 1 )
+can_spawn_gold = true
+
+[node name="ResourceSpot66" type="Spatial" parent="GoldSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, 2.5 )
+script = ExtResource( 1 )
+can_spawn_gold = true
+
+[node name="ResourceSpot67" type="Spatial" parent="GoldSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, -1.5 )
+script = ExtResource( 1 )
+can_spawn_gold = true
+
+[node name="ResourceSpot68" type="Spatial" parent="GoldSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, -2.5 )
+script = ExtResource( 1 )
+can_spawn_gold = true
+
+[node name="ResourceSpot69" type="Spatial" parent="GoldSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, -2.5 )
+script = ExtResource( 1 )
+can_spawn_gold = true
+
+[node name="ResourceSpot70" type="Spatial" parent="GoldSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, -1.5 )
+script = ExtResource( 1 )
+can_spawn_gold = true
+
+[node name="IncenseSpawner" type="Node" parent="."]
+
+[node name="ResourceSpot71" type="Spatial" parent="IncenseSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.0361031, -1.5 )
+script = ExtResource( 1 )
+can_spawn_incense = true
+
+[node name="ResourceSpot72" type="Spatial" parent="IncenseSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.0361031, -0.5 )
+script = ExtResource( 1 )
+can_spawn_incense = true
+
+[node name="ResourceSpot73" type="Spatial" parent="IncenseSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, -0.5 )
+script = ExtResource( 1 )
+can_spawn_incense = true
+
+[node name="ResourceSpot74" type="Spatial" parent="IncenseSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, 0.5 )
+script = ExtResource( 1 )
+can_spawn_incense = true
+
+[node name="ResourceSpot75" type="Spatial" parent="IncenseSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, 1.5 )
+script = ExtResource( 1 )
+can_spawn_incense = true
+
+[node name="ResourceSpot76" type="Spatial" parent="IncenseSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, 2.5 )
+script = ExtResource( 1 )
+can_spawn_incense = true
+
+[node name="ResourceSpot77" type="Spatial" parent="IncenseSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, 3.5 )
+script = ExtResource( 1 )
+can_spawn_incense = true
+
+[node name="ResourceSpot78" type="Spatial" parent="IncenseSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.0361031, 3.5 )
+script = ExtResource( 1 )
+can_spawn_incense = true
+
+[node name="ResourceSpot79" type="Spatial" parent="IncenseSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.0361031, 4.5 )
+script = ExtResource( 1 )
+can_spawn_incense = true
+
+[node name="ResourceSpot80" type="Spatial" parent="IncenseSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.0361031, 5.5 )
+script = ExtResource( 1 )
+can_spawn_incense = true
+
+[node name="ResourceSpot81" type="Spatial" parent="IncenseSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.0361031, 6.5 )
+script = ExtResource( 1 )
+can_spawn_incense = true
+
+[node name="ResourceSpot82" type="Spatial" parent="IncenseSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.0361031, 5.5 )
+script = ExtResource( 1 )
+can_spawn_incense = true
+
+[node name="ResourceSpot83" type="Spatial" parent="IncenseSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.0361031, 0.5 )
+script = ExtResource( 1 )
+can_spawn_incense = true
+
+[node name="ResourceSpot84" type="Spatial" parent="IncenseSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.0361031, -0.5 )
+script = ExtResource( 1 )
+can_spawn_incense = true
+
+[node name="ResourceSpot85" type="Spatial" parent="IncenseSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.0361031, -1.5 )
+script = ExtResource( 1 )
+can_spawn_incense = true
+
+[node name="GrapesSpawner" type="Node" parent="."]
+
+[node name="ResourceSpot86" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.0361031, 2.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot87" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.0361031, 3.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot88" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.0361031, 4.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot89" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.0361031, 5.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot90" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.0361031, 5.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot91" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.0361031, 6.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot92" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.0361031, 6.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot93" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.0361031, 5.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot94" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.0361031, 5.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot95" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.0361031, 6.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot96" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.0361031, 4.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot97" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.0361031, 3.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot98" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.0361031, 2.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot99" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.0361031, 2.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot100" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.0361031, 2.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot101" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.0361031, 2.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot102" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.0361031, -5.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot103" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.0361031, -5.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot104" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.0361031, -5.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot105" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.0361031, -5.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot106" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.0361031, -5.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot107" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.0361031, -3.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot108" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.0361031, -2.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot109" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.0361031, -4.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot110" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.0361031, -5.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot111" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.0361031, -5.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot112" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.0361031, -5.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true
+
+[node name="ResourceSpot113" type="Spatial" parent="GrapesSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.0361031, -4.5 )
+script = ExtResource( 1 )
+can_spawn_grapes = true

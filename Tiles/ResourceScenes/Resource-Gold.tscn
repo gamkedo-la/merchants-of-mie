@@ -5,4 +5,4 @@
 [node name="Resource-Gold" type="Spatial"]
 
 [node name="gold" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0 )
