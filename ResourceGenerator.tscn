@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ResourceSpot.gd" type="Script" id=1]
+[ext_resource path="res://GameBoard/Board.tscn" type="PackedScene" id=2]
+
+[node name="ResourceGenerator" type="Spatial"]
+
+[node name="Board" parent="." instance=ExtResource( 2 )]
+
+[node name="ResourceSpot" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.0361031, 0.5 )
+script = ExtResource( 1 )
+resource_Name = " gold"
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.998491, -0.0363138, 0.0411929, 0, 0.750135, 0.661285, -0.054914, -0.660287, 0.749003, 0.403065, 1.3751, 1.50485 )

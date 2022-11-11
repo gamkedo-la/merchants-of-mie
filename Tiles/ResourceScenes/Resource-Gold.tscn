@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://SharedResources/Models/Resources/gold.glb" type="PackedScene" id=1]
+
+[node name="Resource-Gold" type="Spatial"]
+
+[node name="gold" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
