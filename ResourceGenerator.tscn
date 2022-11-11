@@ -1,14 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://ResourceSpot.gd" type="Script" id=1]
-[ext_resource path="res://GameBoard/Board.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ResourceSpawnManager.gd" type="Script" id=2]
 
 [node name="ResourceGenerator" type="Spatial"]
-
-[node name="Board" parent="." instance=ExtResource( 2 )]
-
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.0017813, -0.74487, 0.667208, 0, 0.667209, 0.744871, -0.999998, -0.00132684, 0.0011885, 10.5248, 9.85633, -0.765475 )
+script = ExtResource( 2 )
+all_tiles = [ null ]
 
 [node name="FishSpawner" type="Node" parent="."]
 
