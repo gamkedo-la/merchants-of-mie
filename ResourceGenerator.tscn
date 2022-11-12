@@ -5,7 +5,6 @@
 
 [node name="ResourceGenerator" type="Spatial"]
 script = ExtResource( 2 )
-all_tiles = [ null ]
 
 [node name="FishSpawner" type="Node" parent="."]
 
