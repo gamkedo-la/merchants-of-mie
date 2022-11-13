@@ -26,7 +26,8 @@ __meta__ = {
 }
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 8.56997e-10, -3.64579e-10, 0, 0.391463, 0.920194, 9.31323e-10, -0.920194, 0.391463, -1.22851, 16.0734, 8.96881 )
+transform = Transform( 0.83867, -0.268571, 0.473816, 0, 0.869963, 0.493116, -0.54464, -0.413562, 0.729612, 12.7715, 16.0734, 20.9688 )
+projection = 1
 current = true
 size = 20.0
 script = ExtResource( 4 )
