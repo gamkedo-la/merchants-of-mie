@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://GameBoard/Board.tscn" type="PackedScene" id=1]
 [ext_resource path="res://MainGame/AMap.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://GameBoard/BoardManagement.gd" type="Script" id=4]
+[ext_resource path="res://AmbientLighting.tres" type="Environment" id=5]
 [ext_resource path="res://ResourceGenerator.tscn" type="PackedScene" id=6]
 
 [node name="GameSpace" type="Spatial"]
@@ -13,9 +14,14 @@ script = ExtResource( 4 )
 
 [node name="GUI" parent="." instance=ExtResource( 3 )]
 
-[node name="DirectionalLight" type="DirectionalLight" parent="."]
+[node name="Ambient Light" type="WorldEnvironment" parent="."]
+environment = ExtResource( 5 )
+
+[node name="Sunlight" type="DirectionalLight" parent="."]
 transform = Transform( 0.838136, 0.390412, -0.380928, -0.286211, 0.909271, 0.302174, 0.464339, -0.144237, 0.873833, 1.74184, 5.53709, 1.93983 )
-light_energy = 4.0
+light_energy = 7.376
+light_bake_mode = 2
+shadow_color = Color( 0.87451, 0.87451, 0.87451, 1 )
 
 [node name="ResourceGenerator" parent="." instance=ExtResource( 6 )]
 
