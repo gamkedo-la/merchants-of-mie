@@ -38,7 +38,7 @@ func get_path_to_node(start, end):
 	if gm_start in all_points:
 		start_id = all_points[gm_start]
 	else:
-		start_id = astar.get_closest_point(gm_start)
+		start_id = astar.get_closest_point(start)
 		
 	if gm_end in all_points:
 		end_id = all_points[gm_end]
