@@ -1,5 +1,8 @@
 extends KinematicBody
 
+var MoveAction = load("Actions/MoveAction.gd")
+var action_queue
+
 var path = []
 var path_ind = 0
 const MOVE_SPEED = 5
@@ -13,6 +16,7 @@ signal end_turn
 func _ready():
 	add_to_group("player")
 	Events.connect("start_player_turn", self, "start_player_turn")
+	action_queue = get_node("/root/GameSpace/ActionQueue")
 	
 func _physics_process(delta):
 	if path_ind < path.size():
@@ -24,8 +28,13 @@ func _physics_process(delta):
 			
 func move_to(target_pos):
 	var g_transform = global_transform.origin
-	path = amap.get_path_to_node(g_transform, target_pos)
-	path_ind = 0
+	var mov = MoveAction.new()
+	mov.original_position = g_transform
+	mov.target_position = target_pos
+	mov.actor = self
+	mov.map = amap
+	action_queue.execute(mov)
+	
 
 func start_player_turn():
 	# Wait for feedback animation to finish

@@ -1,5 +1,6 @@
 extends Control
 
+signal undo_actions
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -18,3 +19,6 @@ func _ready():
 
 func _on_EndTurnBtn_pressed():
 	Events.emit_signal("end_player_turn")
+
+func _on_Undo_pressed():
+	Events.emit_signal("undo_actions")
