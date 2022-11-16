@@ -89,8 +89,15 @@ text = "UNDO"
 [node name="Inventory" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 320.0
-margin_right = -270.0
+margin_left = 384.0
+margin_top = 512.0
+margin_right = -384.0
+
+[node name="ColorRect" type="ColorRect" parent="Inventory"]
+margin_top = 10.0
+margin_right = 256.0
+margin_bottom = 88.0
+color = Color( 0, 0, 0, 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Inventory"]
 anchor_left = 0.5
