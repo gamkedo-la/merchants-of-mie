@@ -5,6 +5,7 @@
 [ext_resource path="res://GUI/TurnChangeFeedback.tscn" type="PackedScene" id=3]
 
 [node name="GUI" type="CanvasLayer"]
+layer = 2
 
 [node name="TurnChangeFeedback" parent="." instance=ExtResource( 3 )]
 
