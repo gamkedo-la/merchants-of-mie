@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://SharedResources/Fonts/PrStart.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://GUI/GameHUD.gd" type="Script" id=2]
 [ext_resource path="res://SharedResources/ResourceIcons/Base.png" type="Texture" id=3]
+[ext_resource path="res://GUI/Inventory.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -92,6 +93,7 @@ anchor_bottom = 1.0
 margin_left = 384.0
 margin_top = 512.0
 margin_right = -384.0
+script = ExtResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="Inventory"]
 margin_top = 10.0

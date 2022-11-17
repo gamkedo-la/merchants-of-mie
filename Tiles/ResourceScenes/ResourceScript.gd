@@ -17,8 +17,11 @@ func _on_Area_area_entered(area):
 		pickup.resource_parent = get_parent()
 		pickup.resource_path = self.filename
 		print("Merchant Picked Up: " + resource_name)
-		action_queue.execute(pickup)#queue_free()
-	pass # Replace with function body.
+		action_queue.execute(pickup)
+		
+		Events.emit_signal("resource_picked_up", resource_name)
+		#queue_free()
+		# Replace with function body.
 
 func _process(delta):
 	if(!active):
