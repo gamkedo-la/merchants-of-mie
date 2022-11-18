@@ -44,24 +44,26 @@ func _input(event):
 
 func _physics_process(delta):
 	var pos = get_viewport().get_mouse_position()
-	#print(str(pos.x) + ", " + str(pos.y))
 	
 	if(pos.x < move_camera_left):
 		direction.x = -cam_move_rate
-		print("slide cam left")
 	elif(pos.x > move_camera_right):
 		direction.x = cam_move_rate
-		print("slide cam right")
 	elif(pos.y < move_camera_up):
 		direction.y = cam_move_rate
-		print("slide cam up")
 	elif(pos.y > move_camera_down):
 		direction.y = -cam_move_rate
-		print("slide cam down")
 	else:
-		print("not moving")
 		direction.x = 0
 		direction.y = 0
 		
+	if(global_transform.origin.x > 14):
+		global_transform.origin.x = 14
+	if(global_transform.origin.x < 10):
+		global_transform.origin.x = 10
+	if(global_transform.origin.y > 12):
+		global_transform.origin.y = 12
+	if(global_transform.origin.y < 5):
+		global_transform.origin.y = 5
+	
 	translate_object_local(direction)
-		
