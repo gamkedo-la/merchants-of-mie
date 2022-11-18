@@ -32,6 +32,37 @@ current = true
 size = 20.0
 script = ExtResource( 4 )
 
+[node name="Control" type="Control" parent="Camera"]
+process_priority = 1
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Top" type="ColorRect" parent="Camera/Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 25.56, 1 )
+
+[node name="Left" type="ColorRect" parent="Camera/Control"]
+margin_left = 2.0
+margin_top = 559.0
+margin_right = 42.0
+margin_bottom = 599.0
+rect_scale = Vector2( 1.2869, -13.1064 )
+
+[node name="Right" type="ColorRect" parent="Camera/Control"]
+margin_left = 971.0
+margin_top = 560.0
+margin_right = 1011.0
+margin_bottom = 600.0
+rect_scale = Vector2( 1.2869, -13.1064 )
+
+[node name="Bottom" type="ColorRect" parent="Camera/Control"]
+margin_left = 1.0
+margin_top = 559.0
+margin_right = 41.0
+margin_bottom = 599.0
+rect_scale = Vector2( 25.56, 1 )
+
 [node name="Ground" type="MeshInstance" parent="."]
 visible = false
 mesh = SubResource( 1 )
@@ -43,3 +74,6 @@ shape = SubResource( 2 )
 
 [node name="PlayerPrototype" parent="." instance=ExtResource( 5 )]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.47288, 0.336094, 0.544791 )
+
+[connection signal="mouse_entered" from="Camera/Control/Top" to="Camera" method="_on_Top_mouse_entered"]
+[connection signal="mouse_exited" from="Camera/Control/Top" to="Camera" method="_on_Top_mouse_exited"]

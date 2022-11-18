@@ -13,3 +13,12 @@ func _input(event):
 		if result:
 			print("clicked")
 			get_tree().call_group("player", "move_to", result.position)
+			
+
+func _on_Top_mouse_entered():
+	print("move up")
+	
+
+
+func _on_Top_mouse_exited():
+	print("stop")

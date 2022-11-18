@@ -47,3 +47,6 @@ func get_path_to_node(start, end):
 		
 	return astar.get_point_path(start_id, end_id)
 	pass
+	
+	
+
