@@ -8,6 +8,13 @@ var max_zoom = 12.5
 var current_zoom = 7.5
 var rate_to_zoom = .5
 
+var move_camera_left = 50
+var move_camera_right = 970
+var move_camera_up = 40
+var move_camera_down = 560
+
+var cam_move_rate = 1
+
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == 1:
@@ -34,10 +41,17 @@ func _input(event):
 					current_zoom = max_zoom
 				print(current_zoom)
 
-func _on_Top_mouse_entered():
-	print("move up")
+func _physics_process(delta):
+	var pos = get_viewport().get_mouse_position()
+	#print(str(pos.x) + ", " + str(pos.y))
 	
-
-
-func _on_Top_mouse_exited():
-	print("stop")
+	if(pos.x < move_camera_left):
+		print("slide cam left")
+	elif(pos.x > move_camera_right):
+		print("slide cam right")
+	elif(pos.y < move_camera_up):
+		print("slide cam up")
+	elif(pos.y > move_camera_down):
+		print("slide cam down")
+	else:
+		print("not moving")
