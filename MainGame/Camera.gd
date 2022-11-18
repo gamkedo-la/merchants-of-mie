@@ -13,7 +13,8 @@ var move_camera_right = 970
 var move_camera_up = 40
 var move_camera_down = 560
 
-var cam_move_rate = 1
+var cam_move_rate = .1
+var direction = Vector3(0,0,0)
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -46,12 +47,21 @@ func _physics_process(delta):
 	#print(str(pos.x) + ", " + str(pos.y))
 	
 	if(pos.x < move_camera_left):
+		direction.x = -cam_move_rate
 		print("slide cam left")
 	elif(pos.x > move_camera_right):
+		direction.x = cam_move_rate
 		print("slide cam right")
 	elif(pos.y < move_camera_up):
+		direction.y = cam_move_rate
 		print("slide cam up")
 	elif(pos.y > move_camera_down):
+		direction.y = -cam_move_rate
 		print("slide cam down")
 	else:
 		print("not moving")
+		direction.x = 0
+		direction.y = 0
+		
+	translate_object_local(direction)
+		
