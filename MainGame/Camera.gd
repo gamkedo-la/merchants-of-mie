@@ -17,6 +17,14 @@ var cam_move_rate = .1
 var direction = Vector3(0,0,0)
 
 func _input(event):
+	if event is InputEventMouseMotion:
+		var from = project_ray_origin(event.position)
+		var to = from + project_ray_normal(event.position) * RAY_LENGTH
+		var space_state = get_world().direct_space_state
+		var tile_result = space_state.intersect_ray(from, to, [], 2)
+		if tile_result:
+			tile_result.collider.emit_signal("tile_hovered", tile_result.collider)
+
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == 1:
 			var from = project_ray_origin(event.position)
@@ -27,6 +35,10 @@ func _input(event):
 			if result:
 				print("clicked")
 				get_tree().call_group("player", "move_to", result.position)
+			var tile_result = space_state.intersect_ray(from, to, [], 2)
+			if tile_result:
+				tile_result.collider.emit_signal("tile_clicked", tile_result.collider)
+			
 		if event.is_pressed():
 			if event.button_index == BUTTON_WHEEL_UP:
 				current_zoom -= rate_to_zoom
