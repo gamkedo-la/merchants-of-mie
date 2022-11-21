@@ -23,7 +23,8 @@ func _input(event):
 		var space_state = get_world().direct_space_state
 		var tile_result = space_state.intersect_ray(from, to, [], 2)
 		if tile_result:
-			tile_result.collider.emit_signal("tile_hovered", tile_result.collider)
+			#tile_result.collider.emit_signal("tile_hovered", tile_result.collider)
+			pass
 
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == 1:
