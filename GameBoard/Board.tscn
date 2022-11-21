@@ -3,7 +3,7 @@
 [ext_resource path="res://GameBoard/BoardActions.gd" type="Script" id=1]
 [ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-Forest.glb" type="PackedScene" id=2]
 [ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-Mountain.glb" type="PackedScene" id=3]
-[ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-Castle.glb" type="PackedScene" id=4]
+[ext_resource path="res://Tiles/Objectives-Castle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-City.glb" type="PackedScene" id=5]
 [ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-Plains.glb" type="PackedScene" id=6]
 [ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-Water.glb" type="PackedScene" id=7]
@@ -17,9 +17,6 @@ script = ExtResource( 1 )
 
 [node name="BoardTiles" type="Spatial" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
-
-[node name="Tile-Castle" parent="BoardTiles" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1 )
 
 [node name="Tile-City" parent="BoardTiles" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 17 )
@@ -1515,3 +1512,6 @@ width = 40.0
 height = 0.1
 depth = 0.1
 material = ExtResource( 10 )
+
+[node name="Objectives-Castle" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.50213, 0, 0.461386 )

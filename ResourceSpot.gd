@@ -13,7 +13,6 @@ export var percent_chance_to_initially_drop_resource = .10
 func _ready():
 	if can_spawn_coffee:
 		var percent = randf()
-		print(percent)
 		if(percent > (1-percent_chance_to_initially_drop_resource)):
 			var scene = load("res://Tiles//ResourceScenes/Resource-Coffee.tscn")
 			var resource = scene.instance()
