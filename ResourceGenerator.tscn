@@ -414,6 +414,83 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.0361031, -1.5 )
 script = ExtResource( 1 )
 can_spawn_incense = true
 
+[node name="SaltSpawner" type="Node" parent="."]
+
+[node name="ResourceSpot71" type="Spatial" parent="SaltSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.0361031, -1.5 )
+script = ExtResource( 1 )
+can_spawn_salt = true
+
+[node name="ResourceSpot72" type="Spatial" parent="SaltSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.0361031, -0.5 )
+script = ExtResource( 1 )
+can_spawn_salt = true
+
+[node name="ResourceSpot73" type="Spatial" parent="SaltSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, -0.5 )
+script = ExtResource( 1 )
+can_spawn_salt = true
+
+[node name="ResourceSpot74" type="Spatial" parent="SaltSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, 0.5 )
+script = ExtResource( 1 )
+can_spawn_salt = true
+
+[node name="ResourceSpot75" type="Spatial" parent="SaltSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, 1.5 )
+script = ExtResource( 1 )
+can_spawn_salt = true
+
+[node name="ResourceSpot76" type="Spatial" parent="SaltSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, 2.5 )
+script = ExtResource( 1 )
+can_spawn_salt = true
+
+[node name="ResourceSpot77" type="Spatial" parent="SaltSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, 3.5 )
+script = ExtResource( 1 )
+can_spawn_salt = true
+
+[node name="ResourceSpot78" type="Spatial" parent="SaltSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.0361031, 3.5 )
+script = ExtResource( 1 )
+can_spawn_salt = true
+
+[node name="ResourceSpot79" type="Spatial" parent="SaltSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.0361031, 4.5 )
+script = ExtResource( 1 )
+can_spawn_salt = true
+
+[node name="ResourceSpot80" type="Spatial" parent="SaltSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.0361031, 5.5 )
+script = ExtResource( 1 )
+can_spawn_salt = true
+
+[node name="ResourceSpot81" type="Spatial" parent="SaltSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.0361031, 6.5 )
+script = ExtResource( 1 )
+can_spawn_salt = true
+
+[node name="ResourceSpot82" type="Spatial" parent="SaltSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.0361031, 5.5 )
+script = ExtResource( 1 )
+can_spawn_salt = true
+
+[node name="ResourceSpot83" type="Spatial" parent="SaltSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.0361031, 0.5 )
+script = ExtResource( 1 )
+can_spawn_salt = true
+
+[node name="ResourceSpot84" type="Spatial" parent="SaltSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.0361031, -0.5 )
+script = ExtResource( 1 )
+can_spawn_salt = true
+
+[node name="ResourceSpot85" type="Spatial" parent="SaltSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.0361031, -1.5 )
+script = ExtResource( 1 )
+can_spawn_salt = true
+
 [node name="GrapesSpawner" type="Node" parent="."]
 
 [node name="ResourceSpot86" type="Spatial" parent="GrapesSpawner"]

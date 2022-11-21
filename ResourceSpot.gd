@@ -5,6 +5,7 @@ export var can_spawn_fish = false
 export var can_spawn_gold = false
 export var can_spawn_grapes = false
 export var can_spawn_incense = false
+export var can_spawn_salt = false
 
 export var percent_chance_to_initially_drop_resource = .10
 
@@ -42,6 +43,13 @@ func _ready():
 		var percent = randf()
 		if(percent > (1-percent_chance_to_initially_drop_resource)):
 			var scene = load("res://Tiles//ResourceScenes/Resource-Incense.tscn")
+			var resource = scene.instance()
+			add_child(resource)
+			Global.total_resources_on_board += 1
+	if can_spawn_salt:
+		var percent = randf()
+		if(percent > (1-percent_chance_to_initially_drop_resource)):
+			var scene = load("res://Tiles//ResourceScenes/Resource-Salt.tscn")
 			var resource = scene.instance()
 			add_child(resource)
 			Global.total_resources_on_board += 1
