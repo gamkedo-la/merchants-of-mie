@@ -1,6 +1,7 @@
 extends Control
 
 var resources_in_inventory = []
+var base_texture = preload("res://SharedResources/ResourceIcons/Base.png")
 var coffee_texture = preload("res://SharedResources/ResourceIcons/Coffee.png")
 var fish_texture = preload("res://SharedResources/ResourceIcons/Fish.png")
 var gold_texture = preload("res://SharedResources/ResourceIcons/Gold.png")
@@ -11,7 +12,7 @@ var wheat_texture = preload("res://SharedResources/ResourceIcons/Wheat.png")
 
 func _ready():
 	Events.connect("resource_picked_up", self, "add_resource_to_inventory")
-	
+	Events.connect("resource_dropped", self, "remove_resource_from_inventory")
 
 
 func add_resource_to_inventory(resource):
@@ -45,3 +46,12 @@ func add_resource_to_inventory(resource):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func remove_resource_from_inventory(resource):
+	print(resources_in_inventory)
+	print(resource)
+	var idx = resources_in_inventory.find(resource, 0)
+	print(str(idx))
+	if idx != -1:
+		resources_in_inventory.erase(resource)
+		$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture

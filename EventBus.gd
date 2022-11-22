@@ -8,6 +8,7 @@ signal end_board_turn
 
 # Resource Pickup Signals
 signal resource_picked_up(resource_name)
+signal resource_dropped(resource_name)
 
 #actions signals
 signal undo_actions

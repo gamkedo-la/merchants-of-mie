@@ -15,4 +15,5 @@ func undo():
 	var scene = load(resource_path)
 	var resource = scene.instance()
 	resource_parent.add_child(resource)
+	Events.emit_signal("resource_dropped", resource.resource_name)
 	Global.total_resources_on_board += 1
