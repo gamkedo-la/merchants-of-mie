@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://SharedResources/Fonts/PrStart.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://GUI/GameHUD.gd" type="Script" id=2]
 [ext_resource path="res://SharedResources/ResourceIcons/Base.png" type="Texture" id=3]
 [ext_resource path="res://GUI/Inventory.gd" type="Script" id=4]
+[ext_resource path="res://GUI/ActionPointNum.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -52,6 +53,7 @@ margin_bottom = 32.0
 text = "23"
 align = 1
 valign = 1
+script = ExtResource( 5 )
 
 [node name="EndTurn" type="Control" parent="."]
 anchor_left = 1.0
