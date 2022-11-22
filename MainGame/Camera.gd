@@ -46,14 +46,12 @@ func _input(event):
 				size = current_zoom
 				if current_zoom < min_zoom:
 					current_zoom = min_zoom
-				print(current_zoom)
 				
 			if event.button_index == BUTTON_WHEEL_DOWN:
 				current_zoom += rate_to_zoom
 				size = current_zoom
 				if current_zoom > max_zoom:
 					current_zoom = max_zoom
-				print(current_zoom)
 
 func _physics_process(delta):
 	var pos = get_viewport().get_mouse_position()
