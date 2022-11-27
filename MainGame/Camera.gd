@@ -16,6 +16,8 @@ var move_camera_down = 560
 var cam_move_rate = .1
 var direction = Vector3(0,0,0)
 
+var hovered_tile
+
 func _input(event):
 	if event is InputEventMouseMotion:
 		var from = project_ray_origin(event.position)
@@ -23,8 +25,10 @@ func _input(event):
 		var space_state = get_world().direct_space_state
 		var tile_result = space_state.intersect_ray(from, to, [], 2)
 		if tile_result:
-			#tile_result.collider.emit_signal("tile_hovered", tile_result.collider)
-			pass
+			if hovered_tile != null and hovered_tile != tile_result.collider:
+				tile_result.collider.emit_signal("tile_unhovered", hovered_tile)
+			tile_result.collider.emit_signal("tile_hovered", tile_result.collider)
+			hovered_tile = tile_result.collider
 
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == 1:
