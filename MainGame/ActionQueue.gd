@@ -20,6 +20,8 @@ func clear():
 	print(actions_list)
 
 func execute(action: BaseAction):
+	if Global.action_Points_available <= 0:
+		return
 	actions_list.append(action)
 	action.execute()
 	pass
