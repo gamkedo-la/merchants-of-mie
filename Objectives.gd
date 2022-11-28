@@ -32,6 +32,11 @@ var possible_objectives = [
 "Coffee"
 ]
 
+var rand_resource_obj_one = 0
+var rand_resource_obj_two_one = 0
+var rand_resource_obj_two_two = 0
+var rand_resource_obj_two_three = 0
+
 func _ready():
 	randomize()
 	objective_one_count = randi() % (max_obj_one - min_obj_one) + min_obj_one
@@ -40,11 +45,31 @@ func _ready():
 	objective_two_item_two_count = randi() % (max_obj_two - min_obj_two) + min_obj_two
 	objective_two_item_three_count = randi() % (max_obj_two - min_obj_two) + min_obj_two
 	
-	var rand_resource_obj_one:int = randi() % possible_objectives.size()
-	var rand_resource_obj_two_one:int = randi() % possible_objectives.size()
-	var rand_resource_obj_two_two:int = randi() % possible_objectives.size()
-	var rand_resource_obj_two_three:int = randi() % possible_objectives.size()
+	#first objective (1 item)
+	rand_resource_obj_one = randi() % possible_objectives.size()
 	
+	#second objective - a set of 3 resources that are different
+	rand_resource_obj_two_one = randi() % possible_objectives.size()
+	
+	#verifying resource 2 2 does not equal resource 2 1
+	for n in possible_objectives.size():
+		if(n == rand_resource_obj_two_one):
+			continue
+		else:
+			rand_resource_obj_two_two = n
+			break
+
+	#verifying resource 2 3 does not equal resource 2 2 or 2 1
+	for n in possible_objectives.size():
+		if(n == rand_resource_obj_two_one):
+			continue
+		elif(n == rand_resource_obj_two_two):
+			continue
+		else:
+			rand_resource_obj_two_three = n
+			break
+
+
 	print(str(possible_objectives[rand_resource_obj_one] , " " , objective_one_count))
 	print(str(possible_objectives[rand_resource_obj_two_one] , " " , objective_two_item_one_count))
 	print(str(possible_objectives[rand_resource_obj_two_two] , " " , objective_two_item_two_count))
