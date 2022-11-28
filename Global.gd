@@ -9,6 +9,8 @@ onready var action_Points_Per_Turn = 5
 
 onready var total_resources_on_board = 0
 
+onready var currency_available = 20
+
 func _ready():
 	print("At turn start, player has: " + str(action_Points_Per_Turn) + " available")
 	var root = get_tree().get_root()
