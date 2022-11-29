@@ -29,6 +29,11 @@ config/icon="res://icon.png"
 Global="*res://Global.gd"
 Events="*res://EventBus.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
