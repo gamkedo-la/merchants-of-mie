@@ -18,18 +18,18 @@ var max_obj_two = 10
 
 var possible_objectives = [
 #"Silver",
-"Gold",
-"Salt",
-"Grapes",
-"Wheat",
+"GOLD",
+"SALT",
+"GRAPES",
+"WHEAT",
 #"Tea",
 #"Marble",
-"Incense",
+"INCENSE",
 #"Diamonds",
-"Fish",
+"FISH",
 #"Lumber",
 #"Dyes",
-"Coffee"
+"COFFEE"
 ]
 
 var rand_resource_obj_one = 0
@@ -74,6 +74,8 @@ func _ready():
 	print(str(possible_objectives[rand_resource_obj_two_one] , " " , objective_two_item_one_count))
 	print(str(possible_objectives[rand_resource_obj_two_two] , " " , objective_two_item_two_count))
 	print(str(possible_objectives[rand_resource_obj_two_three] , " " , objective_two_item_three_count))
+	
+	Global.objective_one_text = str("COLLECT ", objective_one_count, " ", possible_objectives[rand_resource_obj_one])
 	pass 
 	
 func _on_Area_area_entered(area):

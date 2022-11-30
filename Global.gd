@@ -11,6 +11,9 @@ onready var total_resources_on_board = 0
 
 onready var currency_available = 20
 
+# Objective Text
+var objective_one_text = ""
+
 func _ready():
 	print("At turn start, player has: " + str(action_Points_Per_Turn) + " available")
 	var root = get_tree().get_root()

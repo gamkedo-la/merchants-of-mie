@@ -9,6 +9,7 @@ signal undo_actions
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$"Objectives/VBoxContainer/Objective Text".text = Global.objective_one_text
 	pass # Replace with function body.
 
 
