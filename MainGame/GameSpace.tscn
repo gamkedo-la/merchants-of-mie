@@ -27,6 +27,7 @@ shadow_color = Color( 0.87451, 0.87451, 0.87451, 1 )
 [node name="ResourceGenerator" parent="." instance=ExtResource( 6 )]
 
 [node name="AMap" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, -0.000299977, 0.000736582, 0.000300394, 1, -0.000567993, -0.000736411, 0.000568214, 1, 0, 0, 0 )
 
 [node name="GridMap" parent="AMap" index="0"]
 cell_size = Vector3( 1, 1, 1 )

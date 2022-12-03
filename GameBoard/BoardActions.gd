@@ -15,6 +15,9 @@ export var resource_value_lumber = 3
 export var resource_value_dyes = 3
 export var resource_value_coffee = 3
 
+#var gui_update = preload("res://GUI/TurnsRemaining.gd")
+#var instance = gui_update.instance()
+
 signal end_turn
 
 var board_cards = [0,1,2,3,4 ]
@@ -116,4 +119,8 @@ func _card_5():
 func _end_board_turn():
 	yield(get_tree().create_timer(3), "timeout")
 	Events.emit_signal("end_board_turn")
+	
+	#update board card count
+	print("instance.update_Card_Count_UI() for turn Count")
+	
 	Global.action_Points_available = Global.action_Points_Per_Turn
