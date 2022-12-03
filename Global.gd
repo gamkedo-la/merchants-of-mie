@@ -17,6 +17,9 @@ var objective_two_one_text = ""
 var objective_two_two_text = ""
 var objective_two_three_text = ""
 
+var flavor_text = ""
+var functional_text = ""
+
 func _ready():
 	print("At turn start, player has: " + str(action_Points_Per_Turn) + " available")
 	var root = get_tree().get_root()

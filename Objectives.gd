@@ -69,12 +69,6 @@ func _ready():
 			rand_resource_obj_two_three = n
 			break
 
-
-	print(str(possible_objectives[rand_resource_obj_one] , " " , objective_one_count))
-	print(str(possible_objectives[rand_resource_obj_two_one] , " " , objective_two_item_one_count))
-	print(str(possible_objectives[rand_resource_obj_two_two] , " " , objective_two_item_two_count))
-	print(str(possible_objectives[rand_resource_obj_two_three] , " " , objective_two_item_three_count))
-	
 	Global.objective_one_text = str("COLLECT ", objective_one_count, " ", possible_objectives[rand_resource_obj_one])
 	
 	Global.objective_two_one_text = str("COLLECT ", objective_two_item_one_count, " ", possible_objectives[rand_resource_obj_two_one])

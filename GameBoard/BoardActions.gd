@@ -95,23 +95,28 @@ func _tile_clicked(tile_object):
 	tween.queue_free()
 
 func _card_1():
-	print("EVENT CARD: SPAWN DESERT RESOURCES")
+	Global.flavor_text = str("A DUST STORM REVEALED HIDDEN TREASURE.")
+	Global.functional_text = str("EVENT CARD: SPAWN DESERT RESOURCES")
 	_end_board_turn()
 	
 func _card_2():
-	print("EVENT CARD: MOVE ROBBER")
+	Global.flavor_text = str("THE ROBBER GOT A DROP ON A SHIPMENT")
+	Global.functional_text = str("MOVE ROBBER X SQUARES")
 	_end_board_turn()
 	
 func _card_3():
-	print("EVENT CARD: SPAWN GRASSLAND RESOURCES")
+	Global.flavor_text = str("A BOUNTIFUL HARVEST THIS YEAR YIELDS MORE RESOURCES")
+	Global.functional_text = str("SPAWN GRASSLAND RESOURCES")
 	_end_board_turn()
 	
 func _card_4():
-	print("EVENT CARD: TOWN X IS PAYING MORE FOR Y RESOURCE")
+	Global.flavor_text = str("THE PEOPLE OF X NEED MORE OF Y RESOURCE")
+	Global.functional_text = str("TOWN X IS PAYING MORE FOR Y RESOURCE")
 	_end_board_turn()
 	
 func _card_5():
-	print("EVENT CARD: TOWN X IS ON LOCKDOWN, NO ONE MAY ENTER OR LEAVE")
+	Global.flavor_text = str("X TOWN IS FACING A MYSTERY ILLNESS")
+	Global.functional_text = str("TOWN X IS ON LOCKDOWN, NO ONE MAY ENTER OR LEAVE")
 	_end_board_turn()
 
 func _end_board_turn():

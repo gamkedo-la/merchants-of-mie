@@ -15,12 +15,6 @@ func _ready():
 	$"Objectives/VBoxContainer2/Objective Text2-3".text = Global.objective_two_three_text
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
 func _on_EndTurnBtn_pressed():
 	Events.emit_signal("end_player_turn")
 
