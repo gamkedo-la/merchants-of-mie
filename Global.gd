@@ -13,6 +13,9 @@ onready var currency_available = 20
 
 # Objective Text
 var objective_one_text = ""
+var objective_two_one_text = ""
+var objective_two_two_text = ""
+var objective_two_three_text = ""
 
 func _ready():
 	print("At turn start, player has: " + str(action_Points_Per_Turn) + " available")

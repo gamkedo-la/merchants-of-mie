@@ -76,6 +76,10 @@ func _ready():
 	print(str(possible_objectives[rand_resource_obj_two_three] , " " , objective_two_item_three_count))
 	
 	Global.objective_one_text = str("COLLECT ", objective_one_count, " ", possible_objectives[rand_resource_obj_one])
+	
+	Global.objective_two_one_text = str("COLLECT ", objective_two_item_one_count, " ", possible_objectives[rand_resource_obj_two_one])
+	Global.objective_two_two_text = str("COLLECT ", objective_two_item_two_count, " ", possible_objectives[rand_resource_obj_two_two])
+	Global.objective_two_three_text = str("COLLECT ", objective_two_item_three_count, " ", possible_objectives[rand_resource_obj_two_three])
 	pass 
 	
 func _on_Area_area_entered(area):
