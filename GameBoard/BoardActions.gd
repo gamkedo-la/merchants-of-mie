@@ -120,6 +120,8 @@ func _card_5():
 	_end_board_turn()
 
 func _end_board_turn():
+#	print("poke BoardCard")
+#	$BoardCard.spawnCard()
 	yield(get_tree().create_timer(3), "timeout")
 	Events.emit_signal("end_board_turn")
 	
