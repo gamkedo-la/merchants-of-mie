@@ -122,7 +122,5 @@ func _card_5():
 func _end_board_turn():
 #	print("poke BoardCard")
 #	$BoardCard.spawnCard()
-	yield(get_tree().create_timer(3), "timeout")
-	Events.emit_signal("end_board_turn")
-	
-	Global.action_Points_available = Global.action_Points_Per_Turn
+	#yield(get_tree().create_timer(3), "timeout")
+	print("these functions were moved to BoardCard -> onButtonPressed")
