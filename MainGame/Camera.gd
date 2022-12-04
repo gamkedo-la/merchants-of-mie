@@ -18,7 +18,7 @@ var direction = Vector3(0,0,0)
 
 var hovered_tile
 
-func _input(event):
+func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		var from = project_ray_origin(event.position)
 		var to = from + project_ray_normal(event.position) * RAY_LENGTH
