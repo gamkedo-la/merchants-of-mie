@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://SharedResources/Fonts/PrStart.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://GUI/GameHUD.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://GUI/TurnsRemaining.gd" type="Script" id=8]
 [ext_resource path="res://GUI/lock.png" type="Texture" id=9]
 [ext_resource path="res://GUI/BoardCard.tscn" type="PackedScene" id=10]
+[ext_resource path="res://GUI/MerchantPurchase.tscn" type="PackedScene" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -342,6 +343,8 @@ margin_bottom = 50.0
 texture = ExtResource( 3 )
 
 [node name="BoardCard" parent="." instance=ExtResource( 10 )]
+
+[node name="MerchantPurchase" parent="." instance=ExtResource( 11 )]
 
 [connection signal="pressed" from="EndTurn/EndTurnBtn" to="." method="_on_EndTurnBtn_pressed"]
 [connection signal="pressed" from="Undo/Undo" to="." method="_on_Undo_pressed"]

@@ -78,4 +78,5 @@ func _ready():
 	
 func _on_Area_area_entered(area):
 	if(area.name == "Merchant_Area"):
+		Events.emit_signal("merchant_entered_castle")
 		print("Merchant has arrived to the city carrying: " + "MERCHANT RESOURCES" )

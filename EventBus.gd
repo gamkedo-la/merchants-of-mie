@@ -12,3 +12,6 @@ signal resource_dropped(resource_name)
 
 #actions signals
 signal undo_actions
+
+
+signal merchant_entered_castle
