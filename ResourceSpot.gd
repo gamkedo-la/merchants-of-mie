@@ -11,6 +11,9 @@ export var can_spawn_wheat = false
 export var percent_chance_to_initially_drop_resource = .10
 
 func _ready():
+	_spawn_resources()
+			
+func _spawn_resources():
 	if can_spawn_coffee:
 		var percent = randf()
 		if(percent > (1-percent_chance_to_initially_drop_resource)):
