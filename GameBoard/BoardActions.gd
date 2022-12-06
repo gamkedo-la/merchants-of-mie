@@ -97,6 +97,7 @@ func _tile_clicked(tile_object):
 func _card_1():
 	Global.flavor_text = str("A DUST STORM REVEALED HIDDEN TREASURE.")
 	Global.functional_text = str("EVENT CARD: SPAWN DESERT RESOURCES")
+	print("Spawn Incense and Gold")
 	_end_board_turn()
 	
 func _card_2():
@@ -107,6 +108,7 @@ func _card_2():
 func _card_3():
 	Global.flavor_text = str("A BOUNTIFUL HARVEST THIS YEAR YIELDS MORE RESOURCES")
 	Global.functional_text = str("SPAWN GRASSLAND RESOURCES")
+	print("Spawn Wheat and Grapes")
 	_end_board_turn()
 	
 func _card_4():
