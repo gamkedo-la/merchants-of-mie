@@ -12,7 +12,13 @@ export var percent_chance_to_initially_drop_resource = .10
 
 func _ready():
 	_spawn_resources()
+	#Referencing Event Bus - find Global and subscribe to the signal, 
+	#so when it is fired, trigger the function that is the 3rd variable ("_spawn_gold").
+	Events.connect("spawn_gold", self, "_spawn_gold")
+	
+	#Think about this - should this be per resource, or just hit _spawn_resources()?
 			
+			#maybe pass in a sting here
 func _spawn_resources():
 	if can_spawn_coffee:
 		_spawn_coffee()

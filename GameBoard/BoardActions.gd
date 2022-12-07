@@ -97,6 +97,11 @@ func _tile_clicked(tile_object):
 func _card_1():
 	Global.flavor_text = str("A DUST STORM REVEALED HIDDEN TREASURE.")
 	Global.functional_text = str("EVENT CARD: SPAWN DESERT RESOURCES")
+	
+	#Referencing variable in EventBus.gd
+	Events.emit_signal("spawn_gold")
+	Events.emit_signal("spawn_incense")
+	
 	print("Spawn Incense and Gold")
 	_end_board_turn()
 	
