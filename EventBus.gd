@@ -19,3 +19,8 @@ signal merchant_entered_castle
 #Resource Spawning Signals
 signal spawn_gold
 signal spawn_incense
+signal spawn_coffee
+signal spawn_fish
+signal spawn_grapes
+signal spawn_salt
+signal spawn_wheat

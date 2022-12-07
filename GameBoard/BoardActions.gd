@@ -113,6 +113,8 @@ func _card_2():
 func _card_3():
 	Global.flavor_text = str("A BOUNTIFUL HARVEST THIS YEAR YIELDS MORE RESOURCES")
 	Global.functional_text = str("SPAWN GRASSLAND RESOURCES")
+	Events.emit_signal("spawn_grapes")
+	Events.emit_signal("spawn_wheat")
 	print("Spawn Wheat and Grapes")
 	_end_board_turn()
 	
