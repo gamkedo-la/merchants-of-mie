@@ -12,10 +12,22 @@ onready var total_resources_on_board = 0
 onready var currency_available = 20
 
 # Objective Text
+#this is just the inventory item (not the sentence)
 var objective_one_text = ""
 var objective_two_one_text = ""
 var objective_two_two_text = ""
 var objective_two_three_text = ""
+
+# This is the entire sentence that is displayed
+var objective_one_text_concatenate = ""
+var objective_two_one_text_concatenate = ""
+var objective_two_two_text_concatenate = ""
+var objective_two_three_text_concatenate = ""
+
+var objective_one_count = 0
+var objective_two_item_one_count = 0
+var objective_two_item_two_count = 0
+var objective_two_item_three_count = 0 
 
 var flavor_text = ""
 var functional_text = ""

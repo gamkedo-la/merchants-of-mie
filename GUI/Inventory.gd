@@ -48,10 +48,12 @@ func add_resource_to_inventory(resource):
 #	pass
 
 func remove_resource_from_inventory(resource):
-	print(resources_in_inventory)
+	print("Merchant has arrived to the city carrying: ", resources_in_inventory)
 	print(resource)
+	print(Global.objective_one_text)
 	var idx = resources_in_inventory.find(resource, 0)
 	print(str(idx))
 	if idx != -1:
 		resources_in_inventory.erase(resource)
 		$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
+	Events.emit_signal("update_objectives")
