@@ -49,11 +49,12 @@ func add_resource_to_inventory(resource):
 
 func remove_resource_from_inventory(resource):
 	print("Merchant has arrived to the city carrying: ", resources_in_inventory)
-	print(resource)
-	print(Global.objective_one_text)
+	if(Global.objective_one_text == resource):
+		Global.objective_one_count -= 1
 	var idx = resources_in_inventory.find(resource, 0)
 	print(str(idx))
 	if idx != -1:
 		resources_in_inventory.erase(resource)
 		$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
+	#Updates objectives in Global.gd
 	Events.emit_signal("update_objectives")

@@ -26,3 +26,4 @@ signal spawn_salt
 signal spawn_wheat
 
 signal update_objectives
+signal update_UI
