@@ -14,7 +14,7 @@ signal resource_dropped(resource_name)
 signal undo_actions
 
 
-signal merchant_entered_castle
+signal merchant_clicked_castle
 
 #Resource Spawning Signals
 signal spawn_gold

@@ -64,7 +64,7 @@ func _ready():
 	
 func _on_Area_area_entered(area):
 	if(area.name == "Merchant_Area"):
-		Events.emit_signal("merchant_entered_castle")
+		#Events.emit_signal("merchant_clicked_castle")
 		Events.emit_signal("resource_dropped", possible_objectives[rand_resource_obj_one])
 
 func update_count():
@@ -80,3 +80,14 @@ func update_count():
 	
 	#update GameHUD.gd
 	Events.emit_signal("update_UI")
+
+
+func _on_Area_mouse_entered():
+	Global.mouse_is_hovering_over_castle = true
+	print("Hovering!")
+
+
+
+func _on_Area_mouse_exited():
+	Global.mouse_is_hovering_over_castle = false
+	print("Exit Hovering!")

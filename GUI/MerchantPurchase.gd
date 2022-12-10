@@ -8,7 +8,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Events.connect("merchant_entered_castle", self, "_on_merchant_entered_castle")
+	Events.connect("merchant_clicked_castle", self, "_on_merchant_entered_castle")
 
 func _on_merchant_entered_castle():
 	visible = true

@@ -38,8 +38,10 @@ func _unhandled_input(event):
 			var space_state = get_world().direct_space_state
 			var result = space_state.intersect_ray(from, to, [], 1)
 			if result:
-				print("clicked")
-				get_tree().call_group("player", "move_to", result.position)
+				if !Global.mouse_is_hovering_over_castle:
+					get_tree().call_group("player", "move_to", result.position)
+				else:
+					Events.emit_signal("merchant_clicked_castle")
 			var tile_result = space_state.intersect_ray(from, to, [], 2)
 			if tile_result:
 				tile_result.collider.emit_signal("tile_clicked", tile_result.collider)
