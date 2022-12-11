@@ -19,3 +19,5 @@ func update_GUI():
 	$"Objectives/VBoxContainer2/Objective Text2-1".text = Global.objective_two_one_text_concatenate
 	$"Objectives/VBoxContainer2/Objective Text2-2".text = Global.objective_two_two_text_concatenate
 	$"Objectives/VBoxContainer2/Objective Text2-3".text = Global.objective_two_three_text_concatenate
+	if(Global.first_objective_completed):
+		$Objectives/SecondObjCover.visible = false

@@ -1,7 +1,7 @@
 extends Spatial
 
-var min_obj_one = 10
-var max_obj_one = 15
+var min_obj_one = 1 #10
+var max_obj_one = 2 #15
 
 var min_obj_two = 3
 var max_obj_two = 10 

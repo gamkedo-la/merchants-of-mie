@@ -29,6 +29,9 @@ var objective_two_item_one_count = 0
 var objective_two_item_two_count = 0
 var objective_two_item_three_count = 0 
 
+var first_objective_completed = false
+var secondary_objectives_completed = false
+
 var flavor_text = ""
 var functional_text = ""
 
