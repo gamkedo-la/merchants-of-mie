@@ -291,11 +291,13 @@ margin_left = 302.0
 margin_top = 186.0
 margin_right = 878.0
 margin_bottom = 202.0
+grow_horizontal = 2
 rect_scale = Vector2( 0.650827, 1.61649 )
 custom_fonts/font = ExtResource( 2 )
 text = "THIS IS THE FLAVOR TEXT
  FOR THE CARD"
 align = 1
+autowrap = true
 
 [node name="FunctionalText" type="Label" parent="."]
 visible = false
@@ -303,10 +305,12 @@ margin_left = 305.0
 margin_top = 342.0
 margin_right = 881.0
 margin_bottom = 377.0
+grow_horizontal = 2
 rect_scale = Vector2( 0.650827, 1.61649 )
 custom_fonts/font = ExtResource( 2 )
 text = "FUNCTIONAL TEXT"
 align = 1
+autowrap = true
 
 [node name="Button" type="Button" parent="."]
 visible = false
