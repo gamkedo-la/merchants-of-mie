@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://SharedResources/Fonts/PrStart.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://StartScreen/StartScreen.gd" type="Script" id=2]
+[ext_resource path="res://Audio/Music/MerchantsMain.wav" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFont" id=3]
 size = 32
@@ -52,6 +53,13 @@ margin_right = 512.0
 margin_bottom = 148.0
 custom_fonts/font = SubResource( 2 )
 text = "EXIT"
+
+[node name="Listener" type="Listener" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+autoplay = true
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/NewGameButton" to="." method="_on_NewGameButton_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
