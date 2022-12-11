@@ -1,6 +1,6 @@
 extends Node
 
-const MAX_TURNS = 3
+const MAX_TURNS = 5
 var current_scene = null
 var turn_number = 0
 

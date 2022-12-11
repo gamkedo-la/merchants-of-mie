@@ -13,7 +13,7 @@ var wheat_texture = preload("res://SharedResources/ResourceIcons/Wheat.png")
 func _ready():
 	Events.connect("resource_picked_up", self, "add_resource_to_inventory")
 	Events.connect("resource_dropped", self, "remove_resource_from_inventory")
-
+	Events.connect("resource_dropped_second", self, "remove_resources_from_inventory")
 
 func add_resource_to_inventory(resource):
 	var inventory_texture
@@ -64,3 +64,37 @@ func remove_resource_from_inventory(resource):
 			$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
 	else:
 		print("No items in inventory match the objective")
+
+func remove_resources_from_inventory(resource_2_1, resource_2_2, resource_2_3):
+	print("Merchant has arrived to the city carrying: ", resources_in_inventory)
+	print(resource_2_1, " ", resource_2_2, " ", resource_2_3)
+	
+	if((resources_in_inventory.size() == 1 && resource_2_1 == resources_in_inventory[0]) || (resources_in_inventory.size() == 2 && (resource_2_1  == resources_in_inventory[0] || resource_2_1  == resources_in_inventory[1])) || (resources_in_inventory.size() == 3 && (resource_2_1  == resources_in_inventory[0] || resource_2_1  == resources_in_inventory[1] || resource_2_1 == resources_in_inventory[2]))):
+		Global.objective_two_item_one_count -= 1
+		#Updates objectives in Global.gd
+		Events.emit_signal("update_objectives")
+		var idx = resources_in_inventory.find(resource_2_1, 0)
+		print(str(idx))
+		if idx != -1:
+			resources_in_inventory.erase(resource_2_1)
+			$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
+	if((resources_in_inventory.size() == 1 && resource_2_2 == resources_in_inventory[0]) || (resources_in_inventory.size() == 2 && (resource_2_2  == resources_in_inventory[0] || resource_2_2  == resources_in_inventory[1])) || (resources_in_inventory.size() == 3 && (resource_2_2  == resources_in_inventory[0] || resource_2_2  == resources_in_inventory[1] || resource_2_2 == resources_in_inventory[2]))):
+		Global.objective_two_item_two_count -= 1
+		#Updates objectives in Global.gd
+		Events.emit_signal("update_objectives")
+		var idx = resources_in_inventory.find(resource_2_2, 0)
+		print(str(idx))
+		if idx != -1:
+			resources_in_inventory.erase(resource_2_2)
+			$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
+	if((resources_in_inventory.size() == 1 && resource_2_3 == resources_in_inventory[0]) || (resources_in_inventory.size() == 2 && (resource_2_3  == resources_in_inventory[0] || resource_2_3  == resources_in_inventory[1])) || (resources_in_inventory.size() == 3 && (resource_2_3 == resources_in_inventory[0] || resource_2_3  == resources_in_inventory[1] || resource_2_3 == resources_in_inventory[2]))):
+		Global.objective_two_item_three_count -= 1
+		#Updates objectives in Global.gd
+		Events.emit_signal("update_objectives")
+		var idx = resources_in_inventory.find(resource_2_3, 0)
+		print(str(idx))
+		if idx != -1:
+			resources_in_inventory.erase(resource_2_3)
+			$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
+	if(Global.objective_two_item_one_count == 0 && Global.objective_two_item_two_count == 0 && Global.objective_two_item_three_count == 0):
+			print("Player wins - advance to victory screen")

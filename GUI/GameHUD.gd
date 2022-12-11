@@ -21,3 +21,10 @@ func update_GUI():
 	$"Objectives/VBoxContainer2/Objective Text2-3".text = Global.objective_two_three_text_concatenate
 	if(Global.first_objective_completed):
 		$Objectives/SecondObjCover.visible = false
+		$"Objectives/VBoxContainer/Objective Text".text = "1st Objective Complete!"
+	if(Global.objective_two_item_one_count <= 0):
+		$"Objectives/VBoxContainer2/Objective Text2-1".text = "Item 1 done!"
+	if(Global.objective_two_item_two_count <= 0):
+		$"Objectives/VBoxContainer2/Objective Text2-2".text = "Item 2 done!"
+	if(Global.objective_two_item_three_count <= 0):
+		$"Objectives/VBoxContainer2/Objective Text2-3".text = "Item 3 done!"

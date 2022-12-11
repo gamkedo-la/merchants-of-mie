@@ -3,8 +3,8 @@ extends Spatial
 var min_obj_one = 1 #10
 var max_obj_one = 2 #15
 
-var min_obj_two = 3
-var max_obj_two = 10 
+var min_obj_two = 2#3
+var max_obj_two = 3#10 
 
 var possible_objectives = [
 #"Silver",
@@ -65,7 +65,10 @@ func _ready():
 func _on_Area_area_entered(area):
 	if(area.name == "Merchant_Area"):
 		#Events.emit_signal("merchant_clicked_castle")
-		Events.emit_signal("resource_dropped", possible_objectives[rand_resource_obj_one])
+		if(!Global.first_objective_completed):
+			Events.emit_signal("resource_dropped", possible_objectives[rand_resource_obj_one])
+		else:
+			Events.emit_signal("resource_dropped_second", possible_objectives[rand_resource_obj_two_one], possible_objectives[rand_resource_obj_two_two], possible_objectives[rand_resource_obj_two_three])
 
 func update_count():
 	Global.objective_one_text = possible_objectives[rand_resource_obj_one]
