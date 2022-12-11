@@ -38,7 +38,6 @@ data = {
 
 [node name="Camera" parent="AMap" index="1"]
 transform = Transform( 0.549782, -0.454383, 0.70091, 0, 0.839104, 0.543971, -0.835308, -0.299066, 0.461325, 14.5098, 11.6862, 10.2154 )
-current = false
 size = 7.5
 
 [node name="ActionQueue" type="Node" parent="."]

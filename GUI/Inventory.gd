@@ -9,6 +9,7 @@ var grapes_texture = preload("res://SharedResources/ResourceIcons/Grapes.png")
 var incense_texture = preload("res://SharedResources/ResourceIcons/Incense.png")
 var salt_texture = preload("res://SharedResources/ResourceIcons/Salt.png")
 var wheat_texture = preload("res://SharedResources/ResourceIcons/Wheat.png")
+var tea_texture = preload("res://SharedResources/ResourceIcons/Tea.png")
 
 func _ready():
 	Events.connect("resource_picked_up", self, "add_resource_to_inventory")
@@ -32,6 +33,8 @@ func add_resource_to_inventory(resource):
 			inventory_texture = salt_texture
 		"Wheat":
 			inventory_texture = wheat_texture
+		"Tea":
+			inventory_texture = tea_texture
 	
 	if resource in resources_in_inventory:
 		print("You already have this resource in your inventory")

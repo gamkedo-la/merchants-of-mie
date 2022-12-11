@@ -12,7 +12,7 @@ var possible_objectives = [
 "Salt",
 "Grapes",
 "Wheat",
-#"Tea",
+"Tea",
 #"Marble",
 "Incense",
 #"Diamonds",

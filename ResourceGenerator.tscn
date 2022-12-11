@@ -756,6 +756,188 @@ script = ExtResource( 1 )
 can_spawn_grapes = true
 percent_chance_to_initially_drop_resource = 0.35
 
+[node name="TeaSpawner" type="Node" parent="."]
+
+[node name="ResourceSpot86" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.0361031, 2.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot87" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.0361031, 1.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot88" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.0361031, 0.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot89" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.0361031, -0.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot90" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.0361031, -1.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot91" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.0361031, -1.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot92" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.0361031, -2.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot93" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.0361031, -3.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot94" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.0361031, -5.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot95" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.0361031, -5.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot96" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.0361031, -5.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot97" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.0361031, -5.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot98" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.0361031, -5.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot99" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.0361031, -5.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot100" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.0361031, -4.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot101" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.0361031, -6.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot102" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0.0361031, -6.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot103" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.0361031, -3.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot104" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.0361031, -3.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot105" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.0361031, -3.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot106" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.0361031, -2.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot107" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.0361031, -1.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot108" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.0361031, -0.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot109" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.0361031, -0.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot110" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.0361031, -0.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot111" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.0361031, 5.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot112" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.0361031, 5.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot113" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.0361031, 6.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot114" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.0361031, 6.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot115" type="Spatial" parent="TeaSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.0361031, 6.5 )
+script = ExtResource( 1 )
+can_spawn_tea = true
+percent_chance_to_initially_drop_resource = 0.35
+
 [node name="WheatSpawner" type="Node" parent="."]
 
 [node name="ResourceSpot86" type="Spatial" parent="WheatSpawner"]
