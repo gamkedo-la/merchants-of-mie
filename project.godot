@@ -31,6 +31,8 @@ Events="*res://EventBus.gd"
 
 [display]
 
+window/size/test_width=2080
+window/size/test_height=1200
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
