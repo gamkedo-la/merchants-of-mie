@@ -50,4 +50,5 @@ max_distance = 10000.0
 
 [node name="Listener" type="Listener" parent="ActionQueue"]
 
+[editable path="Board"]
 [editable path="AMap"]

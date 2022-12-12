@@ -1,18 +1,19 @@
 extends Control
 
+const CASTLE_POSITION = Vector3(-0.502,0,0.461)
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	Events.connect("merchant_clicked_castle", self, "_on_merchant_entered_castle")
+	Events.connect("merchant_clicked_castle", self, "_on_merchant_clicked_castle")
 
-func _on_merchant_entered_castle():
+func _on_merchant_clicked_castle():
 	visible = true
 
 
 func _on_CancelBtn_pressed():
 	visible = false
+
+
+func _on_MoveBtn_pressed():
+	visible = false
+	get_tree().call_group("player", "move_to", CASTLE_POSITION)
+

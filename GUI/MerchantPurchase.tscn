@@ -3,7 +3,6 @@
 [ext_resource path="res://GUI/MerchantPurchase.gd" type="Script" id=1]
 
 [node name="MerchantPurchase" type="Control"]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -32,9 +31,9 @@ color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 5.0
-margin_top = 40.0
+margin_top = 28.0
 margin_right = 154.0
-margin_bottom = 120.0
+margin_bottom = 132.0
 
 [node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_right = 149.0
@@ -49,16 +48,23 @@ margin_bottom = 32.0
 text = "COST: $20"
 align = 1
 
-[node name="BuyBtn" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="MoveBtn" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 36.0
 margin_right = 149.0
 margin_bottom = 56.0
-text = "BUY MERCHANT"
+text = "MOVE HERE"
 
-[node name="CancelBtn" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="BuyBtn" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 60.0
 margin_right = 149.0
 margin_bottom = 80.0
+text = "BUY MERCHANT"
+
+[node name="CancelBtn" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 84.0
+margin_right = 149.0
+margin_bottom = 104.0
 text = "CANCEL"
 
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MoveBtn" to="." method="_on_MoveBtn_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/CancelBtn" to="." method="_on_CancelBtn_pressed"]
