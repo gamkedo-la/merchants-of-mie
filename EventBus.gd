@@ -16,6 +16,7 @@ signal undo_actions
 
 
 signal merchant_clicked_castle
+signal merchant_purchased
 
 #Resource Spawning Signals
 signal spawn_gold
@@ -29,3 +30,5 @@ signal spawn_tea
 
 signal update_objectives
 signal update_UI
+
+

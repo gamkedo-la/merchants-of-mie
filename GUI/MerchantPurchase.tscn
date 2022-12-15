@@ -3,7 +3,6 @@
 [ext_resource path="res://GUI/MerchantPurchase.gd" type="Script" id=1]
 
 [node name="MerchantPurchase" type="Control"]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -68,4 +67,5 @@ margin_bottom = 104.0
 text = "CANCEL"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/MoveBtn" to="." method="_on_MoveBtn_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/BuyBtn" to="." method="_on_BuyBtn_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/CancelBtn" to="." method="_on_CancelBtn_pressed"]
