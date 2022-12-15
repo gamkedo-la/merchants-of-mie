@@ -1,5 +1,7 @@
 extends KinematicBody
 
+export var purchased_merchant = false
+
 var MoveAction = load("Actions/MoveAction.gd")
 var action_queue
 
@@ -14,6 +16,11 @@ signal end_turn
 
 
 func _ready():
+	if purchased_merchant:
+		visible = true
+	else:
+		visible = false
+		
 	add_to_group("player")
 	Events.connect("start_player_turn", self, "start_player_turn")
 	action_queue = get_node("/root/GameSpace/ActionQueue")

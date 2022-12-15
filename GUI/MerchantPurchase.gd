@@ -20,9 +20,19 @@ func _on_MoveBtn_pressed():
 
 
 func _on_BuyBtn_pressed():
-	if Global.currency_available >= 20:
-		Global.currency_available -= 20
-		Events.emit_signal("merchant_purchased")
+	
+	if not Global.currency_available >= 20:
+		return
+	
+	Global.currency_available -= 20
+	Events.emit_signal("merchant_purchased")
 		
-		Global.action_Points_Per_Turn += 3
-		Global.action_Points_available += 3
+	Global.action_Points_Per_Turn += 3
+	Global.action_Points_available += 3
+	
+	var merchants = get_tree().get_nodes_in_group("player")
+	
+	for x in merchants:
+		if x.visible == false:
+			x.visible = true
+			return
