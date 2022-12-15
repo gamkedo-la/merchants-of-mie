@@ -36,3 +36,5 @@ func _on_BuyBtn_pressed():
 		if x.visible == false:
 			x.visible = true
 			return
+	
+	visible = false
