@@ -43,7 +43,7 @@ shape = SubResource( 2 )
 
 [node name="PlayerPrototype" parent="." instance=ExtResource( 5 )]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.47288, 0.336094, 0.544791 )
-active_merchant = true
 
 [node name="PlayerPrototype2" parent="." instance=ExtResource( 5 )]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.52712, 0.336094, 0.544791 )
+purchased_merchant = true
