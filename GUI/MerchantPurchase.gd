@@ -23,3 +23,6 @@ func _on_BuyBtn_pressed():
 	if Global.currency_available >= 20:
 		Global.currency_available -= 20
 		Events.emit_signal("merchant_purchased")
+		
+		Global.action_Points_Per_Turn += 3
+		Global.action_Points_available += 3
