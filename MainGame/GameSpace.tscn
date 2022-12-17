@@ -40,6 +40,13 @@ data = {
 transform = Transform( 0.549782, -0.454383, 0.70091, 0, 0.839104, 0.543971, -0.835308, -0.299066, 0.461325, 14.5098, 11.6862, 10.2154 )
 size = 7.5
 
+[node name="PlayerPrototype" parent="AMap" index="3"]
+purchased_merchant = true
+active_merchant = true
+
+[node name="PlayerPrototype2" parent="AMap" index="4"]
+purchased_merchant = false
+
 [node name="ActionQueue" type="Node" parent="."]
 script = ExtResource( 7 )
 

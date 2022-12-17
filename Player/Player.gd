@@ -1,6 +1,7 @@
 extends KinematicBody
 
 export var purchased_merchant = false
+export var active_merchant = false
 
 var MoveAction = load("Actions/MoveAction.gd")
 var action_queue
@@ -26,6 +27,9 @@ func _ready():
 	action_queue = get_node("/root/GameSpace/ActionQueue")
 	
 func _physics_process(delta):
+	if not active_merchant:
+		return
+	
 	if path_ind < path.size():
 		var move_vec = (path[path_ind] - global_transform.origin)
 		if move_vec.length() < 0.1:
@@ -34,6 +38,9 @@ func _physics_process(delta):
 			move_and_slide(move_vec.normalized() * MOVE_SPEED, Vector3(0,1,0))
 			
 func move_to(target_pos):
+	if not active_merchant:
+		return
+	
 	var g_transform = global_transform.origin
 	var mov = MoveAction.new()
 	mov.original_position = g_transform
