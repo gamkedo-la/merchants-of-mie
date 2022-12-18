@@ -27,6 +27,7 @@ signal spawn_grapes
 signal spawn_salt
 signal spawn_wheat
 signal spawn_tea
+signal spawn_marble
 
 signal update_objectives
 signal update_UI

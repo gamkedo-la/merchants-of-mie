@@ -402,6 +402,74 @@ script = ExtResource( 1 )
 can_spawn_gold = true
 percent_chance_to_initially_drop_resource = 0.35
 
+[node name="MarbleSpawner" type="Node" parent="."]
+
+[node name="ResourceSpot60" type="Spatial" parent="MarbleSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, 6.5 )
+script = ExtResource( 1 )
+can_spawn_marble = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot61" type="Spatial" parent="MarbleSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, 5.5 )
+script = ExtResource( 1 )
+can_spawn_marble = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot62" type="Spatial" parent="MarbleSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.0361031, 5.5 )
+script = ExtResource( 1 )
+can_spawn_marble = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot63" type="Spatial" parent="MarbleSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.0361031, 5.5 )
+script = ExtResource( 1 )
+can_spawn_marble = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot64" type="Spatial" parent="MarbleSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, 1.5 )
+script = ExtResource( 1 )
+can_spawn_marble = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot65" type="Spatial" parent="MarbleSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, 0.5 )
+script = ExtResource( 1 )
+can_spawn_marble = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot66" type="Spatial" parent="MarbleSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, 2.5 )
+script = ExtResource( 1 )
+can_spawn_marble = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot67" type="Spatial" parent="MarbleSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, -1.5 )
+script = ExtResource( 1 )
+can_spawn_marble = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot68" type="Spatial" parent="MarbleSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, -2.5 )
+script = ExtResource( 1 )
+can_spawn_marble = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot69" type="Spatial" parent="MarbleSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, -2.5 )
+script = ExtResource( 1 )
+can_spawn_marble = true
+percent_chance_to_initially_drop_resource = 0.35
+
+[node name="ResourceSpot70" type="Spatial" parent="MarbleSpawner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, -1.5 )
+script = ExtResource( 1 )
+can_spawn_marble = true
+percent_chance_to_initially_drop_resource = 0.35
+
 [node name="IncenseSpawner" type="Node" parent="."]
 
 [node name="ResourceSpot71" type="Spatial" parent="IncenseSpawner"]
