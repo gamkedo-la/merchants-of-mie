@@ -28,3 +28,7 @@ func update_GUI():
 		$"Objectives/VBoxContainer2/Objective Text2-2".text = "Item 2 done!"
 	if(Global.objective_two_item_three_count <= 0):
 		$"Objectives/VBoxContainer2/Objective Text2-3".text = "Item 3 done!"
+
+func _on_PauseButton_pressed():
+	Events.emit_signal("game_paused")
+

@@ -31,4 +31,6 @@ signal spawn_tea
 signal update_objectives
 signal update_UI
 
+signal game_paused
+
 

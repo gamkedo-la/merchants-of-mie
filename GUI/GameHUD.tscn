@@ -354,5 +354,17 @@ texture = ExtResource( 3 )
 
 [node name="MerchantPurchase" parent="." instance=ExtResource( 11 )]
 
+[node name="Pause" type="Control" parent="."]
+margin_right = 44.0
+margin_bottom = 40.0
+rect_scale = Vector2( 1, 1.0018 )
+
+[node name="PauseButton" type="Button" parent="Pause"]
+margin_right = 44.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 6 )
+text = "ll"
+
 [connection signal="pressed" from="EndTurn/EndTurnBtn" to="." method="_on_EndTurnBtn_pressed"]
 [connection signal="pressed" from="Undo/Undo" to="." method="_on_Undo_pressed"]
+[connection signal="pressed" from="Pause/PauseButton" to="." method="_on_PauseButton_pressed"]
