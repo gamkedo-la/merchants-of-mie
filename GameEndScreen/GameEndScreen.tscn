@@ -1,7 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://SharedResources/Fonts/PrStart.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://GameEndScreen/GameEndScreen.gd" type="Script" id=2]
+[ext_resource path="res://EndScreenCharacters/Monk.glb" type="PackedScene" id=3]
+[ext_resource path="res://EndScreenCharacters/Queen.glb" type="PackedScene" id=4]
+[ext_resource path="res://EndScreenCharacters/King.glb" type="PackedScene" id=5]
+[ext_resource path="res://EndScreenCharacters/Jester.glb" type="PackedScene" id=6]
+[ext_resource path="res://EndScreenCharacters/Maid.glb" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -15,12 +20,68 @@ font_data = ExtResource( 1 )
 size = 32
 font_data = ExtResource( 1 )
 
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 3.24946, 1.29125, 0.518889 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 2.85216, 89.1482, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "WinningCamera"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 3.24946, 1.29125, 0.518889 ), Vector3( -1.1829, 1.29125, 0.518889 ), Vector3( -6.72096, 1.29125, 0.518889 ), Vector3( -6.72096, 1.29125, 0.518889 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 2.85216, 89.1482, 0 ), Vector3( 2.58, 90, 0 ), Vector3( 16.9066, 70.9998, -0.216224 ) ]
+}
+
 [node name="GameEndScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -51,6 +112,47 @@ margin_right = 480.0
 margin_bottom = 128.0
 custom_fonts/font = SubResource( 3 )
 text = "MAIN MENU"
+
+[node name="CSGBox" type="CSGBox" parent="."]
+width = 20.0
+height = 0.25
+depth = 10.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Camera")
+autoplay = "WinningCamera"
+method_call_mode = 1
+anims/RESET = SubResource( 4 )
+anims/WinningCamera = SubResource( 5 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.0148668, 0.0497535, 0.998651, 0, 0.998761, -0.049759, -0.999889, 0.000739759, 0.0148484, 3.24946, 1.29125, 0.518889 )
+
+[node name="WinningCutScene" type="Node" parent="."]
+
+[node name="Jester" parent="WinningCutScene" instance=ExtResource( 6 )]
+transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0, 1.33329, 1.71819 )
+
+[node name="Jester2" parent="WinningCutScene" instance=ExtResource( 6 )]
+transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -0.307979, 1.33329, -0.944075 )
+
+[node name="King" parent="WinningCutScene" instance=ExtResource( 5 )]
+transform = Transform( -8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, -5.85773, 2.35228, 0.963692 )
+
+[node name="Maid" parent="WinningCutScene" instance=ExtResource( 7 )]
+transform = Transform( -0.258391, 0, -0.458014, 0, 0.4, 0, 0.305343, 0, -0.387587, -2.05475, 1.16332, -0.749556 )
+
+[node name="Maid2" parent="WinningCutScene" instance=ExtResource( 7 )]
+transform = Transform( 0.0140784, 0, -0.599628, 0, 0.4, 0, 0.399752, 0, 0.0211175, -3.75734, 1.16332, 1.39346 )
+
+[node name="Monk" parent="WinningCutScene" instance=ExtResource( 3 )]
+transform = Transform( -0.0692927, 0, 0.495175, 0, 0.5, 0, -0.495175, 0, -0.0692927, -2.54371, 1.24819, 1.81718 )
+
+[node name="Monk2" parent="WinningCutScene" instance=ExtResource( 3 )]
+transform = Transform( 0.0549364, 0, -0.496973, 0, 0.5, 0, 0.496973, 0, 0.0549364, -4.18221, 1.24819, -0.834393 )
+
+[node name="Queen" parent="WinningCutScene" instance=ExtResource( 4 )]
+transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -6.20357, 1.62474, -0.570238 )
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ReplayBtn" to="." method="_on_ReplayBtn_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ExitToMainBtn" to="." method="_on_ExitToMainBtn_pressed"]
