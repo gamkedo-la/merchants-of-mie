@@ -17,14 +17,15 @@ func start_player_turn():
 	Global.turn_number += 1
 	Global.action_Points_available = Global.action_Points_Per_Turn
 	#if game is over
-	if Global.turn_number >= Global.MAX_TURNS:
-		Global.goto_scene("res://GameEndScreen/GameEndScreen.tscn")
-		return
 	
 	Events.emit_signal("start_player_turn")
 
 
 func start_board_turn():
+	if Global.turn_number >= (Global.MAX_TURNS - 1):
+		Global.goto_scene("res://GameEndScreen/GameEndScreen.tscn")
+		return
+	
 	Events.emit_signal("start_board_turn")
 	Global.action_Points_available = Global.action_Points_Per_Turn
 
