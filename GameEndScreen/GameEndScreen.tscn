@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://SharedResources/Fonts/PrStart.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://GameEndScreen/GameEndScreen.gd" type="Script" id=2]
@@ -18,6 +18,34 @@
 [ext_resource path="res://SharedResources/Models/Resources/salt.glb" type="PackedScene" id=16]
 [ext_resource path="res://SharedResources/Models/Resources/Grapes2.material" type="Material" id=17]
 [ext_resource path="res://SharedResources/Models/Resources/c6505a.material" type="Material" id=18]
+
+[sub_resource type="Animation" id=6]
+resource_name = "LosingCamera"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3, 6.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 2.7411, 1.37008, -2.19809 ), Vector3( 2.66533, 1.42955, -0.0378618 ), Vector3( 2.51381, 1.5485, 4.2826 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3, 6.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -3.39791, 97.6485, 0 ), Vector3( -2.89791, 124.482, 0 ), Vector3( -1.89791, 178.149, 0 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 length = 0.001
@@ -91,149 +119,148 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
 
-[node name="WinningCutScene2" type="Spatial" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Camera")
+method_call_mode = 1
+anims/LosingCamera = SubResource( 6 )
+anims/RESET = SubResource( 4 )
+anims/WinningCamera = SubResource( 5 )
 
-[node name="Jester" parent="WinningCutScene2" instance=ExtResource( 6 )]
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.0148668, 0.0497535, 0.998651, 0, 0.998761, -0.049759, -0.999889, 0.000739759, 0.0148484, 3.24946, 1.29125, 0.518889 )
+
+[node name="WinningCutScene" type="Spatial" parent="."]
+visible = false
+
+[node name="Jester" parent="WinningCutScene" instance=ExtResource( 6 )]
 transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0, 1.33329, 2.50885 )
 
-[node name="Jester2" parent="WinningCutScene2" instance=ExtResource( 6 )]
+[node name="Jester2" parent="WinningCutScene" instance=ExtResource( 6 )]
 transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -0.307979, 1.33329, -0.944075 )
 
-[node name="King" parent="WinningCutScene2" instance=ExtResource( 5 )]
+[node name="King" parent="WinningCutScene" instance=ExtResource( 5 )]
 transform = Transform( -8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, -5.85773, 2.35228, 1.75434 )
 
-[node name="Maid" parent="WinningCutScene2" instance=ExtResource( 7 )]
+[node name="Maid" parent="WinningCutScene" instance=ExtResource( 7 )]
 transform = Transform( -0.258391, 0, -0.458014, 0, 0.4, 0, 0.305343, 0, -0.387587, -2.05475, 1.16332, -0.749556 )
 
-[node name="Maid2" parent="WinningCutScene2" instance=ExtResource( 7 )]
+[node name="Maid2" parent="WinningCutScene" instance=ExtResource( 7 )]
 transform = Transform( 0.0140784, 0, -0.599628, 0, 0.4, 0, 0.399752, 0, 0.0211175, -3.75734, 1.16332, 2.18411 )
 
-[node name="Monk" parent="WinningCutScene2" instance=ExtResource( 3 )]
+[node name="Monk" parent="WinningCutScene" instance=ExtResource( 3 )]
 transform = Transform( -0.0692927, 0, 0.495175, 0, 0.5, 0, -0.495175, 0, -0.0692927, -2.54371, 1.24819, 2.60783 )
 
-[node name="Monk2" parent="WinningCutScene2" instance=ExtResource( 3 )]
+[node name="Monk2" parent="WinningCutScene" instance=ExtResource( 3 )]
 transform = Transform( 0.0549364, 0, -0.496973, 0, 0.5, 0, 0.496973, 0, 0.0549364, -4.18221, 1.24819, -1.01929 )
 
-[node name="Queen" parent="WinningCutScene2" instance=ExtResource( 4 )]
+[node name="Queen" parent="WinningCutScene" instance=ExtResource( 4 )]
 transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -6.20357, 1.62474, -0.977616 )
 
-[node name="CSGBox" type="CSGBox" parent="WinningCutScene2"]
+[node name="CSGBox" type="CSGBox" parent="WinningCutScene"]
 width = 20.0
 height = 0.25
 depth = 10.0
 material = ExtResource( 18 )
 
-[node name="CSGBox9" type="CSGBox" parent="WinningCutScene2"]
+[node name="CSGBox9" type="CSGBox" parent="WinningCutScene"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.82422, 0 )
 width = 20.0
 height = 0.25
 depth = 10.0
 material = ExtResource( 8 )
 
-[node name="CSGBox3" type="CSGBox" parent="WinningCutScene2"]
+[node name="CSGBox3" type="CSGBox" parent="WinningCutScene"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.99334, 4.82899 )
 width = 20.0
 height = 6.0
 depth = 0.5
 material = ExtResource( 8 )
 
-[node name="CSGBox5" type="CSGBox" parent="WinningCutScene2"]
+[node name="CSGBox5" type="CSGBox" parent="WinningCutScene"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.76927, 2.99334, 3.05153 )
 width = 0.2
 height = 6.0
 depth = 3.0
 material = ExtResource( 8 )
 
-[node name="CSGBox6" type="CSGBox" parent="WinningCutScene2"]
+[node name="CSGBox6" type="CSGBox" parent="WinningCutScene"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.76927, 2.99334, -3.47447 )
 width = 0.2
 height = 6.0
 depth = 3.0
 material = ExtResource( 8 )
 
-[node name="CSGBox7" type="CSGBox" parent="WinningCutScene2"]
+[node name="CSGBox7" type="CSGBox" parent="WinningCutScene"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.76927, 5.48141, -0.270167 )
 width = 0.2
 height = 1.0
 depth = 4.0
 material = ExtResource( 8 )
 
-[node name="CSGBox8" type="CSGBox" parent="WinningCutScene2"]
+[node name="CSGBox8" type="CSGBox" parent="WinningCutScene"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.76927, 0.66363, -0.270167 )
 width = 0.2
 height = 1.0
 depth = 4.0
 material = ExtResource( 8 )
 
-[node name="CSGBox4" type="CSGBox" parent="WinningCutScene2"]
+[node name="CSGBox4" type="CSGBox" parent="WinningCutScene"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.99334, -5.15349 )
 width = 20.0
 height = 6.0
 depth = 0.5
 material = ExtResource( 8 )
 
-[node name="CSGBox2" type="CSGBox" parent="WinningCutScene2"]
+[node name="CSGBox2" type="CSGBox" parent="WinningCutScene"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.56154, -0.0351874, 0.527562 )
 width = 10.0
 height = 1.4
 material = ExtResource( 17 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="WinningCutScene2"]
-root_node = NodePath("../Camera")
-autoplay = "WinningCamera"
-method_call_mode = 1
-anims/RESET = SubResource( 4 )
-anims/WinningCamera = SubResource( 5 )
-
-[node name="incense" parent="WinningCutScene2" instance=ExtResource( 13 )]
+[node name="incense" parent="WinningCutScene" instance=ExtResource( 13 )]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.34579, 0.167072, -3.7487 )
 
-[node name="incense2" parent="WinningCutScene2" instance=ExtResource( 13 )]
+[node name="incense2" parent="WinningCutScene" instance=ExtResource( 13 )]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.47402, 0.167072, 4.08076 )
 
-[node name="grapes" parent="WinningCutScene2" instance=ExtResource( 15 )]
+[node name="grapes" parent="WinningCutScene" instance=ExtResource( 15 )]
 transform = Transform( -1.31134e-08, 0, 0.5, 0, 0.3, 0, -0.3, 0, -2.18557e-08, 0, 0.640998, 0.444675 )
 
-[node name="grapes2" parent="WinningCutScene2" instance=ExtResource( 15 )]
+[node name="grapes2" parent="WinningCutScene" instance=ExtResource( 15 )]
 transform = Transform( -1.31134e-08, 0, 0.5, 0, 0.3, 0, -0.3, 0, -2.18557e-08, -0.912227, 0.640998, 0.957181 )
 
-[node name="coffee" parent="WinningCutScene2" instance=ExtResource( 12 )]
+[node name="coffee" parent="WinningCutScene" instance=ExtResource( 12 )]
 transform = Transform( 0.25, 0, -0.433013, 0, 0.5, 0, 0.433013, 0, 0.25, -4.79717, 0.167422, -3.48578 )
 
-[node name="gold" parent="WinningCutScene2" instance=ExtResource( 9 )]
+[node name="gold" parent="WinningCutScene" instance=ExtResource( 9 )]
 transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -5.17815, 0.129964, 3.64449 )
 
-[node name="gold2" parent="WinningCutScene2" instance=ExtResource( 9 )]
+[node name="gold2" parent="WinningCutScene" instance=ExtResource( 9 )]
 transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -4.36246, 0.129964, 3.64449 )
 
-[node name="gold3" parent="WinningCutScene2" instance=ExtResource( 9 )]
+[node name="gold3" parent="WinningCutScene" instance=ExtResource( 9 )]
 transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -4.71063, 0.437515, 3.64449 )
 
-[node name="marble" parent="WinningCutScene2" instance=ExtResource( 11 )]
+[node name="marble" parent="WinningCutScene" instance=ExtResource( 11 )]
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -8.62327, 0, 3.43793 )
 
-[node name="coffee2" parent="WinningCutScene2" instance=ExtResource( 12 )]
+[node name="coffee2" parent="WinningCutScene" instance=ExtResource( 12 )]
 transform = Transform( 0.25, 0, -0.433013, 0, 0.5, 0, 0.433013, 0, 0.25, -6.30745, 0.167422, -3.48578 )
 
-[node name="salt" parent="WinningCutScene2" instance=ExtResource( 16 )]
+[node name="salt" parent="WinningCutScene" instance=ExtResource( 16 )]
 transform = Transform( 0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.098, -2.18384, 0.713589, 0 )
 
-[node name="salt2" parent="WinningCutScene2" instance=ExtResource( 16 )]
+[node name="salt2" parent="WinningCutScene" instance=ExtResource( 16 )]
 transform = Transform( 0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.098, -4.41789, 0.713589, 0 )
 
-[node name="wheat" parent="WinningCutScene2" instance=ExtResource( 14 )]
+[node name="wheat" parent="WinningCutScene" instance=ExtResource( 14 )]
 transform = Transform( 3.82137e-16, 8.74228e-09, 0.4, 0.2, -8.74228e-09, 0, 8.74228e-09, 0.2, -1.74846e-08, -3.6922, 0.783021, 0.521319 )
 
-[node name="fish" parent="WinningCutScene2" instance=ExtResource( 10 )]
+[node name="fish" parent="WinningCutScene" instance=ExtResource( 10 )]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.76136, 0.791772, 0.602816 )
 
-[node name="fish2" parent="WinningCutScene2" instance=ExtResource( 10 )]
+[node name="fish2" parent="WinningCutScene" instance=ExtResource( 10 )]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.93457, 0.791772, 0.424849 )
-
-[node name="Camera" type="Camera" parent="WinningCutScene2"]
-transform = Transform( 0.0148668, 0.0497535, 0.998651, 0, 0.998761, -0.049759, -0.999889, 0.000739759, 0.0148484, 3.24946, 1.29125, 0.518889 )
-
-[node name="WinningCutScene" type="Node" parent="."]
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 visible = false
@@ -287,5 +314,154 @@ margin_bottom = 247.0
 custom_fonts/font = SubResource( 3 )
 text = "MAIN MENU"
 
+[node name="LosingContainer" type="CenterContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LosingContainer"]
+margin_left = 160.0
+margin_top = 176.0
+margin_right = 864.0
+margin_bottom = 423.0
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="LosingContainer/VBoxContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 704.0
+margin_bottom = 67.0
+custom_fonts/font = SubResource( 1 )
+text = "THE KINGDOM 
+IS IN RUINS..."
+align = 1
+
+[node name="Label3" type="Label" parent="LosingContainer/VBoxContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_top = 77.0
+margin_right = 704.0
+margin_bottom = 109.0
+custom_fonts/font = SubResource( 1 )
+align = 1
+
+[node name="Label2" type="Label" parent="LosingContainer/VBoxContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_top = 119.0
+margin_right = 704.0
+margin_bottom = 151.0
+custom_fonts/font = SubResource( 1 )
+text = "BETTER LUCK NEXT TIME."
+align = 1
+
+[node name="ReplayBtn" type="Button" parent="LosingContainer/VBoxContainer"]
+margin_top = 161.0
+margin_right = 704.0
+margin_bottom = 199.0
+custom_fonts/font = SubResource( 2 )
+text = "REPLAY"
+
+[node name="ExitToMainBtn" type="Button" parent="LosingContainer/VBoxContainer"]
+margin_top = 209.0
+margin_right = 704.0
+margin_bottom = 247.0
+custom_fonts/font = SubResource( 3 )
+text = "MAIN MENU"
+
+[node name="LosingCutScene" type="Spatial" parent="."]
+visible = false
+
+[node name="Jester3" parent="LosingCutScene" instance=ExtResource( 6 )]
+transform = Transform( -0.236152, 0, 0.440718, 0, 0.5, 0, -0.440718, 0, -0.236152, 0, 1.33329, 3.23303 )
+
+[node name="Jester4" parent="LosingCutScene" instance=ExtResource( 6 )]
+transform = Transform( -0.0962781, 0, -0.490643, 0, 0.5, 0, 0.490643, 0, -0.0962781, -0.307979, 1.33329, -1.47478 )
+
+[node name="King2" parent="LosingCutScene" instance=ExtResource( 5 )]
+transform = Transform( 0.00139625, 0, -0.199995, 0, 0.2, 0, 0.199995, 0, 0.00139625, -3.99157, 2.35228, 1.13078 )
+
+[node name="Maid3" parent="LosingCutScene" instance=ExtResource( 7 )]
+transform = Transform( -0.258391, 0, -0.458014, 0, 0.4, 0, 0.305343, 0, -0.387587, -0.161122, 1.16332, -2.33996 )
+
+[node name="Maid4" parent="LosingCutScene" instance=ExtResource( 7 )]
+transform = Transform( -0.0752885, 0, 0.589276, 0, 0.4, 0, -0.392851, 0, -0.112933, -0.686182, 1.16332, 2.40583 )
+
+[node name="Monk3" parent="LosingCutScene" instance=ExtResource( 3 )]
+transform = Transform( 0.435345, 0, -0.245916, 0, 0.5, 0, 0.245916, 0, 0.435345, 0.00114846, 1.24819, 3.9366 )
+
+[node name="Monk4" parent="LosingCutScene" instance=ExtResource( 3 )]
+transform = Transform( 0.0549364, 0, -0.496973, 0, 0.5, 0, 0.496973, 0, 0.0549364, 0.316857, 1.24819, -3.06626 )
+
+[node name="Queen2" parent="LosingCutScene" instance=ExtResource( 4 )]
+transform = Transform( -0.0442472, 0, -0.498038, 0, 0.5, 0, 0.498038, 0, -0.0442472, -4.05223, 1.62474, 0.0408853 )
+
+[node name="CSGBox10" type="CSGBox" parent="LosingCutScene"]
+width = 20.0
+height = 0.25
+depth = 10.0
+material = ExtResource( 18 )
+
+[node name="CSGBox11" type="CSGBox" parent="LosingCutScene"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.82422, 0 )
+width = 20.0
+height = 0.25
+depth = 10.0
+material = ExtResource( 8 )
+
+[node name="CSGBox12" type="CSGBox" parent="LosingCutScene"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.99334, 4.82899 )
+width = 20.0
+height = 6.0
+depth = 0.5
+material = ExtResource( 8 )
+
+[node name="CSGBox13" type="CSGBox" parent="LosingCutScene"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.76927, 2.99334, 3.05153 )
+width = 0.2
+height = 6.0
+depth = 3.0
+material = ExtResource( 8 )
+
+[node name="CSGBox19" type="CSGBox" parent="LosingCutScene"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9879, 2.99334, -0.0568311 )
+width = 0.2
+height = 6.0
+depth = 10.0
+material = ExtResource( 8 )
+
+[node name="CSGBox14" type="CSGBox" parent="LosingCutScene"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.76927, 2.99334, -3.47447 )
+width = 0.2
+height = 6.0
+depth = 3.0
+material = ExtResource( 8 )
+
+[node name="CSGBox15" type="CSGBox" parent="LosingCutScene"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.76927, 5.48141, -0.270167 )
+width = 0.2
+height = 1.0
+depth = 4.0
+material = ExtResource( 8 )
+
+[node name="CSGBox16" type="CSGBox" parent="LosingCutScene"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.76927, 0.66363, -0.270167 )
+width = 0.2
+height = 1.0
+depth = 4.0
+material = ExtResource( 8 )
+
+[node name="CSGBox17" type="CSGBox" parent="LosingCutScene"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.99334, -5.15349 )
+width = 20.0
+height = 6.0
+depth = 0.5
+material = ExtResource( 8 )
+
+[node name="CSGBox18" type="CSGBox" parent="LosingCutScene"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46672, -0.0351874, 0.527562 )
+width = 6.0
+height = 1.4
+material = ExtResource( 17 )
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ReplayBtn" to="." method="_on_ReplayBtn_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ExitToMainBtn" to="." method="_on_ExitToMainBtn_pressed"]
+[connection signal="pressed" from="LosingContainer/VBoxContainer/ReplayBtn" to="." method="_on_ReplayBtn_pressed"]
+[connection signal="pressed" from="LosingContainer/VBoxContainer/ExitToMainBtn" to="." method="_on_ExitToMainBtn_pressed"]
