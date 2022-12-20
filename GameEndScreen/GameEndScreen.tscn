@@ -127,7 +127,7 @@ anims/RESET = SubResource( 4 )
 anims/WinningCamera = SubResource( 5 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.0148668, 0.0497535, 0.998651, 0, 0.998761, -0.049759, -0.999889, 0.000739759, 0.0148484, 3.24946, 1.29125, 0.518889 )
+transform = Transform( 0.014866, 0.0497535, 0.998651, 0, 0.998761, -0.049759, -0.999889, 0.000739717, 0.0148476, 3.24946, 1.29125, 0.518889 )
 
 [node name="WinningCutScene" type="Spatial" parent="."]
 visible = false
