@@ -57,10 +57,8 @@ func start_player_turn():
 	print("Currently, it is the player's turn")
 
 func _on_PlayerPrototype_mouse_entered():
-	print("Mouse is over merchant")
 	Global.mouse_is_hovering_over_merchant = true
 
 
 func _on_PlayerPrototype_mouse_exited():
-	print("Mouse exited merchant")
 	Global.mouse_is_hovering_over_merchant = false
