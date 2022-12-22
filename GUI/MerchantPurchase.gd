@@ -35,6 +35,8 @@ func _on_BuyBtn_pressed():
 	for x in merchants:
 		if x.visible == false:
 			x.visible = true
+			
+			visible = false
 			return
 	
-	visible = false
+	
