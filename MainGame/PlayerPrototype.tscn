@@ -27,3 +27,6 @@ mesh = SubResource( 3 )
 
 [node name="MerchantToken" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1.3806, 0, 1.44704, 0, 2, 0, -1.44704, 0, 1.3806, 0, -0.699833, 0 )
+
+[connection signal="mouse_entered" from="." to="." method="_on_PlayerPrototype_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_PlayerPrototype_mouse_exited"]

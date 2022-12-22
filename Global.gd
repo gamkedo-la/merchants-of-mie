@@ -38,6 +38,9 @@ var functional_text = ""
 #Mouse Hovering Over Castle
 var mouse_is_hovering_over_castle = false
 
+#Mouse Hovering Over merchant
+var mouse_is_hovering_over_merchant = false
+
 func _ready():
 	print("At turn start, player has: " + str(action_Points_Per_Turn) + " available")
 	var root = get_tree().get_root()
