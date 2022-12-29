@@ -28,6 +28,7 @@ signal spawn_salt
 signal spawn_wheat
 signal spawn_tea
 signal spawn_marble
+signal spawn_diamond
 
 signal update_objectives
 signal update_UI

@@ -11,6 +11,7 @@ var salt_texture = preload("res://SharedResources/ResourceIcons/Salt.png")
 var wheat_texture = preload("res://SharedResources/ResourceIcons/Wheat.png")
 var tea_texture = preload("res://SharedResources/ResourceIcons/Tea.png")
 var marble_texture = preload("res://SharedResources/ResourceIcons/Marble.png")
+var diamond_texture = preload("res://SharedResources/ResourceIcons/Diamond.png")
 
 func _ready():
 	Events.connect("resource_picked_up", self, "add_resource_to_inventory")
@@ -38,6 +39,8 @@ func add_resource_to_inventory(resource):
 			inventory_texture = tea_texture
 		"Marble":
 			inventory_texture = marble_texture
+		"Diamond":
+			inventory_texture = diamond_texture
 	
 	if resource in resources_in_inventory:
 		print("You already have this resource in your inventory")
