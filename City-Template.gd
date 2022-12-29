@@ -65,6 +65,9 @@ func _ready():
 		
 		
 func update_values():
+	#Equation: base_resource_value * (each array element) * (1 + [array value modifier])
+	#Equation Example: gold_value = ((5 * 0) * (1 - .8)) + [array 2, 3, 4, 5]
+	
 	#silver_value = (((base_resource_value * resource_status_silver[0]) * (1+have_excess))+ ((base_resource_value * resource_status_silver[1]) * (1+have_enough))+ ((base_resource_value * resource_status_silver[2]) * (1-neutral))+ ((base_resource_value * resource_status_silver[3]) * (1+need_resource))+ ((base_resource_value * resource_status_silver[4]) * (1+need_alot)))
 	gold_value = (((base_resource_value * resource_status_gold[0]) * (1+have_excess))+ ((base_resource_value * resource_status_gold[1]) * (1+have_enough))+ ((base_resource_value * resource_status_gold[2]) * (1-neutral))+ ((base_resource_value * resource_status_gold[3]) * (1+need_resource))+ ((base_resource_value * resource_status_gold[4]) * (1+need_alot)))
 	salt_value = (((base_resource_value * resource_status_salt[0]) * (1+have_excess))+ ((base_resource_value * resource_status_salt[1]) * (1+have_enough))+ ((base_resource_value * resource_status_salt[2]) * (1-neutral))+ ((base_resource_value * resource_status_salt[3]) * (1+need_resource))+ ((base_resource_value * resource_status_salt[4]) * (1+need_alot)))
