@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://City-Template.gd" type="Script" id=1]
+
+[node name="City-Template" type="Spatial"]
+script = ExtResource( 1 )
+resource_status_gold = [ 0, 0, 0, 1, 0 ]
+resource_status_salt = [ 0, 0, 1, 0, 0 ]
+resource_status_grapes = [ 0, 0, 0, 1, 0 ]
+resource_status_wheat = [ 0, 0, 1, 0, 0 ]
+resource_status_tea = [ 0, 0, 1, 0, 0 ]
+resource_status_marble = [ 0, 0, 0, 1, 0 ]
+resource_status_incense = [ 0, 0, 0, 1, 0 ]
+resource_status_diamond = [ 0, 0, 0, 1, 0 ]
+resource_status_fish = [ 1, 0, 0, 0, 0 ]
+resource_status_coffee = [ 0, 1, 0, 0, 0 ]
