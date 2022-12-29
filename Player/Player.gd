@@ -56,6 +56,14 @@ func start_player_turn():
 	
 	print("Currently, it is the player's turn")
 
+
+
+func _on_PlayerPrototype_input_event(camera, event, position, normal, shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT && event.pressed == true:
+			print (self.name + " Was Clicked!")
+
+
 func _on_PlayerPrototype_mouse_entered():
 	Global.mouse_is_hovering_over_merchant = true
 

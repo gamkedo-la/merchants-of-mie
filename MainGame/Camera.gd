@@ -37,11 +37,16 @@ func _unhandled_input(event):
 			var to = from + project_ray_normal(event.position) * RAY_LENGTH
 			var space_state = get_world().direct_space_state
 			var result = space_state.intersect_ray(from, to, [], 1)
+			
 			if result:
-				if !Global.mouse_is_hovering_over_castle && !Global.mouse_is_hovering_over_merchant:
-					get_tree().call_group("player", "move_to", result.position)
-				else:
-					Events.emit_signal("merchant_clicked_castle")
+				if Global.mouse_is_hovering_over_castle:
+					return
+					
+				if Global.mouse_is_hovering_over_merchant:
+					return
+				
+				get_tree().call_group("player", "move_to", result.position)
+				
 			var tile_result = space_state.intersect_ray(from, to, [], 2)
 			if tile_result:
 				tile_result.collider.emit_signal("tile_clicked", tile_result.collider)

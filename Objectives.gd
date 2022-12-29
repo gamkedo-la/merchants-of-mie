@@ -94,3 +94,10 @@ func _on_Area_mouse_entered():
 func _on_Area_mouse_exited():
 	Global.mouse_is_hovering_over_castle = false
 	print("Exit Hovering!")
+
+
+func _on_Area_input_event(camera, event, position, normal, shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT && event.pressed == true:
+			Events.emit_signal("merchant_clicked_castle")
+			print (self.name + " CASTLE Was Clicked!")
