@@ -320,16 +320,17 @@ margin_top = -68.0
 margin_right = 79.0
 
 [node name="Label" type="Label" parent="Inventory/VBoxContainer"]
+margin_top = -8.0
 margin_right = 158.0
-margin_bottom = 22.0
+margin_bottom = 14.0
 custom_fonts/font = ExtResource( 6 )
 text = "INVENTORY"
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Inventory/VBoxContainer"]
-margin_top = 26.0
+margin_top = 15.0
 margin_right = 158.0
-margin_bottom = 76.0
+margin_bottom = 65.0
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Inventory/VBoxContainer/HBoxContainer"]
@@ -354,7 +355,6 @@ texture = ExtResource( 3 )
 [node name="MerchantPurchase" parent="." instance=ExtResource( 11 )]
 
 [node name="CityMenu" parent="." instance=ExtResource( 12 )]
-visible = false
 margin_left = -457.0
 margin_top = -300.0
 margin_right = -357.0
