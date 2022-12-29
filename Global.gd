@@ -41,6 +41,22 @@ var mouse_is_hovering_over_castle = false
 #Mouse Hovering Over merchant
 var mouse_is_hovering_over_merchant = false
 
+#Getting the value of goods per city
+var city_name = ""
+#var SilverValue = 0
+var GoldValue = 0
+var SaltValue = 0
+var GrapesValue = 0
+var WheatValue = 0
+var TeaValue = 0
+var MarbleValue = 0
+var IncenseValue = 0
+var DiamondValue = 0
+var FishValue = 0
+#var LumberValue = 0
+#var DyesValue = 0
+var CoffeeValue = 0
+
 func _ready():
 	print("At turn start, player has: " + str(action_Points_Per_Turn) + " available")
 	var root = get_tree().get_root()

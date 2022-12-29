@@ -78,19 +78,37 @@ func update_values():
 	#lumber_value = (((base_resource_value * resource_status_lumber[0]) * (1+have_excess))+ ((base_resource_value * resource_status_lumber[1]) * (1+have_enough))+ ((base_resource_value * resource_status_lumber[2]) * (1-neutral))+ ((base_resource_value * resource_status_lumber[3]) * (1+need_resource))+ ((base_resource_value * resource_status_lumber[4]) * (1+need_alot)))
 	#dyes_value = (((base_resource_value * resource_status_dyes[0]) * (1+have_excess))+ ((base_resource_value * resource_status_dyes[1]) * (1+have_enough))+ ((base_resource_value * resource_status_dyes[2]) * (1-neutral))+ ((base_resource_value * resource_status_dyes[3]) * (1+need_resource))+ ((base_resource_value * resource_status_dyes[4]) * (1+need_alot)))
 	coffee_value = (((base_resource_value * resource_status_coffee[0]) * (1+have_excess))+ ((base_resource_value * resource_status_coffee[1]) * (1+have_enough))+ ((base_resource_value * resource_status_coffee[2]) * (1-neutral))+ ((base_resource_value * resource_status_coffee[3]) * (1+need_resource))+ ((base_resource_value * resource_status_coffee[4]) * (1+need_alot)))
-	
-	print(city_name)
-	print(gold_value)
-	print(salt_value)
-	print(grapes_value)
-	print(wheat_value)
-	print(tea_value)
-	print(marble_value)
-	print(incense_value)
-	print(diamond_value)
-	print(fish_value)
-	print(coffee_value)
 
+	Global.city_name = city_name
+	#Global.SilverValue = silver_value
+	Global.GoldValue = gold_value
+	Global.SaltValue = salt_value
+	Global.GrapesValue = grapes_value
+	Global.WheatValue = wheat_value
+	Global.TeaValue = tea_value
+	Global.MarbleValue = marble_value
+	Global.IncenseValue = incense_value
+	Global.DiamondValue = diamond_value
+	Global.FishValue = fish_value
+	#Global.LumberValue = lumber_value
+	#Global.DyesValue = dyes_value
+	Global.CoffeeValue = coffee_value
+
+func clear_values():
+	Global.city_name = ""
+	#Global.SilverValue = 0
+	Global.GoldValue = 0
+	Global.SaltValue = 0
+	Global.GrapesValue = 0
+	Global.WheatValue = 0
+	Global.TeaValue = 0
+	Global.MarbleValue = 0
+	Global.IncenseValue = 0
+	Global.DiamondValue = 0
+	Global.FishValue = 0
+	#Global.LumberValue = 0
+	#Global.DyesValue = 0
+	Global.CoffeeValue = 0
 
 func _on_Area_area_entered(area):
 	if(area.name == "Merchant_Area"):
@@ -101,5 +119,6 @@ func _on_Area_area_entered(area):
 
 func _on_Area_area_exited(area):
 	if(area.name == "Merchant_Area"):
+		clear_values()
 		#Signal goes to Event Bus and GUI
 		Events.emit_signal("merchant_left_city")

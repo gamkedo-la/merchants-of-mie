@@ -37,19 +37,19 @@ rect_scale = Vector2( 0.6, 3.6 )
 color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 
 [node name="Title" type="Label" parent="."]
-margin_left = 4.0
-margin_top = 9.47368
-margin_right = 122.0
-margin_bottom = 23.4737
+margin_left = 4.21053
+margin_top = 8.88889
+margin_right = 122.211
+margin_bottom = 22.8889
 rect_scale = Vector2( 0.779999, 1.62632 )
 text = "Greenglade"
 align = 1
 
 [node name="Title2" type="Label" parent="."]
-margin_left = 10.0
-margin_top = 538.947
-margin_right = 128.0
-margin_bottom = 552.947
+margin_left = 10.2105
+margin_top = 538.362
+margin_right = 128.211
+margin_bottom = 552.362
 rect_scale = Vector2( 0.7, 0.7 )
 text = "Sell Inventory Slot"
 align = 1
@@ -79,10 +79,10 @@ margin_bottom = 485.6
 text = "CANCEL"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 14.96
-margin_top = 43.7579
-margin_right = 119.96
-margin_bottom = 741.758
+margin_left = 6.31579
+margin_top = 43.3333
+margin_right = 111.316
+margin_bottom = 741.333
 rect_scale = Vector2( 0.7, 0.7 )
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
@@ -92,17 +92,19 @@ texture = ExtResource( 5 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect"]
 margin_left = 50.0
-margin_right = 100.0
+margin_right = 120.0
 margin_bottom = 14.0
+rect_scale = Vector2( 1.18045, 1.31746 )
 text = "Silver"
 align = 1
 valign = 1
 
-[node name="Cost2" type="Label" parent="VBoxContainer/TextureRect"]
+[node name="SilverValue" type="Label" parent="VBoxContainer/TextureRect"]
 margin_left = 50.0
-margin_top = 35.0
-margin_right = 100.0
-margin_bottom = 49.0
+margin_top = 19.0
+margin_right = 120.0
+margin_bottom = 33.0
+rect_scale = Vector2( 1.18045, 1.3859 )
 text = "M 7"
 align = 1
 valign = 1
@@ -115,17 +117,19 @@ texture = ExtResource( 7 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect2"]
 margin_left = 50.0
-margin_right = 100.0
+margin_right = 120.0
 margin_bottom = 14.0
+rect_scale = Vector2( 1.18, 1.317 )
 text = "Gold"
 align = 1
 valign = 1
 
-[node name="Cost2" type="Label" parent="VBoxContainer/TextureRect2"]
+[node name="GoldValue" type="Label" parent="VBoxContainer/TextureRect2"]
 margin_left = 50.0
-margin_top = 35.0
-margin_right = 100.0
-margin_bottom = 49.0
+margin_top = 19.0
+margin_right = 120.0
+margin_bottom = 33.0
+rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
@@ -138,17 +142,19 @@ texture = ExtResource( 11 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect3"]
 margin_left = 50.0
-margin_right = 100.0
+margin_right = 120.0
 margin_bottom = 14.0
+rect_scale = Vector2( 1.18, 1.317 )
 text = "Salt"
 align = 1
 valign = 1
 
-[node name="Cost2" type="Label" parent="VBoxContainer/TextureRect3"]
+[node name="SaltValue" type="Label" parent="VBoxContainer/TextureRect3"]
 margin_left = 50.0
-margin_top = 35.0
-margin_right = 100.0
-margin_bottom = 49.0
+margin_top = 19.0
+margin_right = 120.0
+margin_bottom = 33.0
+rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
@@ -161,17 +167,19 @@ texture = ExtResource( 4 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect4"]
 margin_left = 50.0
-margin_right = 100.0
+margin_right = 120.0
 margin_bottom = 14.0
+rect_scale = Vector2( 1.18, 1.317 )
 text = "Grapes"
 align = 1
 valign = 1
 
-[node name="Cost2" type="Label" parent="VBoxContainer/TextureRect4"]
+[node name="GrapesValue" type="Label" parent="VBoxContainer/TextureRect4"]
 margin_left = 50.0
-margin_top = 35.0
-margin_right = 100.0
-margin_bottom = 49.0
+margin_top = 19.0
+margin_right = 120.0
+margin_bottom = 33.0
+rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
@@ -184,17 +192,19 @@ texture = ExtResource( 10 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect5"]
 margin_left = 50.0
-margin_right = 100.0
+margin_right = 120.0
 margin_bottom = 14.0
+rect_scale = Vector2( 1.18, 1.317 )
 text = "Wheat"
 align = 1
 valign = 1
 
-[node name="Cost2" type="Label" parent="VBoxContainer/TextureRect5"]
+[node name="WheatValue" type="Label" parent="VBoxContainer/TextureRect5"]
 margin_left = 50.0
-margin_top = 35.0
-margin_right = 100.0
-margin_bottom = 49.0
+margin_top = 19.0
+margin_right = 120.0
+margin_bottom = 33.0
+rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
@@ -207,17 +217,19 @@ texture = ExtResource( 2 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect6"]
 margin_left = 50.0
-margin_right = 100.0
+margin_right = 120.0
 margin_bottom = 14.0
+rect_scale = Vector2( 1.18, 1.317 )
 text = "Tea"
 align = 1
 valign = 1
 
-[node name="Cost2" type="Label" parent="VBoxContainer/TextureRect6"]
+[node name="TeaValue" type="Label" parent="VBoxContainer/TextureRect6"]
 margin_left = 50.0
-margin_top = 35.0
-margin_right = 100.0
-margin_bottom = 49.0
+margin_top = 19.0
+margin_right = 120.0
+margin_bottom = 33.0
+rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
@@ -230,17 +242,19 @@ texture = ExtResource( 3 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect7"]
 margin_left = 50.0
-margin_right = 100.0
+margin_right = 120.0
 margin_bottom = 14.0
+rect_scale = Vector2( 1.18, 1.317 )
 text = "Marble"
 align = 1
 valign = 1
 
-[node name="Cost2" type="Label" parent="VBoxContainer/TextureRect7"]
+[node name="MarbleValue" type="Label" parent="VBoxContainer/TextureRect7"]
 margin_left = 50.0
-margin_top = 35.0
-margin_right = 100.0
-margin_bottom = 49.0
+margin_top = 19.0
+margin_right = 120.0
+margin_bottom = 33.0
+rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
@@ -253,17 +267,19 @@ texture = ExtResource( 6 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect8"]
 margin_left = 50.0
-margin_right = 100.0
+margin_right = 120.0
 margin_bottom = 14.0
+rect_scale = Vector2( 1.18, 1.317 )
 text = "Incense"
 align = 1
 valign = 1
 
-[node name="Cost2" type="Label" parent="VBoxContainer/TextureRect8"]
+[node name="IncenseValue" type="Label" parent="VBoxContainer/TextureRect8"]
 margin_left = 50.0
-margin_top = 35.0
-margin_right = 100.0
-margin_bottom = 49.0
+margin_top = 19.0
+margin_right = 120.0
+margin_bottom = 33.0
+rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
@@ -276,17 +292,19 @@ texture = ExtResource( 12 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect9"]
 margin_left = 50.0
-margin_right = 100.0
+margin_right = 120.0
 margin_bottom = 14.0
+rect_scale = Vector2( 1.18, 1.317 )
 text = "Diamond"
 align = 1
 valign = 1
 
-[node name="Cost2" type="Label" parent="VBoxContainer/TextureRect9"]
+[node name="DiamondValue" type="Label" parent="VBoxContainer/TextureRect9"]
 margin_left = 50.0
-margin_top = 35.0
-margin_right = 100.0
-margin_bottom = 49.0
+margin_top = 19.0
+margin_right = 120.0
+margin_bottom = 33.0
+rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
@@ -299,17 +317,19 @@ texture = ExtResource( 9 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect10"]
 margin_left = 50.0
-margin_right = 100.0
+margin_right = 120.0
 margin_bottom = 14.0
+rect_scale = Vector2( 1.18, 1.317 )
 text = "Fish"
 align = 1
 valign = 1
 
-[node name="Cost2" type="Label" parent="VBoxContainer/TextureRect10"]
+[node name="FishValue" type="Label" parent="VBoxContainer/TextureRect10"]
 margin_left = 50.0
-margin_top = 35.0
-margin_right = 100.0
-margin_bottom = 49.0
+margin_top = 19.0
+margin_right = 120.0
+margin_bottom = 33.0
+rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
@@ -322,17 +342,19 @@ texture = ExtResource( 5 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect11"]
 margin_left = 50.0
-margin_right = 100.0
+margin_right = 120.0
 margin_bottom = 14.0
+rect_scale = Vector2( 1.18, 1.317 )
 text = "Lumber"
 align = 1
 valign = 1
 
-[node name="Cost2" type="Label" parent="VBoxContainer/TextureRect11"]
+[node name="LumberValue" type="Label" parent="VBoxContainer/TextureRect11"]
 margin_left = 50.0
-margin_top = 35.0
-margin_right = 100.0
-margin_bottom = 49.0
+margin_top = 19.0
+margin_right = 120.0
+margin_bottom = 33.0
+rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
@@ -345,17 +367,19 @@ texture = ExtResource( 5 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect12"]
 margin_left = 50.0
-margin_right = 100.0
+margin_right = 120.0
 margin_bottom = 14.0
+rect_scale = Vector2( 1.18, 1.317 )
 text = "Dyes"
 align = 1
 valign = 1
 
-[node name="Cost2" type="Label" parent="VBoxContainer/TextureRect12"]
+[node name="DyesValue" type="Label" parent="VBoxContainer/TextureRect12"]
 margin_left = 50.0
-margin_top = 35.0
-margin_right = 100.0
-margin_bottom = 49.0
+margin_top = 19.0
+margin_right = 120.0
+margin_bottom = 33.0
+rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
@@ -368,17 +392,19 @@ texture = ExtResource( 8 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect13"]
 margin_left = 50.0
-margin_right = 100.0
+margin_right = 120.0
 margin_bottom = 14.0
+rect_scale = Vector2( 1.18, 1.317 )
 text = "Coffee"
 align = 1
 valign = 1
 
-[node name="Cost2" type="Label" parent="VBoxContainer/TextureRect13"]
+[node name="CoffeeValue" type="Label" parent="VBoxContainer/TextureRect13"]
 margin_left = 50.0
-margin_top = 35.0
-margin_right = 100.0
-margin_bottom = 49.0
+margin_top = 19.0
+margin_right = 120.0
+margin_bottom = 33.0
+rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
