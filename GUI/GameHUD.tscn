@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://SharedResources/Fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://GUI/GameHUD.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://GUI/lock.png" type="Texture" id=9]
 [ext_resource path="res://GUI/BoardCard.tscn" type="PackedScene" id=10]
 [ext_resource path="res://GUI/MerchantPurchase.tscn" type="PackedScene" id=11]
+[ext_resource path="res://GUI/CityMenu.tscn" type="PackedScene" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -351,6 +352,12 @@ texture = ExtResource( 3 )
 [node name="BoardCard" parent="." instance=ExtResource( 10 )]
 
 [node name="MerchantPurchase" parent="." instance=ExtResource( 11 )]
+
+[node name="CityMenu" parent="." instance=ExtResource( 12 )]
+margin_left = -457.0
+margin_top = -300.0
+margin_right = -357.0
+margin_bottom = 250.0
 
 [node name="Pause" type="Control" parent="."]
 margin_right = 44.0
