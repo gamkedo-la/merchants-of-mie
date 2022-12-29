@@ -59,10 +59,6 @@ var fish_value = 0
 #var lumber_value = 0
 #var dyes_value = 0
 var coffee_value = 0
-
-func _ready():
-	update_values()
-		
 		
 func update_values():
 	#Equation: base_resource_value * (each array element) * (1 + [array value modifier])
@@ -82,6 +78,7 @@ func update_values():
 	#dyes_value = (((base_resource_value * resource_status_dyes[0]) * (1+have_excess))+ ((base_resource_value * resource_status_dyes[1]) * (1+have_enough))+ ((base_resource_value * resource_status_dyes[2]) * (1-neutral))+ ((base_resource_value * resource_status_dyes[3]) * (1+need_resource))+ ((base_resource_value * resource_status_dyes[4]) * (1+need_alot)))
 	coffee_value = (((base_resource_value * resource_status_coffee[0]) * (1+have_excess))+ ((base_resource_value * resource_status_coffee[1]) * (1+have_enough))+ ((base_resource_value * resource_status_coffee[2]) * (1-neutral))+ ((base_resource_value * resource_status_coffee[3]) * (1+need_resource))+ ((base_resource_value * resource_status_coffee[4]) * (1+need_alot)))
 	
+	print(city_name)
 	print(gold_value)
 	print(salt_value)
 	print(grapes_value)
@@ -92,3 +89,8 @@ func update_values():
 	print(diamond_value)
 	print(fish_value)
 	print(coffee_value)
+
+
+func _on_Area_area_entered(area):
+	if(area.name == "Merchant_Area"):
+		update_values()
