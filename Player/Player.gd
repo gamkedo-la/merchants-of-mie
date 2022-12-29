@@ -55,13 +55,18 @@ func start_player_turn():
 	yield(get_tree().create_timer(3), "timeout")
 	
 	print("Currently, it is the player's turn")
-
+	
+func turn_off_active_merchants():
+	if active_merchant:
+		active_merchant = false
 
 
 func _on_PlayerPrototype_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT && event.pressed == true:
-			print (self.name + " Was Clicked!")
+			if active_merchant == false:
+				get_tree().call_group("player","turn_off_active_merchants")
+				active_merchant = true
 
 
 func _on_PlayerPrototype_mouse_entered():
