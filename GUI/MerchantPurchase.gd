@@ -8,16 +8,12 @@ func _ready():
 func _on_merchant_clicked_castle():
 	visible = true
 
-
 func _on_CancelBtn_pressed():
 	visible = false
-
 
 func _on_MoveBtn_pressed():
 	visible = false
 	get_tree().call_group("player", "move_to", CASTLE_POSITION)
-
-
 
 func _on_BuyBtn_pressed():
 	
@@ -38,5 +34,3 @@ func _on_BuyBtn_pressed():
 			
 			visible = false
 			return
-	
-	

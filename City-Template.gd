@@ -60,6 +60,7 @@ var fish_value = 0
 #var dyes_value = 0
 var coffee_value = 0
 		
+	
 func update_values():
 	#Equation: base_resource_value * (each array element) * (1 + [array value modifier])
 	#Equation Example: gold_value = ((5 * 0) * (1 - .8)) + [array 2, 3, 4, 5]
@@ -94,3 +95,11 @@ func update_values():
 func _on_Area_area_entered(area):
 	if(area.name == "Merchant_Area"):
 		update_values()
+		#Signal goes to Event Bus and GUI
+		Events.emit_signal("merchant_entered_city")
+
+
+func _on_Area_area_exited(area):
+	if(area.name == "Merchant_Area"):
+		#Signal goes to Event Bus and GUI
+		Events.emit_signal("merchant_left_city")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://GUI/MerchantPurchase.gd" type="Script" id=1]
+[ext_resource path="res://GUI/CityMenu.gd" type="Script" id=1]
 [ext_resource path="res://SharedResources/ResourceIcons/Tea.png" type="Texture" id=2]
 [ext_resource path="res://SharedResources/ResourceIcons/Marble.png" type="Texture" id=3]
 [ext_resource path="res://SharedResources/ResourceIcons/Grapes.png" type="Texture" id=4]
@@ -15,6 +15,7 @@
 [ext_resource path="res://GUI/X.png" type="Texture" id=13]
 
 [node name="CityMenu" type="Control"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

@@ -18,6 +18,9 @@ signal undo_actions
 signal merchant_clicked_castle
 signal merchant_purchased
 
+signal merchant_entered_city
+signal merchant_left_city
+
 #Resource Spawning Signals
 signal spawn_gold
 signal spawn_incense
