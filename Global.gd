@@ -57,6 +57,9 @@ var FishValue = 0
 #var DyesValue = 0
 var CoffeeValue = 0
 
+var merchant_name = ""
+var merchant_flavor_text = ""
+
 func _ready():
 	print("At turn start, player has: " + str(action_Points_Per_Turn) + " available")
 	var root = get_tree().get_root()

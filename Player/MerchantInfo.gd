@@ -6,6 +6,7 @@ var bridge = ""
 var aspirations = ""
 var new_occupation = ""
 var merchant_name = ""
+var concatenated_flavor = ""
 
 var merchant_names = [
 	"Laureion Mirwald",
@@ -379,5 +380,6 @@ func _ready():
 	aspirations_array.shuffle()
 	new_occupation_array.shuffle()
 	merchant_name = merchant_names[0]
-	print(merchant_name)
-	print(pronoun + former_job_array[0] + " " + bridge_array[0] + " " + aspirations_array[0] + " " + new_occupation_array[0])
+	#print(merchant_name)
+	#print(pronoun + former_job_array[0] + " " + bridge_array[0] + " " + aspirations_array[0] + " " + new_occupation_array[0])
+	concatenated_flavor = pronoun + former_job_array[0] + " " + bridge_array[0] + " " + aspirations_array[0] + " " + new_occupation_array[0]

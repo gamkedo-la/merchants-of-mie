@@ -1,10 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://GUI/CityMenu.gd" type="Script" id=1]
+[ext_resource path="res://GUI/DisplayMerchantFlavor.gd" type="Script" id=1]
 [ext_resource path="res://SharedResources/ResourceIcons/MerchantProfile.png" type="Texture" id=2]
 
 [node name="MerchantFlavor" type="Control"]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -29,28 +28,15 @@ margin_left = 28.4741
 margin_top = 4.63159
 margin_right = 228.474
 margin_bottom = 18.6316
-rect_scale = Vector2( 0.779999, 1.62632 )
+rect_scale = Vector2( 1.25, 1.25 )
 text = "THIS IS THE MERCHANT'S NAME"
-align = 1
 
-[node name="Title2" type="Label" parent="."]
-margin_left = 34.4736
-margin_top = 533.994
-margin_right = 152.474
-margin_bottom = 547.994
-rect_scale = Vector2( 0.7, 0.7 )
-text = "Sell Inventory Slot"
-align = 1
-
-[node name="Cost" type="Label" parent="."]
+[node name="Flavor" type="Label" parent="."]
 margin_left = 84.2631
 margin_top = 38.9646
 margin_right = 284.263
-margin_bottom = 118.965
-rect_scale = Vector2( 1.00319, 0.539714 )
+margin_bottom = 98.9646
 text = "This is some flavor text talking about the merchant. Hopefully carryover works."
-align = 1
-valign = 1
 autowrap = true
 
 [node name="TextureRect" type="TextureRect" parent="."]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/MerchantToken.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/MerchantInfo.gd" type="Script" id=3]
 
 [sub_resource type="BoxShape" id=4]
 margin = 0.001
@@ -29,6 +30,9 @@ mesh = SubResource( 3 )
 
 [node name="MerchantToken" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1.3806, 0, 1.44704, 0, 2, 0, -1.44704, 0, 1.3806, 0, -0.699833, 0 )
+
+[node name="MerchantInfo" type="Node" parent="."]
+script = ExtResource( 3 )
 
 [connection signal="input_event" from="." to="." method="_on_PlayerPrototype_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_PlayerPrototype_mouse_entered"]

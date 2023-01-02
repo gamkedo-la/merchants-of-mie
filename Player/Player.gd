@@ -25,6 +25,9 @@ func _ready():
 	add_to_group("player")
 	Events.connect("start_player_turn", self, "start_player_turn")
 	action_queue = get_node("/root/GameSpace/ActionQueue")
+	Global.merchant_name = $MerchantInfo.merchant_name
+	Global.merchant_flavor_text = $MerchantInfo.concatenated_flavor
+	Events.emit_signal("update_merchant_flavor_text")
 	
 func _physics_process(delta):
 	if not active_merchant:
@@ -72,6 +75,9 @@ func _on_PlayerPrototype_input_event(camera, event, position, normal, shape_idx)
 					x.active_merchant = false
 				
 				active_merchant = true
+				Global.merchant_name = $MerchantInfo.merchant_name
+				Global.merchant_flavor_text = $MerchantInfo.concatenated_flavor
+				Events.emit_signal("update_merchant_flavor_text")
 
 
 func _on_PlayerPrototype_mouse_entered():
