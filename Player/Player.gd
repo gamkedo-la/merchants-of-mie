@@ -64,8 +64,14 @@ func turn_off_active_merchants():
 func _on_PlayerPrototype_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT && event.pressed == true:
+
 			if active_merchant == false:
-				get_tree().call_group("player","turn_off_active_merchants")
+				#get_tree().call_group("player","turn_off_active_merchants")
+				var merchants = get_tree().get_nodes_in_group("player")
+				
+				for x in merchants:
+					x.active_merchant = false
+				
 				active_merchant = true
 
 
