@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://SharedResources/Fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://GUI/GameHUD.gd" type="Script" id=2]
@@ -10,8 +10,9 @@
 [ext_resource path="res://GUI/TurnsRemaining.gd" type="Script" id=8]
 [ext_resource path="res://GUI/lock.png" type="Texture" id=9]
 [ext_resource path="res://GUI/BoardCard.tscn" type="PackedScene" id=10]
-[ext_resource path="res://GUI/MerchantPurchase.tscn" type="PackedScene" id=11]
+[ext_resource path="res://GUI/MerchantFlavor.tscn" type="PackedScene" id=11]
 [ext_resource path="res://GUI/CityMenu.tscn" type="PackedScene" id=12]
+[ext_resource path="res://GUI/MerchantPurchase.tscn" type="PackedScene" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -144,6 +145,45 @@ text = "23"
 valign = 1
 
 [node name="Objective Text2-3" type="Label" parent="Objectives/VBoxContainer2"]
+margin_top = 52.0
+margin_right = 208.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 6 )
+text = "23"
+valign = 1
+
+[node name="MerchantText" type="VBoxContainer" parent="Objectives"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 643.0
+margin_top = 435.0
+margin_right = 851.0
+margin_bottom = 495.032
+
+[node name="Label" type="Label" parent="Objectives/MerchantText"]
+visible = false
+margin_right = 208.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 6 )
+text = "OBJECTIVE"
+valign = 1
+
+[node name="Objective Text2-1" type="Label" parent="Objectives/MerchantText"]
+margin_right = 208.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 6 )
+text = "23"
+valign = 1
+
+[node name="Objective Text2-2" type="Label" parent="Objectives/MerchantText"]
+margin_top = 26.0
+margin_right = 208.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 6 )
+text = "23"
+valign = 1
+
+[node name="Objective Text2-3" type="Label" parent="Objectives/MerchantText"]
 margin_top = 52.0
 margin_right = 208.0
 margin_bottom = 74.0
@@ -349,9 +389,15 @@ margin_right = 158.0
 margin_bottom = 50.0
 texture = ExtResource( 3 )
 
+[node name="MerchantPurchase" parent="." instance=ExtResource( 13 )]
+
 [node name="BoardCard" parent="." instance=ExtResource( 10 )]
 
-[node name="MerchantPurchase" parent="." instance=ExtResource( 11 )]
+[node name="MerchantFlavor" parent="." instance=ExtResource( 11 )]
+margin_left = 142.0
+margin_top = 116.0
+margin_right = 462.0
+margin_bottom = 211.0
 
 [node name="CityMenu" parent="." instance=ExtResource( 12 )]
 margin_left = -457.0

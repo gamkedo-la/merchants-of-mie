@@ -15,6 +15,7 @@ transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0 )
 
 [node name="merchant" parent="Token" instance=ExtResource( 4 )]
 transform = Transform( 0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, -0.0437049 )
+visible = false
 
 [node name="MerchantInfo" type="Node" parent="."]
 script = ExtResource( 2 )
