@@ -4,6 +4,7 @@ class_name BaseAction
 
 var actor
 var map
+var sfx
 
 func execute():
 	pass

@@ -5,10 +5,16 @@ var resource
 var resource_path
 var resource_parent
 
+func _init():
+	# todo: make one sound for each of
+	# coffee diamond fish gold grapes incense marble salt tea wheat dye lumber 
+	sfx = load("Audio/SFX/PickupResource.wav")
+
 func execute():
 	print("execute resource pickup")
 	resource.queue_free()
 	Global.total_resources_on_board -= 1
+	# we should play pickup sounds here
 
 func undo():
 	print("undo resource pickup")

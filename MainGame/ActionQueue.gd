@@ -25,8 +25,14 @@ func execute(action: BaseAction):
 	if Global.action_Points_available <= 0:
 		return
 	actions_list.append(action)
-	if !$AudioStreamPlayer3D.is_playing():
-		$AudioStreamPlayer3D.stream = token_move_sfx
-		$AudioStreamPlayer3D.play()
+	
+	
+	$AudioStreamPlayer3D.stop()
+	$AudioStreamPlayer3D.stream = token_move_sfx #default sound
+	if (action.sfx!=null): # sound effect depending on resource type
+		print("yay a custom sfx") # fixme this never fires
+		$AudioStreamPlayer3D.stream = action.sfx
+	$AudioStreamPlayer3D.play()
+	
 	action.execute()
 	pass
