@@ -26,9 +26,13 @@ func _unhandled_input(event):
 		var tile_result = space_state.intersect_ray(from, to, [], 2)
 		if tile_result:
 			if hovered_tile != null and hovered_tile != tile_result.collider:
-				tile_result.collider.emit_signal("tile_unhovered", hovered_tile)
-			tile_result.collider.emit_signal("tile_hovered", tile_result.collider)
-			hovered_tile = tile_result.collider
+				
+				if not tile_result.collider.get_class() == "KinematicBody":
+					tile_result.collider.emit_signal("tile_unhovered", hovered_tile)
+					
+			if not tile_result.collider.get_class() == "KinematicBody":		
+				tile_result.collider.emit_signal("tile_hovered", tile_result.collider)
+				hovered_tile = tile_result.collider
 
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == 1:
