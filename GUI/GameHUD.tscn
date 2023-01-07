@@ -91,7 +91,7 @@ margin_bottom = 493.016
 [node name="Label" type="Label" parent="Objectives/VBoxContainer"]
 visible = false
 margin_right = 208.0
-margin_bottom = 16.0
+margin_bottom = 22.0
 custom_fonts/font = ExtResource( 6 )
 text = "OBJECTIVE"
 valign = 1
@@ -124,7 +124,7 @@ margin_bottom = 495.032
 [node name="Label" type="Label" parent="Objectives/VBoxContainer2"]
 visible = false
 margin_right = 208.0
-margin_bottom = 16.0
+margin_bottom = 22.0
 custom_fonts/font = ExtResource( 6 )
 text = "OBJECTIVE"
 valign = 1
@@ -163,7 +163,7 @@ margin_bottom = 495.032
 [node name="Label" type="Label" parent="Objectives/MerchantText"]
 visible = false
 margin_right = 208.0
-margin_bottom = 16.0
+margin_bottom = 22.0
 custom_fonts/font = ExtResource( 6 )
 text = "OBJECTIVE"
 valign = 1

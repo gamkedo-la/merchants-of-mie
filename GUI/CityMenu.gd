@@ -24,3 +24,14 @@ func _on_merchant_enter_city():
 
 func _on_merchant_left_city():
 	visible = false
+
+func _on_Inv1_button_down():
+	Events.emit_signal("sell_inv_one")
+
+
+func _on_Inv2_button_down():
+	Events.emit_signal("sell_inv_two")
+
+
+func _on_Inv3_button_down():
+	Events.emit_signal("sell_inv_three")

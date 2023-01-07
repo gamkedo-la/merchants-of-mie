@@ -17,6 +17,10 @@ func _ready():
 	Events.connect("resource_picked_up", self, "add_resource_to_inventory")
 	Events.connect("resource_dropped", self, "remove_resource_from_inventory")
 	Events.connect("resource_dropped_second", self, "remove_resources_from_inventory")
+	#Selling to the city
+	Events.connect("sell_inv_one", self, "sell_first_resource")
+	Events.connect("sell_inv_two", self, "sell_second_resource")
+	Events.connect("sell_inv_three", self, "sell_third_resource")
 
 func add_resource_to_inventory(resource):
 	var inventory_texture
@@ -107,3 +111,28 @@ func remove_resources_from_inventory(resource_2_1, resource_2_2, resource_2_3):
 			$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
 	if(Global.objective_two_item_one_count == 0 && Global.objective_two_item_two_count == 0 && Global.objective_two_item_three_count == 0):
 			Global.goto_scene("res://MainGame/GameSpace.tscn")
+
+#may need to add 'resource' into the function			
+func sell_first_resource():
+	#Tie button to this function
+	print("Sell item 1")
+	#See what the resource is
+	#Check the value of the resource
+	#Remove from inventory
+	#Update player's gold
+
+func sell_second_resource():
+	#Tie button to this function
+	print("Sell item 2")
+	#See what the resource is
+	#Check the value of the resource
+	#Remove from inventory
+	#Update player's gold
+
+func sell_third_resource():
+	#Tie button to this function
+	print("Sell item 3")
+	#See what the resource is
+	#Check the value of the resource
+	#Remove from inventory
+	#Update player's gold

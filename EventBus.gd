@@ -40,4 +40,6 @@ signal update_UI
 
 signal game_paused
 
-
+signal sell_inv_one
+signal sell_inv_two
+signal sell_inv_three

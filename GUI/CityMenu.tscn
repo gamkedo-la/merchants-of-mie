@@ -15,7 +15,6 @@
 [ext_resource path="res://GUI/X.png" type="Texture" id=13]
 
 [node name="CityMenu" type="Control"]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -442,3 +441,6 @@ text = "3"
 [connection signal="pressed" from="MoveBtn" to="." method="_on_MoveBtn_pressed"]
 [connection signal="pressed" from="BuyBtn" to="." method="_on_BuyBtn_pressed"]
 [connection signal="pressed" from="CancelBtn" to="." method="_on_CancelBtn_pressed"]
+[connection signal="button_down" from="Inv1" to="." method="_on_Inv1_button_down"]
+[connection signal="button_down" from="Inv2" to="." method="_on_Inv2_button_down"]
+[connection signal="button_down" from="Inv3" to="." method="_on_Inv3_button_down"]
