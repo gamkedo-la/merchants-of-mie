@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/diamond-dinging.mp3-75a300958b47c06a8b14de46f96f821c.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/diamond-dinging.mp3"
+dest_files=[ "res://.import/diamond-dinging.mp3-75a300958b47c06a8b14de46f96f821c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

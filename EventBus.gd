@@ -42,4 +42,6 @@ signal game_paused
 
 signal settings_entered
 
-
+signal sell_inv_one
+signal sell_inv_two
+signal sell_inv_three

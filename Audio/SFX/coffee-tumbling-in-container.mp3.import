@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/coffee-tumbling-in-container.mp3-272dd26fb1e9476b247067e18b2cfb62.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/coffee-tumbling-in-container.mp3"
+dest_files=[ "res://.import/coffee-tumbling-in-container.mp3-272dd26fb1e9476b247067e18b2cfb62.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

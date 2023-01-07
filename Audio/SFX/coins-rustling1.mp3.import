@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/coins-rustling1.mp3-77991c2e828f805db4e4afd55875e1b5.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/coins-rustling1.mp3"
+dest_files=[ "res://.import/coins-rustling1.mp3-77991c2e828f805db4e4afd55875e1b5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
