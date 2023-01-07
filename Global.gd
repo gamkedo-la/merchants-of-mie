@@ -62,7 +62,7 @@ var merchant_flavor_text = ""
 
 var current_merchant_inv_one = ""
 var current_merchant_inv_two = ""
-var current_mrechant_inv_three = ""
+var current_merchant_inv_three = ""
 
 func _ready():
 	print("At turn start, player has: " + str(action_Points_Per_Turn) + " available")

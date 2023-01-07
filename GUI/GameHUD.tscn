@@ -51,16 +51,16 @@ alignment = 1
 
 [node name="Label" type="Label" parent="ActionPoints/VBoxContainer"]
 margin_right = 284.0
-margin_bottom = 22.0
+margin_bottom = 43.0
 custom_fonts/font = ExtResource( 6 )
 text = "ACTION POINTS"
 align = 1
 valign = 1
 
 [node name="ActionPointNum" type="Label" parent="ActionPoints/VBoxContainer"]
-margin_top = 26.0
+margin_top = 47.0
 margin_right = 284.0
-margin_bottom = 48.0
+margin_bottom = 90.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 align = 1
@@ -98,7 +98,7 @@ valign = 1
 
 [node name="Objective Text" type="Label" parent="Objectives/VBoxContainer"]
 margin_right = 208.0
-margin_bottom = 22.0
+margin_bottom = 43.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
@@ -131,23 +131,23 @@ valign = 1
 
 [node name="Objective Text2-1" type="Label" parent="Objectives/VBoxContainer2"]
 margin_right = 208.0
-margin_bottom = 22.0
+margin_bottom = 43.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
 
 [node name="Objective Text2-2" type="Label" parent="Objectives/VBoxContainer2"]
-margin_top = 26.0
+margin_top = 47.0
 margin_right = 208.0
-margin_bottom = 48.0
+margin_bottom = 90.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
 
 [node name="Objective Text2-3" type="Label" parent="Objectives/VBoxContainer2"]
-margin_top = 52.0
+margin_top = 94.0
 margin_right = 208.0
-margin_bottom = 74.0
+margin_bottom = 137.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
@@ -170,23 +170,23 @@ valign = 1
 
 [node name="Objective Text2-1" type="Label" parent="Objectives/MerchantText"]
 margin_right = 208.0
-margin_bottom = 22.0
+margin_bottom = 43.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
 
 [node name="Objective Text2-2" type="Label" parent="Objectives/MerchantText"]
-margin_top = 26.0
+margin_top = 47.0
 margin_right = 208.0
-margin_bottom = 48.0
+margin_bottom = 90.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
 
 [node name="Objective Text2-3" type="Label" parent="Objectives/MerchantText"]
-margin_top = 52.0
+margin_top = 94.0
 margin_right = 208.0
-margin_bottom = 74.0
+margin_bottom = 137.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
@@ -283,16 +283,16 @@ alignment = 1
 
 [node name="Label" type="Label" parent="Currency/VBoxContainer"]
 margin_right = 128.0
-margin_bottom = 22.0
+margin_bottom = 43.0
 custom_fonts/font = ExtResource( 6 )
 text = "MONEY"
 align = 1
 valign = 1
 
 [node name="CurrencyAmount" type="Label" parent="Currency/VBoxContainer"]
-margin_top = 26.0
+margin_top = 47.0
 margin_right = 128.0
-margin_bottom = 48.0
+margin_bottom = 90.0
 custom_fonts/font = ExtResource( 6 )
 text = "10"
 align = 1
@@ -360,32 +360,33 @@ margin_top = -68.0
 margin_right = 79.0
 
 [node name="Label" type="Label" parent="Inventory/VBoxContainer"]
-margin_right = 158.0
-margin_bottom = 22.0
+margin_right = 188.0
+margin_bottom = 43.0
 custom_fonts/font = ExtResource( 6 )
 text = "INVENTORY"
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Inventory/VBoxContainer"]
-margin_top = 26.0
-margin_right = 158.0
-margin_bottom = 76.0
+margin_top = 47.0
+margin_right = 188.0
+margin_bottom = 97.0
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Inventory/VBoxContainer/HBoxContainer"]
-margin_right = 50.0
+margin_left = 15.0
+margin_right = 65.0
 margin_bottom = 50.0
 texture = ExtResource( 3 )
 
 [node name="TextureRect2" type="TextureRect" parent="Inventory/VBoxContainer/HBoxContainer"]
-margin_left = 54.0
-margin_right = 104.0
+margin_left = 69.0
+margin_right = 119.0
 margin_bottom = 50.0
 texture = ExtResource( 3 )
 
 [node name="TextureRect3" type="TextureRect" parent="Inventory/VBoxContainer/HBoxContainer"]
-margin_left = 108.0
-margin_right = 158.0
+margin_left = 123.0
+margin_right = 173.0
 margin_bottom = 50.0
 texture = ExtResource( 3 )
 
