@@ -21,6 +21,8 @@ func _ready():
 	Events.connect("sell_inv_one", self, "sell_first_resource")
 	Events.connect("sell_inv_two", self, "sell_second_resource")
 	Events.connect("sell_inv_three", self, "sell_third_resource")
+	#Updating global inventory (for selling)
+	Events.connect("update_global_inventory_tracking", self, "update_global_inventory")
 
 func add_resource_to_inventory(resource):
 	var inventory_texture
@@ -113,13 +115,20 @@ func remove_resources_from_inventory(resource_2_1, resource_2_2, resource_2_3):
 			Global.goto_scene("res://MainGame/GameSpace.tscn")
 
 #may need to add 'resource' into the function			
-func sell_first_resource():
+func sell_first_resource(resource):
 	#Tie button to this function
 	print("Sell item 1")
 	#See what the resource is
+	print("Resource 1:" + resource)
 	#Check the value of the resource
-	#Remove from inventory
+	var currentItemString = "Global." + resource + "Value"
+	print(currentItemString)
+	int(currentItemString)
+	print(currentItemString)
 	#Update player's gold
+	#Remove from inventory
+	#Refetch global inventory to resize inventory
+	update_global_inventory()
 
 func sell_second_resource():
 	#Tie button to this function
@@ -128,6 +137,7 @@ func sell_second_resource():
 	#Check the value of the resource
 	#Remove from inventory
 	#Update player's gold
+	#Refetch global inventory to resize inventory
 
 func sell_third_resource():
 	#Tie button to this function
@@ -136,3 +146,15 @@ func sell_third_resource():
 	#Check the value of the resource
 	#Remove from inventory
 	#Update player's gold
+	#Refetch global inventory to resize inventory
+
+func update_global_inventory():
+	if(resources_in_inventory.size() == 1):
+		Global.current_merchant_inv_one = resources_in_inventory[0]
+	if(resources_in_inventory.size() == 2):
+		Global.current_merchant_inv_one = resources_in_inventory[0]
+		Global.current_merchant_inv_two = resources_in_inventory[1]
+	if(resources_in_inventory.size() == 3):
+		Global.current_merchant_inv_one = resources_in_inventory[0]
+		Global.current_merchant_inv_two = resources_in_inventory[1]
+		Global.current_merchant_inv_three = resources_in_inventory[2]
