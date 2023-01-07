@@ -41,12 +41,13 @@ color = Color( 0.141176, 0.129412, 0.129412, 0.631373 )
 [node name="VBoxContainer" type="VBoxContainer" parent="ActionPoints"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -142.0
+margin_left = -72.0
 margin_top = 2.0
-margin_right = 142.0
-margin_bottom = 50.0
+margin_right = 212.0
+margin_bottom = 92.0
 grow_horizontal = 2
 grow_vertical = 2
+rect_scale = Vector2( 0.5, 0.5 )
 alignment = 1
 
 [node name="Label" type="Label" parent="ActionPoints/VBoxContainer"]
@@ -87,6 +88,7 @@ margin_left = 4.0
 margin_top = 432.984
 margin_right = 212.0
 margin_bottom = 493.016
+rect_scale = Vector2( 0.5, 0.5 )
 
 [node name="Label" type="Label" parent="Objectives/VBoxContainer"]
 visible = false
@@ -120,6 +122,7 @@ margin_left = 643.0
 margin_top = 435.0
 margin_right = 851.0
 margin_bottom = 495.032
+rect_scale = Vector2( 0.5, 0.5 )
 
 [node name="Label" type="Label" parent="Objectives/VBoxContainer2"]
 visible = false
@@ -159,6 +162,7 @@ margin_left = 643.0
 margin_top = 435.0
 margin_right = 851.0
 margin_bottom = 495.032
+rect_scale = Vector2( 0.5, 0.5 )
 
 [node name="Label" type="Label" parent="Objectives/MerchantText"]
 visible = false
@@ -214,10 +218,11 @@ scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 9 )
 
 [node name="Objective Text" type="Label" parent="Objectives/SecondObjCover"]
-margin_left = 106.0
-margin_top = 69.0
-margin_right = 314.0
-margin_bottom = 123.0
+margin_left = 122.619
+margin_top = 65.4762
+margin_right = 380.619
+margin_bottom = 200.476
+rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = ExtResource( 6 )
 text = "UNLOCKS AFTER
 1ST OBJECTIVE
@@ -240,18 +245,21 @@ margin_right = 381.0
 color = Color( 0.141176, 0.129412, 0.129412, 0.501961 )
 
 [node name="Label" type="Label" parent="TurnsRemaining"]
-margin_top = 65.984
-margin_right = 288.0
-margin_bottom = 81.984
+margin_left = -1.0
+margin_top = 69.0
+margin_right = 329.0
+margin_bottom = 112.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = ExtResource( 6 )
 text = "CARDS IN DECK LEFT:"
 valign = 1
 
 [node name="CardCount" type="Label" parent="TurnsRemaining"]
-margin_left = 167.0
-margin_top = 67.0
-margin_right = 199.0
-margin_bottom = 89.0
+margin_left = 171.0
+margin_top = 66.0
+margin_right = 203.0
+margin_bottom = 109.0
+rect_scale = Vector2( 0.6, 0.6 )
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
@@ -274,16 +282,19 @@ color = Color( 0.141176, 0.129412, 0.129412, 0.501961 )
 [node name="VBoxContainer" type="VBoxContainer" parent="Currency"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -128.0
-margin_top = 2.0
-margin_bottom = 50.0
+margin_left = -99.0
+margin_top = -1.0
+margin_right = 29.0
+margin_bottom = 89.0
 grow_horizontal = 2
 grow_vertical = 2
+rect_scale = Vector2( 0.6, 0.6 )
 alignment = 1
 
 [node name="Label" type="Label" parent="Currency/VBoxContainer"]
 margin_right = 128.0
 margin_bottom = 43.0
+rect_scale = Vector2( 0.8, 0.8 )
 custom_fonts/font = ExtResource( 6 )
 text = "MONEY"
 align = 1
@@ -293,6 +304,7 @@ valign = 1
 margin_top = 47.0
 margin_right = 128.0
 margin_bottom = 90.0
+rect_scale = Vector2( 0.8, 0.8 )
 custom_fonts/font = ExtResource( 6 )
 text = "10"
 align = 1
@@ -317,30 +329,31 @@ custom_fonts/font = SubResource( 1 )
 text = "END TURN"
 
 [node name="Undo" type="Control" parent="."]
-margin_left = 2.0
-margin_top = 4.0
-margin_right = 42.0
-margin_bottom = 44.0
-rect_scale = Vector2( 1, 1.0018 )
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -40.0
 
 [node name="Undo" type="Button" parent="Undo"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 845.0
-margin_top = 482.0
-margin_right = 979.0
-margin_bottom = 512.0
+margin_left = -140.0
+margin_top = -88.0
+margin_bottom = -39.0
 custom_fonts/font = ExtResource( 6 )
 text = "UNDO"
 
 [node name="Inventory" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 384.0
-margin_top = 512.0
-margin_right = -384.0
+margin_left = 394.0
+margin_top = 511.0
+margin_right = -374.0
+margin_bottom = -1.0
 script = ExtResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="Inventory"]
@@ -358,18 +371,20 @@ anchor_bottom = 1.0
 margin_left = -79.0
 margin_top = -68.0
 margin_right = 79.0
+rect_scale = Vector2( 0.8, 0.8 )
 
 [node name="Label" type="Label" parent="Inventory/VBoxContainer"]
+margin_top = -10.0
 margin_right = 188.0
-margin_bottom = 43.0
+margin_bottom = 33.0
 custom_fonts/font = ExtResource( 6 )
 text = "INVENTORY"
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Inventory/VBoxContainer"]
-margin_top = 47.0
+margin_top = 30.0
 margin_right = 188.0
-margin_bottom = 97.0
+margin_bottom = 80.0
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Inventory/VBoxContainer/HBoxContainer"]
@@ -401,6 +416,7 @@ margin_right = 7.0
 margin_bottom = 325.0
 
 [node name="CityMenu" parent="." instance=ExtResource( 12 )]
+visible = false
 margin_left = -457.0
 margin_top = -300.0
 margin_right = -357.0
