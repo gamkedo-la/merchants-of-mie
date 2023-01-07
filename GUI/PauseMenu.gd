@@ -25,3 +25,8 @@ func _on_ResumeBtn_pressed():
 func _on_QuitBtn_pressed():
 	self.is_paused = false
 	Global.goto_scene("res://StartScreen/StartScreen.tscn")
+
+
+func _on_SettingsBtn_pressed():
+	SettingsManager.initialize_settings($CenterContainer/VBoxContainer/SettingsBtn);
+	

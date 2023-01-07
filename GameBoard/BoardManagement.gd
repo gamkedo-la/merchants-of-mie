@@ -3,7 +3,6 @@ extends Node
 func _ready():
 	Events.connect("end_player_turn", self, "start_board_turn")
 	Events.connect("end_board_turn", self, "start_player_turn")
-	
 	start_player_turn()
 	
 

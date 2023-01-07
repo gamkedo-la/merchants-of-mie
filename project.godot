@@ -28,6 +28,7 @@ config/icon="res://icon.png"
 
 Global="*res://Global.gd"
 Events="*res://EventBus.gd"
+SettingsManager="*res://SettingsManager.gd"
 
 [display]
 

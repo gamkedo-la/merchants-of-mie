@@ -64,6 +64,8 @@ func _ready():
 	print("At turn start, player has: " + str(action_Points_Per_Turn) + " available")
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
+	if SettingsManager.soundtrack_enabled():
+		SettingsManager.play_mainsoundtrack();
 
 func goto_scene(path):
 	# This function will usually be called from a signal callback,
@@ -92,3 +94,7 @@ func _deferred_goto_scene(path):
 
 	# Optionally, to make it compatible with the SceneTree.change_scene() API.
 	get_tree().set_current_scene(current_scene)
+	SettingsManager.handle_new_scene()
+	if SettingsManager.soundtrack_enabled():
+		SettingsManager.play_mainsoundtrack();
+	

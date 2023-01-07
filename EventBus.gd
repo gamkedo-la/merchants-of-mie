@@ -40,4 +40,6 @@ signal update_UI
 
 signal game_paused
 
+signal settings_entered
+
 
