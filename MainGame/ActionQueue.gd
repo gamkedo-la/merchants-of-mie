@@ -3,8 +3,6 @@ extends Node
 var BaseAction = load("Actions/BaseAction.gd")
 var actions_list = Array()
 
-var token_move_sfx = load("Audio/SFX/TokenSlide.wav")
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Events.connect("undo_actions", self, "undo")
@@ -26,13 +24,6 @@ func execute(action: BaseAction):
 		return
 	actions_list.append(action)
 	
-	
-	$AudioStreamPlayer3D.stop()
-	$AudioStreamPlayer3D.stream = token_move_sfx #default sound
-	if (action.sfx!=null): # sound effect depending on resource type
-		print("yay a custom sfx") # fixme this never fires
-		$AudioStreamPlayer3D.stream = action.sfx
-	$AudioStreamPlayer3D.play()
-	
+	SettingsManager.play_soundfx(action.sfx)
 	action.execute()
 	pass
