@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://ResourceSpot.gd" type="Script" id=1]
 [ext_resource path="res://ResourceSpawnManager.gd" type="Script" id=2]
+[ext_resource path="res://GameBoard/Board.tscn" type="PackedScene" id=3]
 
 [node name="ResourceGenerator" type="Spatial"]
 script = ExtResource( 2 )
@@ -410,12 +411,6 @@ percent_chance_to_initially_drop_resource = 0.35
 
 [node name="ResourceSpot50" type="Spatial" parent="DyesSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, -5.5 )
-script = ExtResource( 1 )
-can_spawn_dyes = true
-percent_chance_to_initially_drop_resource = 0.35
-
-[node name="ResourceSpot51" type="Spatial" parent="DyesSpawner"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.0361031, -4.5 )
 script = ExtResource( 1 )
 can_spawn_dyes = true
 percent_chance_to_initially_drop_resource = 0.35
@@ -1365,3 +1360,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.0361031, -0.5 )
 script = ExtResource( 1 )
 can_spawn_wheat = true
 percent_chance_to_initially_drop_resource = 0.35
+
+[node name="Board" parent="." instance=ExtResource( 3 )]
