@@ -18,7 +18,7 @@ var possible_objectives = [
 "Diamond",
 "Fish",
 #"Lumber",
-#"Dyes",
+"Dyes",
 "Coffee"
 ]
 

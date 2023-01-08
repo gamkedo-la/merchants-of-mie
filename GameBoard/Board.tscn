@@ -20,6 +20,7 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 
 [node name="City-Template" parent="BoardTiles" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 17 )
+resource_status_dyes = [ 0, 1, 0, 0, 0 ]
 
 [node name="City-Template2" parent="BoardTiles" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 1 )
@@ -33,6 +34,7 @@ resource_status_marble = [ 0, 0, 0, 0, 1 ]
 resource_status_incense = [ 0, 0, 0, 0, 1 ]
 resource_status_diamond = [ 0, 0, 0, 0, 1 ]
 resource_status_fish = [ 0, 1, 0, 0, 0 ]
+resource_status_dyes = [ 1, 0, 0, 0, 0 ]
 
 [node name="City-Template3" parent="BoardTiles" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -15 )
@@ -45,6 +47,7 @@ resource_status_tea = [ 0, 1, 0, 0, 0 ]
 resource_status_marble = [ 0, 0, 0, 0, 1 ]
 resource_status_incense = [ 0, 0, 0, 0, 1 ]
 resource_status_diamond = [ 0, 0, 0, 0, 1 ]
+resource_status_dyes = [ 1, 0, 0, 0, 0 ]
 resource_status_coffee = [ 1, 0, 0, 0, 0 ]
 
 [node name="City-Template4" parent="BoardTiles" instance=ExtResource( 12 )]
@@ -55,6 +58,7 @@ resource_status_grapes = [ 0, 0, 1, 0, 0 ]
 resource_status_tea = [ 0, 1, 0, 0, 0 ]
 resource_status_diamond = [ 0, 0, 1, 0, 0 ]
 resource_status_fish = [ 0, 1, 0, 0, 0 ]
+resource_status_dyes = [ 0, 1, 0, 0, 0 ]
 
 [node name="City-Template5" parent="BoardTiles" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 13 )
@@ -68,6 +72,7 @@ resource_status_marble = [ 1, 0, 0, 0, 0 ]
 resource_status_incense = [ 1, 0, 0, 0, 0 ]
 resource_status_diamond = [ 1, 0, 0, 0, 0 ]
 resource_status_fish = [ 0, 0, 0, 0, 1 ]
+resource_status_dyes = [ 0, 0, 0, 0, 1 ]
 resource_status_coffee = [ 0, 0, 0, 0, 1 ]
 
 [node name="City-Template6" parent="BoardTiles" instance=ExtResource( 12 )]
@@ -77,6 +82,7 @@ resource_status_salt = [ 0, 0, 0, 1, 0 ]
 resource_status_marble = [ 0, 0, 1, 0, 0 ]
 resource_status_incense = [ 0, 0, 1, 0, 0 ]
 resource_status_fish = [ 0, 1, 0, 0, 0 ]
+resource_status_dyes = [ 0, 1, 0, 0, 0 ]
 
 [node name="Tile-Desert" parent="BoardTiles" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -1 )

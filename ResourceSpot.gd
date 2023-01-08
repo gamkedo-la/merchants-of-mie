@@ -10,6 +10,7 @@ export var can_spawn_wheat = false
 export var can_spawn_tea = false
 export var can_spawn_marble = false
 export var can_spawn_diamond = false
+export var can_spawn_dyes = false
 
 export var percent_chance_to_initially_drop_resource = .10
 
@@ -27,6 +28,8 @@ func _ready():
 	Events.connect("spawn_tea", self, "_spawn_tea")
 	Events.connect("spawn_marble", self, "_spawn_marble")
 	Events.connect("spawn_diamond", self, "_spawn_diamond")
+	Events.connect("spawn_dyes", self, "_spawn_dyes")
+	
 	
 	#Think about this - should this be per resource, or just hit _spawn_resources()?
 			
@@ -42,6 +45,7 @@ func _spawn_resources():
 	_spawn_tea()
 	_spawn_marble()
 	_spawn_diamond()
+	_spawn_dyes()
 
 func _spawn_coffee():
 	if can_spawn_coffee:
@@ -129,6 +133,15 @@ func _spawn_diamond():
 		var percent = randf()
 		if(percent > (1-percent_chance_to_initially_drop_resource)):
 			var scene = load("res://Tiles//ResourceScenes/Resource-Diamond.tscn")
+			var resource = scene.instance()
+			add_child(resource)
+			Global.total_resources_on_board += 1
+
+func _spawn_dyes():
+	if can_spawn_dyes:
+		var percent = randf()
+		if(percent > (1-percent_chance_to_initially_drop_resource)):
+			var scene = load("res://Tiles//ResourceScenes/Resource-Dyes.tscn")
 			var resource = scene.instance()
 			add_child(resource)
 			Global.total_resources_on_board += 1
