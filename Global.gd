@@ -57,7 +57,7 @@ var LumberValue = 0
 var DyesValue = 0
 var CoffeeValue = 0
 
-#var SilverValue = 0
+#var SilverBuyValue = 0
 var GoldBuyValue = 0
 var SaltBuyValue = 0
 var GrapesBuyValue = 0
@@ -77,6 +77,8 @@ var merchant_flavor_text = ""
 var current_merchant_inv_one = ""
 var current_merchant_inv_two = ""
 var current_merchant_inv_three = ""
+
+var item_buy_name = ""
 
 func _ready():
 	print("At turn start, player has: " + str(action_Points_Per_Turn) + " available")

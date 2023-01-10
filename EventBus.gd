@@ -47,5 +47,6 @@ signal settings_entered
 signal sell_inv_one(resource_name)
 signal sell_inv_two(resource_name)
 signal sell_inv_three(resource_name)
+signal buy_inv(resource_name)
 
 signal update_global_inventory_tracking
