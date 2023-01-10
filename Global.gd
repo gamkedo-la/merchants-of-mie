@@ -57,6 +57,20 @@ var LumberValue = 0
 var DyesValue = 0
 var CoffeeValue = 0
 
+#var SilverValue = 0
+var GoldBuyValue = 0
+var SaltBuyValue = 0
+var GrapesBuyValue = 0
+var WheatBuyValue = 0
+var TeaBuyValue = 0
+var MarbleBuyValue = 0
+var IncenseBuyValue = 0
+var DiamondBuyValue = 0
+var FishBuyValue = 0
+var LumberBuyValue = 0
+var DyesBuyValue = 0
+var CoffeeBuyValue = 0
+
 var merchant_name = ""
 var merchant_flavor_text = ""
 

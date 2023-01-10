@@ -19,6 +19,20 @@ func _on_merchant_enter_city():
 	$"VBoxContainer/TextureRect11/LumberValue".text = String(Global.LumberValue )
 	$"VBoxContainer/TextureRect12/DyesValue".text = String(Global.DyesValue )
 	$"VBoxContainer/TextureRect13/CoffeeValue".text = String(Global.CoffeeValue)
+	
+	#$"VBoxContainer/TextureRect/SilverValue".text = String(Global.SilverValue)
+	$"VBoxContainer/TextureRect2/GoldValue2".text = String(Global.GoldBuyValue)
+	$"VBoxContainer/TextureRect3/SaltValue2".text = String(Global.SaltBuyValue)
+	$"VBoxContainer/TextureRect4/GrapesValue2".text = String(Global.GrapesBuyValue)
+	$"VBoxContainer/TextureRect5/WheatValue2".text = String(Global.WheatBuyValue)
+	$"VBoxContainer/TextureRect6/TeaValue2".text = String(Global.TeaVBuyalue)
+	$"VBoxContainer/TextureRect7/MarbleValue2".text = String(Global.MarbleBuyValue)
+	$"VBoxContainer/TextureRect8/IncenseValue2".text = String(Global.IncenseBuyValue)
+	$"VBoxContainer/TextureRect9/DiamondValue2".text = String(Global.DiamondBuyValue)
+	$"VBoxContainer/TextureRect10/FishValue2".text = String(Global.FishBuyValue)
+	$"VBoxContainer/TextureRect11/LumberValue2".text = String(Global.LumberBuyValue )
+	$"VBoxContainer/TextureRect12/DyesValue2".text = String(Global.DyesBuyValue )
+	$"VBoxContainer/TextureRect13/CoffeeValue2".text = String(Global.CoffeeBuyValue)
 	visible = true
 	Events.emit_signal("update_global_inventory_tracking")
 	#Update Global values based on city entered

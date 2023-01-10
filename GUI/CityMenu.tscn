@@ -34,15 +34,15 @@ margin_top = 7.36842
 margin_right = 163.0
 margin_bottom = 167.368
 rect_min_size = Vector2( 160, 160 )
-rect_scale = Vector2( 0.6, 3.6 )
+rect_scale = Vector2( 0.894737, 3.6 )
 color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 
 [node name="Title" type="Label" parent="."]
-margin_left = 4.21053
+margin_left = 17.8947
 margin_top = 8.88889
-margin_right = 122.211
+margin_right = 135.895
 margin_bottom = 22.8889
-rect_scale = Vector2( 0.779999, 1.62632 )
+rect_scale = Vector2( 0.945432, 1.24159 )
 text = "Greenglade"
 align = 1
 
@@ -54,6 +54,28 @@ margin_bottom = 552.362
 rect_scale = Vector2( 0.7, 0.7 )
 text = "Sell Inventory Slot"
 align = 1
+
+[node name="Sell" type="Label" parent="."]
+modulate = Color( 0.431373, 0.721569, 0.658824, 1 )
+margin_left = 38.9474
+margin_top = 32.2222
+margin_right = 108.947
+margin_bottom = 46.2222
+rect_scale = Vector2( 0.767643, 0.939517 )
+text = "Sell Price"
+align = 1
+valign = 1
+
+[node name="Buy" type="Label" parent="."]
+modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 91.579
+margin_top = 32.2222
+margin_right = 161.579
+margin_bottom = 46.2222
+rect_scale = Vector2( 0.767643, 0.939517 )
+text = "Buy Price"
+align = 1
+valign = 1
 
 [node name="MoveBtn" type="Button" parent="."]
 visible = false
@@ -93,7 +115,7 @@ texture = ExtResource( 5 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect"]
 margin_left = 50.0
-margin_right = 120.0
+margin_right = 170.0
 margin_bottom = 14.0
 rect_scale = Vector2( 1.18045, 1.31746 )
 text = "Silver"
@@ -101,14 +123,34 @@ align = 1
 valign = 1
 
 [node name="SilverValue" type="Label" parent="VBoxContainer/TextureRect"]
+modulate = Color( 0.431373, 0.721569, 0.658824, 1 )
 margin_left = 50.0
 margin_top = 19.0
-margin_right = 120.0
+margin_right = 80.0
 margin_bottom = 33.0
 rect_scale = Vector2( 1.18045, 1.3859 )
 text = "M 7"
 align = 1
 valign = 1
+
+[node name="SilverValue2" type="Label" parent="VBoxContainer/TextureRect"]
+modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 126.316
+margin_top = 17.4604
+margin_right = 156.316
+margin_bottom = 31.4604
+rect_scale = Vector2( 1.18045, 1.3859 )
+text = "M 7"
+align = 1
+valign = 1
+
+[node name="Inv4" type="Button" parent="VBoxContainer/TextureRect"]
+self_modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 172.932
+margin_top = 15.0
+margin_right = 192.932
+margin_bottom = 20.0
+text = "+"
 
 [node name="TextureRect2" type="TextureRect" parent="VBoxContainer"]
 margin_top = 54.0
@@ -118,7 +160,7 @@ texture = ExtResource( 7 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect2"]
 margin_left = 50.0
-margin_right = 120.0
+margin_right = 170.0
 margin_bottom = 14.0
 rect_scale = Vector2( 1.18, 1.317 )
 text = "Gold"
@@ -126,14 +168,34 @@ align = 1
 valign = 1
 
 [node name="GoldValue" type="Label" parent="VBoxContainer/TextureRect2"]
+modulate = Color( 0.431373, 0.721569, 0.658824, 1 )
 margin_left = 50.0
 margin_top = 19.0
-margin_right = 120.0
+margin_right = 80.0
 margin_bottom = 33.0
 rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
+
+[node name="GoldValue2" type="Label" parent="VBoxContainer/TextureRect2"]
+modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 126.316
+margin_top = 17.4604
+margin_right = 156.316
+margin_bottom = 31.4604
+rect_scale = Vector2( 1.18, 1.386 )
+text = "M 7"
+align = 1
+valign = 1
+
+[node name="Inv5" type="Button" parent="VBoxContainer/TextureRect2"]
+self_modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 172.932
+margin_top = 15.0
+margin_right = 192.932
+margin_bottom = 20.0
+text = "+"
 
 [node name="TextureRect3" type="TextureRect" parent="VBoxContainer"]
 margin_top = 108.0
@@ -143,7 +205,7 @@ texture = ExtResource( 11 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect3"]
 margin_left = 50.0
-margin_right = 120.0
+margin_right = 170.0
 margin_bottom = 14.0
 rect_scale = Vector2( 1.18, 1.317 )
 text = "Salt"
@@ -151,14 +213,34 @@ align = 1
 valign = 1
 
 [node name="SaltValue" type="Label" parent="VBoxContainer/TextureRect3"]
+modulate = Color( 0.431373, 0.721569, 0.658824, 1 )
 margin_left = 50.0
 margin_top = 19.0
-margin_right = 120.0
+margin_right = 80.0
 margin_bottom = 33.0
 rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
+
+[node name="SaltValue2" type="Label" parent="VBoxContainer/TextureRect3"]
+modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 126.316
+margin_top = 17.4604
+margin_right = 156.316
+margin_bottom = 31.4604
+rect_scale = Vector2( 1.18, 1.386 )
+text = "M 7"
+align = 1
+valign = 1
+
+[node name="Inv6" type="Button" parent="VBoxContainer/TextureRect3"]
+self_modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 172.932
+margin_top = 15.0
+margin_right = 192.932
+margin_bottom = 20.0
+text = "+"
 
 [node name="TextureRect4" type="TextureRect" parent="VBoxContainer"]
 margin_top = 162.0
@@ -168,7 +250,7 @@ texture = ExtResource( 4 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect4"]
 margin_left = 50.0
-margin_right = 120.0
+margin_right = 170.0
 margin_bottom = 14.0
 rect_scale = Vector2( 1.18, 1.317 )
 text = "Grapes"
@@ -176,14 +258,34 @@ align = 1
 valign = 1
 
 [node name="GrapesValue" type="Label" parent="VBoxContainer/TextureRect4"]
+modulate = Color( 0.431373, 0.721569, 0.658824, 1 )
 margin_left = 50.0
 margin_top = 19.0
-margin_right = 120.0
+margin_right = 80.0
 margin_bottom = 33.0
 rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
+
+[node name="GrapesValue2" type="Label" parent="VBoxContainer/TextureRect4"]
+modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 126.316
+margin_top = 17.4604
+margin_right = 156.316
+margin_bottom = 31.4604
+rect_scale = Vector2( 1.18, 1.386 )
+text = "M 7"
+align = 1
+valign = 1
+
+[node name="Inv7" type="Button" parent="VBoxContainer/TextureRect4"]
+self_modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 172.932
+margin_top = 15.0
+margin_right = 192.932
+margin_bottom = 20.0
+text = "+"
 
 [node name="TextureRect5" type="TextureRect" parent="VBoxContainer"]
 margin_top = 216.0
@@ -193,7 +295,7 @@ texture = ExtResource( 10 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect5"]
 margin_left = 50.0
-margin_right = 120.0
+margin_right = 170.0
 margin_bottom = 14.0
 rect_scale = Vector2( 1.18, 1.317 )
 text = "Wheat"
@@ -201,14 +303,34 @@ align = 1
 valign = 1
 
 [node name="WheatValue" type="Label" parent="VBoxContainer/TextureRect5"]
+modulate = Color( 0.431373, 0.721569, 0.658824, 1 )
 margin_left = 50.0
 margin_top = 19.0
-margin_right = 120.0
+margin_right = 80.0
 margin_bottom = 33.0
 rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
+
+[node name="WheatValue2" type="Label" parent="VBoxContainer/TextureRect5"]
+modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 126.316
+margin_top = 17.4604
+margin_right = 156.316
+margin_bottom = 31.4604
+rect_scale = Vector2( 1.18, 1.386 )
+text = "M 7"
+align = 1
+valign = 1
+
+[node name="Inv8" type="Button" parent="VBoxContainer/TextureRect5"]
+self_modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 172.932
+margin_top = 15.0
+margin_right = 192.932
+margin_bottom = 20.0
+text = "+"
 
 [node name="TextureRect6" type="TextureRect" parent="VBoxContainer"]
 margin_top = 270.0
@@ -218,7 +340,7 @@ texture = ExtResource( 2 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect6"]
 margin_left = 50.0
-margin_right = 120.0
+margin_right = 170.0
 margin_bottom = 14.0
 rect_scale = Vector2( 1.18, 1.317 )
 text = "Tea"
@@ -226,14 +348,34 @@ align = 1
 valign = 1
 
 [node name="TeaValue" type="Label" parent="VBoxContainer/TextureRect6"]
+modulate = Color( 0.431373, 0.721569, 0.658824, 1 )
 margin_left = 50.0
 margin_top = 19.0
-margin_right = 120.0
+margin_right = 80.0
 margin_bottom = 33.0
 rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
+
+[node name="TeaValue2" type="Label" parent="VBoxContainer/TextureRect6"]
+modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 126.316
+margin_top = 17.4604
+margin_right = 156.316
+margin_bottom = 31.4604
+rect_scale = Vector2( 1.18, 1.386 )
+text = "M 7"
+align = 1
+valign = 1
+
+[node name="Inv9" type="Button" parent="VBoxContainer/TextureRect6"]
+self_modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 172.932
+margin_top = 15.0
+margin_right = 192.932
+margin_bottom = 20.0
+text = "+"
 
 [node name="TextureRect7" type="TextureRect" parent="VBoxContainer"]
 margin_top = 324.0
@@ -243,7 +385,7 @@ texture = ExtResource( 3 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect7"]
 margin_left = 50.0
-margin_right = 120.0
+margin_right = 170.0
 margin_bottom = 14.0
 rect_scale = Vector2( 1.18, 1.317 )
 text = "Marble"
@@ -251,14 +393,34 @@ align = 1
 valign = 1
 
 [node name="MarbleValue" type="Label" parent="VBoxContainer/TextureRect7"]
+modulate = Color( 0.431373, 0.721569, 0.658824, 1 )
 margin_left = 50.0
 margin_top = 19.0
-margin_right = 120.0
+margin_right = 80.0
 margin_bottom = 33.0
 rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
+
+[node name="MarbleValue2" type="Label" parent="VBoxContainer/TextureRect7"]
+modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 126.316
+margin_top = 17.4604
+margin_right = 156.316
+margin_bottom = 31.4604
+rect_scale = Vector2( 1.18, 1.386 )
+text = "M 7"
+align = 1
+valign = 1
+
+[node name="Inv10" type="Button" parent="VBoxContainer/TextureRect7"]
+self_modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 172.932
+margin_top = 15.0
+margin_right = 192.932
+margin_bottom = 20.0
+text = "+"
 
 [node name="TextureRect8" type="TextureRect" parent="VBoxContainer"]
 margin_top = 378.0
@@ -268,7 +430,7 @@ texture = ExtResource( 6 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect8"]
 margin_left = 50.0
-margin_right = 120.0
+margin_right = 170.0
 margin_bottom = 14.0
 rect_scale = Vector2( 1.18, 1.317 )
 text = "Incense"
@@ -276,14 +438,34 @@ align = 1
 valign = 1
 
 [node name="IncenseValue" type="Label" parent="VBoxContainer/TextureRect8"]
+modulate = Color( 0.431373, 0.721569, 0.658824, 1 )
 margin_left = 50.0
 margin_top = 19.0
-margin_right = 120.0
+margin_right = 80.0
 margin_bottom = 33.0
 rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
+
+[node name="IncenseValue2" type="Label" parent="VBoxContainer/TextureRect8"]
+modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 126.316
+margin_top = 17.4604
+margin_right = 156.316
+margin_bottom = 31.4604
+rect_scale = Vector2( 1.18, 1.386 )
+text = "M 7"
+align = 1
+valign = 1
+
+[node name="Inv11" type="Button" parent="VBoxContainer/TextureRect8"]
+self_modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 172.932
+margin_top = 15.0
+margin_right = 192.932
+margin_bottom = 20.0
+text = "+"
 
 [node name="TextureRect9" type="TextureRect" parent="VBoxContainer"]
 margin_top = 432.0
@@ -293,7 +475,7 @@ texture = ExtResource( 12 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect9"]
 margin_left = 50.0
-margin_right = 120.0
+margin_right = 170.0
 margin_bottom = 14.0
 rect_scale = Vector2( 1.18, 1.317 )
 text = "Diamond"
@@ -301,14 +483,34 @@ align = 1
 valign = 1
 
 [node name="DiamondValue" type="Label" parent="VBoxContainer/TextureRect9"]
+modulate = Color( 0.431373, 0.721569, 0.658824, 1 )
 margin_left = 50.0
 margin_top = 19.0
-margin_right = 120.0
+margin_right = 80.0
 margin_bottom = 33.0
 rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
+
+[node name="DiamondValue2" type="Label" parent="VBoxContainer/TextureRect9"]
+modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 126.316
+margin_top = 17.4604
+margin_right = 156.316
+margin_bottom = 31.4604
+rect_scale = Vector2( 1.18, 1.386 )
+text = "M 7"
+align = 1
+valign = 1
+
+[node name="Inv12" type="Button" parent="VBoxContainer/TextureRect9"]
+self_modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 172.932
+margin_top = 15.0
+margin_right = 192.932
+margin_bottom = 20.0
+text = "+"
 
 [node name="TextureRect10" type="TextureRect" parent="VBoxContainer"]
 margin_top = 486.0
@@ -318,7 +520,7 @@ texture = ExtResource( 9 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect10"]
 margin_left = 50.0
-margin_right = 120.0
+margin_right = 170.0
 margin_bottom = 14.0
 rect_scale = Vector2( 1.18, 1.317 )
 text = "Fish"
@@ -326,14 +528,34 @@ align = 1
 valign = 1
 
 [node name="FishValue" type="Label" parent="VBoxContainer/TextureRect10"]
+modulate = Color( 0.431373, 0.721569, 0.658824, 1 )
 margin_left = 50.0
 margin_top = 19.0
-margin_right = 120.0
+margin_right = 80.0
 margin_bottom = 33.0
 rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
+
+[node name="FishValue2" type="Label" parent="VBoxContainer/TextureRect10"]
+modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 126.316
+margin_top = 17.4604
+margin_right = 156.316
+margin_bottom = 31.4604
+rect_scale = Vector2( 1.18, 1.386 )
+text = "M 7"
+align = 1
+valign = 1
+
+[node name="Inv13" type="Button" parent="VBoxContainer/TextureRect10"]
+self_modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 172.932
+margin_top = 15.0
+margin_right = 192.932
+margin_bottom = 20.0
+text = "+"
 
 [node name="TextureRect11" type="TextureRect" parent="VBoxContainer"]
 margin_top = 540.0
@@ -343,7 +565,7 @@ texture = ExtResource( 15 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect11"]
 margin_left = 50.0
-margin_right = 120.0
+margin_right = 170.0
 margin_bottom = 14.0
 rect_scale = Vector2( 1.18, 1.317 )
 text = "Lumber"
@@ -351,14 +573,34 @@ align = 1
 valign = 1
 
 [node name="LumberValue" type="Label" parent="VBoxContainer/TextureRect11"]
+modulate = Color( 0.431373, 0.721569, 0.658824, 1 )
 margin_left = 50.0
 margin_top = 19.0
-margin_right = 120.0
+margin_right = 80.0
 margin_bottom = 33.0
 rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
+
+[node name="LumberValue2" type="Label" parent="VBoxContainer/TextureRect11"]
+modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 126.316
+margin_top = 17.4604
+margin_right = 156.316
+margin_bottom = 31.4604
+rect_scale = Vector2( 1.18, 1.386 )
+text = "M 7"
+align = 1
+valign = 1
+
+[node name="Inv14" type="Button" parent="VBoxContainer/TextureRect11"]
+self_modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 172.932
+margin_top = 15.0
+margin_right = 192.932
+margin_bottom = 20.0
+text = "+"
 
 [node name="TextureRect12" type="TextureRect" parent="VBoxContainer"]
 margin_top = 594.0
@@ -368,7 +610,7 @@ texture = ExtResource( 14 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect12"]
 margin_left = 50.0
-margin_right = 120.0
+margin_right = 170.0
 margin_bottom = 14.0
 rect_scale = Vector2( 1.18, 1.317 )
 text = "Dyes"
@@ -376,14 +618,34 @@ align = 1
 valign = 1
 
 [node name="DyesValue" type="Label" parent="VBoxContainer/TextureRect12"]
+modulate = Color( 0.431373, 0.721569, 0.658824, 1 )
 margin_left = 50.0
 margin_top = 19.0
-margin_right = 120.0
+margin_right = 80.0
 margin_bottom = 33.0
 rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
+
+[node name="DyesValue2" type="Label" parent="VBoxContainer/TextureRect12"]
+modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 126.316
+margin_top = 17.4604
+margin_right = 156.316
+margin_bottom = 31.4604
+rect_scale = Vector2( 1.18, 1.386 )
+text = "M 7"
+align = 1
+valign = 1
+
+[node name="Inv15" type="Button" parent="VBoxContainer/TextureRect12"]
+self_modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 172.932
+margin_top = 15.0
+margin_right = 192.932
+margin_bottom = 20.0
+text = "+"
 
 [node name="TextureRect13" type="TextureRect" parent="VBoxContainer"]
 margin_top = 648.0
@@ -393,7 +655,7 @@ texture = ExtResource( 8 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect13"]
 margin_left = 50.0
-margin_right = 120.0
+margin_right = 170.0
 margin_bottom = 14.0
 rect_scale = Vector2( 1.18, 1.317 )
 text = "Coffee"
@@ -401,14 +663,34 @@ align = 1
 valign = 1
 
 [node name="CoffeeValue" type="Label" parent="VBoxContainer/TextureRect13"]
+modulate = Color( 0.431373, 0.721569, 0.658824, 1 )
 margin_left = 50.0
 margin_top = 19.0
-margin_right = 120.0
+margin_right = 80.0
 margin_bottom = 33.0
 rect_scale = Vector2( 1.18, 1.386 )
 text = "M 7"
 align = 1
 valign = 1
+
+[node name="CoffeeValue2" type="Label" parent="VBoxContainer/TextureRect13"]
+modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 126.316
+margin_top = 17.4604
+margin_right = 156.316
+margin_bottom = 31.4604
+rect_scale = Vector2( 1.18, 1.386 )
+text = "M 7"
+align = 1
+valign = 1
+
+[node name="Inv16" type="Button" parent="VBoxContainer/TextureRect13"]
+self_modulate = Color( 0.988235, 1, 0.752941, 1 )
+margin_left = 172.932
+margin_top = 15.0
+margin_right = 192.932
+margin_bottom = 20.0
+text = "+"
 
 [node name="Button" type="Button" parent="."]
 visible = false
@@ -420,6 +702,7 @@ rect_scale = Vector2( 0.2, 0.2 )
 icon = ExtResource( 13 )
 
 [node name="Inv1" type="Button" parent="."]
+modulate = Color( 0.431373, 0.721569, 0.658824, 1 )
 margin_left = 9.0
 margin_top = 551.579
 margin_right = 34.0
@@ -427,6 +710,7 @@ margin_bottom = 576.579
 text = "1"
 
 [node name="Inv2" type="Button" parent="."]
+modulate = Color( 0.431373, 0.721569, 0.658824, 1 )
 margin_left = 39.0
 margin_top = 551.579
 margin_right = 64.0
@@ -434,6 +718,7 @@ margin_bottom = 576.579
 text = "2"
 
 [node name="Inv3" type="Button" parent="."]
+modulate = Color( 0.431373, 0.721569, 0.658824, 1 )
 margin_left = 69.0
 margin_top = 551.579
 margin_right = 94.0
@@ -443,6 +728,19 @@ text = "3"
 [connection signal="pressed" from="MoveBtn" to="." method="_on_MoveBtn_pressed"]
 [connection signal="pressed" from="BuyBtn" to="." method="_on_BuyBtn_pressed"]
 [connection signal="pressed" from="CancelBtn" to="." method="_on_CancelBtn_pressed"]
+[connection signal="button_down" from="VBoxContainer/TextureRect/Inv4" to="." method="_on_Inv1_button_down"]
+[connection signal="button_down" from="VBoxContainer/TextureRect2/Inv5" to="." method="_on_Inv1_button_down"]
+[connection signal="button_down" from="VBoxContainer/TextureRect3/Inv6" to="." method="_on_Inv1_button_down"]
+[connection signal="button_down" from="VBoxContainer/TextureRect4/Inv7" to="." method="_on_Inv1_button_down"]
+[connection signal="button_down" from="VBoxContainer/TextureRect5/Inv8" to="." method="_on_Inv1_button_down"]
+[connection signal="button_down" from="VBoxContainer/TextureRect6/Inv9" to="." method="_on_Inv1_button_down"]
+[connection signal="button_down" from="VBoxContainer/TextureRect7/Inv10" to="." method="_on_Inv1_button_down"]
+[connection signal="button_down" from="VBoxContainer/TextureRect8/Inv11" to="." method="_on_Inv1_button_down"]
+[connection signal="button_down" from="VBoxContainer/TextureRect9/Inv12" to="." method="_on_Inv1_button_down"]
+[connection signal="button_down" from="VBoxContainer/TextureRect10/Inv13" to="." method="_on_Inv1_button_down"]
+[connection signal="button_down" from="VBoxContainer/TextureRect11/Inv14" to="." method="_on_Inv1_button_down"]
+[connection signal="button_down" from="VBoxContainer/TextureRect12/Inv15" to="." method="_on_Inv1_button_down"]
+[connection signal="button_down" from="VBoxContainer/TextureRect13/Inv16" to="." method="_on_Inv1_button_down"]
 [connection signal="button_down" from="Inv1" to="." method="_on_Inv1_button_down"]
 [connection signal="button_down" from="Inv2" to="." method="_on_Inv2_button_down"]
 [connection signal="button_down" from="Inv3" to="." method="_on_Inv3_button_down"]
