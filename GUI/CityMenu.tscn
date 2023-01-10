@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://GUI/CityMenu.gd" type="Script" id=1]
 [ext_resource path="res://SharedResources/ResourceIcons/Tea.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://SharedResources/ResourceIcons/Diamond.png" type="Texture" id=12]
 [ext_resource path="res://GUI/X.png" type="Texture" id=13]
 [ext_resource path="res://SharedResources/ResourceIcons/Dyes.png" type="Texture" id=14]
+[ext_resource path="res://SharedResources/ResourceIcons/Lumber.png" type="Texture" id=15]
 
 [node name="CityMenu" type="Control"]
 anchor_left = 0.5
@@ -338,7 +339,7 @@ valign = 1
 margin_top = 540.0
 margin_right = 105.0
 margin_bottom = 590.0
-texture = ExtResource( 5 )
+texture = ExtResource( 15 )
 
 [node name="Cost" type="Label" parent="VBoxContainer/TextureRect11"]
 margin_left = 50.0

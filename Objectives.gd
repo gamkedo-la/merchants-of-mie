@@ -8,16 +8,16 @@ var max_obj_two = 3#10
 
 var possible_objectives = [
 #"Silver",
-"Gold",
-"Salt",
-"Grapes",
-"Wheat",
-"Tea",
-"Marble",
-"Incense",
-"Diamond",
+##"Gold",
+##"Salt",
+##"Grapes",
+##"Wheat",
+##"Tea",
+##"Marble",
+##"Incense",
+##"Diamond",
 "Fish",
-#"Lumber",
+"Lumber",
 "Dyes",
 "Coffee"
 ]

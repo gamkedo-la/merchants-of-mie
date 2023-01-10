@@ -53,7 +53,7 @@ var MarbleValue = 0
 var IncenseValue = 0
 var DiamondValue = 0
 var FishValue = 0
-#var LumberValue = 0
+var LumberValue = 0
 var DyesValue = 0
 var CoffeeValue = 0
 

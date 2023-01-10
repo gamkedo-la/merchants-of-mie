@@ -33,6 +33,7 @@ signal spawn_tea
 signal spawn_marble
 signal spawn_diamond
 signal spawn_dyes
+signal spawn_lumber
 
 signal update_merchant_flavor_text
 

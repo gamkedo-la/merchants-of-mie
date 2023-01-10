@@ -13,7 +13,7 @@ export var resource_names = [
 "Incense",
 "Diamond",
 "Fish",
-#"Lumber",
+"Lumber",
 "Dyes",
 "Coffee"
 ]
@@ -42,7 +42,7 @@ export var resource_status_marble = [0,0,0,0,0]
 export var resource_status_incense = [0,0,0,0,0]
 export var resource_status_diamond = [0,0,0,0,0]
 export var resource_status_fish = [0,0,0,0,0]
-#export var resource_status_lumber = [0,0,0,0,0]
+export var resource_status_lumber = [0,0,0,0,0]
 export var resource_status_dyes = [0,0,0,0,0]
 export var resource_status_coffee = [0,0,0,0,0]
 
@@ -56,7 +56,7 @@ var marble_value = 0
 var incense_value = 0
 var diamond_value = 0
 var fish_value = 0
-#var lumber_value = 0
+var lumber_value = 0
 var dyes_value = 0
 var coffee_value = 0
 		
@@ -75,7 +75,7 @@ func update_values():
 	incense_value = (((base_resource_value * resource_status_incense[0]) * (1+have_excess))+ ((base_resource_value * resource_status_incense[1]) * (1+have_enough))+ ((base_resource_value * resource_status_incense[2]) * (1-neutral))+ ((base_resource_value * resource_status_incense[3]) * (1+need_resource))+ ((base_resource_value * resource_status_incense[4]) * (1+need_alot)))
 	diamond_value = (((base_resource_value * resource_status_diamond[0]) * (1+have_excess))+ ((base_resource_value * resource_status_diamond[1]) * (1+have_enough))+ ((base_resource_value * resource_status_diamond[2]) * (1-neutral))+ ((base_resource_value * resource_status_diamond[3]) * (1+need_resource))+ ((base_resource_value * resource_status_diamond[4]) * (1+need_alot)))
 	fish_value = (((base_resource_value * resource_status_fish[0]) * (1+have_excess))+ ((base_resource_value * resource_status_fish[1]) * (1+have_enough))+ ((base_resource_value * resource_status_fish[2]) * (1-neutral))+ ((base_resource_value * resource_status_fish[3]) * (1+need_resource))+ ((base_resource_value * resource_status_fish[4]) * (1+need_alot)))
-	#lumber_value = (((base_resource_value * resource_status_lumber[0]) * (1+have_excess))+ ((base_resource_value * resource_status_lumber[1]) * (1+have_enough))+ ((base_resource_value * resource_status_lumber[2]) * (1-neutral))+ ((base_resource_value * resource_status_lumber[3]) * (1+need_resource))+ ((base_resource_value * resource_status_lumber[4]) * (1+need_alot)))
+	lumber_value = (((base_resource_value * resource_status_lumber[0]) * (1+have_excess))+ ((base_resource_value * resource_status_lumber[1]) * (1+have_enough))+ ((base_resource_value * resource_status_lumber[2]) * (1-neutral))+ ((base_resource_value * resource_status_lumber[3]) * (1+need_resource))+ ((base_resource_value * resource_status_lumber[4]) * (1+need_alot)))
 	dyes_value = (((base_resource_value * resource_status_dyes[0]) * (1+have_excess))+ ((base_resource_value * resource_status_dyes[1]) * (1+have_enough))+ ((base_resource_value * resource_status_dyes[2]) * (1-neutral))+ ((base_resource_value * resource_status_dyes[3]) * (1+need_resource))+ ((base_resource_value * resource_status_dyes[4]) * (1+need_alot)))
 	coffee_value = (((base_resource_value * resource_status_coffee[0]) * (1+have_excess))+ ((base_resource_value * resource_status_coffee[1]) * (1+have_enough))+ ((base_resource_value * resource_status_coffee[2]) * (1-neutral))+ ((base_resource_value * resource_status_coffee[3]) * (1+need_resource))+ ((base_resource_value * resource_status_coffee[4]) * (1+need_alot)))
 
@@ -90,7 +90,7 @@ func update_values():
 	Global.IncenseValue = incense_value
 	Global.DiamondValue = diamond_value
 	Global.FishValue = fish_value
-	#Global.LumberValue = lumber_value
+	Global.LumberValue = lumber_value
 	Global.DyesValue = dyes_value
 	Global.CoffeeValue = coffee_value
 
@@ -106,7 +106,7 @@ func clear_values():
 	Global.IncenseValue = 0
 	Global.DiamondValue = 0
 	Global.FishValue = 0
-	#Global.LumberValue = 0
+	Global.LumberValue = 0
 	Global.DyesValue = 0
 	Global.CoffeeValue = 0
 

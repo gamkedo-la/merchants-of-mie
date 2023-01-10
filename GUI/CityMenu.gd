@@ -16,7 +16,7 @@ func _on_merchant_enter_city():
 	$"VBoxContainer/TextureRect8/IncenseValue".text = String(Global.IncenseValue)
 	$"VBoxContainer/TextureRect9/DiamondValue".text = String(Global.DiamondValue)
 	$"VBoxContainer/TextureRect10/FishValue".text = String(Global.FishValue)
-	#$"VBoxContainer/TextureRect11/LumberValue".text = String(Global.LumberValue )
+	$"VBoxContainer/TextureRect11/LumberValue".text = String(Global.LumberValue )
 	$"VBoxContainer/TextureRect12/DyesValue".text = String(Global.DyesValue )
 	$"VBoxContainer/TextureRect13/CoffeeValue".text = String(Global.CoffeeValue)
 	visible = true
