@@ -3,7 +3,7 @@ extends Control
 func _ready():
 	Events.connect("merchant_entered_city", self, "_on_merchant_enter_city")
 	Events.connect("merchant_left_city", self, "_on_merchant_left_city")
-
+	
 func _on_merchant_enter_city():
 	$"Title".text = Global.city_name
 	#$"VBoxContainer/TextureRect/SilverValue".text = String(Global.SilverValue)
@@ -68,6 +68,8 @@ func _on_Inv5_pressed():
 		Global.currency_available -= Global.GoldBuyValue
 		Events.emit_signal("merchant_purchased")
 		Global.item_buy_name = ""
+	else:
+		print("Either your inventory is full or you have not enough money")
 
 func _on_Inv6_pressed():
 	if(Global.currency_available >= Global.SaltBuyValue):
@@ -77,6 +79,8 @@ func _on_Inv6_pressed():
 		Global.currency_available -= Global.SaltBuyValue
 		Events.emit_signal("merchant_purchased")
 		Global.item_buy_name = ""
+	else:
+		print("Either your inventory is full or you have not enough money")
 
 func _on_Inv7_pressed():
 	if(Global.currency_available >= Global.GrapesBuyValue):
@@ -86,6 +90,8 @@ func _on_Inv7_pressed():
 		Global.currency_available -= Global.GrapesBuyValue
 		Events.emit_signal("merchant_purchased")
 		Global.item_buy_name = ""
+	else:
+		print("Either your inventory is full or you have not enough money")
 
 func _on_Inv8_pressed():
 	if(Global.currency_available >= Global.WheatBuyValue):
@@ -95,6 +101,8 @@ func _on_Inv8_pressed():
 		Global.currency_available -= Global.WheatBuyValue
 		Events.emit_signal("merchant_purchased")
 		Global.item_buy_name = ""
+	else:
+		print("Either your inventory is full or you have not enough money")
 
 func _on_Inv9_pressed():
 	if(Global.currency_available >= Global.TeaBuyValue):
@@ -104,6 +112,8 @@ func _on_Inv9_pressed():
 		Global.currency_available -= Global.TeaBuyValue
 		Events.emit_signal("merchant_purchased")
 		Global.item_buy_name = ""
+	else:
+		print("Either your inventory is full or you have not enough money")
 
 func _on_Inv10_pressed():
 	if(Global.currency_available >= Global.MarbleBuyValue):
@@ -113,6 +123,8 @@ func _on_Inv10_pressed():
 		Global.currency_available -= Global.MarbleBuyValue
 		Events.emit_signal("merchant_purchased")
 		Global.item_buy_name = ""
+	else:
+		print("Either your inventory is full or you have not enough money")
 
 func _on_Inv11_pressed():
 	if(Global.currency_available >= Global.IncenceBuyValue):
@@ -122,6 +134,8 @@ func _on_Inv11_pressed():
 		Global.currency_available -= Global.IncenceBuyValue
 		Events.emit_signal("merchant_purchased")
 		Global.item_buy_name = ""
+	else:
+		print("Either your inventory is full or you have not enough money")
 
 func _on_Inv12_pressed():
 	if(Global.currency_available >= Global.DiamondBuyValue):
@@ -131,6 +145,8 @@ func _on_Inv12_pressed():
 		Global.currency_available -= Global.DiamondBuyValue
 		Events.emit_signal("merchant_purchased")
 		Global.item_buy_name = ""
+	else:
+		print("Either your inventory is full or you have not enough money")
 
 func _on_Inv13_pressed():
 	if(Global.currency_available >= Global.FishBuyValue):
@@ -140,6 +156,8 @@ func _on_Inv13_pressed():
 		Global.currency_available -= Global.FishBuyValue
 		Events.emit_signal("merchant_purchased")
 		Global.item_buy_name = ""
+	else:
+		print("Either your inventory is full or you have not enough money")
 
 func _on_Inv14_pressed():
 	if(Global.currency_available >= Global.LumberBuyValue):
@@ -149,6 +167,8 @@ func _on_Inv14_pressed():
 		Global.currency_available -= Global.LumberBuyValue
 		Events.emit_signal("merchant_purchased")
 		Global.item_buy_name = ""
+	else:
+		print("Either your inventory is full or you have not enough money")
 
 func _on_Inv15_pressed():
 	if(Global.currency_available >= Global.DyesBuyValue):
@@ -158,6 +178,8 @@ func _on_Inv15_pressed():
 		Global.currency_available -= Global.DyesBuyValue
 		Events.emit_signal("merchant_purchased")
 		Global.item_buy_name = ""
+	else:
+		print("Either your inventory is full or you have not enough money")
 
 func _on_Inv16_pressed():
 	if(Global.currency_available >= Global.CoffeeBuyValue):
@@ -167,3 +189,5 @@ func _on_Inv16_pressed():
 		Global.currency_available -= Global.CoffeeBuyValue
 		Events.emit_signal("merchant_purchased")
 		Global.item_buy_name = ""
+	else:
+		print("Either your inventory is full or you have not enough money")

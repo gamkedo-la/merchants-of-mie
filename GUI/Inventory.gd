@@ -61,8 +61,9 @@ func add_resource_to_inventory(resource):
 	if resources_in_inventory.size() < 3:
 		resources_in_inventory.append(resource)
 		$VBoxContainer/HBoxContainer.get_child(resources_in_inventory.size()-1).texture = inventory_texture
+		update_global_inventory()
 		return
-	
+		
 	print("Your inventory is full!")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
