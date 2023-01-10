@@ -141,6 +141,9 @@ func sell_first_resource(resource):
 		resources_in_inventory.erase(resource)
 		$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
 	#Refetch global inventory to resize inventory
+		#if 2nd becomes 1
+
+		#if 3rd, becomes 2nd 
 		###Allowing room here to resize the inventory after selling
 	#Refresh inventory to relect how many items are available
 	update_global_inventory()
@@ -156,6 +159,7 @@ func sell_second_resource(resource):
 		resources_in_inventory.erase(resource)
 		$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
 	#Refetch global inventory to resize inventory
+		#if 3rd comes here
 		###Allowing room here to resize the inventory after selling
 	update_global_inventory()
 
@@ -174,9 +178,20 @@ func sell_third_resource(resource):
 	update_global_inventory()
 
 func update_global_inventory():
-	if(resources_in_inventory.size() == 1):
+	if(resources_in_inventory.size() == 3):
+		Global.current_merchant_inv_three = resources_in_inventory[2]
+		Global.current_merchant_inv_two = resources_in_inventory[1]
 		Global.current_merchant_inv_one = resources_in_inventory[0]
 	elif(resources_in_inventory.size() == 2):
 		Global.current_merchant_inv_two = resources_in_inventory[1]
-	elif(resources_in_inventory.size() == 3):
-		Global.current_merchant_inv_three = resources_in_inventory[2]
+		Global.current_merchant_inv_one = resources_in_inventory[0]
+		Global.current_merchant_inv_three = ""
+	elif(resources_in_inventory.size() == 1):
+		Global.current_merchant_inv_one = resources_in_inventory[0]
+		Global.current_merchant_inv_three = ""
+		Global.current_merchant_inv_two = ""
+	elif(resources_in_inventory.size() == 0):
+		Global.current_merchant_inv_three = ""
+		Global.current_merchant_inv_two = ""
+		Global.current_merchant_inv_one = ""
+
