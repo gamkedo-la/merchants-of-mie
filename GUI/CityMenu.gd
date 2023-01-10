@@ -25,7 +25,7 @@ func _on_merchant_enter_city():
 	$"VBoxContainer/TextureRect3/SaltValue2".text = String(Global.SaltBuyValue)
 	$"VBoxContainer/TextureRect4/GrapesValue2".text = String(Global.GrapesBuyValue)
 	$"VBoxContainer/TextureRect5/WheatValue2".text = String(Global.WheatBuyValue)
-	$"VBoxContainer/TextureRect6/TeaValue2".text = String(Global.TeaVBuyalue)
+	$"VBoxContainer/TextureRect6/TeaValue2".text = String(Global.TeaBuyValue)
 	$"VBoxContainer/TextureRect7/MarbleValue2".text = String(Global.MarbleBuyValue)
 	$"VBoxContainer/TextureRect8/IncenseValue2".text = String(Global.IncenseBuyValue)
 	$"VBoxContainer/TextureRect9/DiamondValue2".text = String(Global.DiamondBuyValue)

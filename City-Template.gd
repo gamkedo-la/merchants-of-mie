@@ -32,11 +32,11 @@ var neutral = 0
 var need_resource = .4
 var need_alot = .8
 
-var have_excess_buy = .8
-var have_enough_buy = .4
+var have_excess_buy = -.8
+var have_enough_buy = -.4
 var neutral_buy = 0
-var need_resource_buy = -.4
-var need_alot_buy = -.8
+var need_resource_buy = .4
+var need_alot_buy = .8
 
 #export var resource_status_silver = [0,0,0,0,0]
 export var resource_status_gold = [0,0,0,0,0]
@@ -65,20 +65,6 @@ var fish_value = 0
 var lumber_value = 0
 var dyes_value = 0
 var coffee_value = 0
-
-#export var resource_status_silver = [0,0,0,0,0]
-export var resource_buy_gold = [0,0,0,0,0]
-export var resource_buy_salt = [0,0,0,0,0]
-export var resource_buy_grapes = [0,0,0,0,0]
-export var resource_buy_wheat = [0,0,0,0,0]
-export var resource_buy_tea = [0,0,0,0,0]
-export var resource_buy_marble = [0,0,0,0,0]
-export var resource_buy_incense = [0,0,0,0,0]
-export var resource_buy_diamond = [0,0,0,0,0]
-export var resource_buy_fish = [0,0,0,0,0]
-export var resource_buy_lumber = [0,0,0,0,0]
-export var resource_buy_dyes = [0,0,0,0,0]
-export var resource_buy_coffee = [0,0,0,0,0]
 
 #var silver_buy_value = 0
 var gold_buy_value = 0
@@ -113,19 +99,19 @@ func update_values():
 	dyes_value = (((base_resource_value * resource_status_dyes[0]) * (1+have_excess))+ ((base_resource_value * resource_status_dyes[1]) * (1+have_enough))+ ((base_resource_value * resource_status_dyes[2]) * (1-neutral))+ ((base_resource_value * resource_status_dyes[3]) * (1+need_resource))+ ((base_resource_value * resource_status_dyes[4]) * (1+need_alot)))
 	coffee_value = (((base_resource_value * resource_status_coffee[0]) * (1+have_excess))+ ((base_resource_value * resource_status_coffee[1]) * (1+have_enough))+ ((base_resource_value * resource_status_coffee[2]) * (1-neutral))+ ((base_resource_value * resource_status_coffee[3]) * (1+need_resource))+ ((base_resource_value * resource_status_coffee[4]) * (1+need_alot)))
 
-	#silver_buy_value = (((base_resource_value * resource_buy_silver[0]) * (1+have_excess_buy))+ ((base_resource_value * resource_buy_silver[1]) * (1+have_enough_buy))+ ((base_resource_value * resource_buy_silver[2]) * (1-neutral_buy))+ ((base_resource_value * resource_buy_silver[3]) * (1+need_resource_buy))+ ((base_resource_value * resource_buy_silver[4]) * (1+need_alot_buy)))
-	gold_buy_value = (((base_resource_value * resource_buy_gold[0]) * (1+have_excess_buy))+ ((base_resource_value * resource_buy_gold[1]) * (1+have_enough_buy))+ ((base_resource_value * resource_buy_gold[2]) * (1-neutral_buy))+ ((base_resource_value * resource_buy_gold[3]) * (1+need_resource_buy))+ ((base_resource_value * resource_buy_gold[4]) * (1+need_alot_buy)))
-	salt_buy_value = (((base_resource_value * resource_buy_salt[0]) * (1+have_excess_buy))+ ((base_resource_value * resource_buy_salt[1]) * (1+have_enough_buy))+ ((base_resource_value * resource_buy_salt[2]) * (1-neutral_buy))+ ((base_resource_value * resource_buy_salt[3]) * (1+need_resource_buy))+ ((base_resource_value * resource_buy_salt[4]) * (1+need_alot_buy)))
-	grapes_buy_value = (((base_resource_value * resource_buy_grapes[0]) * (1+have_excess_buy))+ ((base_resource_value * resource_buy_grapes[1]) * (1+have_enough_buy))+ ((base_resource_value * resource_buy_grapes[2]) * (1-neutral_buy))+ ((base_resource_value * resource_buy_grapes[3]) * (1+need_resource_buy))+ ((base_resource_value * resource_buy_grapes[4]) * (1+need_alot_buy)))
-	wheat_buy_value = (((base_resource_value * resource_buy_wheat[0]) * (1+have_excess_buy))+ ((base_resource_value * resource_buy_wheat[1]) * (1+have_enough_buy))+ ((base_resource_value * resource_buy_wheat[2]) * (1-neutral_buy))+ ((base_resource_value * resource_buy_wheat[3]) * (1+need_resource_buy))+ ((base_resource_value * resource_buy_wheat[4]) * (1+need_alot_buy)))
-	tea_buy_value = (((base_resource_value * resource_buy_tea[0]) * (1+have_excess_buy))+ ((base_resource_value * resource_buy_tea[1]) * (1+have_enough_buy))+ ((base_resource_value * resource_buy_tea[2]) * (1-neutral_buy))+ ((base_resource_value * resource_buy_tea[3]) * (1+need_resource_buy))+ ((base_resource_value * resource_buy_tea[4]) * (1+need_alot_buy)))
-	marble_buy_value = (((base_resource_value * resource_buy_marble[0]) * (1+have_excess_buy))+ ((base_resource_value * resource_buy_marble[1]) * (1+have_enough_buy))+ ((base_resource_value * resource_buy_marble[2]) * (1-neutral_buy))+ ((base_resource_value * resource_buy_marble[3]) * (1+need_resource_buy))+ ((base_resource_value * resource_buy_marble[4]) * (1+need_alot_buy)))
-	incense_buy_value = (((base_resource_value * resource_buy_incense[0]) * (1+have_excess_buy))+ ((base_resource_value * resource_buy_incense[1]) * (1+have_enough_buy))+ ((base_resource_value * resource_buy_incense[2]) * (1-neutral_buy))+ ((base_resource_value * resource_buy_incense[3]) * (1+need_resource_buy))+ ((base_resource_value * resource_buy_incense[4]) * (1+need_alot_buy)))
-	diamond_buy_value = (((base_resource_value * resource_buy_diamond[0]) * (1+have_excess_buy))+ ((base_resource_value * resource_buy_diamond[1]) * (1+have_enough_buy))+ ((base_resource_value * resource_buy_diamond[2]) * (1-neutral_buy))+ ((base_resource_value * resource_buy_diamond[3]) * (1+need_resource_buy))+ ((base_resource_value * resource_buy_diamond[4]) * (1+need_alot_buy)))
-	fish_buy_value = (((base_resource_value * resource_buy_fish[0]) * (1+have_excess_buy))+ ((base_resource_value * resource_buy_fish[1]) * (1+have_enough_buy))+ ((base_resource_value * resource_buy_fish[2]) * (1-neutral_buy))+ ((base_resource_value * resource_buy_fish[3]) * (1+need_resource_buy))+ ((base_resource_value * resource_buy_fish[4]) * (1+need_alot_buy)))
-	lumber_buy_value = (((base_resource_value * resource_buy_lumber[0]) * (1+have_excess_buy))+ ((base_resource_value * resource_buy_lumber[1]) * (1+have_enough_buy))+ ((base_resource_value * resource_buy_lumber[2]) * (1-neutral_buy))+ ((base_resource_value * resource_buy_lumber[3]) * (1+need_resource_buy))+ ((base_resource_value * resource_buy_lumber[4]) * (1+need_alot_buy)))
-	dyes_buy_value = (((base_resource_value * resource_buy_dyes[0]) * (1+have_excess_buy))+ ((base_resource_value * resource_buy_dyes[1]) * (1+have_enough_buy))+ ((base_resource_value * resource_buy_dyes[2]) * (1-neutral_buy))+ ((base_resource_value * resource_buy_dyes[3]) * (1+need_resource_buy))+ ((base_resource_value * resource_buy_dyes[4]) * (1+need_alot_buy)))
-	coffee_buy_value = (((base_resource_value * resource_buy_coffee[0]) * (1+have_excess_buy))+ ((base_resource_value * resource_buy_coffee[1]) * (1+have_enough_buy))+ ((base_resource_value * resource_buy_coffee[2]) * (1-neutral_buy))+ ((base_resource_value * resource_buy_coffee[3]) * (1+need_resource_buy))+ ((base_resource_value * resource_buy_coffee[4]) * (1+need_alot_buy)))
+	#silver_buy_value = (2 *silver_value)
+	gold_buy_value = (2 *gold_value)
+	salt_buy_value = (2 *salt_value)
+	grapes_buy_value = (2 *grapes_value)
+	wheat_buy_value = (2 *wheat_value)
+	tea_buy_value = (2 *tea_value)
+	marble_buy_value = (2 *marble_value)
+	incense_buy_value = (2 *incense_value)
+	diamond_buy_value = (2 *diamond_value)
+	fish_buy_value = (2 *fish_value)
+	lumber_buy_value = (2 *lumber_value)
+	dyes_buy_value = (2 *dyes_value)
+	coffee_buy_value = (2 *coffee_value)
 
 
 	Global.city_name = city_name
