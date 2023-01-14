@@ -1,6 +1,7 @@
 extends Node
 
 const MAX_TURNS = 5
+const FLAT_COST_PER_TURN = 1
 var current_scene = null
 var turn_number = 0
 

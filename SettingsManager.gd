@@ -9,16 +9,22 @@ const available_settings = {
 		{
 			'Name': 'SFX',
 			'Type': 'Checkbox',
-		}]
+		}],
+	'Gameplay': [
+		{
+			'Name': '1 Actionpoint Per Tile',
+			'Type': 'Checkbox'
+		}
+	]
 };
-var current_settings_idx_lookup = {};
-var current_settings_idx: int = 0;
+var current_settings_unique_id_lookup = {};
+var current_settings_unique_id: int = 0;
 var popupmenus = [];
 var is_soundtrack_enabled: bool = true;
 var is_sfx_enabled: bool = true; 
 
 signal settings_changed(old_settings, new_settings)
-var current_settings_values = { 'Soundtrack' : true, 'SFX' : true };
+var current_settings_values = { '1 Actionpoint Per Tile': true, 'Soundtrack' : true, 'SFX' : true };
 
 
 var current_popupmenu: PopupMenu;
@@ -28,29 +34,31 @@ var sfx_audiostreamplayer: AudioStreamPlayer = null;
 func handle_new_scene():
 	popupmenus = [];
 	current_popupmenu = null;
-	current_settings_idx = 0;
-	current_settings_idx_lookup = {};
+	current_settings_unique_id = 0;
+	current_settings_unique_id_lookup = {};
 
 func add_available_settings_to_popupmenu(popup_menu: PopupMenu) -> void:
 	var setting_names = available_settings.keys();
 	current_popupmenu = popup_menu;
-	for setting in setting_names:	
+	for setting_category in setting_names:	
 		var setting_submenu = PopupMenu.new()
 		setting_submenu.hide_on_item_selection = false;
 		setting_submenu.hide_on_checkable_item_selection = false;
-		setting_submenu.set_name(setting)
-		for sub_setting in available_settings[setting]:
-			var setting_name = sub_setting['Name'];
-			current_settings_idx_lookup[setting_name] = current_settings_idx;
-			if sub_setting['Type'] == 'Checkbox':
-				setting_submenu.add_check_item(setting_name, current_settings_idx)
-				setting_submenu.set_item_checked(current_settings_idx_lookup[setting_name], 
-				current_settings_values[setting_name])
-			current_settings_idx += 1;
-		setting_submenu.connect("id_pressed", self, "_item_selected")
+		setting_submenu.set_name(setting_category);
+		for setting in available_settings[setting_category]:
+			var setting_name = setting['Name'];
+			var setting_value = current_settings_values[setting_name];
+			current_settings_unique_id_lookup[setting_name] = current_settings_unique_id;
+			if setting['Type'] == 'Checkbox':
+				setting_submenu.add_check_item(setting_name, current_settings_unique_id);
+				var setting_submenu_index = setting_submenu.get_item_index(current_settings_unique_id)
+				setting_submenu.set_item_checked(setting_submenu_index, 
+				setting_value);
+			current_settings_unique_id += 1;
+		setting_submenu.connect("id_pressed", self, "_item_selected");
 		popupmenus.append((setting_submenu));
-		popup_menu.add_child(setting_submenu)
-		popup_menu.add_submenu_item(setting, setting)
+		popup_menu.add_child(setting_submenu);
+		popup_menu.add_submenu_item(setting_category, setting_category);
 
 func handle_settings_changed(setting_name, new_value):
 	initialize_audiostreamplayer();
@@ -150,3 +158,5 @@ func _on_SfxTrack_finished():
 	# event emitted when sfx complete
 	pass
 
+func one_tile_per_move() -> bool:
+	return current_settings_values['1 Actionpoint Per Tile']
