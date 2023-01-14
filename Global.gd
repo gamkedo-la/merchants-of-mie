@@ -4,6 +4,7 @@ const MAX_TURNS = 5
 const FLAT_COST_PER_TURN = 1
 var current_scene = null
 var turn_number = 0
+var is_player_turn = true
 
 onready var action_Points_available = 5
 onready var action_Points_Per_Turn = 5 

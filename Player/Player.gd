@@ -54,6 +54,7 @@ func move_to(target_pos):
 	
 
 func start_player_turn():
+	Global.is_player_turn = true
 	# Wait for feedback animation to finish
 	yield(get_tree().create_timer(3), "timeout")
 	

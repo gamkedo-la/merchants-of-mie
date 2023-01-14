@@ -34,7 +34,7 @@ func _unhandled_input(event):
 				tile_result.collider.emit_signal("tile_hovered", tile_result.collider)
 				hovered_tile = tile_result.collider
 
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and Global.is_player_turn:
 		if event.pressed and event.button_index == 1:
 			var from = project_ray_origin(event.position)
 			print(from)
