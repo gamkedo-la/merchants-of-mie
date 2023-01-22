@@ -64,25 +64,26 @@ func make_tiles_interactable():
 			static_body.add_user_signal("tile_clicked")
 			static_body.connect("tile_clicked", self, "_tile_clicked")
 
-func is_valid_movement_tile(desired_move_vector: Vector3) -> bool:
+func is_valid_movement_tile(from_vector: Vector3, desired_move_vector: Vector3) -> bool:
 	if Global.action_Points_available <= 0:
 		return false
 	if SettingsManager.one_tile_per_move():
-		# get player position
-		# How do you find this in editor?
-		var player = get_tree().get_nodes_in_group("player")
-		# calculate move cost to desired location
-		
-		# compare move cost to available points
-		# if valid move, return true for tile hover animation
-		# else return false
-	return false
+		var board_map = get_parent().get_node("AMap")
+		var path_cost = board_map.get_path_cost(from_vector, desired_move_vector)
+		return path_cost <= Global.action_Points_available
+	return true
 	
 
 func _tile_hovered(tile_object):
 	var tween = Tween.new()
 	var from = tile_object.get_parent().translation
 	var to = Vector3(from.x, 0.2, from.z)
+	var players = get_tree().get_nodes_in_group("player")
+	var current_player_location;
+	for player in players:
+		if player.active_merchant == true:
+			current_player_location = player.global_transform.origin;
+	if (!is_valid_movement_tile(from, current_player_location)): return;
 	tween.interpolate_property(tile_object.get_parent(), "translation", from, to, 0.1)
 	tile_object.get_parent().add_child(tween)
 	tween.start()
