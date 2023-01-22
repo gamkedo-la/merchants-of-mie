@@ -64,6 +64,21 @@ func make_tiles_interactable():
 			static_body.add_user_signal("tile_clicked")
 			static_body.connect("tile_clicked", self, "_tile_clicked")
 
+func is_valid_movement_tile(desired_move_vector: Vector3) -> bool:
+	if Global.action_Points_available <= 0:
+		return false
+	if SettingsManager.one_tile_per_move():
+		# get player position
+		# How do you find this in editor?
+		var player = get_tree().get_nodes_in_group("player")
+		# calculate move cost to desired location
+		
+		# compare move cost to available points
+		# if valid move, return true for tile hover animation
+		# else return false
+	return false
+	
+
 func _tile_hovered(tile_object):
 	var tween = Tween.new()
 	var from = tile_object.get_parent().translation
@@ -121,8 +136,14 @@ func _card_3():
 	_end_board_turn()
 	
 func _card_4():
-	Global.flavor_text = str("THE PEOPLE OF X NEED MORE OF Y RESOURCE")
-	Global.functional_text = str("TOWN X IS PAYING MORE FOR Y RESOURCE")
+	var scarce_resource = Global.resource_names[randi() %  Global.resource_names.size()]
+	var cities = get_tree().get_nodes_in_group("cities")
+	var cityname_receiving_scarcity = cities[(randi() % cities.size())].city_name
+	
+	Global.flavor_text = str("THERE IS A DIRE NEED AT " + cityname_receiving_scarcity + " FOR MORE " + scarce_resource + " RESOURCE")
+	Global.functional_text = str(cityname_receiving_scarcity + " IS PAYING MORE FOR " + scarce_resource + " RESOURCE")
+		
+	var city_names = get_tree().call_group("cities", "make_resource_scarce", cityname_receiving_scarcity, scarce_resource)
 	_end_board_turn()
 	
 func _card_5():

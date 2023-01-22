@@ -43,8 +43,26 @@ var mouse_is_hovering_over_castle = false
 #Mouse Hovering Over merchant
 var mouse_is_hovering_over_merchant = false
 
+
 #Getting the value of goods per city
 var city_name = ""
+
+var resource_names = [
+#"Silver",
+"Gold",
+"Salt",
+"Grapes",
+"Wheat",
+"Tea",
+"Marble",
+"Incense",
+"Diamond",
+"Fish",
+"Lumber",
+"Dyes",
+"Coffee"
+]
+
 #var SilverValue = 0
 var GoldValue = 0
 var SaltValue = 0

@@ -10,7 +10,7 @@
 [ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-Desert.glb" type="PackedScene" id=9]
 [ext_resource path="res://SharedResources/Models/TerrainTiles/BaseTerrain.material" type="Material" id=10]
 [ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-Ocean.glb" type="PackedScene" id=11]
-[ext_resource path="res://City/City-Template.tscn" type="PackedScene" id=12]
+[ext_resource path="res://City/CityTemplate.tscn" type="PackedScene" id=12]
 
 [node name="Board" type="Spatial"]
 script = ExtResource( 1 )

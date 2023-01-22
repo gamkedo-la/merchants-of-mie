@@ -244,7 +244,7 @@ height = 1.4
 material = ExtResource( 16 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( -0.905556, -0.114424, 0.408504, 0, 0.962938, 0.269724, -0.424227, 0.24425, -0.871994, 0.885023, 2.47216, 0.0190837 )
+transform = Transform( -0.905554, -0.114425, 0.408508, 0, 0.962938, 0.269723, -0.424231, 0.244249, -0.871992, 0.885023, 2.47216, 0.0190837 )
 
 [node name="CameraAnimation" type="AnimationPlayer" parent="Camera"]
 anims/RESET = SubResource( 4 )

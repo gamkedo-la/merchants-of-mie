@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "BaseAction",
 "language": "GDScript",
 "path": "res://Actions/BaseAction.gd"
+}, {
+"base": "BaseAction",
+"class": "MoveAction",
+"language": "GDScript",
+"path": "res://Actions/MoveAction.gd"
 } ]
 _global_script_class_icons={
-"BaseAction": ""
+"BaseAction": "",
+"MoveAction": ""
 }
 
 [application]
