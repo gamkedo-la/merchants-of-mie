@@ -50,8 +50,10 @@ func move_to(target_pos):
 	mov.target_position = target_pos
 	mov.actor = self
 	mov.map = amap
-	action_queue.execute(mov)
-	
+	if (mov.map.get_path_cost(mov.original_position, mov.target_position) <= Global.action_Points_available):
+		action_queue.execute(mov)
+	else:
+		print_debug('Move too far')
 
 func start_player_turn():
 	Global.is_player_turn = true
