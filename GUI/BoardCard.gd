@@ -1,7 +1,9 @@
 extends Control
 
 func _ready():
-	Events.connect("start_board_turn", self, "spawnCard")
+	if not Events.is_connected("start_board_turn", self, "spawnCard"):
+		var con_res = Events.connect("start_board_turn", self, "spawnCard")
+		assert(con_res == OK)
 
 func spawnCard():
 	yield(get_tree().create_timer(3), "timeout")

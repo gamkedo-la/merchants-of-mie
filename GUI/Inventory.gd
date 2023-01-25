@@ -16,15 +16,35 @@ var dyes_texture = preload("res://SharedResources/ResourceIcons/Dyes.png")
 var lumber_texture = preload("res://SharedResources/ResourceIcons/Lumber.png")
 
 func _ready():
-	Events.connect("resource_picked_up", self, "add_resource_to_inventory")
-	Events.connect("resource_dropped", self, "remove_resource_from_inventory")
-	Events.connect("resource_dropped_second", self, "remove_resources_from_inventory")
+	var con_res
+	if not Events.is_connected("resource_picked_up", self, "add_resource_to_inventory"):
+		con_res = Events.connect("resource_picked_up", self, "add_resource_to_inventory")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("resource_dropped", self, "remove_resource_from_inventory"):
+		con_res = Events.connect("resource_dropped", self, "remove_resource_from_inventory")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("resource_dropped_second", self, "remove_resources_from_inventory"):
+		con_res = Events.connect("resource_dropped_second", self, "remove_resources_from_inventory")
+		assert(con_res == OK)
 	#Selling to the city
-	Events.connect("sell_inv_one", self, "sell_first_resource")
-	Events.connect("sell_inv_two", self, "sell_second_resource")
-	Events.connect("sell_inv_three", self, "sell_third_resource")
+	if not Events.is_connected("sell_inv_one", self, "sell_first_resource"):
+		con_res = Events.connect("sell_inv_one", self, "sell_first_resource")
+		assert(con_res == OK)
+	
+	if not Events.is_connected("sell_inv_two", self, "sell_second_resource"):
+		con_res = Events.connect("sell_inv_two", self, "sell_second_resource")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("sell_inv_three", self, "sell_third_resource"):
+		con_res = Events.connect("sell_inv_three", self, "sell_third_resource")
+		assert(con_res == OK)
+		
 	#Updating global inventory (for selling)
-	Events.connect("update_global_inventory_tracking", self, "update_global_inventory")
+	if not Events.is_connected("update_global_inventory_tracking", self, "update_global_inventory"):
+		con_res = Events.connect("update_global_inventory_tracking", self, "update_global_inventory")
+		assert(con_res == OK)
 
 func add_resource_to_inventory(resource):
 	var inventory_texture

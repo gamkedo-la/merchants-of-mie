@@ -8,8 +8,13 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Events.connect("start_player_turn", self, "start_player_turn")
-	Events.connect("start_board_turn", self, "start_board_turn")
+	var con_res
+	if not Events.is_connected("start_player_turn", self, "start_player_turn"):
+		con_res = Events.connect("start_player_turn", self, "start_player_turn")
+		assert(con_res == OK)
+	if not Events.is_connected("start_board_turn", self, "start_board_turn"):
+		con_res = Events.connect("start_board_turn", self, "start_board_turn")
+		assert(con_res == OK)
 
 
 func start_player_turn():

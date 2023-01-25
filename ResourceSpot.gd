@@ -16,22 +16,56 @@ export var can_spawn_lumber = false
 export var percent_chance_to_initially_drop_resource = .10
 
 func _ready():
+	var con_res
 	_spawn_resources()
 	#Referencing Event Bus - find Global and subscribe to the signal, 
 	#so when it is fired, trigger the function that is the 3rd variable ("_spawn_gold").
-	Events.connect("spawn_coffee", self, "_spawn_coffee")
-	Events.connect("spawn_fish", self, "_spawn_fish")
-	Events.connect("spawn_gold", self, "_spawn_gold")
-	Events.connect("spawn_grapes", self, "_spawn_grapes")
-	Events.connect("spawn_incense", self, "_spawn_incense")
-	Events.connect("spawn_salt", self, "_spawn_salt")
-	Events.connect("spawn_wheat", self, "_spawn_wheat")
-	Events.connect("spawn_tea", self, "_spawn_tea")
-	Events.connect("spawn_marble", self, "_spawn_marble")
-	Events.connect("spawn_diamond", self, "_spawn_diamond")
-	Events.connect("spawn_dyes", self, "_spawn_dyes")
-	Events.connect("spawn_lumber", self, "_spawn_lumber")
-	
+	if not Events.is_connected("spawn_coffee", self, "_spawn_coffee"):
+		con_res = Events.connect("spawn_coffee", self, "_spawn_coffee")
+		assert(con_res == OK)
+	if not Events.is_connected("spawn_fish", self, "_spawn_fish"):
+		con_res = Events.connect("spawn_fish", self, "_spawn_fish")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("spawn_gold", self, "_spawn_gold"):
+		con_res = Events.connect("spawn_gold", self, "_spawn_gold")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("spawn_grapes", self, "_spawn_grapes"):
+		con_res = Events.connect("spawn_grapes", self, "_spawn_grapes")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("spawn_incense", self, "_spawn_incense"):
+		con_res = Events.connect("spawn_incense", self, "_spawn_incense")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("spawn_salt", self, "_spawn_salt"):
+		con_res = Events.connect("spawn_salt", self, "_spawn_salt")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("spawn_wheat", self, "_spawn_wheat"):
+		con_res = Events.connect("spawn_wheat", self, "_spawn_wheat")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("spawn_tea", self, "_spawn_tea"):
+		con_res = Events.connect("spawn_tea", self, "_spawn_tea")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("spawn_marble", self, "_spawn_marble"):
+		con_res = Events.connect("spawn_marble", self, "_spawn_marble")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("spawn_diamond", self, "_spawn_diamond"):
+		con_res = Events.connect("spawn_diamond", self, "_spawn_diamond")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("spawn_dyes", self, "_spawn_dyes"):
+		con_res = Events.connect("spawn_dyes", self, "_spawn_dyes")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("spawn_lumber", self, "_spawn_lumber"):
+		con_res = Events.connect("spawn_lumber", self, "_spawn_lumber")
+		assert(con_res == OK)
 	
 	#Think about this - should this be per resource, or just hit _spawn_resources()?
 			

@@ -114,7 +114,9 @@ func initialize_audiostreamplayer():
 		soundtrack_audiostreamplayer = AudioStreamPlayer.new();
 	if !is_instance_valid(sfx_audiostreamplayer) || sfx_audiostreamplayer == null:
 		sfx_audiostreamplayer = AudioStreamPlayer.new();
-		sfx_audiostreamplayer.connect("finished", self, "_on_SfxTrack_finished");
+		if not sfx_audiostreamplayer.is_connected("finished", self, "_on_SfxTrack_finished"):
+			var con_res = sfx_audiostreamplayer.connect("finished", self, "_on_SfxTrack_finished")
+			assert(con_res == OK)
 	
 func play_mainsoundtrack() -> void:
 	initialize_audiostreamplayer();

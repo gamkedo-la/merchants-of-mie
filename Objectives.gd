@@ -28,7 +28,9 @@ var rand_resource_obj_two_two = 0
 var rand_resource_obj_two_three = 0
 
 func _ready():
-	Events.connect("update_objectives", self, "update_count")
+	if not Events.is_connected("update_objectives", self, "update_count"):
+		var con_res = Events.connect("update_objectives", self, "update_count")
+		assert(con_res == OK)
 	randomize()
 	Global.objective_one_count = randi() % (max_obj_one - min_obj_one) + min_obj_one
 	

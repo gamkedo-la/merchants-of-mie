@@ -1,8 +1,13 @@
 extends Control
 
 func _ready():
-	Events.connect("merchant_entered_city", self, "_on_merchant_enter_city")
-	Events.connect("merchant_left_city", self, "_on_merchant_left_city")
+	var con_res
+	if not Events.is_connected("merchant_entered_city", self, "_on_merchant_enter_city"):
+		con_res = Events.connect("merchant_entered_city", self, "_on_merchant_enter_city")
+		assert(con_res == OK)
+	if not Events.is_connected("merchant_left_city", self, "_on_merchant_left_city"):
+		con_res = Events.connect("merchant_left_city", self, "_on_merchant_left_city")
+		assert(con_res == OK)
 	
 func _on_merchant_enter_city():
 	$"Title".text = Global.city_name

@@ -13,20 +13,24 @@ onready var amap = get_parent()
 
 
 #signal out_of_trader_movement_points
+# warning-ignore:unused_signal
 signal end_turn
 
 
 func _ready():
+	var con_res
 	if purchased_merchant:
 		visible = true
 	else:
 		visible = false
 		
 	add_to_group("player")
-	Events.connect("start_player_turn", self, "start_player_turn")
+	if not Events.is_connected("start_player_turn", self, "start_player_turn"):
+		con_res = Events.connect("start_player_turn", self, "start_player_turn")
+		assert(con_res == OK)
 	action_queue = get_node("/root/GameSpace/ActionQueue")
 	Global.merchant_name = $MerchantInfo.merchant_name
-	Global.merchant_flavor_text = $MerchantInfo.concatenated_flavor
+	Global.merchant_flavor_text = $MerchantInfo.concatenated_flavor	
 	Events.emit_signal("update_merchant_flavor_text")
 	
 func _physics_process(delta):

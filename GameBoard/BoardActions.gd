@@ -17,13 +17,16 @@ export var resource_value_coffee = 3
 
 onready var dead_click_sfx: AudioStream = preload("res://Audio/SFX/err_click.wav")
 
+# warning-ignore:unused_signal
 signal end_turn
 
 var board_cards = [0,1,2,3,4 ]
 
 func _ready():
 	make_tiles_interactable()
-	Events.connect("start_board_turn", self, "start_board_turn")
+	if not Events.is_connected("start_board_turn", self, "start_board_turn"):
+		var con_res = Events.connect("start_board_turn", self, "start_board_turn")
+		assert(con_res == OK)
 
 func start_board_turn():
 	Global.is_player_turn = false

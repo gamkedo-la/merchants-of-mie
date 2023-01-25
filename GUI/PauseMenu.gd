@@ -4,7 +4,9 @@ extends Control
 var is_paused = false setget set_is_paused
 
 func _ready():
-	Events.connect("game_paused", self, "set_is_paused")
+	if not Events.is_connected("game_paused", self, "set_is_paused"):
+		var con_res = Events.connect("game_paused", self, "set_is_paused")
+		assert(con_res == OK)
 
 
 func _unhandled_input(event):
