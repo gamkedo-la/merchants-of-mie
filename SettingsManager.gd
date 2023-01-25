@@ -148,10 +148,12 @@ func play_soundfx(action_sfx: AudioStream) -> void:
 	initialize_audiostreamplayer();
 	if !sfx_audiostreamplayer.is_inside_tree():
 		get_tree().get_current_scene().add_child(sfx_audiostreamplayer)
-	var token_move_sfx = load("Audio/SFX/TokenSlide.wav")
-	sfx_audiostreamplayer.stream = token_move_sfx #default sound
+
 	if (action_sfx != null): # sound effect depending on resource type
 		sfx_audiostreamplayer.stream = action_sfx
+	else:
+		var token_move_sfx = load("Audio/SFX/TokenSlide.wav")
+		sfx_audiostreamplayer.stream = token_move_sfx #default sound
 	sfx_audiostreamplayer.play()
 	
 func _on_SfxTrack_finished():

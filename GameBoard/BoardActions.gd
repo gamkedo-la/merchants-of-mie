@@ -15,6 +15,7 @@ export var resource_value_lumber = 3
 export var resource_value_dyes = 3
 export var resource_value_coffee = 3
 
+onready var dead_click_sfx: AudioStream = preload("res://Audio/SFX/err_click.wav")
 
 signal end_turn
 
@@ -106,6 +107,14 @@ func _tile_clicked(tile_object):
 	var tween = Tween.new()
 	var from = tile_object.get_parent().translation
 	var to = Vector3(from.x, 0.5, from.z)
+	var players = get_tree().get_nodes_in_group("player")
+	var current_player_location;
+	for player in players:
+		if player.active_merchant == true:
+			current_player_location = player.global_transform.origin;
+	if (!is_valid_movement_tile(from, current_player_location)): 
+		SettingsManager.play_soundfx(dead_click_sfx)
+		return;
 	tween.interpolate_property(tile_object.get_parent(), "translation", from, to, 0.1)
 	tile_object.get_parent().add_child(tween)
 	tween.start()
