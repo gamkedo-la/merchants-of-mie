@@ -20,12 +20,14 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 
 [node name="City-Template" parent="BoardTiles" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 17 )
+resource_status_silver = [ 0, 0, 0, 1, 0 ]
 resource_status_lumber = [ 1, 0, 0, 0, 0 ]
 resource_status_dyes = [ 0, 1, 0, 0, 0 ]
 
 [node name="City-Template2" parent="BoardTiles" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 1 )
 city_name = "Doveshire"
+resource_status_silver = [ 0, 0, 0, 0, 1 ]
 resource_status_gold = [ 0, 0, 0, 0, 1 ]
 resource_status_salt = [ 0, 0, 0, 0, 1 ]
 resource_status_grapes = [ 1, 0, 0, 0, 0 ]
@@ -41,6 +43,7 @@ resource_status_dyes = [ 1, 0, 0, 0, 0 ]
 [node name="City-Template3" parent="BoardTiles" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -15 )
 city_name = "Vine River"
+resource_status_silver = [ 0, 0, 0, 0, 1 ]
 resource_status_gold = [ 0, 0, 0, 0, 1 ]
 resource_status_salt = [ 0, 0, 0, 0, 1 ]
 resource_status_grapes = [ 1, 0, 0, 0, 0 ]
@@ -56,6 +59,7 @@ resource_status_coffee = [ 1, 0, 0, 0, 0 ]
 [node name="City-Template4" parent="BoardTiles" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -13 )
 city_name = "East Haven"
+resource_status_silver = [ 0, 0, 0, 1, 0 ]
 resource_status_salt = [ 0, 0, 0, 1, 0 ]
 resource_status_grapes = [ 0, 0, 1, 0, 0 ]
 resource_status_tea = [ 0, 1, 0, 0, 0 ]
@@ -67,6 +71,7 @@ resource_status_dyes = [ 0, 1, 0, 0, 0 ]
 [node name="City-Template5" parent="BoardTiles" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 13 )
 city_name = "Dro Hills"
+resource_status_silver = [ 1, 0, 0, 0, 0 ]
 resource_status_gold = [ 1, 0, 0, 0, 0 ]
 resource_status_salt = [ 1, 0, 0, 0, 0 ]
 resource_status_grapes = [ 0, 0, 0, 0, 1 ]
@@ -83,6 +88,7 @@ resource_status_coffee = [ 0, 0, 0, 0, 1 ]
 [node name="City-Template6" parent="BoardTiles" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -7 )
 city_name = "Greenglade"
+resource_status_silver = [ 0, 0, 1, 0, 0 ]
 resource_status_salt = [ 0, 0, 0, 1, 0 ]
 resource_status_marble = [ 0, 0, 1, 0, 0 ]
 resource_status_incense = [ 0, 0, 1, 0, 0 ]

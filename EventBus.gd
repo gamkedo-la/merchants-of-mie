@@ -34,6 +34,7 @@ signal merchant_entered_city
 signal merchant_left_city
 
 #Resource Spawning Signals
+signal spawn_silver
 # warning-ignore:unused_signal
 signal spawn_gold
 # warning-ignore:unused_signal

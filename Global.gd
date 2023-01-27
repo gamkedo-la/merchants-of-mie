@@ -48,7 +48,7 @@ var mouse_is_hovering_over_merchant = false
 var city_name = ""
 
 var resource_names = [
-#"Silver",
+"Silver",
 "Gold",
 "Salt",
 "Grapes",
@@ -63,7 +63,7 @@ var resource_names = [
 "Coffee"
 ]
 
-#var SilverValue = 0
+var SilverValue = 0
 var GoldValue = 0
 var SaltValue = 0
 var GrapesValue = 0
@@ -77,7 +77,7 @@ var LumberValue = 0
 var DyesValue = 0
 var CoffeeValue = 0
 
-#var SilverBuyValue = 0
+var SilverBuyValue = 0
 var GoldBuyValue = 0
 var SaltBuyValue = 0
 var GrapesBuyValue = 0

@@ -11,7 +11,7 @@ func _ready():
 	
 func _on_merchant_enter_city():
 	$"Title".text = Global.city_name
-	#$"VBoxContainer/TextureRect/SilverValue".text = String(Global.SilverValue)
+	$"VBoxContainer/TextureRect99/SilverValue".text = String(Global.SilverValue)
 	$"VBoxContainer/TextureRect2/GoldValue".text = String(Global.GoldValue)
 	$"VBoxContainer/TextureRect3/SaltValue".text = String(Global.SaltValue)
 	$"VBoxContainer/TextureRect4/GrapesValue".text = String(Global.GrapesValue)
@@ -25,7 +25,7 @@ func _on_merchant_enter_city():
 	$"VBoxContainer/TextureRect12/DyesValue".text = String(Global.DyesValue )
 	$"VBoxContainer/TextureRect13/CoffeeValue".text = String(Global.CoffeeValue)
 	
-	#$"VBoxContainer/TextureRect/SilverValue".text = String(Global.SilverValue)
+	$"VBoxContainer/TextureRect99/SilverValue2".text = String(Global.SilverBuyValue)
 	$"VBoxContainer/TextureRect2/GoldValue2".text = String(Global.GoldBuyValue)
 	$"VBoxContainer/TextureRect3/SaltValue2".text = String(Global.SaltBuyValue)
 	$"VBoxContainer/TextureRect4/GrapesValue2".text = String(Global.GrapesBuyValue)
@@ -57,13 +57,15 @@ func _on_Inv3_button_down():
 	Events.emit_signal("sell_inv_three", Global.current_merchant_inv_three)
 
 func _on_Inv4_pressed():
-	print("Placeholder until silver done")
-	#if(Global.currency_available >= Global.SilverBuyValue):
-		#Global.item_buy_name = "Silver"
-		#Events.emit_signal("buy_inv", Global.item_buy_name)
-		#print("Add resource to open inv")
-		#Global.currency_available -= Global.SilverBuyValue
-		#Global.item_buy_name = ""
+	if(Global.currency_available >= Global.SilverBuyValue):
+		Global.item_buy_name = "Silver"
+		Events.emit_signal("buy_inv", Global.item_buy_name)
+		Events.emit_signal("resource_picked_up", Global.item_buy_name)
+		Global.currency_available -= Global.SilverBuyValue
+		Events.emit_signal("merchant_purchased")
+		Global.item_buy_name = ""
+	else:
+		print("Either your inventory is full or you have not enough money")
 
 func _on_Inv5_pressed():
 	if(Global.currency_available >= Global.GoldBuyValue):

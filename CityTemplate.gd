@@ -38,7 +38,7 @@ var neutral_buy = 0
 var need_resource_buy = .4
 var need_alot_buy = .8
 
-#export var resource_status_silver = [0,0,0,0,0]
+export var resource_status_silver = [0,0,0,0,0]
 export var resource_status_gold = [0,0,0,0,0]
 export var resource_status_salt = [0,0,0,0,0]
 export var resource_status_grapes = [0,0,0,0,0]
@@ -53,6 +53,7 @@ export var resource_status_dyes = [0,0,0,0,0]
 export var resource_status_coffee = [0,0,0,0,0]
 
 var resource_statuses = [
+	resource_status_silver,
 	resource_status_gold,
 	resource_status_salt,
 	resource_status_grapes,
@@ -67,7 +68,7 @@ var resource_statuses = [
 	resource_status_coffee,
 ];
 
-#var silver_value = 0
+var silver_value = 0
 var gold_value = 0
 var salt_value = 0
 var grapes_value = 0
@@ -81,7 +82,7 @@ var lumber_value = 0
 var dyes_value = 0
 var coffee_value = 0
 
-#var silver_buy_value = 0
+var silver_buy_value = 0
 var gold_buy_value = 0
 var salt_buy_value = 0
 var grapes_buy_value = 0
@@ -120,7 +121,7 @@ func calculate_resource_value(resource_name: String, resource_costs_array: PoolI
 func update_values():
 	#Equation: base_resource_value * (each array element) * (1 + [array value modifier])
 	#Equation Example: gold_value = ((5 * 0) * (1 - .8)) + [array 2, 3, 4, 5]
-	
+	silver_value = calculate_resource_value("Silver", resource_status_silver);
 	gold_value = calculate_resource_value("Gold", resource_status_gold);
 	salt_value = calculate_resource_value("Salt", resource_status_salt);
 	grapes_value = calculate_resource_value("Grapes", resource_status_grapes);
@@ -136,7 +137,7 @@ func update_values():
 	
 	#silver_value = (((base_resource_value * resource_status_silver[0]) * (1+have_excess))+ ((base_resource_value * resource_status_silver[1]) * (1+have_enough))+ ((base_resource_value * resource_status_silver[2]) * (1-neutral))+ ((base_resource_value * resource_status_silver[3]) * (1+need_resource))+ ((base_resource_value * resource_status_silver[4]) * (1+need_alot)))
 
-	#silver_buy_value = (2 *silver_value)
+	silver_buy_value = (2 *silver_value)
 	gold_buy_value = (2 *gold_value)
 	salt_buy_value = (2 *salt_value)
 	grapes_buy_value = (2 *grapes_value)
@@ -152,7 +153,7 @@ func update_values():
 
 
 	Global.city_name = city_name
-	#Global.SilverValue = silver_value
+	Global.SilverValue = silver_value
 	Global.GoldValue = gold_value
 	Global.SaltValue = salt_value
 	Global.GrapesValue = grapes_value
@@ -166,7 +167,7 @@ func update_values():
 	Global.DyesValue = dyes_value
 	Global.CoffeeValue = coffee_value
 	
-	#Global.SilverValue = silver_value
+	Global.SilverBuyValue = silver_buy_value
 	Global.GoldBuyValue = gold_buy_value
 	Global.SaltBuyValue = salt_buy_value
 	Global.GrapesBuyValue = grapes_buy_value
@@ -182,7 +183,7 @@ func update_values():
 
 func clear_values():
 	Global.city_name = ""
-	#Global.SilverValue = 0
+	Global.SilverValue = 0
 	Global.GoldValue = 0
 	Global.SaltValue = 0
 	Global.GrapesValue = 0
@@ -196,7 +197,7 @@ func clear_values():
 	Global.DyesValue = 0
 	Global.CoffeeValue = 0
 	
-	#Global.SilverBuyValue = 0
+	Global.SilverBuyValue = 0
 	Global.GoldBuyValue = 0
 	Global.SaltBuyValue = 0
 	Global.GrapesBuyValue = 0

@@ -7,19 +7,19 @@ var min_obj_two = 2#3
 var max_obj_two = 3#10 
 
 var possible_objectives = [
-#"Silver",
-"Gold",
-"Salt",
-"Grapes",
-"Wheat",
-"Tea",
-"Marble",
-"Incense",
-"Diamond",
-"Fish",
-"Lumber",
-"Dyes",
-"Coffee"
+"Silver",
+#"Gold",
+#"Salt",
+#"Grapes",
+#"Wheat",
+#"Tea",
+#"Marble",
+#"Incense",
+#"Diamond",
+#"Fish",
+#"Lumber",
+#"Dyes",
+#"Coffee"
 ]
 
 var rand_resource_obj_one = 0
