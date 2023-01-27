@@ -22,7 +22,7 @@ func _on_Area_area_entered(area):
 		Events.emit_signal("resource_picked_up", resource_name)
 		#queue_free()
 		# Replace with function body.
-	if(area.name == "Area"):
+	if(area.name == "Area" && !active):
 		queue_free()
 
 func _process(delta):
