@@ -2,7 +2,12 @@ extends Spatial
 
 export var city_name = "West Rymare"
 
-
+export var is_west_rymare = false
+export var is_doveshire = false
+export var is_vine_river = false
+export var is_easthaven = false
+export var is_greenglade = false
+export var is_dro_hills = false
 
 enum town_resource_status {
 	HAVE_EXCESS,
@@ -213,9 +218,10 @@ func clear_values():
 
 func _on_Area_area_entered(area):
 	if(area.name == "Merchant_Area"):
-		update_values()
-		#Signal goes to Event Bus and GUI
-		Events.emit_signal("merchant_entered_city")
+		if(is_west_rymare && !Global.west_rymare_lockdown):
+			update_values()
+			#Signal goes to Event Bus and GUI
+			Events.emit_signal("merchant_entered_city")
 
 
 func _on_Area_area_exited(area):

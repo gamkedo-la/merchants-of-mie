@@ -85,3 +85,16 @@ signal buy_inv(resource_name)
 
 # warning-ignore:unused_signal
 signal update_global_inventory_tracking
+
+signal turn_off_west_rymare
+signal turn_on_west_rymare
+signal turn_off_doveshire
+signal turn_on_west_doveshire
+signal turn_off_west_vine_river
+signal turn_on_west_vine_river
+signal turn_off_west_easthaven
+signal turn_on_west_easthaven
+signal turn_off_west_greenglade
+signal turn_on_west_greenglade
+signal turn_off_dro_hills
+signal turn_on_dro_hills

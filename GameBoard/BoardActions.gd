@@ -27,6 +27,12 @@ func _ready():
 	if not Events.is_connected("start_board_turn", self, "start_board_turn"):
 		var con_res = Events.connect("start_board_turn", self, "start_board_turn")
 		assert(con_res == OK)
+	if not Events.is_connected("turn_on_west_rymare", self, "turn_on_west_rymare"):
+		var con_res = Events.connect("turn_on_west_rymare", self, "turn_on_west_rymare")
+		assert(con_res == OK)
+	if not Events.is_connected("turn_off_west_rymare", self, "turn_off_west_rymare"):
+		var con_res = Events.connect("turn_off_west_rymare", self, "turn_off_west_rymare")
+		assert(con_res == OK)
 
 func start_board_turn():
 	Global.is_player_turn = false
@@ -292,3 +298,30 @@ func _end_board_turn():
 #	$BoardCard.spawnCard()
 	#yield(get_tree().create_timer(3), "timeout")
 	print("these functions were moved to BoardCard -> onButtonPressed")
+	
+	
+func _input(ev):
+	if ev is InputEventKey and ev.scancode == KEY_K and not ev.echo:
+		turn_on_west_rymare()
+	if ev is InputEventKey and ev.scancode == KEY_L and not ev.echo:
+		turn_off_west_rymare()
+		
+func turn_on_west_rymare():
+	#Turn off lockdown
+	$"BoardTiles/City-Lockdown".visible = false
+	#turn on city
+	$"BoardTiles/City-Template".visible = true
+	#turn bool off to prevent menu from popping 
+	Global.west_rymare_lockdown = false
+	#make counter 0
+	print("ere")
+	
+func turn_off_west_rymare():
+	#Turn on lockdown
+	$"BoardTiles/City-Lockdown".visible = true
+	#turn off city
+	$"BoardTiles/City-Template".visible = false
+	#turn bool on to prevent menu from popping 
+	Global.west_rymare_lockdown = true
+	#make counter 3
+	print("here")

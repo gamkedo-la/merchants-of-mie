@@ -98,6 +98,13 @@ var current_merchant_inv_one = ""
 var current_merchant_inv_two = ""
 var current_merchant_inv_three = ""
 
+var west_rymare_lockdown = false
+var doveshire_lockdown = false
+var vine_river_lockdown = false
+var easthaven_lockdown = false
+var greenglade_lockdown = false
+var dro_hills_lockdown = false
+
 var item_buy_name = ""
 
 func _ready():
