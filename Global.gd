@@ -105,6 +105,13 @@ var easthaven_lockdown = false
 var greenglade_lockdown = false
 var dro_hills_lockdown = false
 
+var west_rymare_countdown = 0
+var doveshire_countdown = 0
+var vine_river_countdown = 0
+var easthaven_countdown = 0
+var greenglade_countdown = 0
+var dro_hills_countdown = 0
+
 var item_buy_name = ""
 
 func _ready():

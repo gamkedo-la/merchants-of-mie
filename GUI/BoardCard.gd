@@ -22,4 +22,9 @@ func _on_Button_pressed():
 	
 	print("Turn Board Card off")
 	$AnimationPlayer.play("CardSpinBase")
+	if(Global.west_rymare_lockdown):
+		Global.west_rymare_countdown -= 1
+		if(Global.west_rymare_countdown <= 0):
+			Global.west_rymare_lockdown = false
+			Events.emit_signal("turn_on_west_rymare")
 	pass # Replace with function body.

@@ -324,4 +324,5 @@ func turn_off_west_rymare():
 	#turn bool on to prevent menu from popping 
 	Global.west_rymare_lockdown = true
 	#make counter 3
+	Global.west_rymare_countdown = 3
 	print("here")
