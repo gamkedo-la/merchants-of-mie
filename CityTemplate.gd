@@ -222,6 +222,26 @@ func _on_Area_area_entered(area):
 			update_values()
 			#Signal goes to Event Bus and GUI
 			Events.emit_signal("merchant_entered_city")
+		if(is_doveshire && !Global.doveshire_lockdown):
+			update_values()
+			#Signal goes to Event Bus and GUI
+			Events.emit_signal("merchant_entered_city")
+		if(is_vine_river && !Global.vine_river_lockdown):
+			update_values()
+			#Signal goes to Event Bus and GUI
+			Events.emit_signal("merchant_entered_city")
+		if(is_easthaven && !Global.easthaven_lockdown):
+			update_values()
+			#Signal goes to Event Bus and GUI
+			Events.emit_signal("merchant_entered_city")
+		if(is_greenglade && !Global.greenglade_lockdown):
+			update_values()
+			#Signal goes to Event Bus and GUI
+			Events.emit_signal("merchant_entered_city")
+		if(is_dro_hills && !Global.dro_hills_lockdown):
+			update_values()
+			#Signal goes to Event Bus and GUI
+			Events.emit_signal("merchant_entered_city")
 
 
 func _on_Area_area_exited(area):

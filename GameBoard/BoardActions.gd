@@ -20,7 +20,7 @@ onready var dead_click_sfx: AudioStream = preload("res://Audio/SFX/err_click.wav
 # warning-ignore:unused_signal
 signal end_turn
 
-var board_cards = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+var board_cards = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
 
 func _ready():
 	make_tiles_interactable()
@@ -45,57 +45,76 @@ func start_board_turn():
 
 func determine_card():
 	var rand_card:int = randi() % board_cards.size()
-	if(board_cards[rand_card] == 0):
+	rand_card = 20
+	if(board_cards[rand_card] == -1):
 		determine_card()
 	else:
-		if(rand_card == 0):
+		if(rand_card == 1):
 			_spawn_Gold_Incense()
-			board_cards[0] = 0
+			board_cards[0] = -1
 		elif(rand_card == 1):
 			_spawn_marble_lumber()
-			board_cards[1] = 0
+			board_cards[1] = -1
 		elif(rand_card == 2):
 			_spawn_grassland()
-			board_cards[2] = 0
+			board_cards[2] = -1
 		elif(rand_card == 3):
 			_spawn_fish()
-			board_cards[3] = 0
+			board_cards[3] = -1
 		elif(rand_card == 4):
 			_spawn_diamonds_gold_silver()
-			board_cards[4] = 0
+			board_cards[4] = -1
 		elif(rand_card == 5):
 			_spawn_salt()
-			board_cards[5] = 0
+			board_cards[5] = -1
 		elif(rand_card == 6):
 			_spawn_coffee()
-			board_cards[6] = 0
+			board_cards[6] = -1
 		elif(rand_card == 7):
 			_spawn_dyes_tea()
-			board_cards[7] = 0
+			board_cards[7] = -1
 		elif(rand_card == 8):
 			_spawn_coffee_wheat()
-			board_cards[8] = 0
+			board_cards[8] = -1
 		elif(rand_card == 9):
 			_spawn_salt_incense()
-			board_cards[9] = 0
+			board_cards[9] = -1
 		elif(rand_card == 10):
 			_spawn_silver_dyes_diamonds()
-			board_cards[10] = 0
+			board_cards[10] = -1
 		elif(rand_card == 11):
 			_spawn_trees()
-			board_cards[11] = 0
+			board_cards[11] = -1
 		elif(rand_card == 12):
 			_spawn_grapes()
-			board_cards[12] = 0
+			board_cards[12] = -1
 		elif(rand_card == 13):
 			_spawn_marble()
-			board_cards[13] = 0
+			board_cards[13] = -1
 		elif(rand_card == 14):
 			_card_4()
-			board_cards[14] = 0
+			board_cards[14] = -1
 		elif(rand_card == 15):
 			_card_5()
-			board_cards[15] = 0
+			board_cards[15] = -1
+		elif(rand_card == 16):
+			_lockdown_west_rymare()
+			board_cards[16] = -1
+		elif(rand_card == 17):
+			_lockdown_doveshire()
+			board_cards[17] = -1
+		elif(rand_card == 18):
+			_lockdown_vine_river()
+			board_cards[18] = -1
+		elif(rand_card == 19):
+			_lockdown_easthaven()
+			board_cards[19] = -1
+		elif(rand_card == 20):
+			_lockdown_greenglade()
+			board_cards[20] = -1
+		elif(rand_card == 21):
+			_lockdown_dro_hills()
+			board_cards[21] = -1
 
 
 func make_tiles_interactable():
@@ -277,6 +296,36 @@ func _spawn_marble():
 	Events.emit_signal("spawn_marble")
 	_end_board_turn()			
 		
+func _lockdown_west_rymare():
+	Global.flavor_text = str("TOXIC LEVELS OF MERCURY IN WEST RYMARE, CITY LOCKED DOWN")
+	Global.functional_text = str("WEST RYMARE IS ON LOCKDOWN FOR 3 TURNS")
+	Events.emit_signal("turn_off_west_rymare")
+	
+func _lockdown_doveshire():
+	Global.flavor_text = str("A RARE FUNGUS HAS ENTERED THE WATER SUPPLY OF DOVESHIRE")
+	Global.functional_text = str("DOVESHIRE IS ON LOCKDOWN FOR 3 TURNS")
+	Events.emit_signal("turn_off_doveshire")
+	
+func _lockdown_vine_river():
+	Global.flavor_text = str("NEARBY MOUNTAIN LIONS ARE CIRCLING THE CITY")
+	Global.functional_text = str("VINE RIVER IS ON LOCKDOWN FOR 3 TURNS")
+	Events.emit_signal("turn_off_vine_river")
+	
+func _lockdown_easthaven():
+	Global.flavor_text = str("A POLITICAL STRUGGLE IS CAUSING AN EMBARGO")
+	Global.functional_text = str("EASTHAVEN IS ON LOCKDOWN FOR 3 TURNS")
+	Events.emit_signal("turn_off_easthaven")
+	
+func _lockdown_greenglade():
+	Global.flavor_text = str("AN OUTBREAK OF THE FLU GREENGLADE IS NOT ALLOWING VISITORS")
+	Global.functional_text = str("GREENGLADE IS ON LOCKDOWN FOR 3 TURNS")
+	Events.emit_signal("turn_off_greenglade")
+	
+func _lockdown_dro_hills():
+	Global.flavor_text = str("A HEAVY DUST STORM PREVENTING ACCESS TO DRO HILLS")
+	Global.functional_text = str("DRO HILLS IS ON LOCKDOWN FOR 3 TURNS")
+	Events.emit_signal("turn_off_dro_hills")
+	
 func _card_4():
 	var scarce_resource = Global.resource_names[randi() %  Global.resource_names.size()]
 	var cities = get_tree().get_nodes_in_group("cities")
@@ -313,8 +362,6 @@ func turn_on_west_rymare():
 	$"BoardTiles/City-Template".visible = true
 	#turn bool off to prevent menu from popping 
 	Global.west_rymare_lockdown = false
-	#make counter 0
-	print("ere")
 	
 func turn_off_west_rymare():
 	#Turn on lockdown
@@ -325,4 +372,58 @@ func turn_off_west_rymare():
 	Global.west_rymare_lockdown = true
 	#make counter 3
 	Global.west_rymare_countdown = 3
-	print("here")
+	
+func turn_on_doveshire():
+	$"BoardTiles/City-Lockdown2".visible = false
+	$"BoardTiles/City-Template2".visible = true
+	Global.doveshire_lockdown = false
+	
+func turn_off_doveshire():
+	$"BoardTiles/City-Lockdown2".visible = true
+	$"BoardTiles/City-Template2".visible = false
+	Global.doveshire_lockdown = true
+	Global.doveshire_countdown = 3
+	
+func turn_on_vine_river():
+	$"BoardTiles/City-Lockdown3".visible = false
+	$"BoardTiles/City-Template3".visible = true
+	Global.vine_river_lockdown = false
+	
+func turn_off_vine_river():
+	$"BoardTiles/City-Lockdown3".visible = true
+	$"BoardTiles/City-Template3".visible = false
+	Global.vine_river_lockdown = true
+	Global.vine_river_countdown = 3
+	
+func turn_on_easthaven():
+	$"BoardTiles/City-Lockdown4".visible = false
+	$"BoardTiles/City-Template4".visible = true
+	Global.easthaven_lockdown = false
+	
+func turn_off_easthaven():
+	$"BoardTiles/City-Lockdown4".visible = true
+	$"BoardTiles/City-Template4".visible = false
+	Global.easthaven_lockdown = true
+	Global.easthaven_countdown = 3
+	
+func turn_on_dro_hills():
+	$"BoardTiles/City-Lockdown5".visible = false
+	$"BoardTiles/City-Template5".visible = true
+	Global.dro_hills_lockdown = false
+	
+func turn_off_dro_hills():
+	$"BoardTiles/City-Lockdown5".visible = true
+	$"BoardTiles/City-Template5".visible = false
+	Global.dro_hills_lockdown = true
+	Global.dro_hills_countdown = 3
+	
+func turn_on_greenglade():
+	$"BoardTiles/City-Lockdown6".visible = false
+	$"BoardTiles/City-Template6".visible = true
+	Global.greenglade_lockdown = false
+	
+func turn_off_greenglade():
+	$"BoardTiles/City-Lockdown6".visible = true
+	$"BoardTiles/City-Template6".visible = false
+	Global.greenglade_lockdown = true
+	Global.greenglade_countdown = 3
