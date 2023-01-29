@@ -89,11 +89,11 @@ signal update_global_inventory_tracking
 signal turn_off_west_rymare
 signal turn_on_west_rymare
 signal turn_off_doveshire
-signal turn_on_west_doveshire
-signal turn_off_west_vine_river
-signal turn_on_west_vine_river
-signal turn_off_west_easthaven
-signal turn_on_west_easthaven
+signal turn_on_doveshire
+signal turn_off_vine_river
+signal turn_on_vine_river
+signal turn_off_easthaven
+signal turn_on_easthaven
 signal turn_off_greenglade
 signal turn_on_greenglade
 signal turn_off_dro_hills

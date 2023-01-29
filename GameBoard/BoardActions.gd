@@ -20,18 +20,54 @@ onready var dead_click_sfx: AudioStream = preload("res://Audio/SFX/err_click.wav
 # warning-ignore:unused_signal
 signal end_turn
 
-var board_cards = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
+var board_cards = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
 
 func _ready():
 	make_tiles_interactable()
 	if not Events.is_connected("start_board_turn", self, "start_board_turn"):
 		var con_res = Events.connect("start_board_turn", self, "start_board_turn")
 		assert(con_res == OK)
+		
 	if not Events.is_connected("turn_on_west_rymare", self, "turn_on_west_rymare"):
 		var con_res = Events.connect("turn_on_west_rymare", self, "turn_on_west_rymare")
 		assert(con_res == OK)
 	if not Events.is_connected("turn_off_west_rymare", self, "turn_off_west_rymare"):
 		var con_res = Events.connect("turn_off_west_rymare", self, "turn_off_west_rymare")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("turn_on_doveshire", self, "turn_on_doveshire"):
+		var con_res = Events.connect("turn_on_doveshire", self, "turn_on_doveshire")
+		assert(con_res == OK)
+	if not Events.is_connected("turn_off_doveshire", self, "turn_off_doveshire"):
+		var con_res = Events.connect("turn_off_doveshire", self, "turn_off_doveshire")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("turn_on_easthaven", self, "turn_on_easthaven"):
+		var con_res = Events.connect("turn_on_easthaven", self, "turn_on_easthaven")
+		assert(con_res == OK)
+	if not Events.is_connected("turn_off_easthaven", self, "turn_off_easthaven"):
+		var con_res = Events.connect("turn_off_easthaven", self, "turn_off_easthaven")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("turn_on_vine_river", self, "turn_on_vine_river"):
+		var con_res = Events.connect("turn_on_vine_river", self, "turn_on_vine_river")
+		assert(con_res == OK)
+	if not Events.is_connected("turn_off_vine_river", self, "turn_off_vine_river"):
+		var con_res = Events.connect("turn_off_vine_river", self, "turn_off_vine_river")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("turn_on_greenglade", self, "turn_on_greenglade"):
+		var con_res = Events.connect("turn_on_greenglade", self, "turn_on_greenglade")
+		assert(con_res == OK)
+	if not Events.is_connected("turn_off_greenglade", self, "turn_off_greenglade"):
+		var con_res = Events.connect("turn_off_greenglade", self, "turn_off_greenglade")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("turn_on_dro_hills", self, "turn_on_dro_hills"):
+		var con_res = Events.connect("turn_on_dro_hills", self, "turn_on_dro_hills")
+		assert(con_res == OK)
+	if not Events.is_connected("turn_off_dro_hills", self, "turn_off_dro_hills"):
+		var con_res = Events.connect("turn_off_dro_hills", self, "turn_off_dro_hills")
 		assert(con_res == OK)
 
 func start_board_turn():
@@ -45,11 +81,10 @@ func start_board_turn():
 
 func determine_card():
 	var rand_card:int = randi() % board_cards.size()
-	rand_card = 20
 	if(board_cards[rand_card] == -1):
 		determine_card()
 	else:
-		if(rand_card == 1):
+		if(rand_card == 0):
 			_spawn_Gold_Incense()
 			board_cards[0] = -1
 		elif(rand_card == 1):
@@ -92,10 +127,10 @@ func determine_card():
 			_spawn_marble()
 			board_cards[13] = -1
 		elif(rand_card == 14):
-			_card_4()
+			_lockdown_greenglade()
 			board_cards[14] = -1
 		elif(rand_card == 15):
-			_card_5()
+			_lockdown_dro_hills()
 			board_cards[15] = -1
 		elif(rand_card == 16):
 			_lockdown_west_rymare()
@@ -109,12 +144,6 @@ func determine_card():
 		elif(rand_card == 19):
 			_lockdown_easthaven()
 			board_cards[19] = -1
-		elif(rand_card == 20):
-			_lockdown_greenglade()
-			board_cards[20] = -1
-		elif(rand_card == 21):
-			_lockdown_dro_hills()
-			board_cards[21] = -1
 
 
 func make_tiles_interactable():
@@ -299,27 +328,27 @@ func _spawn_marble():
 func _lockdown_west_rymare():
 	Global.flavor_text = str("TOXIC LEVELS OF MERCURY IN WEST RYMARE, CITY LOCKED DOWN")
 	Global.functional_text = str("WEST RYMARE IS ON LOCKDOWN FOR 3 TURNS")
-	Events.emit_signal("turn_off_west_rymare")
+	turn_off_west_rymare()
 	
 func _lockdown_doveshire():
 	Global.flavor_text = str("A RARE FUNGUS HAS ENTERED THE WATER SUPPLY OF DOVESHIRE")
 	Global.functional_text = str("DOVESHIRE IS ON LOCKDOWN FOR 3 TURNS")
-	Events.emit_signal("turn_off_doveshire")
+	turn_off_doveshire()
 	
 func _lockdown_vine_river():
 	Global.flavor_text = str("NEARBY MOUNTAIN LIONS ARE CIRCLING THE CITY")
 	Global.functional_text = str("VINE RIVER IS ON LOCKDOWN FOR 3 TURNS")
-	Events.emit_signal("turn_off_vine_river")
+	turn_off_vine_river()
 	
 func _lockdown_easthaven():
 	Global.flavor_text = str("A POLITICAL STRUGGLE IS CAUSING AN EMBARGO")
 	Global.functional_text = str("EASTHAVEN IS ON LOCKDOWN FOR 3 TURNS")
-	Events.emit_signal("turn_off_easthaven")
+	turn_off_easthaven()
 	
 func _lockdown_greenglade():
 	Global.flavor_text = str("AN OUTBREAK OF THE FLU GREENGLADE IS NOT ALLOWING VISITORS")
 	Global.functional_text = str("GREENGLADE IS ON LOCKDOWN FOR 3 TURNS")
-	Events.emit_signal("turn_off_greenglade")
+	turn_off_greenglade()
 	
 func _lockdown_dro_hills():
 	Global.flavor_text = str("A HEAVY DUST STORM PREVENTING ACCESS TO DRO HILLS")
@@ -335,11 +364,6 @@ func _card_4():
 	Global.functional_text = str(cityname_receiving_scarcity + " IS PAYING MORE FOR " + scarce_resource + " RESOURCE")
 		
 	var city_names = get_tree().call_group("cities", "make_resource_scarce", cityname_receiving_scarcity, scarce_resource)
-	_end_board_turn()
-	
-func _card_5():
-	Global.flavor_text = str("X TOWN IS FACING A MYSTERY ILLNESS")
-	Global.functional_text = str("TOWN X IS ON LOCKDOWN, NO ONE MAY ENTER OR LEAVE")
 	_end_board_turn()
 
 func _end_board_turn():
