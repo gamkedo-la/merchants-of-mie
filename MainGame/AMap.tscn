@@ -47,3 +47,31 @@ transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.47288, 0.336094, 0.544
 [node name="PlayerPrototype2" parent="." instance=ExtResource( 5 )]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.52712, 0.336094, 0.544791 )
 purchased_merchant = true
+
+[node name="PlayerPrototype3" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.52712, 0.336094, 1.54479 )
+purchased_merchant = true
+
+[node name="PlayerPrototype4" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.52712, 0.336094, 1.54479 )
+purchased_merchant = true
+
+[node name="PlayerPrototype5" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.47288, 0.336094, 1.54479 )
+purchased_merchant = true
+
+[node name="PlayerPrototype6" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.47288, 0.336094, 0.544791 )
+purchased_merchant = true
+
+[node name="PlayerPrototype7" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.47288, 0.336094, -0.455209 )
+purchased_merchant = true
+
+[node name="PlayerPrototype8" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.52712, 0.336094, -0.455209 )
+purchased_merchant = true
+
+[node name="PlayerPrototype9" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.52712, 0.336094, -0.455209 )
+purchased_merchant = true
