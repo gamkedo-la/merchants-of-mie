@@ -76,11 +76,7 @@ func add_resource_to_inventory(resource):
 			inventory_texture = lumber_texture
 		"Silver":
 			inventory_texture = silver_texture
-	
-	if resource in resources_in_inventory:
-		print("You already have this resource in your inventory")
-		return
-	
+
 	if resources_in_inventory.size() < 3:
 		resources_in_inventory.append(resource)
 		$VBoxContainer/HBoxContainer.get_child(resources_in_inventory.size()-1).texture = inventory_texture
