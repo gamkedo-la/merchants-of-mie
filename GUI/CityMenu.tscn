@@ -4,7 +4,7 @@
 [ext_resource path="res://SharedResources/ResourceIcons/Tea.png" type="Texture" id=2]
 [ext_resource path="res://SharedResources/ResourceIcons/Marble.png" type="Texture" id=3]
 [ext_resource path="res://SharedResources/ResourceIcons/Grapes.png" type="Texture" id=4]
-[ext_resource path="res://SharedResources/ResourceIcons/Base.png" type="Texture" id=5]
+[ext_resource path="res://SharedResources/ResourceIcons/Silver.png" type="Texture" id=5]
 [ext_resource path="res://SharedResources/ResourceIcons/Incense.png" type="Texture" id=6]
 [ext_resource path="res://SharedResources/ResourceIcons/Gold.png" type="Texture" id=7]
 [ext_resource path="res://SharedResources/ResourceIcons/Coffee.png" type="Texture" id=8]
@@ -108,12 +108,12 @@ margin_right = 111.316
 margin_bottom = 741.333
 rect_scale = Vector2( 0.7, 0.7 )
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+[node name="TextureRect99" type="TextureRect" parent="VBoxContainer"]
 margin_right = 105.0
 margin_bottom = 50.0
 texture = ExtResource( 5 )
 
-[node name="Cost" type="Label" parent="VBoxContainer/TextureRect"]
+[node name="Cost" type="Label" parent="VBoxContainer/TextureRect99"]
 margin_left = 50.0
 margin_right = 170.0
 margin_bottom = 14.0
@@ -122,7 +122,7 @@ text = "Silver"
 align = 1
 valign = 1
 
-[node name="SilverValue" type="Label" parent="VBoxContainer/TextureRect"]
+[node name="SilverValue" type="Label" parent="VBoxContainer/TextureRect99"]
 modulate = Color( 0.431373, 0.721569, 0.658824, 1 )
 margin_left = 50.0
 margin_top = 19.0
@@ -133,7 +133,7 @@ text = "M 7"
 align = 1
 valign = 1
 
-[node name="SilverValue2" type="Label" parent="VBoxContainer/TextureRect"]
+[node name="SilverValue2" type="Label" parent="VBoxContainer/TextureRect99"]
 modulate = Color( 0.988235, 1, 0.752941, 1 )
 margin_left = 126.316
 margin_top = 17.4604
@@ -144,7 +144,7 @@ text = "M 7"
 align = 1
 valign = 1
 
-[node name="Inv4" type="Button" parent="VBoxContainer/TextureRect"]
+[node name="Inv4" type="Button" parent="VBoxContainer/TextureRect99"]
 self_modulate = Color( 0.988235, 1, 0.752941, 1 )
 margin_left = 172.932
 margin_top = 15.0
@@ -728,7 +728,7 @@ text = "3"
 [connection signal="pressed" from="MoveBtn" to="." method="_on_MoveBtn_pressed"]
 [connection signal="pressed" from="BuyBtn" to="." method="_on_BuyBtn_pressed"]
 [connection signal="pressed" from="CancelBtn" to="." method="_on_CancelBtn_pressed"]
-[connection signal="pressed" from="VBoxContainer/TextureRect/Inv4" to="." method="_on_Inv4_pressed"]
+[connection signal="pressed" from="VBoxContainer/TextureRect99/Inv4" to="." method="_on_Inv4_pressed"]
 [connection signal="pressed" from="VBoxContainer/TextureRect2/Inv5" to="." method="_on_Inv5_pressed"]
 [connection signal="pressed" from="VBoxContainer/TextureRect3/Inv6" to="." method="_on_Inv6_pressed"]
 [connection signal="pressed" from="VBoxContainer/TextureRect4/Inv7" to="." method="_on_Inv7_pressed"]

@@ -5,7 +5,9 @@ signal undo_actions
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	update_GUI()
-	Events.connect("update_UI", self, "update_GUI")
+	if not Events.is_connected("update_UI", self, "update_GUI"):
+		var con_res = Events.connect("update_UI", self, "update_GUI")
+		assert(con_res == OK)
 	pass # Replace with function body.
 
 func _on_EndTurnBtn_pressed():

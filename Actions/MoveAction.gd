@@ -1,5 +1,7 @@
 extends BaseAction
 
+class_name MoveAction
+
 var target_position: Vector3 = Vector3()
 var original_position: Vector3 = Vector3()
 

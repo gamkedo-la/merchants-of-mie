@@ -5,8 +5,14 @@ var actions_list = Array()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Events.connect("undo_actions", self, "undo")
-	Events.connect("end_player_turn", self, "clear")
+	var con_res
+	if not Events.is_connected("undo_actions", self, "undo"):
+		con_res = Events.connect("undo_actions", self, "undo")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("end_player_turn", self, "clear"):
+		con_res = Events.connect("end_player_turn", self, "clear")
+		assert(con_res == OK)
 
 func undo():
 	print("AQUNDO")

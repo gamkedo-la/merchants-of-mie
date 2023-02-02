@@ -1,6 +1,6 @@
 extends Node
 
-const MAX_TURNS = 5
+const MAX_TURNS = 8
 const FLAT_COST_PER_TURN = 1
 var current_scene = null
 var turn_number = 0
@@ -43,9 +43,27 @@ var mouse_is_hovering_over_castle = false
 #Mouse Hovering Over merchant
 var mouse_is_hovering_over_merchant = false
 
+
 #Getting the value of goods per city
 var city_name = ""
-#var SilverValue = 0
+
+var resource_names = [
+"Silver",
+"Gold",
+"Salt",
+"Grapes",
+"Wheat",
+"Tea",
+"Marble",
+"Incense",
+"Diamond",
+"Fish",
+"Lumber",
+"Dyes",
+"Coffee"
+]
+
+var SilverValue = 0
 var GoldValue = 0
 var SaltValue = 0
 var GrapesValue = 0
@@ -59,7 +77,7 @@ var LumberValue = 0
 var DyesValue = 0
 var CoffeeValue = 0
 
-#var SilverBuyValue = 0
+var SilverBuyValue = 0
 var GoldBuyValue = 0
 var SaltBuyValue = 0
 var GrapesBuyValue = 0
@@ -79,6 +97,20 @@ var merchant_flavor_text = ""
 var current_merchant_inv_one = ""
 var current_merchant_inv_two = ""
 var current_merchant_inv_three = ""
+
+var west_rymare_lockdown = false
+var doveshire_lockdown = false
+var vine_river_lockdown = false
+var easthaven_lockdown = false
+var greenglade_lockdown = false
+var dro_hills_lockdown = false
+
+var west_rymare_countdown = 0
+var doveshire_countdown = 0
+var vine_river_countdown = 0
+var easthaven_countdown = 0
+var greenglade_countdown = 0
+var dro_hills_countdown = 0
 
 var item_buy_name = ""
 

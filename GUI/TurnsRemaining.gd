@@ -1,7 +1,9 @@
 extends Control
 
 func _ready():
-	Events.connect("start_player_turn", self, "update_card_count_ui")
+	if not Events.is_connected("start_player_turn", self, "update_card_count_ui"):
+		var con_res = Events.connect("start_player_turn", self, "update_card_count_ui")
+		assert(con_res == OK)
 	get_node("CardCount").text = str(Global.MAX_TURNS)
 
 func update_card_count_ui():

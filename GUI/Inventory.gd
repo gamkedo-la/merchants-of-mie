@@ -14,17 +14,38 @@ var marble_texture = preload("res://SharedResources/ResourceIcons/Marble.png")
 var diamond_texture = preload("res://SharedResources/ResourceIcons/Diamond.png")
 var dyes_texture = preload("res://SharedResources/ResourceIcons/Dyes.png")
 var lumber_texture = preload("res://SharedResources/ResourceIcons/Lumber.png")
+var silver_texture = preload("res://SharedResources/ResourceIcons/Silver.png")
 
 func _ready():
-	Events.connect("resource_picked_up", self, "add_resource_to_inventory")
-	Events.connect("resource_dropped", self, "remove_resource_from_inventory")
-	Events.connect("resource_dropped_second", self, "remove_resources_from_inventory")
+	var con_res
+	if not Events.is_connected("resource_picked_up", self, "add_resource_to_inventory"):
+		con_res = Events.connect("resource_picked_up", self, "add_resource_to_inventory")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("resource_dropped", self, "remove_resource_from_inventory"):
+		con_res = Events.connect("resource_dropped", self, "remove_resource_from_inventory")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("resource_dropped_second", self, "remove_resources_from_inventory"):
+		con_res = Events.connect("resource_dropped_second", self, "remove_resources_from_inventory")
+		assert(con_res == OK)
 	#Selling to the city
-	Events.connect("sell_inv_one", self, "sell_first_resource")
-	Events.connect("sell_inv_two", self, "sell_second_resource")
-	Events.connect("sell_inv_three", self, "sell_third_resource")
+	if not Events.is_connected("sell_inv_one", self, "sell_first_resource"):
+		con_res = Events.connect("sell_inv_one", self, "sell_first_resource")
+		assert(con_res == OK)
+	
+	if not Events.is_connected("sell_inv_two", self, "sell_second_resource"):
+		con_res = Events.connect("sell_inv_two", self, "sell_second_resource")
+		assert(con_res == OK)
+		
+	if not Events.is_connected("sell_inv_three", self, "sell_third_resource"):
+		con_res = Events.connect("sell_inv_three", self, "sell_third_resource")
+		assert(con_res == OK)
+		
 	#Updating global inventory (for selling)
-	Events.connect("update_global_inventory_tracking", self, "update_global_inventory")
+	if not Events.is_connected("update_global_inventory_tracking", self, "update_global_inventory"):
+		con_res = Events.connect("update_global_inventory_tracking", self, "update_global_inventory")
+		assert(con_res == OK)
 
 func add_resource_to_inventory(resource):
 	var inventory_texture
@@ -53,11 +74,9 @@ func add_resource_to_inventory(resource):
 			inventory_texture = dyes_texture
 		"Lumber":
 			inventory_texture = lumber_texture
-	
-	if resource in resources_in_inventory:
-		print("You already have this resource in your inventory")
-		return
-	
+		"Silver":
+			inventory_texture = silver_texture
+
 	if resources_in_inventory.size() < 3:
 		resources_in_inventory.append(resource)
 		$VBoxContainer/HBoxContainer.get_child(resources_in_inventory.size()-1).texture = inventory_texture
@@ -71,7 +90,7 @@ func add_resource_to_inventory(resource):
 
 func remove_resource_from_inventory(resource):
 	print("Merchant has arrived to the city carrying: ", resources_in_inventory)
-	if((resources_in_inventory.size() == 1 && resource == resources_in_inventory[0]) || (resources_in_inventory.size() == 2 && (resource == resources_in_inventory[0] || resource == resources_in_inventory[1])) || (resources_in_inventory.size() == 3 && (resource == resources_in_inventory[0] || resource == resources_in_inventory[1] || resource == resources_in_inventory[2]))):
+	if resource in resources_in_inventory:
 		if(Global.first_objective_completed == false):
 			Global.objective_one_count -= 1
 			if(Global.objective_one_count <= 0):
@@ -91,7 +110,7 @@ func remove_resources_from_inventory(resource_2_1, resource_2_2, resource_2_3):
 	print("Merchant has arrived to the city carrying: ", resources_in_inventory)
 	print(resource_2_1, " ", resource_2_2, " ", resource_2_3)
 	
-	if((resources_in_inventory.size() == 1 && resource_2_1 == resources_in_inventory[0]) || (resources_in_inventory.size() == 2 && (resource_2_1  == resources_in_inventory[0] || resource_2_1  == resources_in_inventory[1])) || (resources_in_inventory.size() == 3 && (resource_2_1  == resources_in_inventory[0] || resource_2_1  == resources_in_inventory[1] || resource_2_1 == resources_in_inventory[2]))):
+	if resource_2_1 in resources_in_inventory:
 		Global.objective_two_item_one_count -= 1
 		#Updates objectives in Global.gd
 		Events.emit_signal("update_objectives")
@@ -100,7 +119,8 @@ func remove_resources_from_inventory(resource_2_1, resource_2_2, resource_2_3):
 		if idx != -1:
 			resources_in_inventory.erase(resource_2_1)
 			$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
-	if((resources_in_inventory.size() == 1 && resource_2_2 == resources_in_inventory[0]) || (resources_in_inventory.size() == 2 && (resource_2_2  == resources_in_inventory[0] || resource_2_2  == resources_in_inventory[1])) || (resources_in_inventory.size() == 3 && (resource_2_2  == resources_in_inventory[0] || resource_2_2  == resources_in_inventory[1] || resource_2_2 == resources_in_inventory[2]))):
+			
+	if resource_2_2 in resources_in_inventory:
 		Global.objective_two_item_two_count -= 1
 		#Updates objectives in Global.gd
 		Events.emit_signal("update_objectives")
@@ -109,7 +129,8 @@ func remove_resources_from_inventory(resource_2_1, resource_2_2, resource_2_3):
 		if idx != -1:
 			resources_in_inventory.erase(resource_2_2)
 			$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
-	if((resources_in_inventory.size() == 1 && resource_2_3 == resources_in_inventory[0]) || (resources_in_inventory.size() == 2 && (resource_2_3  == resources_in_inventory[0] || resource_2_3  == resources_in_inventory[1])) || (resources_in_inventory.size() == 3 && (resource_2_3 == resources_in_inventory[0] || resource_2_3  == resources_in_inventory[1] || resource_2_3 == resources_in_inventory[2]))):
+			
+	if resource_2_3 in resources_in_inventory:
 		Global.objective_two_item_three_count -= 1
 		#Updates objectives in Global.gd
 		Events.emit_signal("update_objectives")
@@ -118,6 +139,7 @@ func remove_resources_from_inventory(resource_2_1, resource_2_2, resource_2_3):
 		if idx != -1:
 			resources_in_inventory.erase(resource_2_3)
 			$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
+	
 	if(Global.objective_two_item_one_count == 0 && Global.objective_two_item_two_count == 0 && Global.objective_two_item_three_count == 0):
 			Global.goto_scene("res://MainGame/GameSpace.tscn")
 

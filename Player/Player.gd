@@ -13,20 +13,24 @@ onready var amap = get_parent()
 
 
 #signal out_of_trader_movement_points
+# warning-ignore:unused_signal
 signal end_turn
 
 
 func _ready():
+	var con_res
 	if purchased_merchant:
 		visible = true
 	else:
 		visible = false
 		
 	add_to_group("player")
-	Events.connect("start_player_turn", self, "start_player_turn")
+	if not Events.is_connected("start_player_turn", self, "start_player_turn"):
+		con_res = Events.connect("start_player_turn", self, "start_player_turn")
+		assert(con_res == OK)
 	action_queue = get_node("/root/GameSpace/ActionQueue")
 	Global.merchant_name = $MerchantInfo.merchant_name
-	Global.merchant_flavor_text = $MerchantInfo.concatenated_flavor
+	Global.merchant_flavor_text = $MerchantInfo.concatenated_flavor	
 	Events.emit_signal("update_merchant_flavor_text")
 	
 func _physics_process(delta):
@@ -39,7 +43,14 @@ func _physics_process(delta):
 			path_ind += 1
 		else:
 			move_and_slide(move_vec.normalized() * MOVE_SPEED, Vector3(0,1,0))
-			
+	
+func handle_one_tile_move(move: MoveAction) -> void:
+	if (move.map.get_path_cost(move.original_position, move.target_position) <= Global.action_Points_available):
+		action_queue.execute(move)
+	else:
+		# TODO - Signal UI for feedback
+		print_debug('Move too far')
+				
 func move_to(target_pos):
 	if not active_merchant:
 		return
@@ -50,7 +61,10 @@ func move_to(target_pos):
 	mov.target_position = target_pos
 	mov.actor = self
 	mov.map = amap
-	action_queue.execute(mov)
+	if (SettingsManager.one_tile_per_move()):
+		handle_one_tile_move(mov)
+	else:
+		action_queue.execute(mov) ## TODO: Validate expected behavior
 	
 
 func start_player_turn():

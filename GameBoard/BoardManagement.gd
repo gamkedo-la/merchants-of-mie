@@ -1,8 +1,13 @@
 extends Node
 
 func _ready():
-	Events.connect("end_player_turn", self, "start_board_turn")
-	Events.connect("end_board_turn", self, "start_player_turn")
+	var con_res
+	if not Events.is_connected("end_player_turn", self, "start_board_turn"):
+		con_res = Events.connect("end_player_turn", self, "start_board_turn")
+		assert(con_res == OK)
+	if not Events.is_connected("end_board_turn", self, "start_player_turn"):
+		con_res = Events.connect("end_board_turn", self, "start_player_turn")
+		assert(con_res == OK)
 	start_player_turn()
 	
 

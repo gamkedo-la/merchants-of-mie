@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://GUI/GameHUD_Font_Settings.tres" type="DynamicFont" id=1]
 [ext_resource path="res://StartScreen/StartScreen.gd" type="Script" id=2]
@@ -30,23 +30,100 @@ font_data = ExtResource( 17 )
 size = 32
 font_data = ExtResource( 17 )
 
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.885023, 2.47216, 0.0190837 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../CenterContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -15.6478, 154.898, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "starting_anim"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.885023, 2.47216, 0.0190837 ), Vector3( 0.027, 1.637, 0.019 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../CenterContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -15.6478, 154.898, 0 ), Vector3( -6.5, 109.898, 0 ) ]
+}
+
 [node name="StartScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-anchor_top = 0.7
-anchor_right = 0.4
+anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 267.0
-margin_top = -77.0
-margin_right = 375.4
+margin_top = -257.0
+margin_right = 344.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 103.0
+margin_left = 16.0
 margin_top = 3.0
-margin_right = 415.0
+margin_right = 328.0
 margin_bottom = 253.0
 custom_constants/separation = 20
 
@@ -167,7 +244,11 @@ height = 1.4
 material = ExtResource( 16 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( -0.340351, -0.253621, 0.905449, 0, 0.962938, 0.269724, -0.940298, 0.0918008, -0.327737, 0.513468, 1.63692, 0.0190835 )
+transform = Transform( -0.905554, -0.114425, 0.408508, 0, 0.962938, 0.269723, -0.424231, 0.244249, -0.871992, 0.885023, 2.47216, 0.0190837 )
+
+[node name="CameraAnimation" type="AnimationPlayer" parent="Camera"]
+anims/RESET = SubResource( 4 )
+anims/starting_anim = SubResource( 5 )
 
 [node name="Board" parent="." instance=ExtResource( 13 )]
 transform = Transform( 0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, -2.72849, 0.708526, 0.528655 )

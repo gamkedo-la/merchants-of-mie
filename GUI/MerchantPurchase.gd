@@ -3,7 +3,10 @@ extends Control
 const CASTLE_POSITION = Vector3(-0.502,0,0.461)
 
 func _ready():
-	Events.connect("merchant_clicked_castle", self, "_on_merchant_clicked_castle")
+	if not Events.is_connected("merchant_clicked_castle", self, "_on_merchant_clicked_castle"):
+		var con_res = Events.connect("merchant_clicked_castle", self, "_on_merchant_clicked_castle")
+		assert(con_res == OK)
+		
 
 func _on_merchant_clicked_castle():
 	visible = true

@@ -14,6 +14,18 @@ script = ExtResource( 4 )
 
 [node name="Board" parent="." instance=ExtResource( 1 )]
 
+[node name="City-Template" parent="Board/BoardTiles" index="6" groups=["cities"]]
+
+[node name="City-Template2" parent="Board/BoardTiles" index="7" groups=["cities"]]
+
+[node name="City-Template3" parent="Board/BoardTiles" index="8" groups=["cities"]]
+
+[node name="City-Template4" parent="Board/BoardTiles" index="9" groups=["cities"]]
+
+[node name="City-Template5" parent="Board/BoardTiles" index="10" groups=["cities"]]
+
+[node name="City-Template6" parent="Board/BoardTiles" index="11" groups=["cities"]]
+
 [node name="GUI" parent="." instance=ExtResource( 3 )]
 
 [node name="Ambient Light" type="WorldEnvironment" parent="."]
@@ -45,6 +57,27 @@ purchased_merchant = true
 active_merchant = true
 
 [node name="PlayerPrototype2" parent="AMap" index="4"]
+purchased_merchant = false
+
+[node name="PlayerPrototype3" parent="AMap" index="5"]
+purchased_merchant = false
+
+[node name="PlayerPrototype4" parent="AMap" index="6"]
+purchased_merchant = false
+
+[node name="PlayerPrototype5" parent="AMap" index="7"]
+purchased_merchant = false
+
+[node name="PlayerPrototype6" parent="AMap" index="8"]
+purchased_merchant = false
+
+[node name="PlayerPrototype7" parent="AMap" index="9"]
+purchased_merchant = false
+
+[node name="PlayerPrototype8" parent="AMap" index="10"]
+purchased_merchant = false
+
+[node name="PlayerPrototype9" parent="AMap" index="11"]
 purchased_merchant = false
 
 [node name="ActionQueue" type="Node" parent="."]
