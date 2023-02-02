@@ -46,8 +46,8 @@ func _ready():
 	if not Events.is_connected("update_global_inventory_tracking", self, "update_global_inventory"):
 		con_res = Events.connect("update_global_inventory_tracking", self, "update_global_inventory")
 		assert(con_res == OK)
-
-func add_resource_to_inventory(resource):
+		
+func get_resource_texture(resource):
 	var inventory_texture
 	match resource:
 		"Coffee":
@@ -76,12 +76,16 @@ func add_resource_to_inventory(resource):
 			inventory_texture = lumber_texture
 		"Silver":
 			inventory_texture = silver_texture
+	
+	return inventory_texture
 
+func add_resource_to_inventory(resource):
 	if resources_in_inventory.size() < 3:
 		resources_in_inventory.append(resource)
-		$VBoxContainer/HBoxContainer.get_child(resources_in_inventory.size()-1).texture = inventory_texture
+		$VBoxContainer/HBoxContainer.get_child(resources_in_inventory.size()-1).texture = get_resource_texture(resource)
 		update_global_inventory()
 		return
+		
 		
 	print("Your inventory is full!")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -90,21 +94,40 @@ func add_resource_to_inventory(resource):
 
 func remove_resource_from_inventory(resource):
 	print("Merchant has arrived to the city carrying: ", resources_in_inventory)
-	if resource in resources_in_inventory:
-		if(Global.first_objective_completed == false):
-			Global.objective_one_count -= 1
-			if(Global.objective_one_count <= 0):
-				Global.first_objective_completed = true
-				print(Global.first_objective_completed)
-		#Updates objectives in Global.gd
-		Events.emit_signal("update_objectives")
-		var idx = resources_in_inventory.find(resource, 0)
-		print(str(idx))
-		if idx != -1:
-			resources_in_inventory.erase(resource)
-			$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
-	else:
+	
+	if not resource in resources_in_inventory:
 		print("No items in inventory match the objective")
+		return
+
+	if(Global.first_objective_completed == true):
+		return
+	
+	Global.objective_one_count -= 1
+	if(Global.objective_one_count <= 0):
+		Global.first_objective_completed = true
+		print(Global.first_objective_completed)
+	
+	#Updates objectives in Global.gd
+	Events.emit_signal("update_objectives")
+	var idx = resources_in_inventory.find(resource)
+	print(str(idx))
+	if idx != -1:
+		resources_in_inventory.erase(resource)
+		update_inventory_textures()
+		#$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
+		
+func update_inventory_textures():
+	clear_inventory_textures()
+	
+	var resources = resources_in_inventory
+	for i in resources.size():
+		var resource = resources[i]
+		$VBoxContainer/HBoxContainer.get_child(i).texture = get_resource_texture(resource)
+
+func clear_inventory_textures():
+	for idx in resources_in_inventory.size():
+		$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
+		
 
 func remove_resources_from_inventory(resource_2_1, resource_2_2, resource_2_3):
 	print("Merchant has arrived to the city carrying: ", resources_in_inventory)
