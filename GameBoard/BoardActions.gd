@@ -20,7 +20,7 @@ onready var dead_click_sfx: AudioStream = preload("res://Audio/SFX/err_click.wav
 # warning-ignore:unused_signal
 signal end_turn
 
-var board_cards = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+var board_cards = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19, 20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45]
 
 func _ready():
 	make_tiles_interactable()
@@ -143,8 +143,85 @@ func determine_card():
 			board_cards[18] = -1
 		elif(rand_card == 19):
 			_lockdown_easthaven()
-			board_cards[19] = -1
-
+			board_cards[19] = -1			
+		elif(rand_card == 20):
+			_double_silver()
+			board_cards[20] = -1
+		elif(rand_card == 21):
+			_double_gold()
+			board_cards[21] = -1
+		elif(rand_card == 22):
+			_double_salt()
+			board_cards[22] = -1
+		elif(rand_card == 23):
+			_double_grapes()
+			board_cards[23] = -1
+		elif(rand_card == 24):
+			_double_wheat()
+			board_cards[24] = -1
+		elif(rand_card == 25):
+			_double_tea()
+			board_cards[25] = -1
+		elif(rand_card == 26):
+			_double_marble()
+			board_cards[26] = -1
+		elif(rand_card == 27):
+			_double_incense()
+			board_cards[27] = -1
+		elif(rand_card == 28):
+			_double_diamonds()
+			board_cards[28] = -1
+		elif(rand_card == 29):
+			_double_fish()
+			board_cards[29] = -1
+		elif(rand_card == 30):
+			_double_lumber()
+			board_cards[30] = -1
+		elif(rand_card == 31):
+			_double_dyes()
+			board_cards[31] = -1
+		elif(rand_card == 32):
+			_double_coffee()
+			board_cards[32] = -1
+		elif(rand_card == 33):
+			_halve_silver()
+			board_cards[33] = -1
+		elif(rand_card == 34):
+			_halve_gold()
+			board_cards[34] = -1
+		elif(rand_card == 35):
+			_halve_salt()
+			board_cards[35] = -1
+		elif(rand_card == 36):
+			_halve_grapes()
+			board_cards[36] = -1
+		elif(rand_card == 37):
+			_halve_wheat()
+			board_cards[37] = -1
+		elif(rand_card == 38):
+			_halve_tea()
+			board_cards[38] = -1
+		elif(rand_card == 39):
+			_halve_marble()
+			board_cards[39] = -1
+		elif(rand_card == 40):
+			_halve_incense()
+			board_cards[40] = -1
+		elif(rand_card == 41):
+			_halve_diamonds()
+			board_cards[41] = -1
+		elif(rand_card == 42):
+			_halve_fish()
+			board_cards[42] = -1
+		elif(rand_card == 43):
+			_halve_lumber()
+			board_cards[43] = -1
+		elif(rand_card == 44):
+			_halve_dyes()
+			board_cards[44] = -1
+		elif(rand_card == 45):
+			_halve_coffee()
+			board_cards[45] = -1
 
 func make_tiles_interactable():
 	for tile in $BoardTiles.get_children():
@@ -354,6 +431,191 @@ func _lockdown_dro_hills():
 	Global.flavor_text = str("A HEAVY DUST STORM PREVENTING ACCESS TO DRO HILLS")
 	Global.functional_text = str("DRO HILLS IS ON LOCKDOWN FOR 3 TURNS")
 	Events.emit_signal("turn_off_dro_hills")
+	
+func _double_silver():
+	Global.flavor_text = str("")
+	Global.functional_text = str("SILVER VALUES DOUBLED ACROSS KINGDOM")
+	Global.silver_multiplier = 2
+	Global.silver_modifier_changed = true
+	Global.silver_turn_countdown = 3
+	
+func _double_gold():
+	Global.flavor_text = str("")
+	Global.functional_text = str("GOLD VALUES DOUBLED ACROSS KINGDOM")
+	Global.gold_multiplier = 2
+	Global.gold_modifier_changed = true
+	Global.gold_turn_countdown = 3
+	
+func _double_salt():
+	Global.flavor_text = str("")
+	Global.functional_text = str("SALT VALUES DOUBLED ACROSS KINGDOM")
+	Global.salt_multiplier = 2
+	Global.salt_modifier_changed = true
+	Global.salt_turn_countdown = 3
+	
+func _double_grapes():
+	Global.flavor_text = str("")
+	Global.functional_text = str("GRAPES VALUES DOUBLED ACROSS KINGDOM")
+	Global.grapes_multiplier = 2
+	Global.grapes_modifier_changed = true
+	Global.grapes_turn_countdown = 3
+	
+func _double_wheat():
+	Global.flavor_text = str("")
+	Global.functional_text = str("WHEAT VALUES DOUBLED ACROSS KINGDOM")
+	Global.wheat_multiplier = 2
+	Global.wheat_modifier_changed = true
+	Global.wheat_turn_countdown = 3
+	
+func _double_tea():
+	Global.flavor_text = str("")
+	Global.functional_text = str("TEA VALUES DOUBLED ACROSS KINGDOM")
+	Global.tea_multiplier = 2
+	Global.tea_modifier_changed = true
+	Global.tea_turn_countdown = 3
+	
+func _double_marble():
+	Global.flavor_text = str("")
+	Global.functional_text = str("MARBLE VALUES DOUBLED ACROSS KINGDOM")
+	Global.marble_multiplier = 2
+	Global.marble_modifier_changed = true
+	Global.marble_turn_countdown = 3
+	
+func _double_incense():
+	Global.flavor_text = str("")
+	Global.functional_text = str("INCENSE VALUES DOUBLED ACROSS KINGDOM")
+	Global.incense_multiplier = 2
+	Global.incense_modifier_changed = true
+	Global.incense_turn_countdown = 3
+	
+func _double_diamonds():
+	Global.flavor_text = str("")
+	Global.functional_text = str("DIAMONDS VALUES DOUBLED ACROSS KINGDOM")
+	Global.diamonds_multiplier = 2
+	Global.diamonds_modifier_changed = true
+	Global.diamonds_turn_countdown = 3
+	
+func _double_fish():
+	Global.flavor_text = str("")
+	Global.functional_text = str("FISH VALUES DOUBLED ACROSS KINGDOM")
+	Global.fish_multiplier = 2
+	Global.fish_modifier_changed = true
+	Global.fish_turn_countdown = 3
+	
+func _double_lumber():
+	Global.flavor_text = str("")
+	Global.functional_text = str("LUMBER VALUES DOUBLED ACROSS KINGDOM")
+	Global.lumber_multiplier = 2
+	Global.lumber_modifier_changed = true
+	Global.lumber_turn_countdown = 3
+	
+func _double_dyes():
+	Global.flavor_text = str("")
+	Global.functional_text = str("DYES VALUES DOUBLED ACROSS KINGDOM")
+	Global.dyes_multiplier = 2
+	Global.dyes_modifier_changed = true
+	Global.dyes_turn_countdown = 3
+	
+func _double_coffee():
+	Global.flavor_text = str("")
+	Global.functional_text = str("COFFEE VALUES DOUBLED ACROSS KINGDOM")
+	Global.coffee_multiplier = 2
+	Global.coffee_modifier_changed = true
+	Global.coffee_turn_countdown = 3
+	
+	
+func _halve_silver():
+	Global.flavor_text = str("SILVER IS NO LONGER 'IN'")
+	Global.functional_text = str("SILVER VALUES HALVED ACROSS KINGDOM")
+	Global.silver_multiplier = .5
+	Global.silver_modifier_changed = true
+	Global.silver_turn_countdown = 3
+	
+func _halve_gold():
+	Global.flavor_text = str("IT IS BELIEVES GODS HAVE CURSED GOLD")
+	Global.functional_text = str("GOLD VALUES HALVED ACROSS KINGDOM")
+	Global.gold_multiplier = .5
+	Global.gold_modifier_changed = true
+	Global.gold_turn_countdown = 3
+	
+func _halve_salt():
+	Global.flavor_text = str("BRICKS OF SALT WASH UP ON SHORE")
+	Global.functional_text = str("SALT VALUES HALVED ACROSS KINGDOM")
+	Global.salt_multiplier = .5
+	Global.salt_modifier_changed = true
+	Global.salt_turn_countdown = 3
+	
+func _halve_grapes():
+	Global.flavor_text = str("THE RAIN HAS BLESSED THE VINES WITH OVERABUNDANCE")
+	Global.functional_text = str("GRAPES VALUES HALVED ACROSS KINGDOM")
+	Global.grapes_multiplier = .5
+	Global.grapes_modifier_changed = true
+	Global.grapes_turn_countdown = 3
+	
+func _halve_wheat():
+	Global.flavor_text = str("THE GODS HAVE BLESSED THE HARVEST WITH OVERABUNDANCE")
+	Global.functional_text = str("WHEAT VALUES HALVED ACROSS KINGDOM")
+	Global.wheat_multiplier = .5
+	Global.wheat_modifier_changed = true
+	Global.wheat_turn_countdown = 3
+	
+func _halve_tea():
+	Global.flavor_text = str("WORD IN THE CITIES SAY TEA IS POISONOUS")
+	Global.functional_text = str("TEA VALUES HALVED ACROSS KINGDOM")
+	Global.tea_multiplier = .5
+	Global.tea_modifier_changed = true
+	Global.tea_turn_countdown = 3
+	
+func _halve_marble():
+	Global.flavor_text = str("SCULPTORS ARE USING ROCK INSTEAD OF MARBLE")
+	Global.functional_text = str("MARBLE VALUES HALVED ACROSS KINGDOM")
+	Global.marble_multiplier = .5
+	Global.marble_modifier_changed = true
+	Global.marble_turn_countdown = 3
+	
+func _halve_incense():
+	Global.flavor_text = str("THERE IS A RELIGIOUS PULLBACK IN THE KINDGOM")
+	Global.functional_text = str("INCENSE VALUES HALVED ACROSS KINGDOM")
+	Global.incense_multiplier = .5
+	Global.incense_modifier_changed = true
+	Global.incense_turn_countdown = 3
+	
+func _halve_diamonds():
+	Global.flavor_text = str("RECENT TRENDS HAVE PEOPLE USING OTHER STONES FOR JEWELERY")
+	Global.functional_text = str("DIAMONDS VALUES HALVED ACROSS KINGDOM")
+	Global.diamonds_multiplier = .5
+	Global.diamonds_modifier_changed = true
+	Global.diamonds_turn_countdown = 3
+	
+func _halve_fish():
+	Global.flavor_text = str("ABUNDANCE OF FISH HAVE WASHED UP ON THE SHORE")
+	Global.functional_text = str("FISH VALUES HALVED ACROSS KINGDOM")
+	Global.fish_multiplier = .5
+	Global.fish_modifier_changed = true
+	Global.fish_turn_countdown = 3
+	
+func _halve_lumber():
+	Global.flavor_text = str("TREE WORMS HAVE INFILTRATED LUMBER")
+	Global.functional_text = str("LUMBER VALUES HALVED ACROSS KINGDOM")
+	Global.lumber_multiplier = .5
+	Global.lumber_modifier_changed = true
+	Global.lumber_turn_countdown = 3
+	
+func _halve_dyes():
+	Global.flavor_text = str("LOCAL CUSTOMS FORBID DYEING OF CLOTHES")
+	Global.functional_text = str("DYES VALUES HALVED ACROSS KINGDOM")
+	Global.dyes_multiplier = .5
+	Global.dyes_modifier_changed = true
+	Global.dyes_turn_countdown = 3
+	
+func _halve_coffee():
+	Global.flavor_text = str("LOCAL SCIENTISTS DETERMINE COFFEE IS BAD FOR YOU")
+	Global.functional_text = str("COFFEE VALUES HALVED ACROSS KINGDOM")
+	Global.coffee_multiplier = .5
+	Global.coffee_modifier_changed = true
+	Global.coffee_turn_countdown = 3
+		
+	
 	
 func _card_4():
 	var scarce_resource = Global.resource_names[randi() %  Global.resource_names.size()]

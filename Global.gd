@@ -112,6 +112,48 @@ var easthaven_countdown = 0
 var greenglade_countdown = 0
 var dro_hills_countdown = 0
 
+var silver_multiplier = 1
+var gold_multiplier = 1
+var salt_multiplier = 1
+var grapes_multiplier = 1
+var wheat_multiplier = 1
+var tea_multiplier = 1
+var marble_multiplier = 1
+var incense_multiplier = 1
+var diamonds_multiplier = 1
+var fish_multiplier = 1
+var lumber_multiplier = 1
+var dyes_multiplier = 1
+var coffee_multiplier = 1
+
+var silver_modifier_changed = false
+var gold_modifier_changed = false
+var salt_modifier_changed = false
+var grapes_modifier_changed = false
+var wheat_modifier_changed = false
+var tea_modifier_changed = false
+var marble_modifier_changed = false
+var incense_modifier_changed = false
+var diamonds_modifier_changed = false
+var fish_modifier_changed = false
+var lumber_modifier_changed = false
+var dyes_modifier_changed = false
+var coffee_modifier_changed = false
+
+var silver_turn_countdown = 0
+var gold_turn_countdown = 0
+var salt_turn_countdown = 0
+var grapes_turn_countdown = 0
+var wheat_turn_countdown = 0
+var tea_turn_countdown = 0
+var marble_turn_countdown = 0
+var incense_turn_countdown = 0
+var diamonds_turn_countdown = 0
+var fish_turn_countdown = 0
+var lumber_turn_countdown = 0
+var dyes_turn_countdown = 0
+var coffee_turn_countdown = 0
+
 var item_buy_name = ""
 
 func _ready():
