@@ -433,49 +433,49 @@ func _lockdown_dro_hills():
 	Events.emit_signal("turn_off_dro_hills")
 	
 func _double_silver():
-	Global.flavor_text = str("")
+	Global.flavor_text = str("FASHION TRENDS DICTATE SILVER IS 'IN' ")
 	Global.functional_text = str("SILVER VALUES DOUBLED ACROSS KINGDOM")
 	Global.silver_multiplier = 2
 	Global.silver_modifier_changed = true
 	Global.silver_turn_countdown = 3
 	
 func _double_gold():
-	Global.flavor_text = str("")
+	Global.flavor_text = str("FASHION TRENDS DICTATE GOLD IS 'IN' ")
 	Global.functional_text = str("GOLD VALUES DOUBLED ACROSS KINGDOM")
 	Global.gold_multiplier = 2
 	Global.gold_modifier_changed = true
 	Global.gold_turn_countdown = 3
 	
 func _double_salt():
-	Global.flavor_text = str("")
+	Global.flavor_text = str("THE SALT MINE VIENS ARE COMING UP EMPTY")
 	Global.functional_text = str("SALT VALUES DOUBLED ACROSS KINGDOM")
 	Global.salt_multiplier = 2
 	Global.salt_modifier_changed = true
 	Global.salt_turn_countdown = 3
 	
 func _double_grapes():
-	Global.flavor_text = str("")
+	Global.flavor_text = str("THE HARVEST HAS NOT BEEN SUCCESSFUL")
 	Global.functional_text = str("GRAPES VALUES DOUBLED ACROSS KINGDOM")
 	Global.grapes_multiplier = 2
 	Global.grapes_modifier_changed = true
 	Global.grapes_turn_countdown = 3
 	
 func _double_wheat():
-	Global.flavor_text = str("")
+	Global.flavor_text = str("INFESTATION OF BEETLES DESTROYED MOST WHEAT CROPS")
 	Global.functional_text = str("WHEAT VALUES DOUBLED ACROSS KINGDOM")
 	Global.wheat_multiplier = 2
 	Global.wheat_modifier_changed = true
 	Global.wheat_turn_countdown = 3
 	
 func _double_tea():
-	Global.flavor_text = str("")
+	Global.flavor_text = str("TEA PLANTS AREN'T GROWING DUE TO POOR SOIL")
 	Global.functional_text = str("TEA VALUES DOUBLED ACROSS KINGDOM")
 	Global.tea_multiplier = 2
 	Global.tea_modifier_changed = true
 	Global.tea_turn_countdown = 3
 	
 func _double_marble():
-	Global.flavor_text = str("")
+	Global.flavor_text = str("QUARRY WORKERS ON STRIKE, LESS MARBLE IS AVAILABLE")
 	Global.functional_text = str("MARBLE VALUES DOUBLED ACROSS KINGDOM")
 	Global.marble_multiplier = 2
 	Global.marble_modifier_changed = true
@@ -489,35 +489,35 @@ func _double_incense():
 	Global.incense_turn_countdown = 3
 	
 func _double_diamonds():
-	Global.flavor_text = str("")
+	Global.flavor_text = str("A NEW TREND IS SHOWING DIAMONDS ARE USED IN CUTLERY")
 	Global.functional_text = str("DIAMONDS VALUES DOUBLED ACROSS KINGDOM")
 	Global.diamonds_multiplier = 2
 	Global.diamonds_modifier_changed = true
 	Global.diamonds_turn_countdown = 3
 	
 func _double_fish():
-	Global.flavor_text = str("")
+	Global.flavor_text = str("THE TIDE HAS GONE OUT, LESS FISH ARE AVAILABLE")
 	Global.functional_text = str("FISH VALUES DOUBLED ACROSS KINGDOM")
 	Global.fish_multiplier = 2
 	Global.fish_modifier_changed = true
 	Global.fish_turn_countdown = 3
 	
 func _double_lumber():
-	Global.flavor_text = str("")
+	Global.flavor_text = str("TREE WORMS HAVE INFILTRATED LUMBER")
 	Global.functional_text = str("LUMBER VALUES DOUBLED ACROSS KINGDOM")
 	Global.lumber_multiplier = 2
 	Global.lumber_modifier_changed = true
 	Global.lumber_turn_countdown = 3
 	
 func _double_dyes():
-	Global.flavor_text = str("")
+	Global.flavor_text = str("LOCAL TAILORS ARE TRYING TO INVENT A NEW COLOR WITH DYES")
 	Global.functional_text = str("DYES VALUES DOUBLED ACROSS KINGDOM")
 	Global.dyes_multiplier = 2
 	Global.dyes_modifier_changed = true
 	Global.dyes_turn_countdown = 3
 	
 func _double_coffee():
-	Global.flavor_text = str("")
+	Global.flavor_text = str("LINKED TO LONGEVITY AND LOOKS, COFFEE IS VERY POPULAR")
 	Global.functional_text = str("COFFEE VALUES DOUBLED ACROSS KINGDOM")
 	Global.coffee_multiplier = 2
 	Global.coffee_modifier_changed = true
@@ -595,7 +595,7 @@ func _halve_fish():
 	Global.fish_turn_countdown = 3
 	
 func _halve_lumber():
-	Global.flavor_text = str("TREE WORMS HAVE INFILTRATED LUMBER")
+	Global.flavor_text = str("DEFORESTATION BROUGHT DOWN TOO MANY TREES")
 	Global.functional_text = str("LUMBER VALUES HALVED ACROSS KINGDOM")
 	Global.lumber_multiplier = .5
 	Global.lumber_modifier_changed = true

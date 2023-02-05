@@ -174,9 +174,11 @@ func sell_first_resource(resource):
 	print("Resource 1:" + resource)
 	#Check the value of the resource
 	var currentItemString = resource + "Value"
+	var currentMultiplierString = resource + "_multiplier"
 	Global.get(currentItemString)
+	Global.get(currentMultiplierString)
 	#Update player's gold
-	Global.currency_available += Global.get(currentItemString)
+	Global.currency_available += (Global.get(currentItemString) * Global.get(currentMultiplierString))
 	#Update GUI
 	Events.emit_signal("merchant_purchased")
 	#Remove from inventory
@@ -195,8 +197,11 @@ func sell_first_resource(resource):
 
 func sell_second_resource(resource):
 	var currentItemString = resource + "Value"
+	var currentMultiplierString = resource + "_multiplier"
 	Global.get(currentItemString)
-	Global.currency_available += Global.get(currentItemString)
+	Global.get(currentMultiplierString)
+	#Update player's gold
+	Global.currency_available += (Global.get(currentItemString) * Global.get(currentMultiplierString))
 	Events.emit_signal("merchant_purchased")
 	var idx = resources_in_inventory.find(resource, 0)
 	print(str(idx))
@@ -210,8 +215,11 @@ func sell_second_resource(resource):
 
 func sell_third_resource(resource):
 	var currentItemString = resource + "Value"
+	var currentMultiplierString = resource + "_multiplier"
 	Global.get(currentItemString)
-	Global.currency_available += Global.get(currentItemString)
+	Global.get(currentMultiplierString)
+	#Update player's gold
+	Global.currency_available += (Global.get(currentItemString) * Global.get(currentMultiplierString))
 	Events.emit_signal("merchant_purchased")
 	var idx = resources_in_inventory.find(resource, 0)
 	print(str(idx))

@@ -52,4 +52,69 @@ func _on_Button_pressed():
 		if(Global.dro_hills_countdown <= 0):
 			Global.dro_hills_lockdown = false
 			Events.emit_signal("turn_on_dro_hills")
+	if(Global.silver_modifier_changed):
+		Global.silver_turn_countdown -= 1
+		if(Global.silver_turn_countdown <= 0):
+			Global.silver_multiplier = 1
+			Global.silver_modifier_changed = false
+	if(Global.gold_modifier_changed):
+		Global.gold_turn_countdown -= 1
+		if(Global.gold_turn_countdown <= 0):
+			Global.gold_multiplier = 1
+			Global.gold_modifier_changed = false
+	if(Global.salt_modifier_changed):
+		Global.salt_turn_countdown -= 1
+		if(Global.salt_turn_countdown <= 0):
+			Global.salt_multiplier = 1
+			Global.salt_modifier_changed = false
+	if(Global.grapes_modifier_changed):
+		Global.grapes_turn_countdown -= 1
+		if(Global.grapes_turn_countdown <= 0):
+			Global.grapes_multiplier = 1
+			Global.grapes_modifier_changed = false
+	if(Global.wheat_modifier_changed):
+		Global.wheat_turn_countdown -= 1
+		if(Global.wheat_turn_countdown <= 0):
+			Global.wheat_multiplier = 1
+			Global.wheat_modifier_changed = false
+	if(Global.tea_modifier_changed):
+		Global.tea_turn_countdown -= 1
+		if(Global.tea_turn_countdown <= 0):
+			Global.tea_multiplier = 1
+			Global.tea_modifier_changed = false
+	if(Global.marble_modifier_changed):
+		Global.marble_turn_countdown -= 1
+		if(Global.marble_turn_countdown <= 0):
+			Global.marble_multiplier = 1
+			Global.marble_modifier_changed = false
+	if(Global.incense_modifier_changed):
+		Global.incense_turn_countdown -= 1
+		if(Global.incense_turn_countdown <= 0):
+			Global.incense_multiplier = 1
+			Global.incense_modifier_changed = false
+	if(Global.diamonds_modifier_changed):
+		Global.diamonds_turn_countdown -= 1
+		if(Global.diamonds_turn_countdown <= 0):
+			Global.diamonds_multiplier = 1
+			Global.diamonds_modifier_changed = false
+	if(Global.fish_modifier_changed):
+		Global.fish_turn_countdown -= 1
+		if(Global.fish_turn_countdown <= 0):
+			Global.fish_multiplier = 1
+			Global.fish_modifier_changed = false
+	if(Global.lumber_modifier_changed):
+		Global.lumber_turn_countdown -= 1
+		if(Global.lumber_turn_countdown <= 0):
+			Global.lumber_multiplier = 1
+			Global.lumber_modifier_changed = false
+	if(Global.dyes_modifier_changed):
+		Global.dyes_turn_countdown -= 1
+		if(Global.dyes_turn_countdown <= 0):
+			Global.dyes_multiplier = 1
+			Global.dyes_modifier_changed = false
+	if(Global.coffee_modifier_changed):
+		Global.coffee_turn_countdown -= 1
+		if(Global.coffee_turn_countdown <= 0):
+			Global.coffee_multiplier = 1
+			Global.coffee_modifier_changed = false
 	pass # Replace with function body.
