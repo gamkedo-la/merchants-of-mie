@@ -29,6 +29,7 @@ func _ready():
 	if not Events.is_connected("resource_dropped_second", self, "remove_resources_from_inventory"):
 		con_res = Events.connect("resource_dropped_second", self, "remove_resources_from_inventory")
 		assert(con_res == OK)
+		
 	#Selling to the city
 	if not Events.is_connected("sell_inv_one", self, "sell_first_resource"):
 		con_res = Events.connect("sell_inv_one", self, "sell_first_resource")
@@ -76,6 +77,8 @@ func get_resource_texture(resource):
 			inventory_texture = lumber_texture
 		"Silver":
 			inventory_texture = silver_texture
+		"":
+			inventory_texture = base_texture
 	
 	return inventory_texture
 
@@ -84,6 +87,7 @@ func add_resource_to_inventory(resource):
 		resources_in_inventory.append(resource)
 		$VBoxContainer/HBoxContainer.get_child(resources_in_inventory.size()-1).texture = get_resource_texture(resource)
 		update_global_inventory()
+		print("resource array size = ", resources_in_inventory.size())
 		return
 		
 		
@@ -96,7 +100,7 @@ func remove_resource_from_inventory(resource):
 	print("Merchant has arrived to the city carrying: ", resources_in_inventory)
 	
 	if not resource in resources_in_inventory:
-		print("No items in inventory match the objective")
+		print("No items in inventory match the objective", resources_in_inventory.size())
 		return
 
 	if(Global.first_objective_completed == true):
@@ -125,7 +129,7 @@ func update_inventory_textures():
 		$VBoxContainer/HBoxContainer.get_child(i).texture = get_resource_texture(resource)
 
 func clear_inventory_textures():
-	for idx in resources_in_inventory.size():
+	for idx in $VBoxContainer/HBoxContainer.get_child_count():
 		$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
 		
 
