@@ -83,11 +83,11 @@ func get_resource_texture(resource):
 	return inventory_texture
 
 func add_resource_to_inventory(resource):
-	if resources_in_inventory.size() < 3:
-		resources_in_inventory.append(resource)
-		$VBoxContainer/HBoxContainer.get_child(resources_in_inventory.size()-1).texture = get_resource_texture(resource)
+	if Global.resources_in_inventory.size() < 3:
+		Global.resources_in_inventory.append(resource)
+		$VBoxContainer/HBoxContainer.get_child(Global.resources_in_inventory.size()-1).texture = get_resource_texture(resource)
 		update_global_inventory()
-		print("resource array size = ", resources_in_inventory.size())
+		print("resource array size = ", Global.resources_in_inventory.size())
 		return
 		
 		
@@ -97,10 +97,10 @@ func add_resource_to_inventory(resource):
 #	pass
 
 func remove_resource_from_inventory(resource):
-	print("Merchant has arrived to the city carrying: ", resources_in_inventory)
+	print("Merchant has arrived to the city carrying: ", Global.resources_in_inventory)
 	
-	if not resource in resources_in_inventory:
-		print("No items in inventory match the objective", resources_in_inventory.size())
+	if not resource in Global.resources_in_inventory:
+		print("No items in inventory match the objective", Global.resources_in_inventory.size())
 		return
 
 	if(Global.first_objective_completed == true):
@@ -113,17 +113,17 @@ func remove_resource_from_inventory(resource):
 	
 	#Updates objectives in Global.gd
 	Events.emit_signal("update_objectives")
-	var idx = resources_in_inventory.find(resource)
+	var idx = Global.resources_in_inventory.find(resource)
 	print(str(idx))
 	if idx != -1:
-		resources_in_inventory.erase(resource)
+		Global.resources_in_inventory.erase(resource)
 		update_inventory_textures()
 		#$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
 		
 func update_inventory_textures():
 	clear_inventory_textures()
 	
-	var resources = resources_in_inventory
+	var resources = Global.resources_in_inventory
 	for i in resources.size():
 		var resource = resources[i]
 		$VBoxContainer/HBoxContainer.get_child(i).texture = get_resource_texture(resource)
@@ -134,37 +134,37 @@ func clear_inventory_textures():
 		
 
 func remove_resources_from_inventory(resource_2_1, resource_2_2, resource_2_3):
-	print("Merchant has arrived to the city carrying: ", resources_in_inventory)
+	print("Merchant has arrived to the city carrying: ", Global.resources_in_inventory)
 	print(resource_2_1, " ", resource_2_2, " ", resource_2_3)
 	
-	if resource_2_1 in resources_in_inventory:
+	if resource_2_1 in Global.resources_in_inventory:
 		Global.objective_two_item_one_count -= 1
 		#Updates objectives in Global.gd
 		Events.emit_signal("update_objectives")
-		var idx = resources_in_inventory.find(resource_2_1, 0)
+		var idx = Global.resources_in_inventory.find(resource_2_1, 0)
 		print(str(idx))
 		if idx != -1:
-			resources_in_inventory.erase(resource_2_1)
+			Global.resources_in_inventory.erase(resource_2_1)
 			$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
 			
-	if resource_2_2 in resources_in_inventory:
+	if resource_2_2 in Global.resources_in_inventory:
 		Global.objective_two_item_two_count -= 1
 		#Updates objectives in Global.gd
 		Events.emit_signal("update_objectives")
-		var idx = resources_in_inventory.find(resource_2_2, 0)
+		var idx = Global.resources_in_inventory.find(resource_2_2, 0)
 		print(str(idx))
 		if idx != -1:
-			resources_in_inventory.erase(resource_2_2)
+			Global.resources_in_inventory.erase(resource_2_2)
 			$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
 			
-	if resource_2_3 in resources_in_inventory:
+	if resource_2_3 in Global.resources_in_inventory:
 		Global.objective_two_item_three_count -= 1
 		#Updates objectives in Global.gd
 		Events.emit_signal("update_objectives")
-		var idx = resources_in_inventory.find(resource_2_3, 0)
+		var idx = Global.resources_in_inventory.find(resource_2_3, 0)
 		print(str(idx))
 		if idx != -1:
-			resources_in_inventory.erase(resource_2_3)
+			Global.resources_in_inventory.erase(resource_2_3)
 			$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
 	
 	if(Global.objective_two_item_one_count == 0 && Global.objective_two_item_two_count == 0 && Global.objective_two_item_three_count == 0):
@@ -186,10 +186,10 @@ func sell_first_resource(resource):
 	#Update GUI
 	Events.emit_signal("merchant_purchased")
 	#Remove from inventory
-	var idx = resources_in_inventory.find(resource, 0)
+	var idx = Global.resources_in_inventory.find(resource, 0)
 	print(str(idx))
 	if idx != -1:
-		resources_in_inventory.erase(resource)
+		Global.resources_in_inventory.erase(resource)
 		$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
 	#Refetch global inventory to resize inventory
 		#if 2nd becomes 1
@@ -207,10 +207,10 @@ func sell_second_resource(resource):
 	#Update player's gold
 	Global.currency_available += (Global.get(currentItemString) * Global.get(currentMultiplierString))
 	Events.emit_signal("merchant_purchased")
-	var idx = resources_in_inventory.find(resource, 0)
+	var idx = Global.resources_in_inventory.find(resource, 0)
 	print(str(idx))
 	if idx != -1:
-		resources_in_inventory.erase(resource)
+		Global.resources_in_inventory.erase(resource)
 		$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
 	#Refetch global inventory to resize inventory
 		#if 3rd comes here
@@ -225,29 +225,29 @@ func sell_third_resource(resource):
 	#Update player's gold
 	Global.currency_available += (Global.get(currentItemString) * Global.get(currentMultiplierString))
 	Events.emit_signal("merchant_purchased")
-	var idx = resources_in_inventory.find(resource, 0)
+	var idx = Global.resources_in_inventory.find(resource, 0)
 	print(str(idx))
 	if idx != -1:
-		resources_in_inventory.erase(resource)
+		Global.resources_in_inventory.erase(resource)
 		$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
 	#Refetch global inventory to resize inventory
 		###Allowing room here to resize the inventory after selling
 	update_global_inventory()
 
 func update_global_inventory():
-	if(resources_in_inventory.size() == 3):
-		Global.current_merchant_inv_three = resources_in_inventory[2]
-		Global.current_merchant_inv_two = resources_in_inventory[1]
-		Global.current_merchant_inv_one = resources_in_inventory[0]
-	elif(resources_in_inventory.size() == 2):
-		Global.current_merchant_inv_two = resources_in_inventory[1]
-		Global.current_merchant_inv_one = resources_in_inventory[0]
+	if(Global.resources_in_inventory.size() == 3):
+		Global.current_merchant_inv_three = Global.resources_in_inventory[2]
+		Global.current_merchant_inv_two = Global.resources_in_inventory[1]
+		Global.current_merchant_inv_one = Global.resources_in_inventory[0]
+	elif(Global.resources_in_inventory.size() == 2):
+		Global.current_merchant_inv_two = Global.resources_in_inventory[1]
+		Global.current_merchant_inv_one = Global.resources_in_inventory[0]
 		Global.current_merchant_inv_three = ""
-	elif(resources_in_inventory.size() == 1):
-		Global.current_merchant_inv_one = resources_in_inventory[0]
+	elif(Global.resources_in_inventory.size() == 1):
+		Global.current_merchant_inv_one = Global.resources_in_inventory[0]
 		Global.current_merchant_inv_three = ""
 		Global.current_merchant_inv_two = ""
-	elif(resources_in_inventory.size() == 0):
+	elif(Global.resources_in_inventory.size() == 0):
 		Global.current_merchant_inv_three = ""
 		Global.current_merchant_inv_two = ""
 		Global.current_merchant_inv_one = ""

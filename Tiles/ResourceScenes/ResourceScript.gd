@@ -10,6 +10,13 @@ func _ready():
 	action_queue = get_node("/root/GameSpace/ActionQueue")
 
 func _on_Area_area_entered(area):
+	
+	if(area.name == "Area" && !active):
+		queue_free()
+	
+	if not Global.resources_in_inventory.size() < 3:
+		return
+	
 	if(area.name == "Merchant_Area" && active):
 		var pickup = PickUpAction.new()
 		pickup.position = area.global_transform
@@ -22,8 +29,7 @@ func _on_Area_area_entered(area):
 		Events.emit_signal("resource_picked_up", resource_name)
 		#queue_free()
 		# Replace with function body.
-	if(area.name == "Area" && !active):
-		queue_free()
+	
 
 func _process(delta):
 	if(!active):
