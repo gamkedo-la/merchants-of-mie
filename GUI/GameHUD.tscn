@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://SharedResources/Fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://GUI/GameHUD.gd" type="Script" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://GUI/CityMenu.tscn" type="PackedScene" id=12]
 [ext_resource path="res://GUI/MerchantPurchase.tscn" type="PackedScene" id=13]
 [ext_resource path="res://GUI/MerchantMoveFeedback.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Audio/SFX/Dropoff.wav" type="AudioStream" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -402,6 +403,9 @@ margin_left = 123.0
 margin_right = 173.0
 margin_bottom = 50.0
 texture = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Inventory"]
+stream = ExtResource( 15 )
 
 [node name="MerchantPurchase" parent="." instance=ExtResource( 13 )]
 

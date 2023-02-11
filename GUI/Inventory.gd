@@ -16,6 +16,8 @@ var dyes_texture = preload("res://SharedResources/ResourceIcons/Dyes.png")
 var lumber_texture = preload("res://SharedResources/ResourceIcons/Lumber.png")
 var silver_texture = preload("res://SharedResources/ResourceIcons/Silver.png")
 
+var sfx = preload("res://Audio/SFX/Dropoff.wav")
+
 func _ready():
 	var con_res
 	if not Events.is_connected("resource_picked_up", self, "add_resource_to_inventory"):
@@ -106,6 +108,7 @@ func remove_resource_from_inventory(resource):
 	if(Global.first_objective_completed == true):
 		return
 	
+	$AudioStreamPlayer.play()
 	Global.objective_one_count -= 1
 	if(Global.objective_one_count <= 0):
 		Global.first_objective_completed = true
@@ -138,6 +141,7 @@ func remove_resources_from_inventory(resource_2_1, resource_2_2, resource_2_3):
 	print(resource_2_1, " ", resource_2_2, " ", resource_2_3)
 	
 	if resource_2_1 in Global.resources_in_inventory:
+		$AudioStreamPlayer.play()
 		Global.objective_two_item_one_count -= 1
 		#Updates objectives in Global.gd
 		Events.emit_signal("update_objectives")
@@ -148,6 +152,7 @@ func remove_resources_from_inventory(resource_2_1, resource_2_2, resource_2_3):
 			$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
 			
 	if resource_2_2 in Global.resources_in_inventory:
+		$AudioStreamPlayer.play()
 		Global.objective_two_item_two_count -= 1
 		#Updates objectives in Global.gd
 		Events.emit_signal("update_objectives")
@@ -158,6 +163,7 @@ func remove_resources_from_inventory(resource_2_1, resource_2_2, resource_2_3):
 			$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
 			
 	if resource_2_3 in Global.resources_in_inventory:
+		$AudioStreamPlayer.play()
 		Global.objective_two_item_three_count -= 1
 		#Updates objectives in Global.gd
 		Events.emit_signal("update_objectives")
@@ -251,4 +257,3 @@ func update_global_inventory():
 		Global.current_merchant_inv_three = ""
 		Global.current_merchant_inv_two = ""
 		Global.current_merchant_inv_one = ""
-
