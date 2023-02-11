@@ -18,6 +18,7 @@ func _on_Area_area_entered(area):
 		return
 	
 	if(area.name == "Merchant_Area" && active):
+		Global.item_picked_up_name = resource_name
 		var pickup = PickUpAction.new()
 		pickup.position = area.global_transform
 		pickup.resource = self
@@ -28,6 +29,7 @@ func _on_Area_area_entered(area):
 		
 		Events.emit_signal("resource_picked_up", resource_name)
 		#queue_free()
+		Global.item_picked_up_name = ""
 		# Replace with function body.
 	
 

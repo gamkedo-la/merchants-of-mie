@@ -11,5 +11,5 @@ dest_files=[ "res://.import/coins-rustling3.mp3-b7cdbdc4dc08672f2c775438db274da6
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

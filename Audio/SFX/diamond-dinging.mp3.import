@@ -11,5 +11,5 @@ dest_files=[ "res://.import/diamond-dinging.mp3-75a300958b47c06a8b14de46f96f821c
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

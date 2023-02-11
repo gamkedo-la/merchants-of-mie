@@ -155,6 +155,8 @@ var lumber_turn_countdown = 0
 var dyes_turn_countdown = 0
 var coffee_turn_countdown = 0
 
+var item_picked_up_name = ""
+
 var item_buy_name = ""
 
 func _ready():

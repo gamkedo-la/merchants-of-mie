@@ -11,5 +11,5 @@ dest_files=[ "res://.import/coffee-tumbling-in-container.mp3-272dd26fb1e9476b247
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
