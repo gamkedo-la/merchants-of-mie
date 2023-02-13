@@ -192,40 +192,6 @@ func sell_resource(resources,idx):
 	Events.emit_signal("merchant_purchased")
 	update_inventory_textures()
 
-func sell_second_resource(resource):
-	var currentItemString = resource + "Value"
-	var currentMultiplierString = resource + "_multiplier"
-	Global.get(currentItemString)
-	Global.get(currentMultiplierString)
-	#Update player's gold
-	Global.currency_available += (Global.get(currentItemString) * Global.get(currentMultiplierString))
-	Events.emit_signal("merchant_purchased")
-	var idx = Global.resources_in_inventory.find(resource, 0)
-	print(str(idx))
-	if idx != -1:
-		Global.resources_in_inventory.erase(resource)
-		$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
-	#Refetch global inventory to resize inventory
-		#if 3rd comes here
-		###Allowing room here to resize the inventory after selling
-	update_global_inventory()
-
-func sell_third_resource(resource):
-	var currentItemString = resource + "Value"
-	var currentMultiplierString = resource + "_multiplier"
-	Global.get(currentItemString)
-	Global.get(currentMultiplierString)
-	#Update player's gold
-	Global.currency_available += (Global.get(currentItemString) * Global.get(currentMultiplierString))
-	Events.emit_signal("merchant_purchased")
-	var idx = Global.resources_in_inventory.find(resource, 0)
-	print(str(idx))
-	if idx != -1:
-		Global.resources_in_inventory.erase(resource)
-		$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
-	#Refetch global inventory to resize inventory
-		###Allowing room here to resize the inventory after selling
-	update_global_inventory()
 
 func update_global_inventory():
 	if(Global.resources_in_inventory.size() == 3):
