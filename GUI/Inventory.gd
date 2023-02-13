@@ -37,16 +37,8 @@ func _ready():
 		assert(con_res == OK)
 		
 	#Selling to the city
-	if not Events.is_connected("sell_inv_one", self, "sell_first_resource"):
-		con_res = Events.connect("sell_inv_one", self, "sell_first_resource")
-		assert(con_res == OK)
-	
-	if not Events.is_connected("sell_inv_two", self, "sell_second_resource"):
-		con_res = Events.connect("sell_inv_two", self, "sell_second_resource")
-		assert(con_res == OK)
-		
-	if not Events.is_connected("sell_inv_three", self, "sell_third_resource"):
-		con_res = Events.connect("sell_inv_three", self, "sell_third_resource")
+	if not Events.is_connected("sell_resource", self, "sell_resource"):
+		con_res = Events.connect("sell_resource", self, "sell_resource")
 		assert(con_res == OK)
 		
 	#Updating global inventory (for selling)
@@ -180,34 +172,25 @@ func remove_resources_from_inventory(resource_2_1, resource_2_2, resource_2_3):
 	if(Global.objective_two_item_one_count == 0 && Global.objective_two_item_two_count == 0 && Global.objective_two_item_three_count == 0):
 			Global.goto_scene("res://MainGame/GameSpace.tscn")
 
-#may need to add 'resource' into the function			
-func sell_first_resource(resource):
-	#Tie button to this function
-	print("Sell item 1")
-	#See what the resource is
-	print("Resource 1:" + resource)
-	#Check the value of the resource
-	var currentItemString = resource + "Value"
-	var currentMultiplierString = resource + "_multiplier"
-	Global.get(currentItemString)
-	Global.get(currentMultiplierString)
-	#Update player's gold
-	Global.currency_available += (Global.get(currentItemString) * Global.get(currentMultiplierString))
-	#Update GUI
+		
+func sell_resource(resources,idx):
+	if Global.resources_in_inventory.empty():
+		return
+	
+	if Global.resources_in_inventory.size() - 1 < idx:
+		return
+	
+	var sell_value = Global.get(Global.resources_in_inventory[idx] + "Value")
+	var sell_value_multiplier = Global.get(Global.resources_in_inventory[idx].to_lower() + "_multiplier")
+	
+	print("You sold: ", Global.resources_in_inventory[idx], "for $", (sell_value * sell_value_multiplier))
+	
+	Global.currency_available += sell_value * sell_value_multiplier
+	
+	Global.resources_in_inventory.remove(idx)
+	
 	Events.emit_signal("merchant_purchased")
-	#Remove from inventory
-	var idx = Global.resources_in_inventory.find(resource, 0)
-	print(str(idx))
-	if idx != -1:
-		Global.resources_in_inventory.erase(resource)
-		$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
-	#Refetch global inventory to resize inventory
-		#if 2nd becomes 1
-
-		#if 3rd, becomes 2nd 
-		###Allowing room here to resize the inventory after selling
-	#Refresh inventory to relect how many items are available
-	update_global_inventory()
+	update_inventory_textures()
 
 func sell_second_resource(resource):
 	var currentItemString = resource + "Value"

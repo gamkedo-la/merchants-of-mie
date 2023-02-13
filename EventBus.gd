@@ -75,12 +75,7 @@ signal game_paused
 signal settings_entered
 
 # warning-ignore:unused_signal
-signal sell_inv_one(resource_name)
-# warning-ignore:unused_signal
-signal sell_inv_two(resource_name)
-# warning-ignore:unused_signal
-signal sell_inv_three(resource_name)
-# warning-ignore:unused_signal
+signal sell_resource(resource_name,idx)
 signal buy_inv(resource_name)
 
 # warning-ignore:unused_signal

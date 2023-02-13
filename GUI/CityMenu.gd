@@ -46,15 +46,15 @@ func _on_merchant_left_city():
 	visible = false
 
 func _on_Inv1_button_down():
-	Events.emit_signal("sell_inv_one", Global.current_merchant_inv_one)
+	Events.emit_signal("sell_resource", Global.resources_in_inventory, 0)
 
 
 func _on_Inv2_button_down():
-	Events.emit_signal("sell_inv_two", Global.current_merchant_inv_two)
+	Events.emit_signal("sell_resource", Global.resources_in_inventory, 1)
 
 
 func _on_Inv3_button_down():
-	Events.emit_signal("sell_inv_three", Global.current_merchant_inv_three)
+	Events.emit_signal("sell_resource", Global.resources_in_inventory, 2)
 
 func _on_Inv4_pressed():
 	if(Global.currency_available >= Global.SilverBuyValue):
