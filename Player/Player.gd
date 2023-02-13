@@ -12,7 +12,8 @@ var path_ind = 0
 const MOVE_SPEED = 5
 onready var amap = get_parent()
 
-
+onready var merchant_name = $MerchantInfo.merchant_name
+onready var merchant_info = $MerchantInfo.concatenated_flavor
 #signal out_of_trader_movement_points
 # warning-ignore:unused_signal
 signal end_turn
@@ -22,6 +23,8 @@ func _ready():
 	var con_res
 	if purchased_merchant:
 		visible = true
+		Global.merchant_name = merchant_name
+		Global.merchant_flavor_text = merchant_info	
 	else:
 		visible = false
 		
@@ -29,9 +32,12 @@ func _ready():
 	if not Events.is_connected("start_player_turn", self, "start_player_turn"):
 		con_res = Events.connect("start_player_turn", self, "start_player_turn")
 		assert(con_res == OK)
+		
+	
+	print(merchant_name, " ", merchant_info, "has been initialized")
 	action_queue = get_node("/root/GameSpace/ActionQueue")
-	Global.merchant_name = $MerchantInfo.merchant_name
-	Global.merchant_flavor_text = $MerchantInfo.concatenated_flavor	
+	
+
 	Events.emit_signal("update_merchant_flavor_text")
 	
 func _physics_process(delta):
