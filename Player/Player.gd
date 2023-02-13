@@ -7,6 +7,7 @@ var MoveAction = load("Actions/MoveAction.gd")
 var action_queue
 
 var path = []
+var merchant_inventory = []
 var path_ind = 0
 const MOVE_SPEED = 5
 onready var amap = get_parent()
@@ -76,23 +77,30 @@ func start_player_turn():
 	
 func turn_off_active_merchants():
 	if active_merchant:
+		self.merchant_inventory = Global.resources_in_inventory
 		active_merchant = false
 
 
 func _on_PlayerPrototype_input_event(camera, event, position, normal, shape_idx):
-	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT && event.pressed == true:
+	if not event is InputEventMouseButton:
+		return
+		
+	if not event.button_index == BUTTON_LEFT && event.pressed == true:
+		return
 
-			if active_merchant == false:
-				var merchants = get_tree().get_nodes_in_group("player")
-				
-				for x in merchants:
-					x.active_merchant = false
-				
-				active_merchant = true
-				Global.merchant_name = $MerchantInfo.merchant_name
-				Global.merchant_flavor_text = $MerchantInfo.concatenated_flavor
-				Events.emit_signal("update_merchant_flavor_text")
+	if active_merchant == false:
+		var merchants = get_tree().get_nodes_in_group("player")
+		
+		for x in merchants:
+			#x.active_merchant = false
+			x.turn_off_active_merchants()
+		
+		active_merchant = true
+		Global.resources_in_inventory = self.merchant_inventory
+		Global.merchant_name = $MerchantInfo.merchant_name
+		Global.merchant_flavor_text = $MerchantInfo.concatenated_flavor
+		Events.emit_signal("update_inventory_ui")
+		Events.emit_signal("update_merchant_flavor_text")
 
 
 func _on_PlayerPrototype_mouse_entered():

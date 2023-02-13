@@ -86,6 +86,9 @@ signal buy_inv(resource_name)
 # warning-ignore:unused_signal
 signal update_global_inventory_tracking
 
+# warning-ignore:unused_signal
+signal update_inventory_ui
+
 signal turn_off_west_rymare
 signal turn_on_west_rymare
 signal turn_off_doveshire

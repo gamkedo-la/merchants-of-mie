@@ -20,6 +20,10 @@ var sfx = preload("res://Audio/SFX/Dropoff.wav")
 
 func _ready():
 	var con_res
+	if not Events.is_connected("update_inventory_ui", self, "update_inventory_textures"):
+		con_res = Events.connect("update_inventory_ui", self, "update_inventory_textures")
+		assert(con_res == OK)
+	
 	if not Events.is_connected("resource_picked_up", self, "add_resource_to_inventory"):
 		con_res = Events.connect("resource_picked_up", self, "add_resource_to_inventory")
 		assert(con_res == OK)
