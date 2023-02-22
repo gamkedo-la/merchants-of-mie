@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://GUI/GameHUD_Font_Settings.tres" type="DynamicFont" id=1]
 [ext_resource path="res://StartScreen/StartScreen.gd" type="Script" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://SharedResources/Models/Resources/c6505a.material" type="Material" id=15]
 [ext_resource path="res://SharedResources/Models/Resources/Grapes2.material" type="Material" id=16]
 [ext_resource path="res://SharedResources/Fonts/EB_Garamond/EBGaramond-Regular.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://GUI/Theme/ui_theme.tres" type="Theme" id=18]
 
 [sub_resource type="DynamicFont" id=3]
 size = 32
@@ -112,6 +113,7 @@ tracks/2/keys = {
 [node name="StartScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 18 )
 script = ExtResource( 2 )
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -122,9 +124,9 @@ margin_right = 344.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 16.0
-margin_top = 3.0
+margin_top = 12.0
 margin_right = 328.0
-margin_bottom = 253.0
+margin_bottom = 244.0
 custom_constants/separation = 20
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
@@ -138,22 +140,22 @@ valign = 1
 [node name="NewGameButton" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 63.0
 margin_right = 312.0
-margin_bottom = 112.0
+margin_bottom = 106.0
 custom_fonts/font = SubResource( 1 )
 text = "New Game"
 
 [node name="SettingsButton" type="MenuButton" parent="CenterContainer/VBoxContainer"]
-margin_top = 132.0
+margin_top = 126.0
 margin_right = 312.0
-margin_bottom = 181.0
+margin_bottom = 169.0
 custom_fonts/font = ExtResource( 1 )
 text = "Settings"
 flat = false
 
 [node name="ExitButton" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 201.0
+margin_top = 189.0
 margin_right = 312.0
-margin_bottom = 250.0
+margin_bottom = 232.0
 custom_fonts/font = SubResource( 2 )
 text = "Exit"
 
