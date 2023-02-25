@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://SharedResources/Fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://GUI/GameHUD.gd" type="Script" id=2]
@@ -16,9 +16,19 @@
 [ext_resource path="res://GUI/MerchantMoveFeedback.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Audio/SFX/Dropoff.wav" type="AudioStream" id=15]
 [ext_resource path="res://GUI/cog.png" type="Texture" id=16]
+[ext_resource path="res://SharedResources/Fonts/EB_Garamond/EBGaramond-Regular.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://GUI/coin.png" type="Texture" id=18]
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 17 )
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+font_data = ExtResource( 17 )
 
 [node name="GameHUD" type="Control"]
 anchor_right = 1.0
@@ -58,7 +68,7 @@ valign = 1
 
 [node name="Objective Text" type="Label" parent="Objectives/VBoxContainer"]
 margin_right = 208.0
-margin_bottom = 43.0
+margin_bottom = 22.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
@@ -92,23 +102,23 @@ valign = 1
 
 [node name="Objective Text2-1" type="Label" parent="Objectives/VBoxContainer2"]
 margin_right = 208.0
-margin_bottom = 43.0
+margin_bottom = 22.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
 
 [node name="Objective Text2-2" type="Label" parent="Objectives/VBoxContainer2"]
-margin_top = 47.0
+margin_top = 26.0
 margin_right = 208.0
-margin_bottom = 90.0
+margin_bottom = 48.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
 
 [node name="Objective Text2-3" type="Label" parent="Objectives/VBoxContainer2"]
-margin_top = 94.0
+margin_top = 52.0
 margin_right = 208.0
-margin_bottom = 137.0
+margin_bottom = 74.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
@@ -132,23 +142,23 @@ valign = 1
 
 [node name="Objective Text2-1" type="Label" parent="Objectives/MerchantText"]
 margin_right = 208.0
-margin_bottom = 43.0
+margin_bottom = 22.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
 
 [node name="Objective Text2-2" type="Label" parent="Objectives/MerchantText"]
-margin_top = 47.0
+margin_top = 26.0
 margin_right = 208.0
-margin_bottom = 90.0
+margin_bottom = 48.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
 
 [node name="Objective Text2-3" type="Label" parent="Objectives/MerchantText"]
-margin_top = 94.0
+margin_top = 52.0
 margin_right = 208.0
-margin_bottom = 137.0
+margin_bottom = 74.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
@@ -227,46 +237,17 @@ anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -1008.0
 margin_bottom = 52.0
-script = ExtResource( 7 )
 
 [node name="ColorRect" type="ColorRect" parent="Currency"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -128.0
-margin_top = -1.0
+margin_left = -104.0
+margin_top = 8.0
 margin_bottom = 47.0
-color = Color( 0.141176, 0.129412, 0.129412, 0.501961 )
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Currency"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -99.0
-margin_top = -1.0
-margin_right = 29.0
-margin_bottom = 89.0
-grow_horizontal = 2
-grow_vertical = 2
-rect_scale = Vector2( 0.6, 0.6 )
-alignment = 1
-
-[node name="Label" type="Label" parent="Currency/VBoxContainer"]
-margin_right = 128.0
-margin_bottom = 43.0
-custom_fonts/font = ExtResource( 6 )
-text = "MONEY"
-align = 1
-valign = 1
-
-[node name="CurrencyAmount" type="Label" parent="Currency/VBoxContainer"]
-margin_top = 47.0
-margin_right = 128.0
-margin_bottom = 90.0
-custom_fonts/font = ExtResource( 6 )
-text = "10"
-align = 1
-valign = 1
+color = Color( 0.184314, 0.0784314, 0.184314, 1 )
 
 [node name="Undo" type="Control" parent="."]
+visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -309,33 +290,32 @@ margin_right = 79.0
 rect_scale = Vector2( 0.8, 0.8 )
 
 [node name="Label" type="Label" parent="Inventory/VBoxContainer"]
-margin_right = 188.0
-margin_bottom = 43.0
+margin_right = 158.0
+margin_bottom = 22.0
 custom_fonts/font = ExtResource( 6 )
 text = "INVENTORY"
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Inventory/VBoxContainer"]
-margin_top = 47.0
-margin_right = 188.0
-margin_bottom = 97.0
+margin_top = 26.0
+margin_right = 158.0
+margin_bottom = 76.0
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Inventory/VBoxContainer/HBoxContainer"]
-margin_left = 15.0
-margin_right = 65.0
+margin_right = 50.0
 margin_bottom = 50.0
 texture = ExtResource( 3 )
 
 [node name="TextureRect2" type="TextureRect" parent="Inventory/VBoxContainer/HBoxContainer"]
-margin_left = 69.0
-margin_right = 119.0
+margin_left = 54.0
+margin_right = 104.0
 margin_bottom = 50.0
 texture = ExtResource( 3 )
 
 [node name="TextureRect3" type="TextureRect" parent="Inventory/VBoxContainer/HBoxContainer"]
-margin_left = 123.0
-margin_right = 173.0
+margin_left = 108.0
+margin_right = 158.0
 margin_bottom = 50.0
 texture = ExtResource( 3 )
 
@@ -351,6 +331,9 @@ margin_right = 477.0
 margin_bottom = 241.0
 
 [node name="BoardCard" parent="." instance=ExtResource( 10 )]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="MerchantFlavor" parent="." instance=ExtResource( 11 )]
 margin_left = -313.0
@@ -365,63 +348,88 @@ margin_top = -300.0
 margin_right = -357.0
 margin_bottom = 250.0
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 167.0
+margin_bottom = 47.0
+color = Color( 0, 0, 0, 1 )
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 354.0
 margin_bottom = 85.0
 
 [node name="TopLeftUI" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 354.0
-margin_bottom = 49.0
+margin_bottom = 47.0
 custom_constants/separation = 10
 
 [node name="PauseButton" type="Button" parent="VBoxContainer/TopLeftUI"]
 margin_right = 44.0
-margin_bottom = 49.0
+margin_bottom = 47.0
 custom_fonts/font = ExtResource( 6 )
 icon = ExtResource( 16 )
 
 [node name="ActionPointsBox" type="HBoxContainer" parent="VBoxContainer/TopLeftUI"]
 margin_left = 54.0
-margin_right = 354.0
-margin_bottom = 49.0
+margin_right = 157.0
+margin_bottom = 47.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/TopLeftUI/ActionPointsBox"]
-margin_top = 3.0
-margin_right = 266.0
-margin_bottom = 46.0
+margin_right = 69.0
+margin_bottom = 47.0
 custom_fonts/font = ExtResource( 6 )
-text = "ACTION POINTS:  "
+text = "Movement 
+POINTS:  "
 align = 1
 valign = 1
 
 [node name="ActionPointNum" type="Label" parent="VBoxContainer/TopLeftUI/ActionPointsBox"]
-margin_left = 270.0
-margin_top = 3.0
-margin_right = 300.0
-margin_bottom = 46.0
-custom_fonts/font = ExtResource( 6 )
+margin_left = 73.0
+margin_top = 2.0
+margin_right = 103.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 2 )
 text = "23"
 align = 1
 valign = 1
 script = ExtResource( 5 )
 
-[node name="ActionPoints" type="Control" parent="VBoxContainer/TopLeftUI"]
-visible = false
-margin_left = 316.0
-margin_right = 316.0
-margin_bottom = 49.0
-
 [node name="EndTurnBtn" type="Button" parent="VBoxContainer"]
-margin_left = 129.0
-margin_top = 53.0
-margin_right = 225.0
-margin_bottom = 81.0
-size_flags_horizontal = 4
+margin_top = 51.0
+margin_right = 96.0
+margin_bottom = 79.0
+size_flags_horizontal = 0
 custom_fonts/font = SubResource( 1 )
 text = "END TURN"
+
+[node name="CurrencyContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 650.0
+margin_bottom = -515.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 0.6, 0.6 )
+custom_constants/separation = 10
+alignment = 2
+script = ExtResource( 7 )
+
+[node name="CoinTexture" type="TextureRect" parent="CurrencyContainer"]
+margin_left = 1539.0
+margin_right = 1571.0
+margin_bottom = 85.0
+texture = ExtResource( 18 )
+stretch_mode = 6
+
+[node name="CurrencyAmount" type="Label" parent="CurrencyContainer"]
+margin_left = 1581.0
+margin_right = 1674.0
+margin_bottom = 85.0
+custom_fonts/font = SubResource( 3 )
+text = "100"
+align = 2
 
 [connection signal="pressed" from="Undo/Undo" to="." method="_on_Undo_pressed"]
 [connection signal="pressed" from="VBoxContainer/TopLeftUI/PauseButton" to="." method="_on_PauseButton_pressed"]
