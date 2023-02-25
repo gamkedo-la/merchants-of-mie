@@ -15,7 +15,10 @@ export var resource_value_lumber = 3
 export var resource_value_dyes = 3
 export var resource_value_coffee = 3
 
+var hasPlayed = true;
+
 onready var dead_click_sfx: AudioStream = preload("res://Audio/SFX/err_click.wav")
+onready var resource_sound = preload("res://Audio/SFX/ResourceSpawn.wav")
 
 # warning-ignore:unused_signal
 signal end_turn
@@ -81,6 +84,7 @@ func start_board_turn():
 
 func determine_card():
 	var rand_card:int = randi() % board_cards.size()
+	hasPlayed = false
 	if(board_cards[rand_card] == -1):
 		determine_card()
 	else:
@@ -222,6 +226,13 @@ func determine_card():
 		elif(rand_card == 45):
 			_halve_coffee()
 			board_cards[45] = -1
+	
+func _process(delta: float) -> void:
+	yield(get_tree().create_timer(8), "timeout")
+	if !$AudioStreamPlayer.is_playing() && !hasPlayed:
+		$AudioStreamPlayer.stream = resource_sound
+		$AudioStreamPlayer.play()
+		hasPlayed = true
 
 func make_tiles_interactable():
 	for tile in $BoardTiles.get_children():

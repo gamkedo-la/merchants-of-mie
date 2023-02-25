@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://GameBoard/BoardActions.gd" type="Script" id=1]
 [ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-Forest.glb" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://SharedResources/Models/TerrainTiles/BaseTerrain.material" type="Material" id=10]
 [ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-Ocean.glb" type="PackedScene" id=11]
 [ext_resource path="res://City/CityTemplate.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Audio/SFX/ResourceSpawn.wav" type="AudioStream" id=13]
 
 [node name="Board" type="Spatial"]
 script = ExtResource( 1 )
@@ -1606,3 +1607,7 @@ material = ExtResource( 10 )
 
 [node name="Objectives-Castle" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.50213, 0, 0.461386 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -8.974
