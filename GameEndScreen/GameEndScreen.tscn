@@ -461,6 +461,8 @@ width = 6.0
 height = 1.4
 material = ExtResource( 17 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ReplayBtn" to="." method="_on_ReplayBtn_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ExitToMainBtn" to="." method="_on_ExitToMainBtn_pressed"]
 [connection signal="pressed" from="LosingContainer/VBoxContainer/ReplayBtn" to="." method="_on_ReplayBtn_pressed"]
