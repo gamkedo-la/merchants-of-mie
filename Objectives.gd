@@ -7,9 +7,9 @@ var min_obj_two = 2#3
 var max_obj_two = 3#10 
 
 var possible_objectives = [
-#"Silver",
-#"Gold",
-#"Salt",
+"Silver",
+"Gold",
+"Salt",
 "Grapes",
 "Wheat",
 "Tea",
@@ -21,6 +21,9 @@ var possible_objectives = [
 "Dyes",
 "Coffee"
 ]
+
+var particle_timer = 3
+var timer = null
 
 var rand_resource_obj_one = 0
 var rand_resource_obj_two_one = 0
@@ -69,6 +72,15 @@ func _on_Area_area_entered(area):
 		#Events.emit_signal("merchant_clicked_castle")
 		if(!Global.first_objective_completed):
 			Events.emit_signal("resource_dropped", possible_objectives[rand_resource_obj_one])
+			$Explosion.visible = true
+			var t = Timer.new()
+			t.set_wait_time(1.5)
+			t.set_one_shot(true)
+			self.add_child(t)
+			t.start()
+			yield(t, "timeout")
+			$Explosion.visible = false
+			
 		else:
 			Events.emit_signal("resource_dropped_second", possible_objectives[rand_resource_obj_two_one], possible_objectives[rand_resource_obj_two_two], possible_objectives[rand_resource_obj_two_three])
 

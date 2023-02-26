@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://SharedResources/Models/Resources/Gold.material" type="Material" id=1]
+
+[sub_resource type="SphereMesh" id=7]
+material = ExtResource( 1 )
+height = 1.0
+
+[sub_resource type="Curve" id=8]
+_data = [ Vector2( 0.00835655, 0.995454 ), 0.0, 0.0, 0, 0, Vector2( 0.994429, 0 ), 0.0, 0.0, 0, 0 ]
+
+[node name="Explosion" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.8301, 10.5635, -10.1236 )
+
+[node name="CPUParticles2" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.0823387, -0.996604, 0, 0.996604, 0.0823387, 0.00797939, 0.187494, 0.00434494 )
+amount = 100
+lifetime = 3.0
+explosiveness = 1.0
+local_coords = false
+mesh = SubResource( 7 )
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3( 0, 0, -15 )
+gravity = Vector3( 0, -5, 0 )
+initial_velocity = 4.0
+radial_accel = 3.0
+scale_amount = 0.1
+scale_amount_curve = SubResource( 8 )
+color = Color( 1, 0, 0, 1 )
+
+[node name="CPUParticles3" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.0823387, -0.996604, 0, 0.996604, 0.0823387, 0.00798035, -4.30647, 9.17551 )
+amount = 60
+lifetime = 2.0
+preprocess = 0.25
+explosiveness = 1.0
+local_coords = false
+mesh = SubResource( 7 )
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3( 0, 0, -15 )
+gravity = Vector3( 0, -5, 0 )
+initial_velocity = 4.0
+radial_accel = 3.0
+scale_amount = 0.1
+scale_amount_curve = SubResource( 8 )
+color = Color( 1, 0, 0, 1 )
+
+[node name="CPUParticles4" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.0823387, -0.996604, 0, 0.996604, 0.0823387, -16.7368, 13.9683, 5.13633 )
+amount = 400
+lifetime = 6.0
+preprocess = 0.25
+explosiveness = 1.0
+local_coords = false
+mesh = SubResource( 7 )
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3( 0, 0, -15 )
+gravity = Vector3( 0, -5, 0 )
+initial_velocity = 4.0
+radial_accel = 3.0
+scale_amount = 0.1
+scale_amount_curve = SubResource( 8 )
+color = Color( 1, 0, 0, 1 )
