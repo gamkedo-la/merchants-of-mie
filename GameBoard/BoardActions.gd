@@ -228,7 +228,6 @@ func determine_card():
 			board_cards[45] = -1
 	
 func _process(delta: float) -> void:
-	yield(get_tree().create_timer(8), "timeout")
 	if !$AudioStreamPlayer.is_playing() && !hasPlayed:
 		$AudioStreamPlayer.stream = resource_sound
 		$AudioStreamPlayer.play()
