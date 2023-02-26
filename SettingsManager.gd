@@ -108,8 +108,15 @@ func _item_selected(id: int):
 	for popupmenu in popupmenus:
 		var item_index = popupmenu.get_item_index(id);
 		if item_index != -1:
-			popupmenu.toggle_item_checked(item_index);
 			var setting_being_viewed = popupmenu.get_item_text(item_index);
+			match (setting_being_viewed):
+				'Normal':
+					if popupmenu.is_item_checked(item_index):
+						return
+				'Easy':
+					if popupmenu.is_item_checked(item_index):
+						return
+			popupmenu.toggle_item_checked(item_index);
 			var old_settings = current_settings_values;
 			handle_settings_changed(setting_being_viewed, popupmenu.is_item_checked(item_index))
 			emit_signal("settings_changed", old_settings, current_settings_values)
