@@ -170,7 +170,7 @@ func remove_resources_from_inventory(resource_2_1, resource_2_2, resource_2_3):
 			$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
 	
 	if(Global.objective_two_item_one_count == 0 && Global.objective_two_item_two_count == 0 && Global.objective_two_item_three_count == 0):
-			Global.goto_scene("res://MainGame/GameSpace.tscn")
+			Global.goto_scene("res://GameEndScreen/GameEndScreen.tscn")
 
 		
 func sell_resource(resources,idx):
