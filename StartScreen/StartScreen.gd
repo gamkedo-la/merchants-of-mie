@@ -14,5 +14,5 @@ func _on_ExitButton_pressed():
 	get_tree().quit()
 
 func _on_SettingsButton_pressed():
-	SettingsManager.initialize_settings($CenterContainer/VBoxContainer/SettingsButton);
+	SettingsManager.initialize_settings($CenterContainer/VBoxContainer/SettingsButton, true);
 	

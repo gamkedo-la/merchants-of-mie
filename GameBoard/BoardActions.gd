@@ -260,7 +260,8 @@ func is_valid_movement_tile(from_vector: Vector3, desired_move_vector: Vector3) 
 	if SettingsManager.one_tile_per_move():
 		var board_map = get_parent().get_node("AMap")
 		var path_cost = board_map.get_path_cost(from_vector, desired_move_vector)
-		return path_cost <= Global.action_Points_available
+		var can_afford_move = path_cost <= Global.action_Points_available
+		return can_afford_move
 	return true
 	
 

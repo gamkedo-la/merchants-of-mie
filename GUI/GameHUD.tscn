@@ -68,7 +68,7 @@ valign = 1
 
 [node name="Objective Text" type="Label" parent="Objectives/VBoxContainer"]
 margin_right = 208.0
-margin_bottom = 22.0
+margin_bottom = 43.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
@@ -102,23 +102,23 @@ valign = 1
 
 [node name="Objective Text2-1" type="Label" parent="Objectives/VBoxContainer2"]
 margin_right = 208.0
-margin_bottom = 22.0
+margin_bottom = 43.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
 
 [node name="Objective Text2-2" type="Label" parent="Objectives/VBoxContainer2"]
-margin_top = 26.0
+margin_top = 47.0
 margin_right = 208.0
-margin_bottom = 48.0
+margin_bottom = 90.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
 
 [node name="Objective Text2-3" type="Label" parent="Objectives/VBoxContainer2"]
-margin_top = 52.0
+margin_top = 94.0
 margin_right = 208.0
-margin_bottom = 74.0
+margin_bottom = 137.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
@@ -142,23 +142,23 @@ valign = 1
 
 [node name="Objective Text2-1" type="Label" parent="Objectives/MerchantText"]
 margin_right = 208.0
-margin_bottom = 22.0
+margin_bottom = 43.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
 
 [node name="Objective Text2-2" type="Label" parent="Objectives/MerchantText"]
-margin_top = 26.0
+margin_top = 47.0
 margin_right = 208.0
-margin_bottom = 48.0
+margin_bottom = 90.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
 
 [node name="Objective Text2-3" type="Label" parent="Objectives/MerchantText"]
-margin_top = 52.0
+margin_top = 94.0
 margin_right = 208.0
-margin_bottom = 74.0
+margin_bottom = 137.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
@@ -290,32 +290,33 @@ margin_right = 79.0
 rect_scale = Vector2( 0.8, 0.8 )
 
 [node name="Label" type="Label" parent="Inventory/VBoxContainer"]
-margin_right = 158.0
-margin_bottom = 22.0
+margin_right = 188.0
+margin_bottom = 43.0
 custom_fonts/font = ExtResource( 6 )
 text = "INVENTORY"
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Inventory/VBoxContainer"]
-margin_top = 26.0
-margin_right = 158.0
-margin_bottom = 76.0
+margin_top = 47.0
+margin_right = 188.0
+margin_bottom = 97.0
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Inventory/VBoxContainer/HBoxContainer"]
-margin_right = 50.0
+margin_left = 15.0
+margin_right = 65.0
 margin_bottom = 50.0
 texture = ExtResource( 3 )
 
 [node name="TextureRect2" type="TextureRect" parent="Inventory/VBoxContainer/HBoxContainer"]
-margin_left = 54.0
-margin_right = 104.0
+margin_left = 69.0
+margin_right = 119.0
 margin_bottom = 50.0
 texture = ExtResource( 3 )
 
 [node name="TextureRect3" type="TextureRect" parent="Inventory/VBoxContainer/HBoxContainer"]
-margin_left = 108.0
-margin_right = 158.0
+margin_left = 123.0
+margin_right = 173.0
 margin_bottom = 50.0
 texture = ExtResource( 3 )
 
@@ -359,26 +360,26 @@ margin_bottom = 85.0
 
 [node name="TopLeftUI" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 354.0
-margin_bottom = 47.0
+margin_bottom = 89.0
 custom_constants/separation = 10
 
 [node name="PauseButton" type="Button" parent="VBoxContainer/TopLeftUI"]
 margin_right = 44.0
-margin_bottom = 47.0
+margin_bottom = 89.0
 custom_fonts/font = ExtResource( 6 )
 icon = ExtResource( 16 )
 
 [node name="ActionPointsBox" type="HBoxContainer" parent="VBoxContainer/TopLeftUI"]
 margin_left = 54.0
-margin_right = 157.0
-margin_bottom = 47.0
+margin_right = 229.0
+margin_bottom = 89.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/TopLeftUI/ActionPointsBox"]
-margin_right = 69.0
-margin_bottom = 47.0
+margin_right = 141.0
+margin_bottom = 89.0
 custom_fonts/font = ExtResource( 6 )
 text = "Movement 
 POINTS:  "
@@ -386,10 +387,10 @@ align = 1
 valign = 1
 
 [node name="ActionPointNum" type="Label" parent="VBoxContainer/TopLeftUI/ActionPointsBox"]
-margin_left = 73.0
-margin_top = 2.0
-margin_right = 103.0
-margin_bottom = 45.0
+margin_left = 145.0
+margin_top = 23.0
+margin_right = 175.0
+margin_bottom = 66.0
 custom_fonts/font = SubResource( 2 )
 text = "23"
 align = 1
@@ -397,9 +398,9 @@ valign = 1
 script = ExtResource( 5 )
 
 [node name="EndTurnBtn" type="Button" parent="VBoxContainer"]
-margin_top = 51.0
+margin_top = 93.0
 margin_right = 96.0
-margin_bottom = 79.0
+margin_bottom = 121.0
 size_flags_horizontal = 0
 custom_fonts/font = SubResource( 1 )
 text = "END TURN"

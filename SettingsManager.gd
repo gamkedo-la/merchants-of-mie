@@ -10,10 +10,14 @@ const available_settings = {
 			'Name': 'SFX',
 			'Type': 'Checkbox',
 		}],
-	'Gameplay': [
+	'Difficulty': [
 		{
-			'Name': '1 Actionpoint Per Tile',
-			'Type': 'Checkbox'
+			'Name': 'Easy',
+			'Type': 'RadioCheck'
+		},
+		{
+			'Name': 'Normal',
+			'Type': 'RadioCheck'
 		}
 	]
 };
@@ -24,7 +28,7 @@ var is_soundtrack_enabled: bool = true;
 var is_sfx_enabled: bool = true; 
 
 signal settings_changed(old_settings, new_settings)
-var current_settings_values = { '1 Actionpoint Per Tile': true, 'Soundtrack' : true, 'SFX' : true };
+var current_settings_values = { 'Easy': false, 'Normal': true, 'Soundtrack' : true, 'SFX' : true };
 
 
 var current_popupmenu: PopupMenu;
@@ -37,8 +41,10 @@ func handle_new_scene():
 	current_settings_unique_id = 0;
 	current_settings_unique_id_lookup = {};
 
-func add_available_settings_to_popupmenu(popup_menu: PopupMenu) -> void:
+func add_available_settings_to_popupmenu(popup_menu: PopupMenu, allow_difficulty_change: bool) -> void:
 	var setting_names = available_settings.keys();
+	if !allow_difficulty_change:
+		setting_names.erase('Difficulty')
 	current_popupmenu = popup_menu;
 	for setting_category in setting_names:	
 		var setting_submenu = PopupMenu.new()
@@ -51,6 +57,11 @@ func add_available_settings_to_popupmenu(popup_menu: PopupMenu) -> void:
 			current_settings_unique_id_lookup[setting_name] = current_settings_unique_id;
 			if setting['Type'] == 'Checkbox':
 				setting_submenu.add_check_item(setting_name, current_settings_unique_id);
+				var setting_submenu_index = setting_submenu.get_item_index(current_settings_unique_id)
+				setting_submenu.set_item_checked(setting_submenu_index, 
+				setting_value);
+			if setting['Type'] == 'RadioCheck':
+				setting_submenu.add_radio_check_item(setting_name, current_settings_unique_id);
 				var setting_submenu_index = setting_submenu.get_item_index(current_settings_unique_id)
 				setting_submenu.set_item_checked(setting_submenu_index, 
 				setting_value);
@@ -75,6 +86,22 @@ func handle_settings_changed(setting_name, new_value):
 				is_sfx_enabled = true;
 			else:
 				is_sfx_enabled = false;
+		'Normal':
+			if new_value:
+				var easy_difficulty_uid = current_settings_unique_id_lookup['Easy'];
+				for popupmenu in popupmenus:
+					var easy_difficulty_menuindex = popupmenu.get_item_index(easy_difficulty_uid);
+					if easy_difficulty_menuindex != -1:
+						popupmenu.toggle_item_checked(easy_difficulty_menuindex);
+						current_settings_values['Easy'] = false
+		'Easy':
+			if new_value:
+				var normal_difficulty_uid = current_settings_unique_id_lookup['Normal'];
+				for popupmenu in popupmenus:
+					var normal_difficulty_menuindex = popupmenu.get_item_index(normal_difficulty_uid);
+					if normal_difficulty_menuindex != -1:
+						popupmenu.toggle_item_checked(normal_difficulty_menuindex);
+						current_settings_values['Normal'] = false
 	current_settings_values[setting_name] = new_value
 
 func _item_selected(id: int):
@@ -87,7 +114,7 @@ func _item_selected(id: int):
 			handle_settings_changed(setting_being_viewed, popupmenu.is_item_checked(item_index))
 			emit_signal("settings_changed", old_settings, current_settings_values)
 
-func initialize_settings(settings_button: MenuButton) -> void:
+func initialize_settings(settings_button: MenuButton, allow_difficulty_change: bool) -> void:
 	var settings_popup_menu: PopupMenu = settings_button.get_popup()
 	# Early escape case where this menubutton has a popupmenu already
 	var current_settings = settings_popup_menu.get_item_count();
@@ -95,7 +122,7 @@ func initialize_settings(settings_button: MenuButton) -> void:
 		return;
 	settings_popup_menu.hide_on_item_selection = false;
 	settings_popup_menu.hide_on_checkable_item_selection = false;
-	add_available_settings_to_popupmenu(settings_popup_menu)
+	add_available_settings_to_popupmenu(settings_popup_menu, allow_difficulty_change)
 
 func soundtrack_enabled() -> bool:
 	return is_soundtrack_enabled
@@ -162,5 +189,8 @@ func _on_SfxTrack_finished():
 	# event emitted when sfx complete
 	pass
 
+# This is the function that is called by player movement to check the cost of movement.
+# Currently this is just if the game difficulty setting is on Easy
+# The normal difficulty actually doesn't change this, at the time of implementation it is only GUI.
 func one_tile_per_move() -> bool:
-	return current_settings_values['1 Actionpoint Per Tile']
+	return current_settings_values['Normal']
