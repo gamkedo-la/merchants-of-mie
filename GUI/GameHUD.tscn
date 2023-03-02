@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://SharedResources/Fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://GUI/GameHUD.gd" type="Script" id=2]
@@ -24,6 +24,9 @@ font_data = ExtResource( 17 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 32
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 17 )
 
 [sub_resource type="DynamicFont" id=1]
@@ -200,41 +203,6 @@ text = "UNLOCKS AFTER
 IS COMPLETED"
 valign = 1
 
-[node name="TurnsRemaining" type="Control" parent="."]
-margin_left = 3.0
-margin_top = 504.0
-margin_right = 251.0
-margin_bottom = 696.0
-script = ExtResource( 8 )
-
-[node name="ColorRect" type="ColorRect" parent="TurnsRemaining"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = -2.0
-margin_top = -39.0
-margin_right = 381.0
-color = Color( 0.141176, 0.129412, 0.129412, 0.501961 )
-
-[node name="Label" type="Label" parent="TurnsRemaining"]
-margin_left = -1.0
-margin_top = 69.0
-margin_right = 329.0
-margin_bottom = 112.0
-rect_scale = Vector2( 0.5, 0.5 )
-custom_fonts/font = ExtResource( 6 )
-text = "CARDS IN DECK LEFT:"
-valign = 1
-
-[node name="CardCount" type="Label" parent="TurnsRemaining"]
-margin_left = 171.0
-margin_top = 66.0
-margin_right = 203.0
-margin_bottom = 109.0
-rect_scale = Vector2( 0.6, 0.6 )
-custom_fonts/font = ExtResource( 6 )
-text = "23"
-valign = 1
-
 [node name="Currency" type="Control" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
@@ -358,11 +326,11 @@ margin_bottom = 48.0
 color = Color( 0.184314, 0.0784314, 0.184314, 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 354.0
-margin_bottom = 85.0
+margin_right = 193.0
+margin_bottom = 107.0
 
 [node name="TopLeftUI" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 354.0
+margin_right = 193.0
 margin_bottom = 49.0
 custom_constants/separation = 10
 
@@ -401,10 +369,31 @@ align = 1
 valign = 1
 script = ExtResource( 5 )
 
-[node name="EndTurnBtn" type="Button" parent="VBoxContainer"]
+[node name="TurnsRemaining" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 53.0
+margin_right = 193.0
+margin_bottom = 75.0
+script = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="VBoxContainer/TurnsRemaining"]
+margin_right = 98.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 5 )
+text = "TURNS LEFT:"
+valign = 1
+
+[node name="CardCount" type="Label" parent="VBoxContainer/TurnsRemaining"]
+margin_left = 102.0
+margin_right = 118.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 5 )
+text = "23"
+valign = 1
+
+[node name="EndTurnBtn" type="Button" parent="VBoxContainer"]
+margin_top = 79.0
 margin_right = 96.0
-margin_bottom = 81.0
+margin_bottom = 107.0
 size_flags_horizontal = 0
 custom_fonts/font = SubResource( 1 )
 text = "END TURN"
