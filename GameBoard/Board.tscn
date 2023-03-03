@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://GameBoard/BoardActions.gd" type="Script" id=1]
 [ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-Forest.glb" type="PackedScene" id=2]
@@ -13,9 +13,12 @@
 [ext_resource path="res://SharedResources/Models/TerrainTiles/Tile-Ocean.glb" type="PackedScene" id=11]
 [ext_resource path="res://City/CityTemplate.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Audio/SFX/ResourceSpawn.wav" type="AudioStream" id=13]
+[ext_resource path="res://GameBoard/tile_highlight.tscn" type="PackedScene" id=14]
 
 [node name="Board" type="Spatial"]
 script = ExtResource( 1 )
+
+[node name="tile_highlight" parent="." instance=ExtResource( 14 )]
 
 [node name="BoardTiles" type="Spatial" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )

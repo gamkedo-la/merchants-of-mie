@@ -266,32 +266,50 @@ func is_valid_movement_tile(from_vector: Vector3, desired_move_vector: Vector3) 
 	
 
 func _tile_hovered(tile_object):
-	var tween = Tween.new()
+	
 	var from = tile_object.get_parent().translation
-	var to = Vector3(from.x, 0.2, from.z)
 	var players = get_tree().get_nodes_in_group("player")
 	var current_player_location;
 	for player in players:
 		if player.active_merchant == true:
 			current_player_location = player.global_transform.origin;
 	if (!is_valid_movement_tile(from, current_player_location)): return;
-	tween.interpolate_property(tile_object.get_parent(), "translation", from, to, 0.1)
-	tile_object.get_parent().add_child(tween)
-	tween.start()
-	yield(tween, "tween_completed")
-	tween.queue_free()
+
+	$tile_highlight.global_transform.origin.x = tile_object.get_parent().global_transform.origin.x
+	$tile_highlight.global_transform.origin.y = 0.03 # tile_object.get_parent().global_transform.origin.y
+	$tile_highlight.global_transform.origin.z = tile_object.get_parent().global_transform.origin.z
+
+	# this tween looks nice! is raises the tile up which obscures the highlight
+	# which if raised looks offset from board grid - so I turned off the tween
+	# but it still works and can be enabled without problem:
+	# var tween = Tween.new()
+	# var to = Vector3(from.x, 0.2, from.z)
+	# tween.interpolate_property(tile_object.get_parent(), "translation", from, to, 0.1)
+	# tile_object.get_parent().add_child(tween)
+	# tween.start()
+	# yield(tween, "tween_completed")
+	# tween.queue_free()
 
 func _tile_unhovered(tile_object):
+
+	$tile_highlight.global_transform.origin.x = 0
+	$tile_highlight.global_transform.origin.y = -9999
+	$tile_highlight.global_transform.origin.z = 0
+
 	if !tile_object:
 		return
-	var tween = Tween.new()
-	var from = tile_object.get_parent().translation
-	var to = Vector3(from.x, 0, from.z)
-	tween.interpolate_property(tile_object.get_parent(), "translation", from, to, 0.1)
-	tile_object.get_parent().add_child(tween)
-	tween.start()
-	yield(tween, "tween_completed")
-	tween.queue_free()
+	
+	# this tween looks nice! is raises the tile up which obscures the highlight
+	# which if raised looks offset from board grid - so I turned off the tween
+	# but it still works and can be enabled without problem:
+	# var tween = Tween.new()
+	# var from = tile_object.get_parent().translation
+	# var to = Vector3(from.x, 0, from.z)
+	# tween.interpolate_property(tile_object.get_parent(), "translation", from, to, 0.1)
+	# tile_object.get_parent().add_child(tween)
+	# tween.start()
+	# yield(tween, "tween_completed")
+	# tween.queue_free()
 
 func _tile_clicked(tile_object):
 	var tween = Tween.new()
