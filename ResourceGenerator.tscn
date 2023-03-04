@@ -340,211 +340,211 @@ percent_chance_to_initially_drop_resource = 0.3
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0.0361031, 4.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot39" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0.0361031, 5.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot40" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0.0361031, 6.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot41" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.0361031, 6.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot42" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.0361031, 5.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot43" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.0361031, 4.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot44" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.0361031, 3.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot45" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.0361031, 4.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot46" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.0361031, 5.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot47" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.0361031, 6.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot48" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.0361031, 5.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot49" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.0361031, 4.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot50" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.0361031, -6.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot51" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.0361031, -7.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot52" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.0361031, -7.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot53" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.0361031, -6.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot54" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.0361031, -6.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot55" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.0361031, -7.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot56" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.0361031, -7.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot57" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.0361031, -7.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot58" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.0361031, -8.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot59" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.0361031, -8.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot60" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.0361031, -8.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot61" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.0361031, -5.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot62" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.0361031, -4.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot63" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.0361031, -4.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot64" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.0361031, -5.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot65" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.0361031, -5.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot66" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.0361031, -6.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot67" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.0361031, -7.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot68" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.0361031, -7.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot69" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.0361031, -6.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot70" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.0361031, -6.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot71" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.0361031, -7.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="ResourceSpot72" type="Spatial" parent="LumberSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.0361031, -8.5 )
 script = ExtResource( 1 )
 can_spawn_lumber = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.25
 
 [node name="DyesSpawner" type="Node" parent="."]
 
@@ -840,67 +840,67 @@ percent_chance_to_initially_drop_resource = 0.31
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, 6.5 )
 script = ExtResource( 1 )
 can_spawn_diamond = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.3
 
 [node name="ResourceSpot61" type="Spatial" parent="DiamondSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, 5.5 )
 script = ExtResource( 1 )
 can_spawn_diamond = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.3
 
 [node name="ResourceSpot62" type="Spatial" parent="DiamondSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.0361031, 5.5 )
 script = ExtResource( 1 )
 can_spawn_diamond = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.3
 
 [node name="ResourceSpot63" type="Spatial" parent="DiamondSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.0361031, 5.5 )
 script = ExtResource( 1 )
 can_spawn_diamond = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.3
 
 [node name="ResourceSpot64" type="Spatial" parent="DiamondSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, 1.5 )
 script = ExtResource( 1 )
 can_spawn_diamond = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.3
 
 [node name="ResourceSpot65" type="Spatial" parent="DiamondSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, 0.5 )
 script = ExtResource( 1 )
 can_spawn_diamond = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.3
 
 [node name="ResourceSpot66" type="Spatial" parent="DiamondSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, 2.5 )
 script = ExtResource( 1 )
 can_spawn_diamond = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.3
 
 [node name="ResourceSpot67" type="Spatial" parent="DiamondSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, -1.5 )
 script = ExtResource( 1 )
 can_spawn_diamond = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.3
 
 [node name="ResourceSpot68" type="Spatial" parent="DiamondSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.0361031, -2.5 )
 script = ExtResource( 1 )
 can_spawn_diamond = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.3
 
 [node name="ResourceSpot69" type="Spatial" parent="DiamondSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, -2.5 )
 script = ExtResource( 1 )
 can_spawn_diamond = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.3
 
 [node name="ResourceSpot70" type="Spatial" parent="DiamondSpawner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.0361031, -1.5 )
 script = ExtResource( 1 )
 can_spawn_diamond = true
-percent_chance_to_initially_drop_resource = 0.35
+percent_chance_to_initially_drop_resource = 0.3
 
 [node name="MarbleSpawner" type="Node" parent="."]
 
