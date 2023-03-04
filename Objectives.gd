@@ -1,10 +1,10 @@
 extends Spatial
 
-var min_obj_one = 1 #10
-var max_obj_one = 2 #15
+var min_obj_one = 5
+var max_obj_one = 9
 
-var min_obj_two = 2#3
-var max_obj_two = 3#10 
+var min_obj_two = 3
+var max_obj_two = 8 
 
 var possible_objectives = [
 "Silver",
