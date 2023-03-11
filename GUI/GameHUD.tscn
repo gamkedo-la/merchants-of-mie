@@ -43,17 +43,18 @@ mouse_filter = 2
 script = ExtResource( 2 )
 
 [node name="Objectives" type="Control" parent="."]
+margin_top = 4.0
 margin_right = 248.0
-margin_bottom = 192.0
+margin_bottom = 196.0
 
 [node name="ColorRect" type="ColorRect" parent="Objectives"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_top = 426.0
-margin_right = 320.0
-margin_bottom = 465.0
+margin_right = 200.0
+margin_bottom = 501.0
 rect_scale = Vector2( 1.2, 1 )
-color = Color( 0.141176, 0.129412, 0.129412, 0.501961 )
+color = Color( 0.184314, 0.0784314, 0.184314, 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Objectives"]
 anchor_top = 0.5
@@ -65,16 +66,18 @@ margin_bottom = 493.016
 rect_scale = Vector2( 0.5, 0.5 )
 
 [node name="Label" type="Label" parent="Objectives/VBoxContainer"]
-visible = false
-margin_right = 208.0
+anchor_right = 1.0
+margin_right = 267.0
 margin_bottom = 43.0
 custom_fonts/font = ExtResource( 6 )
-text = "OBJECTIVE"
+text = "FIRST OBJECTIVE:"
+align = 1
 valign = 1
 
 [node name="Objective Text" type="Label" parent="Objectives/VBoxContainer"]
-margin_right = 208.0
-margin_bottom = 43.0
+margin_top = 47.0
+margin_right = 267.0
+margin_bottom = 90.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
@@ -82,20 +85,20 @@ valign = 1
 [node name="ColorRect2" type="ColorRect" parent="Objectives"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 642.0
-margin_top = 427.0
-margin_right = 972.0
-margin_bottom = 467.0
+margin_left = 240.0
+margin_top = 426.0
+margin_right = 570.0
+margin_bottom = 466.0
 rect_scale = Vector2( 0.73718, 1.90766 )
-color = Color( 0.141176, 0.129412, 0.129412, 0.501961 )
+color = Color( 0.184314, 0.0784314, 0.184314, 1 )
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Objectives"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 643.0
-margin_top = 435.0
-margin_right = 851.0
-margin_bottom = 495.032
+margin_left = 241.0
+margin_top = 433.0
+margin_right = 449.0
+margin_bottom = 570.0
 rect_scale = Vector2( 0.5, 0.5 )
 
 [node name="Label" type="Label" parent="Objectives/VBoxContainer2"]
@@ -107,7 +110,7 @@ text = "OBJECTIVE"
 valign = 1
 
 [node name="Objective Text2-1" type="Label" parent="Objectives/VBoxContainer2"]
-margin_right = 208.0
+margin_right = 207.0
 margin_bottom = 43.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
@@ -115,7 +118,7 @@ valign = 1
 
 [node name="Objective Text2-2" type="Label" parent="Objectives/VBoxContainer2"]
 margin_top = 47.0
-margin_right = 208.0
+margin_right = 207.0
 margin_bottom = 90.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
@@ -123,7 +126,7 @@ valign = 1
 
 [node name="Objective Text2-3" type="Label" parent="Objectives/VBoxContainer2"]
 margin_top = 94.0
-margin_right = 208.0
+margin_right = 207.0
 margin_bottom = 137.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
@@ -132,10 +135,10 @@ valign = 1
 [node name="MerchantText" type="VBoxContainer" parent="Objectives"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 643.0
-margin_top = 435.0
-margin_right = 851.0
-margin_bottom = 495.032
+margin_left = 241.0
+margin_top = 433.0
+margin_right = 449.0
+margin_bottom = 570.0
 rect_scale = Vector2( 0.5, 0.5 )
 
 [node name="Label" type="Label" parent="Objectives/MerchantText"]
@@ -147,7 +150,7 @@ text = "OBJECTIVE"
 valign = 1
 
 [node name="Objective Text2-1" type="Label" parent="Objectives/MerchantText"]
-margin_right = 208.0
+margin_right = 207.0
 margin_bottom = 43.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
@@ -155,7 +158,7 @@ valign = 1
 
 [node name="Objective Text2-2" type="Label" parent="Objectives/MerchantText"]
 margin_top = 47.0
-margin_right = 208.0
+margin_right = 207.0
 margin_bottom = 90.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
@@ -163,17 +166,17 @@ valign = 1
 
 [node name="Objective Text2-3" type="Label" parent="Objectives/MerchantText"]
 margin_top = 94.0
-margin_right = 208.0
+margin_right = 207.0
 margin_bottom = 137.0
 custom_fonts/font = ExtResource( 6 )
 text = "23"
 valign = 1
 
 [node name="SecondObjCover" type="Control" parent="Objectives"]
-margin_left = 619.0
-margin_top = 480.0
-margin_right = 659.0
-margin_bottom = 520.0
+margin_left = 219.0
+margin_top = 478.0
+margin_right = 259.0
+margin_bottom = 518.0
 rect_scale = Vector2( 0.84, 0.84 )
 
 [node name="ColorRect3" type="ColorRect" parent="Objectives/SecondObjCover"]
@@ -207,7 +210,8 @@ valign = 1
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -1008.0
-margin_bottom = 52.0
+margin_top = -8.0
+margin_bottom = 44.0
 
 [node name="ColorRect" type="ColorRect" parent="Currency"]
 anchor_left = 1.0
@@ -237,10 +241,10 @@ text = "UNDO"
 [node name="Inventory" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 394.0
-margin_top = 511.0
-margin_right = -374.0
-margin_bottom = -1.0
+margin_left = 562.0
+margin_top = 513.0
+margin_right = -206.0
+margin_bottom = 1.0
 script = ExtResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="Inventory"]
@@ -248,16 +252,17 @@ anchor_right = 0.6
 margin_top = 10.0
 margin_right = 102.4
 margin_bottom = 88.0
-color = Color( 0.141176, 0.129412, 0.129412, 0.501961 )
+color = Color( 0.184314, 0.0784314, 0.184314, 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Inventory"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -79.0
-margin_top = -68.0
-margin_right = 79.0
+margin_left = -70.0
+margin_top = -81.0
+margin_right = 118.0
+margin_bottom = 16.0
 rect_scale = Vector2( 0.8, 0.8 )
 
 [node name="Label" type="Label" parent="Inventory/VBoxContainer"]
@@ -308,10 +313,10 @@ __meta__ = {
 }
 
 [node name="MerchantFlavor" parent="." instance=ExtResource( 11 )]
-margin_left = -313.0
-margin_top = 230.0
-margin_right = 7.0
-margin_bottom = 325.0
+margin_left = 281.0
+margin_top = 221.0
+margin_right = 601.0
+margin_bottom = 316.0
 
 [node name="CityMenu" parent="." instance=ExtResource( 12 )]
 visible = false
@@ -322,7 +327,7 @@ margin_bottom = 249.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 167.0
-margin_bottom = 48.0
+margin_bottom = 80.0
 color = Color( 0.184314, 0.0784314, 0.184314, 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -401,9 +406,10 @@ text = "END TURN"
 [node name="CurrencyContainer" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 174.0
-margin_right = 534.0
-margin_bottom = -515.0
+margin_left = 181.0
+margin_top = -8.0
+margin_right = 541.0
+margin_bottom = -523.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_scale = Vector2( 0.6, 0.6 )
