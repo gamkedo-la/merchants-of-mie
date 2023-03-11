@@ -5,7 +5,7 @@ const RAY_LENGTH = 1000
 var min_zoom = 4
 var max_zoom = 12.5
 
-var current_zoom = 7.5
+var current_zoom = 9
 var rate_to_zoom = .5
 
 var move_camera_left = 50
@@ -91,5 +91,10 @@ func _physics_process(delta):
 		global_transform.origin.y = 12
 	if(global_transform.origin.y < 5):
 		global_transform.origin.y = 5
+	if(global_transform.origin.z < -5):
+		global_transform.origin.z = -5
+	if(global_transform.origin.z > 20):
+		global_transform.origin.z = 20
+
 	
 	translate_object_local(direction)

@@ -370,8 +370,6 @@ valign = 1
 script = ExtResource( 5 )
 
 [node name="TurnsRemaining" type="HBoxContainer" parent="VBoxContainer"]
-anchor_left = 0.259
-anchor_right = 0.321
 margin_top = 53.0
 margin_right = 193.0
 margin_bottom = 75.0
@@ -393,8 +391,6 @@ text = "23"
 valign = 1
 
 [node name="EndTurnBtn" type="Button" parent="VBoxContainer"]
-anchor_left = 0.316
-anchor_right = 0.369
 margin_top = 79.0
 margin_right = 96.0
 margin_bottom = 107.0
