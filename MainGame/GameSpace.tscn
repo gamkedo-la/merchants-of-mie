@@ -53,6 +53,7 @@ transform = Transform( 0.549782, -0.454383, 0.70091, 0, 0.839104, 0.543971, -0.8
 size = 7.5
 
 [node name="PlayerPrototype" parent="AMap" index="3"]
+transform = Transform( 0.4, 6.6791e-13, 1.45519e-10, 3.70761e-11, 0.4, -1.16415e-10, -8.73115e-11, -8.73115e-11, 0.4, -0.527118, 0.336994, 0.542581 )
 purchased_merchant = true
 active_merchant = true
 
