@@ -101,6 +101,10 @@ var lumber_buy_value = 0
 var dyes_buy_value = 0
 var coffee_buy_value = 0
 
+func _ready():
+	$Spatial/Viewport/Label.text = city_name
+	$Spatial/Viewport/Label2.text = city_name
+
 func make_resource_scarce(city_name_receiving_scarcity: String, scarce_resource_name: String):
 	if city_name != city_name_receiving_scarcity: return
 	for resource in Global.resource_names:
