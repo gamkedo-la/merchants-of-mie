@@ -30,5 +30,5 @@ func _on_QuitBtn_pressed():
 
 
 func _on_SettingsBtn_pressed():
-	SettingsManager.initialize_settings($CenterContainer/VBoxContainer/SettingsBtn, false);
+	SettingsManager.initialize_settings($VBoxContainer/SettingsBtn, false);
 	
