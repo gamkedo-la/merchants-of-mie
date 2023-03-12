@@ -26,8 +26,8 @@ func _on_BuyBtn_pressed():
 	Global.currency_available -= 20
 	Events.emit_signal("merchant_purchased")
 		
-	Global.action_Points_Per_Turn += 3
-	Global.action_Points_available += 3
+	Global.action_Points_Per_Turn += 6
+	Global.action_Points_available += 6
 	
 	var merchants = get_tree().get_nodes_in_group("player")
 	
