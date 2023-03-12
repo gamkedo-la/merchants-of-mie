@@ -25,7 +25,21 @@ signal end_turn
 
 var board_cards = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19, 20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45]
 
+var players = []
+var valid_moves = {}
+
+func merchant_purchased_update_players():
+	players = get_tree().get_nodes_in_group("player")
+	
 func _ready():
+	players = get_tree().get_nodes_in_group("player")
+	
+	if not Events.is_connected("new_player_added", self, "merchant_purchased_update_players"):
+		var con_res = Events.connect("new_player_added", self, "merchant_purchased_update_players")
+		assert(con_res == OK)
+	if not Events.is_connected("merchant_purchased", self, "merchant_purchased_update_players"):
+		var con_res = Events.connect("merchant_purchased", self, "merchant_purchased_update_players")
+		assert(con_res == OK)
 	make_tiles_interactable()
 	if not Events.is_connected("start_board_turn", self, "start_board_turn"):
 		var con_res = Events.connect("start_board_turn", self, "start_board_turn")
@@ -264,20 +278,32 @@ func is_valid_movement_tile(from_vector: Vector3, desired_move_vector: Vector3) 
 		return can_afford_move
 	return true
 	
+func already_valid(from, current_player_location):
+	if current_player_location in valid_moves:
+		if from in valid_moves[current_player_location]:
+			return true
+		return false
+	return false
 
 func _tile_hovered(tile_object):
-	
-	var from = tile_object.get_parent().translation
-	var players = get_tree().get_nodes_in_group("player")
+	var tile_parent = tile_object.get_parent()
+	var from = tile_parent.translation
 	var current_player_location;
 	for player in players:
 		if player.active_merchant == true:
 			current_player_location = player.global_transform.origin;
-	if (!is_valid_movement_tile(from, current_player_location)): return;
-
-	$tile_highlight.global_transform.origin.x = tile_object.get_parent().global_transform.origin.x
+	# May need to tune this if board dynamically changes what is valid in future
+	if (!already_valid(from, current_player_location)):
+		if (!is_valid_movement_tile(from, current_player_location)): 
+			return;
+		else:
+			if !(current_player_location in valid_moves):
+				valid_moves[current_player_location] = [from]
+			else:
+				valid_moves[current_player_location].append(from)
+	$tile_highlight.global_transform.origin.x = tile_parent.global_transform.origin.x
 	$tile_highlight.global_transform.origin.y = 0.03 # tile_object.get_parent().global_transform.origin.y
-	$tile_highlight.global_transform.origin.z = tile_object.get_parent().global_transform.origin.z
+	$tile_highlight.global_transform.origin.z = tile_parent.global_transform.origin.z
 
 	# this tween looks nice! is raises the tile up which obscures the highlight
 	# which if raised looks offset from board grid - so I turned off the tween
@@ -315,7 +341,6 @@ func _tile_clicked(tile_object):
 	var tween = Tween.new()
 	var from = tile_object.get_parent().translation
 	var to = Vector3(from.x, 0.5, from.z)
-	var players = get_tree().get_nodes_in_group("player")
 	var current_player_location;
 	for player in players:
 		if player.active_merchant == true:

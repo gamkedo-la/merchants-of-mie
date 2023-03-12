@@ -96,3 +96,5 @@ signal turn_off_greenglade
 signal turn_on_greenglade
 signal turn_off_dro_hills
 signal turn_on_dro_hills
+
+signal new_player_added

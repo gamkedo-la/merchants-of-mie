@@ -29,6 +29,7 @@ func _ready():
 		visible = false
 		
 	add_to_group("player")
+	Events.emit_signal("new_player_added")
 	if not Events.is_connected("start_player_turn", self, "start_player_turn"):
 		con_res = Events.connect("start_player_turn", self, "start_player_turn")
 		assert(con_res == OK)
