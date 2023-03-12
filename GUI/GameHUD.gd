@@ -17,13 +17,18 @@ func _on_Undo_pressed():
 	Events.emit_signal("undo_actions")
 
 func update_GUI():
-	$"Objectives/VBoxContainer/Objective Text".text = Global.objective_one_text_concatenate
+	$"Objectives/Objective Text".text = Global.objective_one_text_concatenate
 	$"Objectives/VBoxContainer2/Objective Text2-1".text = Global.objective_two_one_text_concatenate
 	$"Objectives/VBoxContainer2/Objective Text2-2".text = Global.objective_two_two_text_concatenate
 	$"Objectives/VBoxContainer2/Objective Text2-3".text = Global.objective_two_three_text_concatenate
+	$"Description/Obj1".text = Global.objective_one_text_concatenate
+	$"Description/Obj2".text = Global.objective_two_one_text_concatenate
+	$"Description/Obj3".text = Global.objective_two_two_text_concatenate
+	$"Description/Obj4".text = Global.objective_two_three_text_concatenate
+	$"Description/Turns1".text = str(Global.MAX_TURNS - 1) + " Turns"
 	if(Global.first_objective_completed):
 		$Objectives/SecondObjCover.visible = false
-		$"Objectives/VBoxContainer/Objective Text".text = "1st Objective Complete!"
+		$"Objectives/Objective Text".text = "1st Objective Complete!"
 	if(Global.objective_two_item_one_count <= 0):
 		$"Objectives/VBoxContainer2/Objective Text2-1".text = "Item 1 done!"
 	if(Global.objective_two_item_two_count <= 0):
