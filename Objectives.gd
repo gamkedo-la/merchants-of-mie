@@ -90,10 +90,10 @@ func update_count():
 	Global.objective_two_two_text = possible_objectives[rand_resource_obj_two_two]
 	Global.objective_two_three_text = possible_objectives[rand_resource_obj_two_three]
 	
-	Global.objective_one_text_concatenate = str("COLLECT ", Global.objective_one_count, " ", possible_objectives[rand_resource_obj_one])
-	Global.objective_two_one_text_concatenate = str("COLLECT ", Global.objective_two_item_one_count, " ", possible_objectives[rand_resource_obj_two_one])
-	Global.objective_two_two_text_concatenate = str("COLLECT ", Global.objective_two_item_two_count, " ", possible_objectives[rand_resource_obj_two_two])
-	Global.objective_two_three_text_concatenate = str("COLLECT ", Global.objective_two_item_three_count, " ", possible_objectives[rand_resource_obj_two_three])
+	Global.objective_one_text_concatenate = str("Deliver ", Global.objective_one_count, " ", possible_objectives[rand_resource_obj_one])
+	Global.objective_two_one_text_concatenate = str("Deliver ", Global.objective_two_item_one_count, " ", possible_objectives[rand_resource_obj_two_one])
+	Global.objective_two_two_text_concatenate = str("Deliver ", Global.objective_two_item_two_count, " ", possible_objectives[rand_resource_obj_two_two])
+	Global.objective_two_three_text_concatenate = str("Deliver ", Global.objective_two_item_three_count, " ", possible_objectives[rand_resource_obj_two_three])
 	
 	#update GameHUD.gd
 	Events.emit_signal("update_UI")
