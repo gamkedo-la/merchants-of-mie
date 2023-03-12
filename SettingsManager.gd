@@ -25,7 +25,8 @@ var current_settings_unique_id_lookup = {};
 var current_settings_unique_id: int = 0;
 var popupmenus = [];
 var is_soundtrack_enabled: bool = true;
-var is_sfx_enabled: bool = true; 
+var is_sfx_enabled: bool = true;
+var soundtrack_paused: bool = false;
 
 signal settings_changed(old_settings, new_settings)
 var current_settings_values = { 'Easy': false, 'Normal': true, 'Soundtrack' : true, 'SFX' : true };
@@ -34,6 +35,7 @@ var current_settings_values = { 'Easy': false, 'Normal': true, 'Soundtrack' : tr
 var current_popupmenu: PopupMenu;
 var soundtrack_audiostreamplayer: AudioStreamPlayer = null;
 var sfx_audiostreamplayer: AudioStreamPlayer = null;
+
 
 func handle_new_scene():
 	popupmenus = [];
@@ -143,39 +145,51 @@ func handle_play_mainsoundtrack():
 	else:
 		soundtrack_audiostreamplayer.stop();
 
+func stop_mainsoundtrack():
+	if is_instance_valid(soundtrack_audiostreamplayer):
+		soundtrack_audiostreamplayer.stop();
+		soundtrack_paused = true;
+
 func initialize_audiostreamplayer():
 	if !is_instance_valid(soundtrack_audiostreamplayer) || soundtrack_audiostreamplayer == null:
 		soundtrack_audiostreamplayer = AudioStreamPlayer.new();
+		if not soundtrack_audiostreamplayer.is_connected("finished", self, "_on_SoundtrackTrack_finished"):
+			var con_res = soundtrack_audiostreamplayer.connect("finished", self, "_on_SoundtrackTrack_finished")
+			assert(con_res == OK)
+	if !soundtrack_audiostreamplayer.is_inside_tree():
+		add_child(soundtrack_audiostreamplayer)
 	if !is_instance_valid(sfx_audiostreamplayer) || sfx_audiostreamplayer == null:
 		sfx_audiostreamplayer = AudioStreamPlayer.new();
 		if not sfx_audiostreamplayer.is_connected("finished", self, "_on_SfxTrack_finished"):
 			var con_res = sfx_audiostreamplayer.connect("finished", self, "_on_SfxTrack_finished")
 			assert(con_res == OK)
+	if !sfx_audiostreamplayer.is_inside_tree():
+		add_child(sfx_audiostreamplayer)
 	
 func play_mainsoundtrack() -> void:
+	if soundtrack_paused:
+		return
 	initialize_audiostreamplayer();
-	if !soundtrack_audiostreamplayer.is_inside_tree():
-		get_tree().get_current_scene().add_child(soundtrack_audiostreamplayer)
-		var audiofile = File.new();
-		var soundtrack_path = 'res://Audio/Music/MerchantsMain.wav';
-		if audiofile.file_exists(soundtrack_path):
-			audiofile.open(soundtrack_path, audiofile.READ)
-			var buffer = audiofile.get_buffer(audiofile.get_len());
-			var merchantsmain_sample: AudioStreamSample = AudioStreamSample.new();
-			merchantsmain_sample.data = buffer;
-			merchantsmain_sample.format = AudioStreamSample.FORMAT_16_BITS;
-			merchantsmain_sample.set_mix_rate(48000);
-			merchantsmain_sample.set_stereo(true);
-			merchantsmain_sample.loop_mode = AudioStreamSample.LOOP_FORWARD;
-			merchantsmain_sample.set_loop_begin(0);
-			merchantsmain_sample.loop_end = (merchantsmain_sample.mix_rate * merchantsmain_sample.get_length());
-			audiofile.close();
-			soundtrack_audiostreamplayer.stream = merchantsmain_sample;
-			soundtrack_audiostreamplayer.bus = "Master";
-			soundtrack_audiostreamplayer.pitch_scale = 1;
-			soundtrack_audiostreamplayer.volume_db = -10;
-			soundtrack_audiostreamplayer.set_mix_target(0);
-			soundtrack_audiostreamplayer.autoplay = true;
+	var audiofile = File.new();
+	var soundtrack_path = 'res://Audio/Music/MerchantsMain.wav';
+	if audiofile.file_exists(soundtrack_path):
+		audiofile.open(soundtrack_path, audiofile.READ)
+		var buffer = audiofile.get_buffer(audiofile.get_len());
+		var merchantsmain_sample: AudioStreamSample = AudioStreamSample.new();
+		merchantsmain_sample.data = buffer;
+		merchantsmain_sample.format = AudioStreamSample.FORMAT_16_BITS;
+		merchantsmain_sample.set_mix_rate(48000);
+		merchantsmain_sample.set_stereo(true);
+		merchantsmain_sample.loop_mode = AudioStreamSample.LOOP_FORWARD;
+		merchantsmain_sample.set_loop_begin(0);
+		merchantsmain_sample.loop_end = (merchantsmain_sample.mix_rate * merchantsmain_sample.get_length());
+		audiofile.close();
+		soundtrack_audiostreamplayer.stream = merchantsmain_sample;
+		soundtrack_audiostreamplayer.bus = "Master";
+		soundtrack_audiostreamplayer.pitch_scale = 1;
+		soundtrack_audiostreamplayer.volume_db = -10;
+		soundtrack_audiostreamplayer.set_mix_target(0);
+		soundtrack_audiostreamplayer.autoplay = true;
 	handle_play_mainsoundtrack();
 		
 func play_soundfx(action_sfx: AudioStream) -> void:
@@ -195,9 +209,26 @@ func play_soundfx(action_sfx: AudioStream) -> void:
 func _on_SfxTrack_finished():
 	# event emitted when sfx complete
 	pass
+	
+func _on_SoundtrackTrack_finished():
+	soundtrack_paused = false;
+	pass
 
 # This is the function that is called by player movement to check the cost of movement.
 # Currently this is just if the game difficulty setting is on Easy
 # The normal difficulty actually doesn't change this, at the time of implementation it is only GUI.
 func one_tile_per_move() -> bool:
 	return current_settings_values['Normal']
+	
+	
+func play_endgame_sound():
+	initialize_audiostreamplayer();
+	soundtrack_paused = true;
+	if(Global.objective_two_item_one_count == 0 && Global.objective_two_item_two_count == 0 && Global.objective_two_item_three_count == 0):
+		var	winning_sound = load("Audio/SFX/Celebration.wav")
+		soundtrack_audiostreamplayer.stream = winning_sound
+		soundtrack_audiostreamplayer.play()
+	else:
+		var 	losing_sound = load("Audio/SFX/Failure.wav")
+		soundtrack_audiostreamplayer.stream = losing_sound
+		soundtrack_audiostreamplayer.play()
