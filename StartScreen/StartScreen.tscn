@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://GUI/GameHUD_Font_Settings.tres" type="DynamicFont" id=1]
 [ext_resource path="res://StartScreen/StartScreen.gd" type="Script" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://SharedResources/Models/Resources/Grapes2.material" type="Material" id=16]
 [ext_resource path="res://SharedResources/Fonts/EB_Garamond/EBGaramond-Regular.ttf" type="DynamicFontData" id=17]
 [ext_resource path="res://GUI/Theme/ui_theme.tres" type="Theme" id=18]
+[ext_resource path="res://StartScreen/HowTo.tscn" type="PackedScene" id=19]
 
 [sub_resource type="DynamicFont" id=3]
 size = 32
@@ -119,14 +120,15 @@ script = ExtResource( 2 )
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -257.0
-margin_right = 344.0
+margin_left = 2.0
+margin_top = -297.0
+margin_right = 346.0
+margin_bottom = -2.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 16.0
-margin_top = 12.0
 margin_right = 328.0
-margin_bottom = 244.0
+margin_bottom = 295.0
 custom_constants/separation = 20
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
@@ -144,18 +146,25 @@ margin_bottom = 106.0
 custom_fonts/font = SubResource( 1 )
 text = "New Game"
 
-[node name="SettingsButton" type="MenuButton" parent="CenterContainer/VBoxContainer"]
+[node name="NewGameButton2" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 126.0
 margin_right = 312.0
 margin_bottom = 169.0
+custom_fonts/font = SubResource( 1 )
+text = "How To Play"
+
+[node name="SettingsButton" type="MenuButton" parent="CenterContainer/VBoxContainer"]
+margin_top = 189.0
+margin_right = 312.0
+margin_bottom = 232.0
 custom_fonts/font = ExtResource( 1 )
 text = "Settings"
 flat = false
 
 [node name="ExitButton" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 189.0
+margin_top = 252.0
 margin_right = 312.0
-margin_bottom = 232.0
+margin_bottom = 295.0
 custom_fonts/font = SubResource( 2 )
 text = "Exit"
 
@@ -273,6 +282,10 @@ transform = Transform( 0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.05, -3.26603, 0.708879, 0
 [node name="incense" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -2.29569, 0.706793, 0.561796 )
 
+[node name="HowTo" parent="." instance=ExtResource( 19 )]
+visible = false
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/NewGameButton" to="." method="_on_NewGameButton_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/NewGameButton2" to="." method="_on_NewGameButton2_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]

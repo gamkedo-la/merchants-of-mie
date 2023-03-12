@@ -16,3 +16,7 @@ func _on_ExitButton_pressed():
 func _on_SettingsButton_pressed():
 	SettingsManager.initialize_settings($CenterContainer/VBoxContainer/SettingsButton, true);
 	
+
+
+func _on_NewGameButton2_pressed():
+	$HowTo.visible = true
