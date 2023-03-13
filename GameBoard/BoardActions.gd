@@ -350,6 +350,7 @@ func _tile_clicked(tile_object):
 		return;
 	tween.interpolate_property(tile_object.get_parent(), "translation", from, to, 0.1)
 	tile_object.get_parent().add_child(tween)
+	valid_moves = {}
 	tween.start()
 	yield(tween, "tween_completed")
 	tween.queue_free()
