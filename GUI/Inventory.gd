@@ -104,20 +104,25 @@ func remove_resource_from_inventory(resource):
 	if(Global.first_objective_completed == true):
 		return
 	
-	$AudioStreamPlayer.play()
-	Global.objective_one_count -= 1
-	if(Global.objective_one_count <= 0):
-		Global.first_objective_completed = true
-		print(Global.first_objective_completed)
+	for i in Global.resources_in_inventory.size():
+		
+		var idx = Global.resources_in_inventory.find(resource)
+		print(str(idx))
+		if idx != -1:
+			
+			if(Global.objective_one_count <= 0):
+				Global.first_objective_completed = true
+				print(Global.first_objective_completed)
+				break
+			
+			Global.resources_in_inventory.erase(resource)
+			update_inventory_textures()
+				
+			$AudioStreamPlayer.play()
+			Global.objective_one_count -= 1
 	
 	#Updates objectives in Global.gd
 	Events.emit_signal("update_objectives")
-	var idx = Global.resources_in_inventory.find(resource)
-	print(str(idx))
-	if idx != -1:
-		Global.resources_in_inventory.erase(resource)
-		update_inventory_textures()
-		#$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
 		
 func update_inventory_textures():
 	clear_inventory_textures()
