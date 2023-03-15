@@ -28,7 +28,7 @@ func _on_Area_area_entered(area):
 		action_queue.execute(pickup)
 		
 		Events.emit_signal("resource_picked_up", resource_name)
-		#queue_free()
+		queue_free()
 		Global.item_picked_up_name = ""
 		# Replace with function body.
 	
