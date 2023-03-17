@@ -44,6 +44,11 @@ func _ready():
 	if not Events.is_connected("start_board_turn", self, "start_board_turn"):
 		var con_res = Events.connect("start_board_turn", self, "start_board_turn")
 		assert(con_res == OK)
+
+	# we need this to trigger the tile alowed-move highliting at start of turn
+	if not Events.is_connected("start_player_turn", self, "start_player_turn"):
+		var con_res = Events.connect("start_player_turn", self, "start_player_turn")
+		assert(con_res == OK)
 		
 	if not Events.is_connected("turn_on_west_rymare", self, "turn_on_west_rymare"):
 		var con_res = Events.connect("turn_on_west_rymare", self, "turn_on_west_rymare")
@@ -86,6 +91,12 @@ func _ready():
 	if not Events.is_connected("turn_off_dro_hills", self, "turn_off_dro_hills"):
 		var con_res = Events.connect("turn_off_dro_hills", self, "turn_off_dro_hills")
 		assert(con_res == OK)
+		
+
+func start_player_turn():
+	print("game board is preparing for the next player")
+	# highlight the player's allowable move tiles since it is about to be their turn
+	highlight_all_movable_tiles()
 
 func start_board_turn():
 	Global.is_player_turn = false
@@ -93,6 +104,11 @@ func start_board_turn():
 	#this is where we would put all of the board's actions
 	print("currently, it is the board's turn")
 	yield(get_tree().create_timer(3), "timeout")
+
+	# hack: this shouldnt be here, just testing
+	# highlight the player's allowable move tiles since it is about to be their turn
+	# highlight_all_movable_tiles()
+
 	#Choose an event card at end of board turn
 	determine_card()
 
@@ -285,6 +301,39 @@ func already_valid(from, current_player_location):
 		return false
 	return false
 
+# TODO - actually make this work! =(
+# FIXME: for some reason is_valid_movement_tile is always true for everything?
+func highlight_all_movable_tiles():
+	
+	print("highlighting all valid movement tiles...")
+	
+	var current_player_location;
+	var numOK = 0;
+	var numBAD = 0;
+
+	for player in players:
+		if player.active_merchant == true:
+			current_player_location = player.global_transform.origin;
+
+	if current_player_location == null:
+		print("error: no current_player_location")
+		return
+
+	for tile in $BoardTiles.get_children():
+		if tile is Spatial and not tile is CSGBox:
+			var from = tile.get_parent().translation
+			if !is_valid_movement_tile(from, current_player_location): #always true?! hmmmmmmmmm
+				#print("we need to darken a tile at " + str(tile.translation))
+				# TODO tint the mesh it darker? 
+				numBAD = numBAD + 1;
+			else:
+				#print("we can move to a tile at " + str(tile.translation))
+				numOK = numOK + 1;
+	
+	print("tiles we CAN move to: " + str(numOK))
+	print("tiles we CANNOT move to: " + str(numBAD))
+
+
 func _tile_hovered(tile_object):
 	var tile_parent = tile_object.get_parent()
 	var from = tile_parent.translation
@@ -301,6 +350,7 @@ func _tile_hovered(tile_object):
 				valid_moves[current_player_location] = [from]
 			else:
 				valid_moves[current_player_location].append(from)
+				
 	$tile_highlight.global_transform.origin.x = tile_parent.global_transform.origin.x
 	$tile_highlight.global_transform.origin.y = 0.03 # tile_object.get_parent().global_transform.origin.y
 	$tile_highlight.global_transform.origin.z = tile_parent.global_transform.origin.z
