@@ -1,10 +1,10 @@
 extends Spatial
 
-var min_obj_one = 5
-var max_obj_one = 9
+var min_obj_one =5
+var max_obj_one =9
 
-var min_obj_two = 3
-var max_obj_two = 8 
+var min_obj_two =3
+var max_obj_two =8 
 
 var possible_objectives = [
 "Silver",
@@ -94,6 +94,9 @@ func update_count():
 	Global.objective_two_one_text_concatenate = str("Deliver ", Global.objective_two_item_one_count, " ", possible_objectives[rand_resource_obj_two_one])
 	Global.objective_two_two_text_concatenate = str("Deliver ", Global.objective_two_item_two_count, " ", possible_objectives[rand_resource_obj_two_two])
 	Global.objective_two_three_text_concatenate = str("Deliver ", Global.objective_two_item_three_count, " ", possible_objectives[rand_resource_obj_two_three])
+	
+	if(Global.objective_two_item_one_count == 0 && Global.objective_two_item_two_count == 0 && Global.objective_two_item_three_count == 0):
+		Global.goto_scene("res://GameEndScreen/GameEndScreen.tscn")	
 	
 	#update GameHUD.gd
 	Events.emit_signal("update_UI")
