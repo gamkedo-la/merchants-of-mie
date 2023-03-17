@@ -666,7 +666,6 @@ text = "23"
 valign = 1
 
 [node name="SecondObjCover" type="Control" parent="Objectives"]
-visible = false
 margin_left = 219.0
 margin_top = 478.0
 margin_right = 259.0

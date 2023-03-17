@@ -149,7 +149,7 @@ func _on_Inv12_pressed():
 		Global.item_buy_name = "Diamond"
 		Events.emit_signal("buy_inv", Global.item_buy_name)
 		Events.emit_signal("resource_picked_up", Global.item_buy_name)
-		Global.currency_available -= Global.DiamondBuyValue * Global.diamond_multiplier
+		Global.currency_available -= Global.DiamondBuyValue * Global.diamonds_multiplier
 		Events.emit_signal("merchant_purchased")
 		Global.item_buy_name = ""
 	else:
