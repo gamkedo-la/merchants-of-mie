@@ -134,7 +134,7 @@ func _on_Inv10_pressed():
 		print("Either your inventory is full or you have not enough money")
 
 func _on_Inv11_pressed():
-	if(Global.currency_available >= Global.IncenceBuyValue):
+	if(Global.currency_available >= Global.IncenseBuyValue):
 		Global.item_buy_name = "Incence"
 		Events.emit_signal("buy_inv", Global.item_buy_name)
 		Events.emit_signal("resource_picked_up", Global.item_buy_name)
