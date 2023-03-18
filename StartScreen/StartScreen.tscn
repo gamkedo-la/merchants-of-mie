@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://GUI/GameHUD_Font_Settings.tres" type="DynamicFont" id=1]
 [ext_resource path="res://StartScreen/StartScreen.gd" type="Script" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://SharedResources/Fonts/EB_Garamond/EBGaramond-Regular.ttf" type="DynamicFontData" id=17]
 [ext_resource path="res://GUI/Theme/ui_theme.tres" type="Theme" id=18]
 [ext_resource path="res://StartScreen/HowTo.tscn" type="PackedScene" id=19]
+[ext_resource path="res://GUI/Credits.tscn" type="PackedScene" id=20]
 
 [sub_resource type="DynamicFont" id=3]
 size = 32
@@ -288,10 +289,14 @@ transform = Transform( 0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.05, -3.26603, 0.708879, 0
 [node name="incense" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -2.29569, 0.706793, 0.561796 )
 
+[node name="Credits" parent="." instance=ExtResource( 20 )]
+visible = false
+
 [node name="HowTo" parent="." instance=ExtResource( 19 )]
 visible = false
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/NewGameButton" to="." method="_on_NewGameButton_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/NewGameButton2" to="." method="_on_NewGameButton2_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]

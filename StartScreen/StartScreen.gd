@@ -20,3 +20,7 @@ func _on_SettingsButton_pressed():
 
 func _on_NewGameButton2_pressed():
 	$HowTo.visible = true
+
+
+func _on_CreditsButton_pressed():
+	$Credits.visible = true
