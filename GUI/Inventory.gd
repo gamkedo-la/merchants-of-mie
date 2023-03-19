@@ -141,40 +141,52 @@ func remove_resources_from_inventory(resource_2_1, resource_2_2, resource_2_3):
 	print("Merchant has arrived to the city carrying: ", Global.resources_in_inventory)
 	print(resource_2_1, " ", resource_2_2, " ", resource_2_3)
 	
-	if resource_2_1 in Global.resources_in_inventory:
-		$AudioStreamPlayer.play()
-		Global.objective_two_item_one_count -= 1
-		#Updates objectives in Global.gd
-		Events.emit_signal("update_objectives")
-		var idx = Global.resources_in_inventory.find(resource_2_1, 0)
-		print(str(idx))
-		if idx != -1:
-			Global.resources_in_inventory.erase(resource_2_1)
-			$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
-			
-	if resource_2_2 in Global.resources_in_inventory:
-		$AudioStreamPlayer.play()
-		Global.objective_two_item_two_count -= 1
-		#Updates objectives in Global.gd
-		Events.emit_signal("update_objectives")
-		var idx = Global.resources_in_inventory.find(resource_2_2, 0)
-		print(str(idx))
-		if idx != -1:
-			Global.resources_in_inventory.erase(resource_2_2)
-			$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
-			
-	if resource_2_3 in Global.resources_in_inventory:
-		$AudioStreamPlayer.play()
-		Global.objective_two_item_three_count -= 1
-		#Updates objectives in Global.gd
-		Events.emit_signal("update_objectives")
-		var idx = Global.resources_in_inventory.find(resource_2_3, 0)
-		print(str(idx))
-		if idx != -1:
-			Global.resources_in_inventory.erase(resource_2_3)
-			$VBoxContainer/HBoxContainer.get_child(idx).texture = base_texture
-	
-	if(Global.objective_two_item_one_count == 0 && Global.objective_two_item_two_count == 0 && Global.objective_two_item_three_count == 0):
+	if Global.resources_in_inventory.count(resource_2_1) > 0:
+		var valid_resource_inventory_count = Global.resources_in_inventory.count(resource_2_1)
+		print(resource_2_1, " appeared in the inventory ", str(valid_resource_inventory_count))
+		
+		for i in valid_resource_inventory_count:
+			var idx = Global.resources_in_inventory.find(resource_2_1, 0)
+			if idx != -1:
+				Global.resources_in_inventory.erase(resource_2_1)
+				update_inventory_textures()
+				
+				$AudioStreamPlayer.play()
+				Global.objective_two_item_one_count -= 1
+				Events.emit_signal("update_objectives")
+
+
+	if Global.resources_in_inventory.count(resource_2_2) > 0:
+		var valid_resource_inventory_count = Global.resources_in_inventory.count(resource_2_2)
+		print(resource_2_2, " appeared in the inventory ", str(valid_resource_inventory_count))
+		
+		for i in valid_resource_inventory_count:
+			var idx = Global.resources_in_inventory.find(resource_2_2, 0)
+			if idx != -1:
+				Global.resources_in_inventory.erase(resource_2_2)
+				update_inventory_textures()
+				
+				$AudioStreamPlayer.play()
+				Global.objective_two_item_two_count -= 1
+				Events.emit_signal("update_objectives")
+
+
+	if Global.resources_in_inventory.count(resource_2_3) > 0:
+		var valid_resource_inventory_count = Global.resources_in_inventory.count(resource_2_3)
+		print(resource_2_3, " appeared in the inventory ", str(valid_resource_inventory_count))
+		
+		for i in valid_resource_inventory_count:
+			var idx = Global.resources_in_inventory.find(resource_2_3, 0)
+			if idx != -1:
+				Global.resources_in_inventory.erase(resource_2_3)
+				update_inventory_textures()
+				
+				$AudioStreamPlayer.play()
+				Global.objective_two_item_three_count -= 1
+				Events.emit_signal("update_objectives")
+
+
+	if(Global.objective_two_item_one_count <= 0 && Global.objective_two_item_two_count <= 0 && Global.objective_two_item_three_count <= 0):
 			Global.goto_scene("res://GameEndScreen/GameEndScreen.tscn")
 
 		

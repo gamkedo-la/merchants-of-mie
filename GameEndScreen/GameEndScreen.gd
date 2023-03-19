@@ -4,7 +4,7 @@ func _ready():
 	if SettingsManager.soundtrack_enabled():
 		#SettingsManager.stop_mainsoundtrack();
 		SettingsManager.play_endgame_sound();
-	if(Global.objective_two_item_one_count == 0 && Global.objective_two_item_two_count == 0 && Global.objective_two_item_three_count == 0):
+	if(Global.objective_two_item_one_count <= 0 && Global.objective_two_item_two_count <= 0 && Global.objective_two_item_three_count <= 0):
 		get_node("WinningCutScene").visible = true
 		$AnimationPlayer.play("WinningCamera")
 	else:
