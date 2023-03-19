@@ -596,7 +596,7 @@ func _double_incense():
 func _double_diamonds():
 	Global.flavor_text = str("A NEW TREND IS SHOWING DIAMONDS ARE USED IN CUTLERY")
 	Global.functional_text = str("DIAMONDS VALUES DOUBLED ACROSS KINGDOM")
-	Global.diamonds_multiplier = 2
+	Global.diamond_multiplier = 2
 	Global.diamonds_modifier_changed = true
 	Global.diamonds_turn_countdown = 3
 	
@@ -688,7 +688,7 @@ func _halve_incense():
 func _halve_diamonds():
 	Global.flavor_text = str("RECENT TRENDS HAVE PEOPLE USING OTHER STONES FOR JEWELERY")
 	Global.functional_text = str("DIAMONDS VALUES HALVED ACROSS KINGDOM")
-	Global.diamonds_multiplier = .5
+	Global.diamond_multiplier = .5
 	Global.diamonds_modifier_changed = true
 	Global.diamonds_turn_countdown = 3
 	

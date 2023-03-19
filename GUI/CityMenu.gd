@@ -19,7 +19,7 @@ func _on_merchant_enter_city():
 	$"VBoxContainer/TextureRect6/TeaValue".text = String(Global.TeaValue * Global.tea_multiplier)
 	$"VBoxContainer/TextureRect7/MarbleValue".text = String(Global.MarbleValue * Global.marble_multiplier)
 	$"VBoxContainer/TextureRect8/IncenseValue".text = String(Global.IncenseValue * Global.incense_multiplier)
-	$"VBoxContainer/TextureRect9/DiamondValue".text = String(Global.DiamondValue * Global.diamonds_multiplier)
+	$"VBoxContainer/TextureRect9/DiamondValue".text = String(Global.DiamondValue * Global.diamond_multiplier)
 	$"VBoxContainer/TextureRect10/FishValue".text = String(Global.FishValue * Global.fish_multiplier)
 	$"VBoxContainer/TextureRect11/LumberValue".text = String(Global.LumberValue * Global.lumber_multiplier)
 	$"VBoxContainer/TextureRect12/DyesValue".text = String(Global.DyesValue * Global.dyes_multiplier)
@@ -33,7 +33,7 @@ func _on_merchant_enter_city():
 	$"VBoxContainer/TextureRect6/TeaValue2".text = String(Global.TeaBuyValue * Global.tea_multiplier)
 	$"VBoxContainer/TextureRect7/MarbleValue2".text = String(Global.MarbleBuyValue * Global.marble_multiplier)
 	$"VBoxContainer/TextureRect8/IncenseValue2".text = String(Global.IncenseBuyValue * Global.incense_multiplier)
-	$"VBoxContainer/TextureRect9/DiamondValue2".text = String(Global.DiamondBuyValue * Global.diamonds_multiplier)
+	$"VBoxContainer/TextureRect9/DiamondValue2".text = String(Global.DiamondBuyValue * Global.diamond_multiplier)
 	$"VBoxContainer/TextureRect10/FishValue2".text = String(Global.FishBuyValue * Global.fish_multiplier)
 	$"VBoxContainer/TextureRect11/LumberValue2".text = String(Global.LumberBuyValue * Global.lumber_multiplier )
 	$"VBoxContainer/TextureRect12/DyesValue2".text = String(Global.DyesBuyValue * Global.dyes_multiplier )
@@ -135,7 +135,7 @@ func _on_Inv10_pressed():
 
 func _on_Inv11_pressed():
 	if(Global.currency_available >= Global.IncenseBuyValue):
-		Global.item_buy_name = "Incence"
+		Global.item_buy_name = "Incense"
 		Events.emit_signal("buy_inv", Global.item_buy_name)
 		Events.emit_signal("resource_picked_up", Global.item_buy_name)
 		Global.currency_available -= Global.IncenseBuyValue * Global.incense_multiplier
@@ -149,7 +149,7 @@ func _on_Inv12_pressed():
 		Global.item_buy_name = "Diamond"
 		Events.emit_signal("buy_inv", Global.item_buy_name)
 		Events.emit_signal("resource_picked_up", Global.item_buy_name)
-		Global.currency_available -= Global.DiamondBuyValue * Global.diamonds_multiplier
+		Global.currency_available -= Global.DiamondBuyValue * Global.diamond_multiplier
 		Events.emit_signal("merchant_purchased")
 		Global.item_buy_name = ""
 	else:

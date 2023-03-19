@@ -95,7 +95,7 @@ func _on_Button_pressed():
 	if(Global.diamonds_modifier_changed):
 		Global.diamonds_turn_countdown -= 1
 		if(Global.diamonds_turn_countdown <= 0):
-			Global.diamonds_multiplier = 1
+			Global.diamond_multiplier = 1
 			Global.diamonds_modifier_changed = false
 	if(Global.fish_modifier_changed):
 		Global.fish_turn_countdown -= 1
