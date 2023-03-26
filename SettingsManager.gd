@@ -171,25 +171,13 @@ func play_mainsoundtrack() -> void:
 		return
 	initialize_audiostreamplayer();
 	var audiofile = File.new();
-	var soundtrack_path = 'res://Audio/Music/MerchantsMain.wav';
-	if audiofile.file_exists(soundtrack_path):
-		audiofile.open(soundtrack_path, audiofile.READ)
-		var buffer = audiofile.get_buffer(audiofile.get_len());
-		var merchantsmain_sample: AudioStreamSample = AudioStreamSample.new();
-		merchantsmain_sample.data = buffer;
-		merchantsmain_sample.format = AudioStreamSample.FORMAT_16_BITS;
-		merchantsmain_sample.set_mix_rate(48000);
-		merchantsmain_sample.set_stereo(true);
-		merchantsmain_sample.loop_mode = AudioStreamSample.LOOP_FORWARD;
-		merchantsmain_sample.set_loop_begin(0);
-		merchantsmain_sample.loop_end = (merchantsmain_sample.mix_rate * merchantsmain_sample.get_length());
-		audiofile.close();
-		soundtrack_audiostreamplayer.stream = merchantsmain_sample;
-		soundtrack_audiostreamplayer.bus = "Master";
-		soundtrack_audiostreamplayer.pitch_scale = 1;
-		soundtrack_audiostreamplayer.volume_db = -10;
-		soundtrack_audiostreamplayer.set_mix_target(0);
-		soundtrack_audiostreamplayer.autoplay = true;
+	var merchantsmain_sample = load("Audio/Music/MerchantsMain.wav");
+	soundtrack_audiostreamplayer.stream = merchantsmain_sample;
+	soundtrack_audiostreamplayer.bus = "Master";
+	soundtrack_audiostreamplayer.pitch_scale = 1;
+	soundtrack_audiostreamplayer.volume_db = -10;
+	soundtrack_audiostreamplayer.set_mix_target(0);
+	soundtrack_audiostreamplayer.autoplay = true;
 	handle_play_mainsoundtrack();
 		
 func play_soundfx(action_sfx: AudioStream) -> void:
